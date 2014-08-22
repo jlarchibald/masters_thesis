@@ -1,0 +1,73 @@
+\chapter{The Atoms} \label{ChapterAboutTheAtoms}
+  \section{Overview of relevant atomic transitions}
+
+  The system is designed to stimulate Raman transitions between the hyperfine $^2$S$_{1/2}$ ($5s$) ground states corresponding to $F=4$ and $F=5$. The intermediate state is the $^2$P$_{3/2}$ ($5p$) state. 
+
+In Ref.\ \cite{cjeDiss}, this calculation is performed, but some of the details are left mysterious. We hope to reproduce this calculation with better details.  
+
+
+
+\section{Finding the Dipole Moment Matrix Operator}
+I was worried I didn't have the right value for this. According to Ref.\ \cite{safronova2photon} the magnitude of the dipole moment operator is -4.35075 a. u. \footnote{atomic units, $a_0 e$} as calculated using the all-order, relativistic SD method. It is useful to compare this to the value obtained from at least one other source \footnote{I want to make sure the units and conventions are what I think they are.}. According to the NIST atomic spectra database, $A_{ki}=1.41e8$ s$^{-1}$ \cite{NISTasd}. This seems to be the Einstein A coefficient associated only with the decays from this state. If this is the case, then we use this equation from Ref.\ \cite{demilleBudkerKimball}:  
+\begin{equation}
+|\langle f ||d|| i \rangle|^2 = (4 \pi \epsilon_0) \frac{3 \hbar c^3}{4 \omega_0^3} (2 J'+1) A_{ki}\label{budkerAeqn} 
+\end{equation}
+
+This comes from slightly modifying Equation 3.117. It was necessary to convert it from Gaussian units by taking $d\rightarrow d \sqrt{4 \pi \epsilon_0}$. Furthermore, what Ref.\ \cite{demilleBudkerKimball} calls $\gamma$ must be renamed $A_{ki}$. Here $J'$ refers to the total angular momentum of the electron in the upper state, which in our case is $3/2$. Plugging in our values into Ref.\ \ref{budkerAeqn}, we get that the magnitude of $|\langle f ||d|| i \rangle|$ is \href{http://www.wolframalpha.com/input/?i=sqrt%283*hbar*c%5E3%2F%284*%282*pi*c%2F407.771+nm%29%5E3%29*4*pi*epsilon_0*4*1.41e8*1%2Fs%29}{4.344 electron Bohr Dipole Moments}.
+Thus, the agreement between the theoretical calculations of Ref.\ \cite{safronova2photon} and the experimentally-derived values of Ref.\ \cite{NISTasd} is very good.  
+
+\section{Finding the Density Matrices to describe the system}
+
+
+
+%why does the ground state J nt play into it at all?
+%I just realized I have no idea where to find the information on the hyperfine splitting of the Sr+
+%I have this http://link.springer.com/article/10.1007%2FBF00568145
+First, we will write the complete Hamiltonian of the system. The $^2$S states can be rewritten as a sum of eigenstates of the $\vec{J}$ and $\vec{F}$ operators. There are 3 relevant states: 
+
+
+We will then rewrite the Hamiltonian in terms of the total angular momentum. 
+
+We can then treat it perturbatively. 
+
+We will then justify using this equation \cite{footAtomicPhysics} \cite{RamanBeamSplit}: 
+
+\begin{equation}
+\Omega_{eff}=\frac{\Omega_{2i} \Omega_{i1}}{2 \Delta}
+\end{equation}
+
+where $\Omega_{2i}$ and $\Omega_{i1}$ are the Rabi frequencies corresponding to the transition from our $^2$S$_{1/2}$ ground state to the  $^2$P$_{3/2}$ state. 
+The key issue with this segment of the paper is that I want to make sure that we're doing the right thing with the dipole moment operators and the modelling of the atomic transition.  %what about the width of the transition? Ah, that should all come out of the soup. %basically, the dominant effect is . . . something? It's the dipole stuff and the tuning, etc., not an energy thing? well, no, it's just that changing the absolute energy doesn't matter much.  
+% It has just occurred to me (today, 2013-130) that we are doing the right thing. Well, I mean, in reality, the coupling of our two states to our lasers will be the same because the orbital angular momentum state is what matters for the purposes of calculating the coupling of an external field to our atom. 
+
+% Well, it has just occurred to me that I don't know about the angular momentum conservation. It is conserved, but strangely. 
+
+% So, wait--are there 0-0 transitions? Yes--one photon adds the angular momentum, the other one takes it away. 
+
+ I would very much like to see the forbidding of the non-angular-momentum-conserving transitions come out of the soup, as they say. I mean, I would like to see a Hamiltonian that does not couple them at all. In addition, I would like to see the relationship between the magnetic field we have placed and see which direction the angular momentum from our lasers must go. 
+
+%I have very much been thinking about symmetries and ways to rewrite things. Like, if the additive inverse of 0100111 were encoded as 1011000. Then you could store same amount of information, but with different encoding. One way to encode would be to merely find 7 symmetry operators, I think. Such as what? I'm not sure.
+
+So write that Hamiltonian.  
+
+%Ah, so how do we make sure that our lasers both add angular momentum in the same way? Does it matter how they're oriented relative to the magnetic field? 
+
+The Rabi frequencies are given by 
+
+\begin{equation}
+\Omega=\frac{\mu E}{h}
+\end{equation} \cite{hilbornNoGetConfused}
+where $\mu$ is the dipole moment matrix element describing the coupling between the electric field and the atom. 
+
+Hilborn gives an expression for $\mu^2$ in terms of the oscillator strength, which I've found in two places \cite{safronovaTheory} \cite{NISTasd} to be about .7. However, I think I need to apply the Wigner-Eckhart theorem as explained in \cite{demilleBudkerKimball}. This also matches Gallagher's answer. 
+
+We carefully make sure that we're using the right dipole moment matrix elements. This is something I still need to do. 
+
+We can compare our result to Chris' thesis. 
+
+
+  \section{Calculation of ideal intensities}
+
+We use the derived formula above to calculate the necessary beam geometries. We can compare this to Chris' thesis. 
+
+

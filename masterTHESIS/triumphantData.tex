@@ -1,0 +1,82 @@
+\chapter{Results and Conclusions}
+We now present the evidence that the system seemed to be working.
+
+First, we examine the output of the spectrum analyzer when we couple both Slave lasers into it. 
+The two peaks clearly correspond to the two slave lasers. We can see that there is a lot of power \footnote{honestly, I'm not sure that all the power coming out was in those modes. It was a little bit flaky}
+We can clearly identify which peak corresponds to which Slave laser by blocking one of the slaves. 
+
+Next, we attempt an experiment whereby we adjust the driving frequency. We should be able to see the peaks shifting by an amount corresponding to the change in the frequency. This will provide strong evidence that the two slaves are, in fact, injection locked to the modulated beams coming out of the AOM. 
+
+This test has the further benefit of confirming that we have calculated the free spectral range of the cavity in the spectrum analyzer correctly. 
+
+The spectrum analyzer is a semiconfocal cavity of length 200 mm. The flat, partially reflective mirror through which light enters the cavity is mounted on a mount that features piezo-electric actuators. At the other end is a curved mirror of focal length 200 mm. Behind this is a photodiode \footnote{the Thorlabs DET XXXXX}.
+The principal principle of operation is that we sweep the length of the cavity by applying an oscillating voltage to the piezos on the spectrum analyzer. When the cavity length is such that the coupled light is close to a resonance of the cavity, we expect to see higher signal on the photodiode. 
+This is easily accomplished.
+
+In order to calculate the Free Spectral Range (FSR) of the cavity, we search for the amount by which the frequency of the coupled light must change as we move from one resonance to the other. 
+
+According to Ref.\ \cite{lasersMilonniEberly}, the equation for the resonant frequencies of the longitudinal modes of our cavity are
+
+\begin{equation} \label{eqModeF}
+\nu_{qmn}=\frac{c}{2L}\left[q + \frac{1}{\pi}(m+n+1)\cos^{-1}(\operatorname{sgn}(g_1)\sqrt{g_1 g_2})\right], 
+\end{equation}
+
+if we model the resonant modes as Laguerre-Gaussian modes. Here, $L$ is the length of the cavity; $q$ is a nonnegative integer; $m$ and $n$ are integers representing the order of the Hermite polynomials in the solution in the $x$ and $y$ directions. $g_i$ is defined for each mirror and is given by $1-L/R_i$.
+
+From the equation, we see that the hemiconfocal cavity has the special property that many of the resonances align. One of our mirrors is flat, so $g_1=1-L/\infty=1$, while the other's focal length, $f_2$ is equal to the length of the cavity. Recalling that the normal relationship between radius of curvature and focal length is $R_2=2 f_2$, we see that $g_2=1-L/R_2=1-L/(2 f_2)=1-L/(2 L)=1/2$. Thus, 
+
+\begin{equation}
+\cos^{-1}(\operatorname{sgn}(g_1)\sqrt{g_1 g_2})=\frac{\pi}{4}.
+\end{equation}
+Substituting this into Eq.\ \ref{eqModeF}, we see that 
+
+\begin{equation}
+\nu_{qmn}=\frac{c}{2L}\left[q + \frac{1}{4}(m+n+1)\right], 
+\end{equation}
+
+Since $m$,$n$ and $q$ are all integers, we see that the resonant modes will be integer multiples of $c/(8L)$. It would, of course, be possible, to suppress some of the modes by coupling our beam in carefully, 
+
+A simple ray-tracing argument will serve us well:
+
+In order for the cavity to be resonant with our light, the full optical path of the light must be an integer number of wavelengths. The resonance condition is 
+\begin{equation}
+n \lambda = d
+\end{equation}
+where $n$ is an integer, $\lambda$ is the wavelength and $n$ is the length of the optical path in the cavity. The length of the optical path in the cavity for a confocal cavity is going to be approximately 4 times the cavity length. 
+
+HELP! I'm not sure if that's right. I can easily see that by tracing the path of a particular ray that's parallel to the optical axis, I will get back to the same point after travelling the length of a confocal cavity approximately four times. However, I'm not entirely sure that this ray tracing plays nice with models of actual modes of cavities.
+For example, http://www.thorlabs.com/tutorials.cfm?tabID=21118\& seems to talk nebulously about the phase shift of a Gaussian beam in the middle of the cavity adding an extra factor of 2 somehow. 
+
+Ah, it has just occurred to me that probably these are perfectly consistent. After all, the whole point of ray tracing is that any component of the light whose $k$ vector is along the ray will propagate along the ray. Probably there is some way in which we can talk about a Gaussian mode that makes the Gouy phase shift somehow explainable in terms of two (or more!) crossing rays of propagation. 
+
+Now, the entire point of getting the cavity to be nearly confocal (or, as is the case with our spectrum analyzer, nearly semiconfocal) is that all the modes should have the same optical path length. Thus, we get maximum clarity as all the modes transmit to the photodiode at the same time\footnote{Well, actually, maybe the peak would be sharper if we had all the modes at different spots and were simply better able to distinguish between modes. Is that true?}. 
+
+In any case, for a semiconfocal cavity, we see that a ray parallel to the optical axis would have to traverse the cavity length 8 times before finally getting back to its starting point. 
+
+Perhaps the resonant length of the other modes is not because they travel farther off-axis. It's perhaps related to some other issue that arises when we move the focal points.
+
+%where is the energy going? I think it goes from reflecting to transmitting
+
+ 
+\begin{figure}
+    %\centerline{\includegraphics[trim=100pt 100pt 100pt 100pt, clip=true, totalheight=0.5\textheight,angle=90]{testfigure}}
+    %\centerline{\includegraphics[totalheight=0.3\textheight]{testfigure}}
+    \centerline{\includegraphics{sampleOffsetData}}
+    %\includegraphics[totalheight=0.3\textheight]{testfigure}
+    \caption[]{\label{fig:typicaldata}
+    We changed the detuning on our frequency generator in something like 10 MHz increments. These are some of the data that we have that show the spacing between our peaks changing in a predictable way.}
+\end{figure}
+\begin{figure}
+\centerline{\includegraphics{thisone}}
+\end{figure}
+
+\begin{figure}
+\centerline{\includegraphics{all_splittingData}}
+\caption[]{\label{fig:alldata} 
+This is the complete set of data from which the previous graphic was culled. Some of it is clipped uglily. The peaks are on top of each other, but it may have drifted to a higher power between when I set it up and when I took the data. I'm not sure why this looks so much worse than the data I normally take.}
+\end{figure}
+
+Also, I have data that I can analyze to examine the feasibility of a Chu lock. I recorded 999 traces that showed the output of the spectrum analyzer, the current and the voltage. I recorded these over several hours, during which the laser drifted into and out of good, single mode operation. In principle, this data could be analyzed. 
+
+We have shown that we can change the oscillator frequency and thereby change the detuning. There is a limit to the extent that we can do this. (Notice in Fig.\ \ref{fig:alldata} that the peaks get small as we continue to detune.) However, this is due to geometry. When I realigned using the method of measuring the photocurrent coming out of the slave lasers, I found that I was able to get the thing to work over an entirely different range of oscillator frequencies. 
+

@@ -1,0 +1,42 @@
+
+\documentclass[master]{BYUPhys}
+\input{frontmatter.tex}
+
+%\includeonly{AOMinstall}
+%\includeonly{historicalOverviewAndMotivation}
+%\includeonly{triumphantData}
+\includeonly{theAtoms}
+
+\begin{document}
+\input{earlyDocumentParts.tex}
+
+\newcommand{\includeorput}[1]{\include{#1}} %\newcommand{\includeorput}[1]{\input{#1}}
+\mainmatter
+
+
+\include{historicalOverviewAndMotivation}
+\include{experimentOverview}
+\include{theAtoms}
+\includeorput{GenerationofSeedLight}
+\includeorput{spectrumAnalyzer}
+\includeorput{twoWaveplateTrick}
+\include{AOMinstall}
+
+\include{InjectionLocking}
+
+\include{triumphantData}
+
+\appendix
+ \bibliographystyle{phBYU}
+ \bibliography{mybib}
+ 
+\include{AppendixBeamWaistMSquared}
+\include{AppendixTryingtoFigureouttheChuLock}
+%  \include{AppendixB}
+
+ \phantomsection \addcontentsline{toc}{chapter}{Index}
+  \renewcommand{\baselinestretch}{1} \small \normalsize
+  \printindex
+
+
+\end{document}

@@ -1,0 +1,46 @@
+  \chapter{Generation of Seed Light}
+
+\section{Stabilization of Master Laser}
+\subsection{Master Laser Layout}
+The master laser consists of a 408 nm extended cavity diode laser. The diodes themselves are single-spatial mode InGaN diodes that are similar to the diodes used in blu-ray players.
+
+We first used a Sharp GH04020A2GE low power diode, but then quickly switched to the Sharp GH04P21A2GE diodes for the Master laser \footnote{these were not wavelength-selected.}. However, in order to tune the diode, we tried maintaining a diode at 60$^\circ$C, but this resulted in rapid degradation of the diode and loss of power. 
+
+Thus, we found ourselves obligated to acquire several diodes that had been wavelength selected by the manufacturer. As backup diodes, we also bought some diodes that had been removed from blu-ray players on eBay and wavelength-selected them ourselves. \footnote{I have no idea what accounts for the variation between diodes}. 
+
+We 
+
+\subsection{Master Laser Temperature and Current Selection}
+
+Two factors affecting the wavelength of the Master Laser are the temperature and the current. Using a grating spectrometer, we measured the center wavelength of the bare laser (no grating installed). We have a graph of the temperature and current for all of our lasers. We see that the variation of the center wavelength of the laser is linear to a good approximation over reasonable values of temperature and current.
+
+We used an Ocean Optics spectrometer. The spectrometer has 2048 pixels. The difference in wavelength between adjacent pixels is typically ~.061 nm. % This according to /research/octave/ooSpectrumData12Sep/MasterFile.m using the lambdas variable defined in there.
+Because the wavelength changes only a few nanometers over the entire range of possible temperatures and currents, we calibrated to a mercury source both before and after looking at the spectrum of the laser. 
+
+
+\subsection{Placement of the Grating}
+
+Some theory here might be worth reviewing. In addition, I did that really great mathematica notebook where I calculated all that stuff. 
+
+\subsection{Calculation of Maximum Safe Intensity}
+In order to avoid killing the laser diode, we assumed that the maximum current for which the diode is rated corresponds to the maximum amount of power that can be emerging through the front facet of the laser. We put the maximum recommended current of 25 mA through the laser and measured the output to be \footnote{I need to look up where I did these calculations}. Then we measured the efficiency of the grating by moving the grating so that the light was not reflected into the laser. This way, we could could model the external cavity and deduce what the maximum allowable power coming out of the the cavity corresponded to the maximum power coming out of the laser. The maximum allowable current turned out to be around 100 mA. 
+
+
+TODO: look at the peaks of the laser cavity that you did before when Dallin said ``You better make good notes and put that in your thesis''
+ 
+TODO: figure out what the resolution of the spectrometer was. 
+
+TODO: figure out what spectrometer you used. 
+
+TODO: put in the T and I vs $\lambda$ graphs. 
+
+We installed the diffraction grating on a custom-made mount. 
+
+TODO: figure out what grating you used 
+
+Standard 
+
+%check out ooSpectrumData
+
+%do I have wavelength vs. temperature readings? Yes of course. 
+
