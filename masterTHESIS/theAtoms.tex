@@ -6,7 +6,6 @@
 In Ref.\ \cite{cjeDiss}, this calculation is performed, but some of the details are left mysterious. We hope to reproduce this calculation with better details.  
 
 
-
 \section{Finding the Dipole Moment Matrix Operator}
 I was worried I didn't have the right value for this. According to Ref.\ \cite{safronova2photon} the magnitude of the dipole moment operator is -4.35075 a. u. \footnote{atomic units, $a_0 e$} as calculated using the all-order, relativistic SD method. It is useful to compare this to the value obtained from at least one other source \footnote{I want to make sure the units and conventions are what I think they are.}. According to the NIST atomic spectra database, $A_{ki}=1.41e8$ s$^{-1}$ \cite{NISTasd}. This seems to be the Einstein A coefficient associated only with the decays from this state. If this is the case, then we use this equation from Ref.\ \cite{demilleBudkerKimball}:  
 \begin{equation}
@@ -21,10 +20,18 @@ Thus, the agreement between the theoretical calculations of Ref.\ \cite{safronov
 
 
 %why does the ground state J nt play into it at all?
-%I just realized I have no idea where to find the information on the hyperfine splitting of the Sr+
+%I just realized I have no idea where to find the information on the hyperfine splitting of the Sr+ 
+%also, IDK what to do about the the Nucleur spin numbers of the upper state. 
 %I have this http://link.springer.com/article/10.1007%2FBF00568145
 First, we will write the complete Hamiltonian of the system. The $^2$S states can be rewritten as a sum of eigenstates of the $\vec{J}$ and $\vec{F}$ operators. There are 3 relevant states: 
-
+\begin{center}
+\begin{tabular}{l|l|||r}
+$F=4$ $^2$S$_{1/2} (5s)$ & Ground state & label \\ \hline
+$F=5$ $^2$S$_{1/2} (5s)$ & Ground state & label \\ \hline
+$F=4$ P$_{3/2}$ ($5p$)  & Ground state & label \\ \hline
+$F=5$ P$_{3/2}$ ($5p$) & Ground state & label \\ \hline
+\end{tabular}
+\end{center}
 
 We will then rewrite the Hamiltonian in terms of the total angular momentum. 
 
