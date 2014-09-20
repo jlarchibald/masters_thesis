@@ -19,20 +19,41 @@ Because the wavelength changes only a few nanometers over the entire range of po
 
 
 
-
 \subsection{Placement of the Grating}
 
 %Some theory here might be worth reviewing. In addition, I did that really great mathematica notebook where I calculated all that stuff. 
 
-Installation of a diffraction grating allows us to selectively couple light of particular wavelengths back into 
+%Installation of a diffraction grating allows us to selectively couple light of particular wavelengths back into 
 
-The fundamental process involved in lasing is amplification of light
+The fundamental process involved in lasing is amplification of light resonant with a particular mode of the laser cavity via stimulated emission. Ideally, we would like to favor a mode within the diode laser corresponding to our desired wavelength. Furthermore, we can additionally favor modes and narrow the linewidth of our laser by adding yet another resonant cavity outside our laser. We thus install an element to selectively couple light at particular wavelengths back to the laser that will. 
+
+To do this we construct an Extended Cavity for our diode laser (thereby creating an Extended Cavity Diode Laser or ECDL). The cavity is formed between the front face of the laser and the diffraction grating that we installed. We must ensure that the diffraction grating is installed such that both the angle and the cavity length match our desired wavelength. To this end, we install the grating on a Thorlabs piezoelectric mount.
+
+The custom-made grating holder that I fabricated is on display in figure XXXX. 
+The motion of the piezoelectric mount is not entirely trivial. The PID controller used to keep the things mounted %did I ever tune this up? 
+allows for several gains to be set. The ratio between each of these is strategically calculated to ensure that the output of the PID controller circuitry corresponds to motion on the piezos that allows the favored angle for the diffraction grating to track along with the overall change in length of the cavity. 
+ 
+The diffraction grating is angled so that the 407.771 nm light that we want is directed back into the laser. The condition for this to be the case is 
+
+\begin{equation}
+n \lambda = 2 d \cos(\theta),
+\end{equation}
+
+Where $d$ is the grating spacing, $n$ is an integer and $\theta$ is the angle of incidence to the grating. 
+
+Furthermore, we would like our cavity's length to increase proportionally with the change in the angle. Thus, from the equilibrium position, we want 
+
+\begin{equation}
+\frac{d \lambda}{d k} = \frac{d \lambda}{d k},
+\end{equation}
+
+where the LHS represents the derivative 
 
 \subsection{Calculation of Maximum Safe Intensity}
 In order to avoid killing the laser diode, we assumed that the maximum current for which the diode is rated corresponds to the maximum amount of power that can be emerging through the front facet of the laser. We put the maximum recommended current of 25 mA through the laser and measured the output to be \footnote{I need to look up where I did these calculations}. Then we measured the efficiency of the grating by moving the grating so that the light was not reflected into the laser. This way, we could could model the external cavity and deduce what the maximum allowable power coming out of the the cavity corresponded to the maximum power coming out of the laser. The maximum allowable current turned out to be around 100 mA. 
 
 
-TODO: look at the peaks of the laser cavity that you did before when Dallin said ``You better make good notes and put that in your thesis''
+%TODO: look at the peaks of the laser cavity that you did before when Dallin said ``You better make good notes and put that in your thesis''
  
 TODO: put in the T and I vs $\lambda$ graphs. 
 
