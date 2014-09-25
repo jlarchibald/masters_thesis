@@ -13,14 +13,16 @@ The AOM is a crystal with a piezoelectric transducer attached to one side and an
 
 The calculation of this is straightforward: 
 
-SHOULD I INCLUDE THE DERIVATION OF THE RELATIONSHIP BETWEEN DRIVING FREQUENCY, ANGLE OF DEFLECTION AND FREQUENCY SHIFT? 
+%SHOULD I INCLUDE THE DERIVATION OF THE RELATIONSHIP BETWEEN DRIVING FREQUENCY, ANGLE OF DEFLECTION AND FREQUENCY SHIFT? 
 
 Ultimately, getting the AOM to work properly involves optimizing just a few parameters. We must ensure that the AOM is installed at the right angle relative to the incoming beam. We must ensure that as much of the incoming beam as possible hits the active area of the AOM. This requires alignment in the X and Y dimensions, but it also means that we attempt to maneuver the AOM so that the focal point of the incoming beam is approximately in the center of the crystal. The power used to drive the piezoelectric transducer must be optimized. Furthermore, the intensity and shape of the incoming beam must be adjusted to ensure that we do not exceed the maximum allowable intensity for the AOM, which is specified as 50 W/mm$^2$.
 %shape instead of waist?
 Thus, we will first discuss some work we did to characterize our incoming beam.
 
 \section{Optimization of Beam Waist}
-First, we would like to control our beam so that, at its focus, the majority of the beam fits within the active area of the AOM \footnote{I did explore the possibility of just sending in a huge beam with lots of extra power in hopes that the part scattering off the active part of the AOM would work. Preliminary tests showed little promise for the technique. Furthermore, there is no reason to believe we would get any kind of good mode from this.} This area is spec'd as being .05 mm wide. Thus, we hope for a beam waist radius that will be $\approx$4 times smaller.   
+First, we would like to control our beam so that, at its focus, the majority of the beam fits within the active area of the AOM \footnote{I did explore the possibility of just sending in a huge beam with lots of extra power in hopes that the part scattering off the active part of the AOM would work. Preliminary tests showed little promise for the technique. Furthermore, we would expect the possibility of severe distortion of the transverse mode of our laser.} This area is specified as being .05 mm wide. 
+
+Our goal is to have a beam waist radius that will be $\approx$4 times smaller than this 0.05 mm value\footnote{Note I am comparing the beam waist \emph{radius} to the \emph{width} of the active area.}. If our waist is too small, we have to reduce the power to avoid damaging the AOM. Also, the diffraction efficiency decreases because the beam will interact with fewer Bragg planes. If the waist is too large, only a small portion of the beam would be within the active area of the AOM and would thus possibly be distorted. 
 
 If we take measurements of the beam's waist at several points along the beam's path, we can fit this to the equation given in \cite{SiegmanBeamQuality}. When we do our fit, we can either try to allow $M^2$ to be one of the fit parameters. However, if we constrain $M^2=1$ in our fit, we will end up with a worst-case minimum beam waist radius. 
 
@@ -84,7 +86,7 @@ As a sanity check, we can calculate using an ABCD matrix (ray-transfer matrix) w
 %This is in a lab notebook somewhere. You need to find it there, I think. Or it's in a Mathematica file. 
 %found: the Mathematica files are generalABCDfinding.nb, ABCDwillWeBreakAOM.nb . The m files, well, I think the ones I want are in checkTheWaists_realDATA. 
 
-According to \cite{SiegmanBeamQuality}, we can model the propagation of the ``embedded'' Gaussian beam. We could then, in principle, model our beam based on our knowledge of the $M^2$. However, recall that in our analysis, we've been assuming a sort of worst case scenario $M^2=1$. Thus, we will model our beam call the well-known rule for modelling the change of a Gaussian beam as it passes through a system described by ray transfer matrix with coefficients $A$,$B$,$C$ and $D$, which is 
+According to \cite{SiegmanBeamQuality}, we can model the propagation of the ``embedded'' Gaussian beam. We could then, in principle, model our beam based on our knowledge of the $M^2$. However, recall that in our analysis, we've been dealing with the worst case scenario $M^2=1$ (worst-case in the sense that a beam with $M^2=1$ would have the highest intensities and would require the lowest laser power to avoid damaging the AOM. Thus, we will model our beam call the well-known rule for modelling the change of a Gaussian beam as it passes through a system described by ray transfer matrix with coefficients $A$,$B$,$C$ and $D$, which is 
 
 \begin{equation}
 z'-iz_0'=\frac{A(z-iz_0)+B}{C(z-iz_0)+D}
