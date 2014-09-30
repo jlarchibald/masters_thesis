@@ -47,7 +47,11 @@ Furthermore, we would like our cavity's length to increase proportionally with t
 \frac{d \lambda}{d k} = \frac{d \lambda}{d k},
 \end{equation}
 
-where the LHS represents the derivative 
+where the LHS represents the derivative of the wavelength favored by the grating angle as a function of the output from the PID controller and the RHS represents the derivative of the wavelength favored by the cavity length as a function of angle. 
+
+%on some level, we need to know what longitudinal order our wavelength was. I mean, it's not that we just move it out one cavity length to change it by a free spectral range. I don't understand why it doesn't always work better with more light coupled back in. Lasers are weird. 
+
+%couldn't we have done much better? I'm not sure. 
 
 \subsection{Calculation of Maximum Safe Intensity}
 In order to avoid killing the laser diode, we assumed that the maximum current for which the diode is rated corresponds to the maximum amount of power that can be emerging through the front facet of the laser. We put the maximum recommended current of 25 mA through the laser and measured the output to be \footnote{I need to look up where I did these calculations}. Then we measured the efficiency of the grating by moving the grating so that the light was not reflected into the laser. This way, we could could model the external cavity and deduce what the maximum allowable power coming out of the the cavity corresponded to the maximum power coming out of the laser. The maximum allowable current turned out to be around 100 mA. 
