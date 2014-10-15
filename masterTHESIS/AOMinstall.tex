@@ -49,22 +49,22 @@ We can look at the effective slope of divergence by rearranging Eq.\ \ref{Siegma
 \end{equation}
 %does z0 matter as a fit parameter? I don't think so. 
 
-From this we see that the minimum possible beam waist radius corresponding to a given beam divergence corresponds to $M^2=1$. Thus, if we assume $M^2=1$, we get a worst-case scenario as far as intensity goes. 
+Note that the smallest possible beam waist radius corresponding to any given beam divergence, occurs if $M^2=1$. Thus, if we measure the beam divergence and perform our calculations for the case where $M^2=1$, we end up with a minimum calculated beam-waist radius, which corresponds to a maximum peak intensity at the center of the beam. We can thus guarantee that the peak intensity at the focus of our beam will be less than or equal to the result of this calculation no matter what the real-life value $M^2$ actually ends up being. 
 
 To estimate the intensity, we will first suppose that we have a non-twisted Gaussian beam with waists $w_{x0}=2 \sigma_{x0}$ and $w_{y0}=2 \sigma_{y0}$. The maximum intensity in such a beam in terms of the total power contained in the beam is given by integrating the intensity of the beam. We know that the intensity profile of such a beam has the form\footnote{well, based on Wikipedia and assumptions about Siegman's conventions}:
 
 \begin{equation}
-I(x,y)=(I_0) \exp \left( -2 \left(\frac{x}{W_{0x}} \right)^2-2 \left( \frac{y}{W_{0y}}\right)^2\right). \label{intensityEquation}
+I(x,y)=I_0 \exp \left( -2 \left(\frac{x}{W_{0x}} \right)^2-2 \left( \frac{y}{W_{0y}}\right)^2\right). \label{intensityEquation}
 \end{equation}
 
-We can verify that $I_0$ represents the intensity at the center of the beam  by integrating%\footnote{maybe I shouldn't have this in here, it's too simple. I always have to double check my coefficients and factors of 2, though, so the equations should definitely at least be there}: 
+Here, $I_0$ represents the intensity at the center of the beam. We can find its relationship to the total power in the beam by integrating.\footnote{This is straightforward, but it is included merely to ensure that there are no factor of 2 or $\pi$ type snafus.}: 
 
 \begin{align}
 {\rm Total\ Power}=P&=\int_{-\infty}^\infty I(x,y)\, dx\, dy\\
 &=\frac{\pi}{2}(I_0) W_{0x} W_{0y}
 \end{align}
 
-We can solve for our constants and rewrite them in terms of $P$, $W_{0x}$ and $W_{0y}$ we find that Eq.\ \ref{intensityEquation} becomes 
+We can solve for $I_0$ and rewrite it in terms of $P$, $W_{0x}$ and $W_{0y}$ we find that Eq.\ \ref{intensityEquation} becomes 
 
 \begin{equation}
 I(x,y)= \frac{2 P}{\pi W_{0x} W_{0y}}\exp \left( -2 \left(\frac{x}{W_{0x}} \right)^2-2 \left( \frac{y}{W_{0y}}\right)^2\right). \label{intensityEquation2}
