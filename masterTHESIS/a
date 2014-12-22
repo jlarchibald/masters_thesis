@@ -6,7 +6,7 @@ The laser system consists of several components arranged together on a breadboar
 \begin{figure}
     \centerline{\includegraphics[width=1\textwidth]{diagramOfSetup3}}
     \caption[Diagram of the Setup]{\label{figdiagramOfSetup}
-	A cartoon diagram of the basic pieces of the apparatus. The master laser is depicted on the upper right. This is followed by two optical isolators in series. After this, the AOM is depicted with the two beams coming out at exagerrated labels. These are then coupled into the exit ports of two other optical isolators. Finally, the final two beams come out the other end. Not pictured is the two waveplate setup that comes near the beam splitter. Also possibly not pictured are some half waveplates that go near the slave laser. 
+	A cartoon diagram of the basic pieces of the apparatus. The master laser is depicted on the upper right. This is followed by two optical isolators in series. After this, the AOM is depicted with the 
     }
 \end{figure}
 
