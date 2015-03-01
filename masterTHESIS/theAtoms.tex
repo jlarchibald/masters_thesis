@@ -1,9 +1,36 @@
 \chapter{The Atoms} \label{ChapterAboutTheAtoms}
   \section{Overview of relevant atomic transitions}
 
-  The system is designed to stimulate Raman transitions between the hyperfine $^2$S$_{1/2}$ ($5s$) ground states corresponding to $F=4$ and $F=5$. The intermediate state is the $^2$P$_{3/2}$ ($5p$) state. 
+The system is designed to stimulate Raman transitions between the hyperfine $^2$S$_{1/2}$ ($5s$) ground states corresponding to $F=4$ and $F=5$. The intermediate state is the $^2$P$_{3/2}$ ($5p$) state. 
 
 In Ref.\ \cite{cjeDiss}, this calculation is performed, but some of the details are left mysterious. We hope to reproduce this calculation with better details.  
+
+\section{Summary of First Approach to This Problem}
+
+According to Ref.\ \cite{cjeDiss}, the problem is a straightforward one.
+
+First, we take the well-known equation for the Rabi frequency, 
+
+\begin{equation}
+\Omega = \frac{-eE_0}{\hbar}\langle e |\vec{r}|g\rangle=\frac{\vec{d}E_0}{\hbar}
+\end{equation}
+
+Then, we write 
+
+\begin{equation}
+\Omega_\mathit{eff}=\sqrt{\Omega^2+\delta^2}
+\end{equation}
+
+Then, we see that 
+\begin{equation}
+\Omega_\mathit{eff}=\sqrt{\left(\frac{\Gamma^2S_0}{2}\right)^2 + \delta^2}
+\end{equation}
+
+Then, according to \cite{RamanBeamSplit} and \cite{footAtomicPhysics}, we can say that 
+\begin{equation} \label{KorsunskysJewel}
+\Omega_\mathit{Raman}=\frac{2\Omega_1\Omega_2}{\Delta}
+\end{equation}
+
 
 
 \section{Finding the Dipole Moment Matrix Operator}
@@ -17,15 +44,8 @@ Thus, the agreement between the theoretical calculations of Ref.\ \cite{safronov
 
 Based on the looks of this, it seems like we already have the reduced matrix element. 
 
+
 This is doubly true because DeMille et. al. already used the Wigner Eckhart theorem to get this. \footnote{But did they use the wigner Eckhart theorem to combine the different states or did they use it to split them out?} 
-
-\section{So far so good . . . or is it?}
-
-Now we must figure out how to use this element. 
-
-We go back to first principles. 
-
-
 
 From \cite{demilleBudkerKimball}, we see that the value for $\langle f||d||i\rangle$ that we have obtained is the reduced dipole matrix element. In order to apply it to any one of our given states, we would need to apply the wigner-Eckhart theorem. 
 
