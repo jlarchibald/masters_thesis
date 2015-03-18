@@ -48,10 +48,11 @@ Now, we can move to the interaction picture in the standard way. Let $|\alpha\ra
 \end{equation}
 
 Then, 
-
+%I don't know whether to use I or J. I mean, are there now tons of terms? 
 \begin{align}
--i\hbar \frac{d}{dt}|\alpha\rangle = 
+-i\hbar \frac{d}{dt}|n\rangle = 
 \end{align}
+
 
 
 
@@ -96,8 +97,28 @@ $F=4$ P$_{3/2}$ ($5p$)  & Ground state & label \\ \hline
 $F=5$ P$_{3/2}$ ($5p$) & Ground state & label \\ \hline
 \end{tabular}
 \end{center}
+%Do I need to worry about Doppler broadening and all that? 
+Importantly, note that once we complete a perturbation, we just end up with a new Hamiltonian that takes a diagonalized form:
+
+\begin{equation}
+\begin{pmatrix}
+E_1 & 0 & \cdots & 0 \\
+0   & E_2 & \cdots & 0\\
+\vdots&\vdots&\ddots & \vdots\\
+0 & 0 & \cdots & E_n
+\end{pmatrix}
+\end{equation}
 
 We will then rewrite the Hamiltonian in terms of the total angular momentum. 
+
+How do we deal with multiple things? I mean, why does the multiplicity of states make it more likely to end up in those states? 
+
+OK, suppose that you made a mistake and put the same state in the system twice. Then, it starts to become very important to count the right number of states. But now, suppose there was something you didn't know about, like the hyperfine structure. This splits all the states, I guess. 
+
+Sure, now perturbations split states all the time. But can a perturbation split the states just by existing? By making two states where there was one, I mean? 
+
+Yes, of course. This is called a direct product. Everything is direct products. Really, the way to look at it is that the atom is a simple system. It is a direct product of a bunch of different Hamiltonians. Then these Hamiltonians are coupled in particular ways. You can really just throw away all the intuition that comes from the actual meaning of the quantum numbers. 
+
 
 We see that we already have the coupling constants for most of them. %Wait--how does the hyperfine thing come into it? Does it at all? 
 
