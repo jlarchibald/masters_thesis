@@ -53,9 +53,6 @@ Then,
 -i\hbar \frac{d}{dt}|n\rangle = 
 \end{align}
 
-
-
-
 \section{Finding the Dipole Moment Matrix Operator}
 We would like to carefully determine the value of this. According to Ref.\ \cite{safronova2photon} the magnitude of the dipole moment operator is -4.35075 a. u. \footnote{atomic units, $a_0 e$} as calculated using the all-order, relativistic SD method. It is useful to compare this to the value obtained from at least one other source \footnote{I want to make sure the units and conventions are what I think they are.}. According to the NIST atomic spectra database, $A_{ki}=1.41e8$ s$^{-1}$ \cite{NISTasd}. This seems to be the Einstein A coefficient associated only with the decays from this state. If this is the case, then we use this equation from Ref.\ \cite{demilleBudkerKimball}:  
 \begin{equation}
@@ -68,7 +65,7 @@ Thus, the agreement between the theoretical calculations of Ref.\ \cite{safronov
 Based on the looks of this, it seems like we already have the reduced matrix element. 
 
 
-This is doubly true because DeMille et. al. already used the Wigner Eckhart theorem to get this. \footnote{But did they use the wigner Eckhart theorem to combine the different states or did they use it to split them out?} 
+This is doubly true because DeMille et. al. already used the Wigner Eckhart theorem to get this. \footnote{But did they use the Wigner Eckhart theorem to combine the different states or did they use it to split them out?} 
 
 From \cite{demilleBudkerKimball}, we see that the value for $\langle f||d||i\rangle$ that we have obtained is the reduced dipole matrix element. In order to apply it to any one of our given states, we would need to apply the wigner-Eckhart theorem. 
 
@@ -82,21 +79,32 @@ So, for example, to find the coupling between the $^2 P_{3/2}$ state with $m_j=+
 
 \section{Finding the Density Matrices to describe the system}
 
-
-
 %why does the ground state J nt play into it at all?
 %I just realized I have no idea where to find the information on the hyperfine splitting of the Sr+ 
 %also, IDK what to do about the the Nucleur spin numbers of the upper state. 
 %I have this http://link.springer.com/article/10.1007%2FBF00568145
-First, we will write the complete Hamiltonian of the system. The $^2$S states can be rewritten as a sum of eigenstates of the $\vec{J}$ and $\vec{F}$ operators. There are 3 relevant states: 
+First, we will write the complete Hamiltonian of the system. The $^2$S states can be rewritten as a sum of eigenstates of the $\vec{J}$ and $\vec{F}$ operators. 
+There are 4 relevant states: 
 \begin{center}
-\begin{tabular}{l|l|||r}
+\begin{tabular}{|l|l|||r|}
+\hline
 $F=4$ $^2$S$_{1/2} (5s)$ & Ground state & label \\ \hline
 $F=5$ $^2$S$_{1/2} (5s)$ & Ground state & label \\ \hline
-$F=4$ P$_{3/2}$ ($5p$)  & Ground state & label \\ \hline
-$F=5$ P$_{3/2}$ ($5p$) & Ground state & label \\ \hline
+$F=6$ $^2$P$_{3/2}$ ($5p$) & Intermediate state & label \\ \hline
+$F=3$ $^2$P$_{3/2}$ ($5p$) & Intermediate state & label \\ \hline
+$F=4$ $^2$P$_{3/2}$ ($5p$) & Intermediate state & label \\ \hline
+$F=5$ $^2$P$_{3/2}$ ($5p$) & Intermediate state & label \\ \hline
 \end{tabular}
 \end{center}
+
+We will write the states in terms of eigenvectors of the following: $J$, $L$, $s$, $F$, $m_j$.
+
+Oh, it seems like selection rules will tell us the answer. From $F=5$, we can go to $F=6$, from there, we can go to what? 
+
+%Oh, it seems like even though the external light field doesn't couple to the nucleus directly, it does couple other things, which can be rewritten in a basis etc. and get coupled themselves. 
+
+%Oh, also, it seems like maybe the upper state, we are not looking at all possible values of $L$.
+
 %Do I need to worry about Doppler broadening and all that? 
 Importantly, note that once we complete a perturbation, we just end up with a new Hamiltonian that takes a diagonalized form:
 
@@ -126,7 +134,6 @@ We see that we already have the coupling constants for most of them. %Wait--how 
 \langle ^2 P_{3/2}||\mathbf{d}||^2 S_{1/2} \rangle &= 4.35 \\
 \langle ^2 P_{2}||\mathbf{d}||^2 S_{1/2} \rangle &= 4.35
 \end{align}
-
 
 We can then treat it perturbatively. 
 
