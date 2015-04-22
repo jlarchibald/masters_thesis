@@ -1,5 +1,5 @@
 \chapter{The Atoms} \label{ChapterAboutTheAtoms}
-  \section{Overview of relevant atomic transitions}
+\section{Overview of relevant atomic transitions}
 
 The system is designed to stimulate Raman transitions between the hyperfine $^2$S$_{1/2}$ ($5s$) ground states corresponding to $F=4$ and $F=5$. The intermediate state is the $^2$P$_{3/2}$ ($5p$) state. 
 
@@ -33,13 +33,30 @@ Then, according to \cite{RamanBeamSplit} and \cite{footAtomicPhysics}, we can sa
 
 \section{Background}
 
-We may well employ the rotating wave approximation (RWA). Let $H_0$ be the Hamiltonian of our unperturbed system (the atom) and let $V$ be the perturbation (which we will use to model the electric field). 
-
+First, we write the Hamiltonian of the system. We neglect all except the following states: %why does the ground state J nt play into it at all?
+%I just realized I have no idea where to find the information on the hyperfine splitting of the Sr+ 
+%also, IDK what to do about the the Nucleur spin numbers of the upper state. 
+%I have this http://link.springer.com/article/10.1007%2FBF00568145
+First, we will write the complete Hamiltonian of the system. The $^2$S states can be rewritten as a sum of eigenstates of the $\vec{J}$ and $\vec{F}$ operators. 
+There are 4 relevant states: 
+\begin{center}
+\begin{tabular}{|l|l|||r|}
+\hline
+$F=4$ $^2$S$_{1/2} (5s)$ & Ground state & label \\ \hline
+$F=5$ $^2$S$_{1/2} (5s)$ & Ground state & label \\ \hline
+$F=6$ $^2$P$_{3/2}$ ($5p$) & Intermediate state & label \\ \hline
+$F=3$ $^2$P$_{3/2}$ ($5p$) & Intermediate state & label \\ \hline
+$F=4$ $^2$P$_{3/2}$ ($5p$) & Intermediate state & label \\ \hline
+$F=5$ $^2$P$_{3/2}$ ($5p$) & Intermediate state & label \\ \hline
+\end{tabular}
+\end{center}
 Then, the new Hamiltonian, $H$, is given by 
 
 \begin{equation}
 H=H_0+V
 \end{equation}
+rotating wave approximation (RWA). Let $H_0$ be the Hamiltonian of our unperturbed system (the atom) and let $V$ be the perturbation (which we will use to model the electric field). 
+
 
 Now, we can move to the interaction picture in the standard way. Let $|\alpha\rangle$ be the eigenstate of $H_0$, the unperturbed Hamiltonian: 
 
@@ -79,23 +96,6 @@ So, for example, to find the coupling between the $^2 P_{3/2}$ state with $m_j=+
 
 \section{Finding the Density Matrices to describe the system}
 
-%why does the ground state J nt play into it at all?
-%I just realized I have no idea where to find the information on the hyperfine splitting of the Sr+ 
-%also, IDK what to do about the the Nucleur spin numbers of the upper state. 
-%I have this http://link.springer.com/article/10.1007%2FBF00568145
-First, we will write the complete Hamiltonian of the system. The $^2$S states can be rewritten as a sum of eigenstates of the $\vec{J}$ and $\vec{F}$ operators. 
-There are 4 relevant states: 
-\begin{center}
-\begin{tabular}{|l|l|||r|}
-\hline
-$F=4$ $^2$S$_{1/2} (5s)$ & Ground state & label \\ \hline
-$F=5$ $^2$S$_{1/2} (5s)$ & Ground state & label \\ \hline
-$F=6$ $^2$P$_{3/2}$ ($5p$) & Intermediate state & label \\ \hline
-$F=3$ $^2$P$_{3/2}$ ($5p$) & Intermediate state & label \\ \hline
-$F=4$ $^2$P$_{3/2}$ ($5p$) & Intermediate state & label \\ \hline
-$F=5$ $^2$P$_{3/2}$ ($5p$) & Intermediate state & label \\ \hline
-\end{tabular}
-\end{center}
 
 Now, we explicitly neglect any coupling there may be between the external laser field and the nucleur spin. We can write the laser thing like this: 
 
