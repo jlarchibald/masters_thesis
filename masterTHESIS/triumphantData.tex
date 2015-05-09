@@ -1,17 +1,25 @@
 \chapter{Results and Conclusions}
-We now present the evidence that the system seemed to be working.
 
-First, we examine the output of the spectrum analyzer when we couple both Slave lasers into it. 
-The two peaks clearly correspond to the two slave lasers. We can see that there is a lot of power \footnote{honestly, I'm not sure that all the power coming out was in those modes. It was a little bit flaky}
-We can clearly identify which peak corresponds to which Slave laser by blocking one of the slaves. 
+The injection locking was successful and we successfully produced two working beams with an adjustable detuning. 
 
-Next, we attempt an experiment whereby we adjust the driving frequency. We should be able to see the peaks shifting by an amount corresponding to the change in the frequency. This will provide strong evidence that the two slaves are, in fact, injection locked to the modulated beams coming out of the AOM. 
+\section{Spectrum Analyzer}
+First, we must discuss the spectrum analyzer we used to make these measurements. 
 
-This test has the further benefit of confirming that we have calculated the free spectral range of the cavity in the spectrum analyzer correctly. 
+\begin{figure}
+%    \centerline{\includegraphics[trim=100pt 100pt 100pt 100pt, clip=true, totalheight=0.5\textheight,angle=90]{spectrumAnalyzer}}
+    \centerline{\includegraphics[totalheight=0.3\textheight ]{spectrumAnalyzer}}
+    %\includegraphics[totalheight=0.3\textheight]{testfigure}
+    \caption[]{\label{fig:spectrumAnalyzer}
+    A diagram of the spectrum analyzer. both lasers are coupled to the cavity. One of the mirrors is mounted on piezoelectric devices that allow fine control of its motion. 
+}
+\end{figure}
 
-The spectrum analyzer is a semiconfocal cavity of length 200 mm. The flat, partially reflective mirror through which light enters the cavity is mounted on a mount that features piezo-electric actuators. At the other end is a curved mirror of focal length 200 mm. Behind this is a photodiode \footnote{the Thorlabs DET XXXXX}.
+
+The spectrum analyzer is a semiconfocal cavity of length 200 mm. The flat, partially reflective mirror through which light enters the cavity is mounted on a mount that features piezo-electric actuators. At the other end is a curved mirror of focal length 200 mm. Behind this is a photodiode \footnote{the Thorlabs DET XXXXX--probably a DET100A/M or something similar.}.
+
 The principal principle of operation is that we sweep the length of the cavity by applying an oscillating voltage to the piezos on the spectrum analyzer. When the cavity length is such that the coupled light is close to a resonance of the cavity, we expect to see higher signal on the photodiode. 
-This is easily accomplished.
+This is accomplished using a commercially available sweeping piezo control box. 
+
 
 In order to calculate the Free Spectral Range (FSR) of the cavity, we search for the amount by which the frequency of the coupled light must change as we move from one resonance to the other. 
 
@@ -54,6 +62,19 @@ Now, the entire point of getting the cavity to be nearly confocal (or, as is the
 In any case, for a semiconfocal cavity, we see that a ray parallel to the optical axis would have to traverse the cavity length 8 times before finally getting back to its starting point. 
 
 Perhaps the resonant length of the other modes is not because they travel farther off-axis. It's perhaps related to some other issue that arises when we move the focal points.
+
+
+
+
+First, we examine the output of the spectrum analyzer when we couple both Slave lasers into it. 
+The two peaks clearly correspond to the two slave lasers. We can see that there is a lot of power \footnote{honestly, I'm not sure that all the power coming out was in those modes. It was a little bit flaky}
+We can clearly identify which peak corresponds to which Slave laser by blocking one of the slaves. 
+
+\section{}
+
+Next, we attempt an experiment whereby we adjust the driving frequency. We should be able to see the peaks shifting by an amount corresponding to the change in the frequency. This will provide strong evidence that the two slaves are, in fact, injection locked to the modulated beams coming out of the AOM. 
+
+This test has the further benefit of confirming that we have calculated the free spectral range of the cavity in the spectrum analyzer correctly. 
 
 %where is the energy going? I think it goes from reflecting to transmitting
 

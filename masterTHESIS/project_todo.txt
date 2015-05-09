@@ -1,0 +1,4 @@
+* Make sure that you show that great Mathematica notebook where you calculate the motion of the diffraction grating. 
+//oh, crap, maybe you didn't do that correctly? Well, I don't think you locked your laser to anything. 
+//oh, crap, did I do enough? Was I supposed to get everything hooked up to a vapor cell? 
+
