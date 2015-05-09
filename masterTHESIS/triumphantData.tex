@@ -14,7 +14,6 @@ In this section, we discuss the spectrum analyzer that we built to analyze this 
 }
 \end{figure}
 
-
 The spectrum analyzer is a semiconfocal cavity of length 200 mm. The flat, partially reflective mirror through which light enters the cavity is mounted on a mount that features piezo-electric actuators. At the other end is a curved mirror of focal length 200 mm. Behind this is a photodiode \footnote{the Thorlabs DET XXXXX--probably a DET100A/M or something similar.}.
 
 This is accomplished using a commercially available sweeping piezo control box. 
@@ -45,23 +44,46 @@ Substituting this into Eq.\ \ref{eqModeF}, we see that
 
 Since $m$,$n$ and $q$ are all integers, we see that the resonant modes will be integer multiples of $c/(8L)$. Eq.\ \ref{freq_semiconfocal} also demonstrates one of the nicest features about semi-confocal cavities, which is that different transverse modes of the electric and magnetic have the same resonant frequency. Thus, rather than having to couple carefully to the TEM$_{00}$ mode, we can allow the light to couple to any transverse mode of the cavity. If we assume that we are coupled to many cavity modes, we can safely assume that adjacent resonant frequency peaks are separated by $c/8L$, which is the Free Spectral Range of the cavity. 
 
-Interestingly, the hemiconfocal configuration has an advantage over \footnote{I am going out on a limb here...} the confocal configuration that is illustrated by this equation. In the confocal configuration, both mirrors are placed so that their focal points coincide. This means that $L=R_1/2+R_2/2$ and thus $g_1=1-L/R_1$ and $g_2=1-L/(2L-R_1)$. Therefore, $\sqrt{g_1g_2}=1$, making the free spectral range of the cavity $c/4L$. However, note that if $L$ changes, then the sign of $g_1$ changes. NOT! No it doesn't. I mean, if $L$ got bigger than $R_1$, th
+Interestingly, the hemiconfocal configuration has an advantage over \footnote{I am going out on a limb here...} the confocal configuration that is illustrated by this equation. In the confocal configuration, both mirrors are identical and are placed so that their focal points coincide. This means that $L=R_1/2=R_2/2$ and thus $g_1=1-L/R_1=g_2=1-L/(2L-R_2)$. Therefore, $\sqrt{g_1g_2}=0$, making the free spectral range of the cavity $c/4L$. However, note that if $L$ changes, then the sign of $g_1$ changes, leading to a kink in the frequency response. With a hemiconfocal cavity, there is no such discontinuity. This makes the expansion in the next section slightly easier. 
 
-Note that we are note actually scanning the frequency of the laser. Rather, it is the length of the cavity that scans. The piezoelectric mount (Thorlabs KC1-PZ) is rated to accept a maximum voltage of 150 V and provide a maximum of $\pm4\mu$m of linear travel. Thus, since our sweep voltage is only about 75 V, we expect that our cavity should be sweeping ~2$\mu$m. If the wavelength of the light is 408 nm, we expect that for each 2$\mu$m of displacement, we should see about $8*2\mu$m$/408nm \approx 40$ resonant peaks. This is a good order of magnitude estimate for the most peaks we've seen. Therefore, we can say that the change in cavity length, $\Delta L< 2\mu$m.
+Note that we are note actually scanning the frequency of the laser. Rather, it is the length of the cavity that scans. Note, however, that both confocal and hemiconfocal cavities remain good, stable cavities as their lengths are scanned since the condition for cavity stability is that $0\leq g_1 g_2 \leq 1$. 
+
+The piezoelectric mount (Thorlabs KC1-PZ) is rated to accept a maximum voltage of 150 V and provide a maximum of $\pm4\mu$m of linear travel. Thus, since our sweep voltage is only about 75 V, we expect that our cavity should be sweeping ~2$\mu$m. If the wavelength of the light is 408 nm, we expect that for each 2$\mu$m of displacement, we should see about $8*2\mu$m$/408nm \approx 40$ resonant peaks. This is a good order of magnitude estimate for the most peaks we can see. Therefore, we can say that the change in cavity length, $\Delta L< 2\mu$m.
 
 Now, if we take Eq.\ \ref{eqModeF} and make the following substitutions:
 \begin{align}
-g_1&\rightarrow&1 \text{ (since $R_1=\infty$)} \\
-g_2&\rightarrow& 1-L/(2L)\\
-L&\rightarrow& L(1-\epsilon)\\
+g_1&\rightarrow1 \text{ (since $R_1=\infty$)} \\
+g_2&\rightarrow 1-L/(2L)\\
+L&\rightarrow L(1-\epsilon)\\
+\end{align},
+
+we get 
+
+\begin{equation} \label{eqModeF_ready_for_expansion}
+\nu_{qmn}=\frac{c}{2L(1+\epsilon)}\left(q+\frac{m+n+1}{\pi}\arccos(\sqrt{1-L(1-\epsilon)/(2L)})\right)
+\end{equation}.
+
+Note that we have used $R_2=2L$ and not $R_2=2L(1+\epsilon)$ since the radius of the mirror does not change as we sweep the cavity. 
+
+We now make a Taylor expansion of Eq.\ \ref{eqModeF_ready_for_expansion} using Mathematica, we get 
+\begin{align*}
+\nu_{qmn}=\frac{c}{8L}\biggl((4q+m+n+1) +\\
+ \left(-4q-m-n-1+\frac{2}{\pi}(1+m+n)\right)\epsilon+\\
+ \left(4q+m+n+1+\frac{2}{\pi}(1+m+n))\right)\epsilon^2\\
+ \left(-4q-m-n-1+\frac{7}{3\pi}(1+m+n)\right)\epsilon^3\\
+ \left(4q+m+n+1-\frac{7}{3\pi}(1+m+n)\right)\epsilon^4\\
+\biggr)
+\end{align*}
+
+This seems a little unnerving: The coefficient for the first order expansion in terms of $\epsilon$ contains integers $m$,$n$ and $q$ as we expect, but it also contains coefficents like $2/\pi$ that are of order unity! However, this is OK. For our cavity, $q>>m,n$. This can be easily seen since the cavity length is 20cm, while the cavity mirrors are scarcely 1 cm across. 
+
+\footnote{Now, I'm not sure whether it's the case that our approximation breaks down and that's why the $m$ and $n$ have to be small. It seems intuitive to me that you can get a lot more oscillations at a given frequency in a 20cm space than you can in a 1 cm space, but I'm not sure if that's the right intuition.\cite{lasersMilonniEberly} eq. 7.8.17 might have some decent insight. All the modes have the same $R(z)$ and $w(z)$, but I think there's more power out of the bucket as they say.  }
+
+This might be OK. If, for example, we assume the argument in the radical ($1-L(1+\epsilon)/(2L)\approx 1/2$ for all values of $\epsilon$, then we get this expansion: 
+
+\begin{align}
+\nu_{qmn}=\frac{c}{8L}
 \end{align}
-
-, we get 
-
-\begin{equation}
-\nu_{qmn}=\frac{c}{2}
-\end{equation}
-
 
 
 
