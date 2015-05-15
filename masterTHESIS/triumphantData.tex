@@ -78,15 +78,15 @@ We now make a Taylor expansion of Eq.\ \ref{eqModeF_ready_for_expansion} using M
 The coefficient for the first order expansion in terms of $\epsilon$ contains integers $m$,$n$ and $q$ as we expect. 
 However, it might seem unnerving at first that it also contains coefficents like $2/\pi$ that are of order unity! The reason this is ok is that $q>>m,n$. We know this is the case for two reasons: First, the Laguerre Gaussian modes are derived using the paraxial wave approximation. The paraxial wave equation assumes solutions of the form
 \begin{equation}
-\vec{E}(\vec{r},t)=E(\vec{r})\exp[i(kz-\omega t)]
+\vec{E}(\vec{r},t)\approx \mathcal{E}(\vec{r})\exp[i(kz-\omega t)]
 \end{equation}
 and it relies on the fact that 
 \begin{equation}
-\left|2k\frac{\partial E(\vec{r})}{\partial z}\right|\gg\left|\frac{\partial^2E(\vec{r})}{\partial z^2}\right|
+\left|2k\frac{\partial \mathcal{E}(\vec{r})}{\partial z}\right|\gg\left|\frac{\partial^2\mathcal{E}(\vec{r})}{\partial z^2}\right|
 \end{equation}
 Since the derivatives of $E(\vec{r})$ depend on $m$th and $n$th order Hermite polynomials, we see that our equations only hold up when $m$ and $n$ are reasonably small. 
 
-This can also be easily seen since the cavity length is 20cm, while the cavity mirrors are scarcely 1 cm across and the laser modes in the cavity can be seen to be less than 5 mm in diameter. One may imagine intuitively that the number of nodes along a long dimension (represented roughly by $q$) is going to be large compared to the number of nodes created by light at the same frequency along a much smaller distance. 
+This can also be easily seen since the cavity length is 20cm, while the cavity mirrors are about 1 cm across and the laser modes in the cavity can be seen to be less than 5 mm in diameter. One may imagine intuitively that the number of nodes along a long dimension (represented roughly by $q$) is going to be large compared to the number of nodes created by light at the same frequency along a much smaller distance. 
 
 \footnote{Now, I'm not sure whether it's the case that our approximation breaks down and that's why the $m$ and $n$ have to be small. It seems intuitive to me that you can get a lot more oscillations at a given frequency in a 20cm space than you can in a 1 cm space, but I'm not sure if that's the right intuition.\cite{lasersMilonniEberly} eq. 7.8.17 might have some decent insight. All the modes have the same $R(z)$ and $w(z)$, but I think there's more power out of the bucket as they say.  }
 
