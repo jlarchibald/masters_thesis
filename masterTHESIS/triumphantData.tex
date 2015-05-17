@@ -15,14 +15,32 @@ In this section, we discuss the spectrum analyzer that we built to analyze this 
 \end{figure}
 
 The spectrum analyzer is a semiconfocal cavity of length 200 mm. The flat, partially reflective mirror through which light enters the cavity is mounted on a mount that features piezo-electric actuators. At the other end is a curved mirror of focal length 200 mm. Behind this is a photodiode \footnote{the Thorlabs DET XXXXX--probably a DET100A/M or something similar.}.
+The length of the optical cavity in the spectrum analyzer is thus modulated by sweeping the voltage that we put across the piezoelectric crystals. When the cavity length is such that the coupled light is close to a resonance of the cavity, we expect to see higher signal on the photodiode. 
+The piezoelectric actuators are connected to a commercially available piezo control box that sweeps the voltage in a sawtooth wave type pattern, with a frequency $\sim$20Hz. 
 
-This is accomplished using a commercially available sweeping piezo control box. 
-
-The length of the optical cavity in the spectrum analyzer can be modulated by sweeping the voltage that we put across the piezoelectric crystals. When the cavity length is such that the coupled light is close to a resonance of the cavity, we expect to see higher signal on the photodiode. 
-
+\subsection{Resonance Conditions}
 In order to calculate the Free Spectral Range (FSR) of the cavity, we search for the amount by which the frequency of the coupled light must change as we move from one resonance to the other. 
 
-According to Ref.\ \cite{lasersMilonniEberly}, the equation for the resonant frequencies of the longitudinal modes of our cavity are
+The modes of the cavity can be shown to be of the form (see, e.g., Refs.\ \cite{lasersMilonniEberly} and \cite{bergeson_amo_notes} for a complete discussion of this):
+
+\begin{align}
+\mathcal{E}_{mn}(x,y,z)=&\frac{Aw_o}{w(z)}H_m\left[\sqrt{2}\frac{x}{w(z)}\right]H_n\left[\sqrt{2}\frac{x}{w(z)}\right] \\
+&\times \exp(i(kz-(m+n+1)\tan^{-1}(z/z_0)\\
+&\times \exp(ik(x^2+y^2)/2R(z)) \exp(-(x^2+y^2)/w^2(z))
+\end{align}
+
+Here,$\mathcal{E}$ is the magnitude of the electric field. $H_m$ and $H_n$ are the (physicists') Hermite polynomials of degree $m$ and $n$. $R(z)$,$z_0$,$w_z$ and $w_0$ are defined in the same way that they are for a Gaussian mode:
+
+\begin{align}
+w(z)&=w_0 \sqrt{1+\frac{z^2}{z_0^2}} \\
+R(z)&=z+\frac{z_0^2}{z}\\
+z_0&=\frac{\pi w_0^2}{\lambda }
+\end{align}
+
+\footnote{I'm not sure why this works when we neglect polarization. It seems like you might get accidentally a factor of 2 or something extra based on the polarization diagram that Milloni and Eberly have on page 305. }
+
+
+the equation for the resonant frequencies of the longitudinal modes of our cavity are
 
 \begin{equation} \label{eqModeF}
 \nu_{qmn}=\frac{c}{2L}\left[q + \frac{1}{\pi}(m+n+1)\cos^{-1}(\operatorname{sgn}(g_1)\sqrt{g_1 g_2})\right], 
