@@ -35,7 +35,79 @@ Then, according to \cite{RamanBeamSplit} and \cite{footAtomicPhysics}, we can sa
 The hyperfine splitting arises from interactions between the nucleus and the electrons. In general, we can split out the Hamiltonian of the Hyperfine interaction as follows: 
 
 \begin{equation}
+H=H_0+H_{\mathrm{hfs}}
 \end{equation}
+
+where $H$ represents the total Hamiltonian of the sytsem, $H_0$ represents the Hamiltonian neglecting the hyperfine interaction and $H_{\mathrm{hfs}}$ represents the piece of the Hamiltonian that takes the hyperfine interaction into account. 
+
+The standard expansion of $H_{\mathrm{hfs}}$ in the literature is:  
+
+\begin{equation}
+H_{\mathrm{hfs}}=\sum_k \mathbf{T}^{(k)} \cdot \mathbf{M}^{(k)} \label{hfs_hamiltonian_eqn}
+\end{equation}
+\footnote{todo: cite that review article and the lecture notes you found}
+
+where $\mathbf{T}^{(k)}$ and $\mathbf{M}^{(k)}$ are irreducible spherical tensor operators of rank $k$. $\mathbf{T}^{(k)}$ represents the electron, while $\mathbf{M}^{(k)}$ represents the nucleus. $\mathbf{T}^{(k)}$ represents the 
+
+\footnote{The dot product is defined as always as
+
+\begin{equation}
+\mathbf{T}^{(k)}\cdot\mathbf{M}^{(k)}=\sum (-1)^qT_q^{(k)}U_{-q}^{(k)}
+\end{equation}
+}
+
+The expansion of the hyperfine interaction in Eq.\ \ref{hfs_hamiltonian_eqn} encapsulates some important ideas. First of all, expanding $H_{\mathrm{hfs}}$ in this way shows explicitly how the operator transforms under rotations. Specifically, it shows that the coupling should remain the same under rotations. Secondly, each term in the Hamiltonian represents coupling of a different electric or magnetic multipole moment. I believe that the reason that the coupling can be described entirely in terms of scalar products is that the electron and the nucleus are located in the same place. This is probably why it is not necessary to worry about coupling between values of different $k$.
+
+Furthermore, it is the case that the odd values of $k$ correspond to magnetic interactions while the even values correspond to electric interactions. That is to say that there is no electric dipole interaction between the electrons and the nucleus, but there is a magnetic dipole ($k=1$), while there is an electric quadrupole coupling, but no magnetic quadrupole. 
+
+In general, the most important contributions to the Hyperfine splitting come from the magnetic dipole contribution and the electric quadrupole contribution. 
+
+
+\footnote{cite Chinese physics article }
+
+\subsection{Hyperfine $A$ and $B$ coefficients}
+There are various ways to estimate or calculate the hyperfine coefficients. However, for our purposes they are generally looked up and found by either experiment or numerical calculations. 
+\footnote{cite chapter 4  5}
+
+However, it is interesting to see: 
+
+The magnetic dipole contribution to the Hyperfine splitting can be parameterized as follows:
+
+
+
+\begin{equation}
+E_{\mathrm{hfs}}=\frac{1}{2}AC+BC(C+1)
+\end{equation}
+
+where 
+
+\begin{equation}
+C=[F(F+1)-J(J+1)-I(I+1)]
+\end{equation}
+
+\footnote{this is from those MIT notes}
+
+Ref.\ \cite{safronova2photon} gives and cites various values of the $A$ and $B$ coefficients. The ones relevant to our experiment are 
+
+
+\begin{center}
+\begin{tabular}{|l|r|r|r|}
+\hline
+Level &  $A^{\mathrm{(SDpT)}}$ &$A^{\mathrm{(theor)}}$ & $A^{\mathrm{(expt)}}$ \\ \hline \hline
+$5s ^2$S$_{1/2}$&-997.85 MHz& -1000 MHz& -1000.473673(11) MHz\\ \hline
+$5p ^2$P$_{3/2}$&-35.26 MHz&-35.3 MHz&-36.0(04) MHz\\ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|l|r|r|r|}
+\hline
+Level &  $B^{\mathrm{(SDpT)}}$ &$B^{\mathrm{(theor)}}$ & $B^{\mathrm{(expt)}}$ \\ \hline \hline
+$5s ^2$S$_{1/2}$&&0  MHz&  \\ \hline
+$5p ^2$P$_{3/2}$&88.94MHz&271MHz$/b$$\times 0.327(24)$b$=88.68$MHz&88.5(54) \\ \hline
+\end{tabular}
+\end{center}
+
 
 \section{Background}
 
