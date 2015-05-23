@@ -1,7 +1,45 @@
-\chapter{Ion Interferometer Guided Tour}
-An ion to be used in the interferometer goes through three distinct stages: the trapping and cooling stage, ionization and, finally, the interferometry stage. 
+We are constructing an ion interferometer. This work reports progress towards driving stimulated Raman transitions between the $F=4$ and $F=5$ $^2$S$_{1/2}$ states of $^{87}$Sr$+$ using the $^2$P$_{3/2}$ state as the intermediate state.
 
-%We must insert a figure right here if possible. 
+The scope of this work is limited to the construction of a laser system that is intended to drive the stimulated Raman transitions in our ion interferometer experiment (also known as the 408 nm 5GHz detuned laser system).
+This work also includes a discussion of the relevant theory along with some calculations about the transition rates and power levels involved in getting the experiment to work. 
+
+We will also provide a brief summary of the ion interferometer and a discussion of its place among related experiments. 
+
+\chapter{Background}
+In this chapter, we discuss the overall experiment of which the 408 nm 5 GHz detuned laser system is a part. We will give a detailed summary of the preparation the atoms undergo before they are exposed to our laser system. We will also attempt to sensibly contextualize the ion interferometer vis-\`a-vis other physics experiments. 
+
+\section{Ion Interferometer Basic Overview}
+The ion interferometer uses a Mach-Zehnder configuration, which refers to the fact that it relies on splitting and recombining the interfering beam of atoms. See Fig.\ \ref{mach-zehnder-fig}. 
+
+
+\begin{figure}
+\centerline{
+\includegraphics[width=0.95\textwidth]{mach-zehnder_0v2}}
+\caption[Optical and Matterwave Mach Zehnder interferometers]{\label{mach-zehnder-fig}A traditional realization of an optical Mach Zehnder interferometer (left) juxtaposed with a sparse diagram of the ion interferometer (right). The ion interferometer achieves interference of matter waves and uses continuous wave lasers as its beam splitters. Notice that both involve splitting and recombining the beam. }
+\end{figure}
+
+
+As with any interferometer, the essential feature is that there is travelling wave that is split and sent along two paths. The output of the interferometer gives information about the relative phase shift acquired along each of the arms of the interferometer. 
+
+The crucial feature of any interferometer is the splitting and recombining of waves in such a way that the relative phase difference between the two paths may be indirectly observed. In our interferometer, we achieve interference of the atomic wave function of our $^{87}$Sr$^+$ ions. 
+In order to accomplish ion interferometry, we must first acquire a suitable source of $^{87}$Sr$+$ ions. 
+
+Thus, there are three basic steps associated with the operation of the interferometer. 
+\begin{itemize}
+\item Generation of a low velocity beam of cold Strontium atoms   
+\item Ionization 
+\item Atom interferometry
+\end{itemize} 
+
+The basic outline of the apparatus is illustrated in Figure~\ref{fig:IonInterferometer}.
+
+\begin{figure}
+\centerline{
+\includegraphics[totalheight=0.3\textheight]{interferometer_diagram}
+}
+\caption[Ion Interferometer]{\label{fig:IonInterferometer}
+The entire Strontium interferometer. } 
+\end{figure}
 
 \section{Trapping of Neutral Strontium and Low Velocity Intense Source (LVIS)}
 
@@ -24,16 +62,15 @@ The next step is to selectively ionize the $^{87}$Sr to produce $^{87}$Sr$+$. Th
 
 First, we stimulate the 5s$^2$ $^1$S$_0 \rightarrow$ 5s5p $^1$P$_1$ transition, which, conveniently, is the same 461 nm transition used to cool the atom. The second transition is the 5s5p $^1$P$_1\rightarrow$5p$^2$ $^1$D$_2$ transition. The $^1$D$_2$ state is 57 meV above the ionization threshold \cite{NSFprop}. This can be accomplished with a 408 nm laser. This can be achieved using GaN diode lasers \footnote{Maybe InGaN? It is the same diode laser technology used in Blu-ray players.}
 
-%\section{Acceleration of Beam}
+\section{Acceleration of Beam}
 
 The ions, which are at this point already travelling at some speed are then accelerated in an electric field produced by two pieces of copper held at constant potential. This gives us freedom to control the speed of the atoms. 
 
 
 \section{Interferometry}
 
-The interferometry is then achieved. The interferometer is set up in a Mach-Zehnder configuration. \footnote{actually, are all interferometers like this? I'm not sure what makes ours a Mach Zehnder. Ramsey Borde, which it's not, is a subset of Mach Zehnder? }
+The interferometry is then achieved. 
 
-The crucial feature of any interferometer is the splitting and recombining of waves in such a way that the relative phase difference between the two paths may be indirectly observed. In our interferometer, we achieve interference of the atomic wave function of our $^{87}$Sr$^+$ ions. 
 %the waves that are interfered are the quantum mechanical matter waves of our atoms. I borrowed the words "atomic wave function" phrase from chu and kasevich
 
 In order to produce two distinct paths, we uses stimulated Raman transitions as done by Ref.\ \cite{kasevichChu1991}. We use stimulated Raman transitions. This is a two photon process whereby we drive the atoms from one state to another using a third state as an intermediate state. We have 3 pairs of overlapping 408 nm lasers in our apparatus and each of these pairs is tuned to induce a stimulated Raman transition between the two $^2$S$_{1/2}$ ($5s$) ground states corresponding to $F=4$ and $F=5$. The transition uses the $^2$P$_{3/2}$ ($5p$) state as an intermediate state. 
@@ -46,7 +83,5 @@ The essential analysis will be saved for Chapter \ref{ChapterAboutTheAtoms}.
 %trust yourself and know that you know it. and know that it doesn't have to be much better than it will be to be acceptable. 
 
 %Is it true that at the end, we can distinguish between the F=4 and F=5 ground state of the Strontium? 
-
-\section{Scope of this work}
-My work includes only the construction of the 408 nm laser system that stimulates the Raman transitions in the interferometer. 
+%I hope so. Those are the two states, haha. 
 

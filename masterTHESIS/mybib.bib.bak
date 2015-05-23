@@ -2,6 +2,26 @@
 % Encoding: UTF-8
 
 
+@Article{C60_interferometry,
+  Title                    = {Wave-particle duality of C60 molecules},
+  Author                   = {Arndt, Markus and Nairz, Olaf and Vos-Andreae, Julian and Keller, Claudia and van der Zouw, Gerbrand and Zeilinger, AntonC},
+  Journal                  = {Nature},
+  Year                     = {1999},
+
+  Month                    = oct,
+  Number                   = {6754},
+  Pages                    = {680--682},
+  Volume                   = {401},
+
+  __markedentry            = {[jlarchibald:6]},
+  Comment                  = {10.1038/44348},
+  ISSN                     = {0028-0836},
+  Owner                    = {jlarchibald},
+  Publisher                = {Macmillian Magazines Ltd.},
+  Timestamp                = {2015.05.22},
+  Url                      = {http://dx.doi.org/10.1038/44348}
+}
+
 @Electronic{bergeson_amo_notes,
   Title                    = {Physics 571 Lecture 4},
   Author                   = {Scott D. Bergeson},
@@ -174,6 +194,18 @@
   Publisher                = {American Physical Society}
 }
 
+@Article{Mach,
+  Title                    = {Ueber einen Interferenzrefraktor},
+  Author                   = {Ludwig Mach},
+  Journal                  = {Zeitschrift für Instrumentenkunde},
+  Year                     = {1892},
+  Pages                    = {89-93},
+  Volume                   = {12},
+
+  Owner                    = {jlarchibald},
+  Timestamp                = {2015.05.23}
+}
+
 @Book{lasersMilonniEberly,
   Title                    = {Laser Physics},
   Author                   = {Peter W. Milonni and Joseph H. Eberly},
@@ -296,11 +328,28 @@
   Date-modified            = {2010-07-12 17:03:51 -0600}
 }
 
+@Article{zehnder,
+  Title                    = {Ein neuer Interferenzrefraktor},
+  Author                   = {Ludwig Zehnder},
+  Journal                  = {Zeitschrift für Instrumentenkunde},
+  Year                     = {1891},
+  Pages                    = {275–285},
+  Volume                   = {11},
+
+  Owner                    = {jlarchibald},
+  Timestamp                = {2015.05.23}
+}
+
 @Electronic{MellesGriotGaussian,
   Title                    = {Gaussian Beam Optics},
 
   Date-added               = {2013-03-05 10:13:01 -0600},
   Date-modified            = {2013-03-06 09:12:24 -0600},
   Publisher                = {Melles Griot}
+}
+
+@Article{,
+  Owner                    = {jlarchibald},
+  Timestamp                = {2015.05.22}
 }
 
