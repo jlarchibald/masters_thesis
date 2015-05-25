@@ -13,7 +13,7 @@
   Pages                    = {680--682},
   Volume                   = {401},
 
-  __markedentry            = {[jlarchibald:6]},
+  __markedentry            = {[jlarchibald:]},
   Comment                  = {10.1038/44348},
   ISSN                     = {0028-0836},
   Owner                    = {jlarchibald},
@@ -29,6 +29,21 @@
 
   Owner                    = {jlarchibald},
   Timestamp                = {2015.05.13}
+}
+
+@Article{borde_interferometer,
+  Title                    = {Atomic Interferometry with Internal State Labelling},
+  Author                   = {Bord\'e, C. J.},
+  Journal                  = {Physics Letters A},
+  Year                     = {1989},
+
+  Month                    = {September},
+  Number                   = {12},
+  Pages                    = {10-11},
+  Volume                   = {140},
+
+  Owner                    = {jlarchibald},
+  Timestamp                = {2015.05.25}
 }
 
 @Article{kasevichGustavson,
@@ -48,6 +63,44 @@
   Keywords                 = {Raman, AOM, injection lock}
 }
 
+@Article{large_molecule_interferometry,
+  Title                    = {Matter-Wave Interferometer for Large Molecules},
+  Author                   = {Brezger, Bj\"orn and Hackerm\"uller, Lucia and Uttenthaler, Stefan and Petschinka, Julia and Arndt, Markus and Zeilinger, Anton},
+  Journal                  = {Phys. Rev. Lett.},
+  Year                     = {2002},
+
+  Month                    = {Feb},
+  Pages                    = {100404},
+  Volume                   = {88},
+
+  Doi                      = {10.1103/PhysRevLett.88.100404},
+  Issue                    = {10},
+  Numpages                 = {4},
+  Owner                    = {jlarchibald},
+  Publisher                = {American Physical Society},
+  Timestamp                = {2015.05.25},
+  Url                      = {http://link.aps.org/doi/10.1103/PhysRevLett.88.100404}
+}
+
+@Article{youngDoubleSlit_Carnal_Mlynek,
+  Title                    = {Young's double-slit experiment with atoms: A simple atom interferometer},
+  Author                   = {Carnal, O. and Mlynek, J.},
+  Journal                  = {Phys. Rev. Lett.},
+  Year                     = {1991},
+
+  Month                    = {May},
+  Pages                    = {2689--2692},
+  Volume                   = {66},
+
+  Doi                      = {10.1103/PhysRevLett.66.2689},
+  Issue                    = {21},
+  Numpages                 = {0},
+  Owner                    = {jlarchibald},
+  Publisher                = {American Physical Society},
+  Timestamp                = {2015.05.25},
+  Url                      = {http://link.aps.org/doi/10.1103/PhysRevLett.66.2689}
+}
+
 @Article{Kronin_RMP,
   Title                    = {Optics and interferometry with atoms and molecules},
   Author                   = {Cronin, Alexander D. and Schmiedmayer, J\"org and Pritchard, David E.},
@@ -65,6 +118,25 @@
   Publisher                = {American Physical Society},
   Timestamp                = {2014.11.01},
   Url                      = {http://link.aps.org/doi/10.1103/RevModPhys.81.1051}
+}
+
+@Article{davisson_and_germer,
+  Title                    = {Diffraction of Electrons by a Crystal of Nickel},
+  Author                   = {Davisson, C. and Germer, L. H.},
+  Journal                  = {Phys. Rev.},
+  Year                     = {1927},
+
+  Month                    = {Dec},
+  Pages                    = {705--740},
+  Volume                   = {30},
+
+  Doi                      = {10.1103/PhysRev.30.705},
+  Issue                    = {6},
+  Numpages                 = {0},
+  Owner                    = {jlarchibald},
+  Publisher                = {American Physical Society},
+  Timestamp                = {2015.05.25},
+  Url                      = {http://link.aps.org/doi/10.1103/PhysRev.30.705}
 }
 
 @Book{demilleBudkerKimball,
@@ -142,10 +214,10 @@
 }
 
 @Book{jackson,
-  Title                    = {Electrodynamics},
+  Title                    = {Electrodynamics-- 3rd ed.},
   Author                   = {John David Jackson},
   Publisher                = {Wiley},
-  Year                     = {1980},
+  Year                     = {1999},
 
   Date-added               = {2012-12-22 16:29:57 -0600},
   Date-modified            = {2012-12-22 16:30:21 -0600}
@@ -162,6 +234,25 @@
 
   Date-added               = {2013-06-08 20:07:15 -0500},
   Date-modified            = {2013-06-08 20:08:46 -0500}
+}
+
+@Article{pritchard1991,
+  Title                    = {An interferometer for atoms},
+  Author                   = {Keith, David W. and Ekstrom, Christopher R. and Turchette, Quentin A. and Pritchard, David E.},
+  Journal                  = {Phys. Rev. Lett.},
+  Year                     = {1991},
+
+  Month                    = {May},
+  Pages                    = {2693--2696},
+  Volume                   = {66},
+
+  Doi                      = {10.1103/PhysRevLett.66.2693},
+  Issue                    = {21},
+  Numpages                 = {0},
+  Owner                    = {jlarchibald},
+  Publisher                = {American Physical Society},
+  Timestamp                = {2015.05.25},
+  Url                      = {http://link.aps.org/doi/10.1103/PhysRevLett.66.2693}
 }
 
 @Article{RamanBeamSplit,
@@ -204,6 +295,25 @@
 
   Owner                    = {jlarchibald},
   Timestamp                = {2015.05.23}
+}
+
+@Article{electronGrating,
+  Title                    = {Electron Interferometer},
+  Author                   = {Marton, L.},
+  Journal                  = {Phys. Rev.},
+  Year                     = {1952},
+
+  Month                    = {Mar},
+  Pages                    = {1057--1058},
+  Volume                   = {85},
+
+  Doi                      = {10.1103/PhysRev.85.1057},
+  Issue                    = {6},
+  Numpages                 = {0},
+  Owner                    = {jlarchibald},
+  Publisher                = {American Physical Society},
+  Timestamp                = {2015.05.25},
+  Url                      = {http://link.aps.org/doi/10.1103/PhysRev.85.1057}
 }
 
 @Book{lasersMilonniEberly,
@@ -259,6 +369,44 @@
   Date-modified            = {2010-07-12 17:44:06 -0600},
   LastChecked              = {July 12, 2010},
   Url                      = {http://physics.nist.gov/asd3}
+}
+
+@Article{Ramsey_original,
+  Title                    = {A Molecular Beam Resonance Method with Separated Oscillating Fields},
+  Author                   = {Ramsey, Norman F.},
+  Journal                  = {Phys. Rev.},
+  Year                     = {1950},
+
+  Month                    = {Jun},
+  Pages                    = {695--699},
+  Volume                   = {78},
+
+  Doi                      = {10.1103/PhysRev.78.695},
+  Issue                    = {6},
+  Numpages                 = {0},
+  Owner                    = {jlarchibald},
+  Publisher                = {American Physical Society},
+  Timestamp                = {2015.05.25},
+  Url                      = {http://link.aps.org/doi/10.1103/PhysRev.78.695}
+}
+
+@Article{neutronGrating,
+  Title                    = {Neutron-interferometer absorption experiments in the quantum limit},
+  Author                   = {Rauch, H. and Summhammer, J.},
+  Journal                  = {Phys. Rev. A},
+  Year                     = {1992},
+
+  Month                    = {Dec},
+  Pages                    = {7284--7287},
+  Volume                   = {46},
+
+  Doi                      = {10.1103/PhysRevA.46.7284},
+  Issue                    = {11},
+  Numpages                 = {0},
+  Owner                    = {jlarchibald},
+  Publisher                = {American Physical Society},
+  Timestamp                = {2015.05.25},
+  Url                      = {http://link.aps.org/doi/10.1103/PhysRevA.46.7284}
 }
 
 @Article{safronova2photon,
@@ -346,10 +494,5 @@
   Date-added               = {2013-03-05 10:13:01 -0600},
   Date-modified            = {2013-03-06 09:12:24 -0600},
   Publisher                = {Melles Griot}
-}
-
-@Article{,
-  Owner                    = {jlarchibald},
-  Timestamp                = {2015.05.22}
 }
 
