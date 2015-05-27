@@ -101,6 +101,20 @@
   Url                      = {http://link.aps.org/doi/10.1103/PhysRevLett.66.2689}
 }
 
+@Article{christensen_arxiv_calcs,
+  Title                    = {{Numerical calculation of classical and non-classical electrostatic potentials}},
+  Author                   = {{Christensen}, D. and {Neyenhuis}, B. and {Durfee}, D.~S.},
+  Journal                  = {ArXiv Physics e-prints},
+  Year                     = {2006},
+
+  Month                    = sep,
+
+  Adsnote                  = {Provided by the SAO/NASA Astrophysics Data System},
+  Adsurl                   = {http://adsabs.harvard.edu/abs/2006physics...9128C},
+  Eprint                   = {physics/0609128},
+  Keywords                 = {Physics - Computational Physics, Physics - General Physics}
+}
+
 @Article{Kronin_RMP,
   Title                    = {Optics and interferometry with atoms and molecules},
   Author                   = {Cronin, Alexander D. and Schmiedmayer, J\"org and Pritchard, David E.},
@@ -355,6 +369,25 @@
   Date-modified            = {2013-03-04 10:11:23 -0600},
   Rating                   = {4},
   Read                     = {1}
+}
+
+@Article{RabiOriginal,
+  Title                    = {A New Method of Measuring Nuclear Magnetic Moment},
+  Author                   = {Rabi, I. I. and Zacharias, J. R. and Millman, S. and Kusch, P.},
+  Journal                  = {Phys. Rev.},
+  Year                     = {1938},
+
+  Month                    = {Feb},
+  Pages                    = {318--318},
+  Volume                   = {53},
+
+  Doi                      = {10.1103/PhysRev.53.318},
+  Issue                    = {4},
+  Numpages                 = {0},
+  Owner                    = {jlarchibald},
+  Publisher                = {American Physical Society},
+  Timestamp                = {2015.05.26},
+  Url                      = {http://link.aps.org/doi/10.1103/PhysRev.53.318}
 }
 
 @Misc{NISTasd,
