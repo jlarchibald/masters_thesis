@@ -203,6 +203,18 @@
   Date-modified            = {2013-05-27 19:32:58 -0500}
 }
 
+@Article{esterman_stern,
+  Title                    = {Beugung von molekular-strahlen (bending of molecular rays)},
+  Author                   = {I. Estermann and A. Stern},
+  Journal                  = {Z. Phys},
+  Year                     = {1930},
+  Number                   = {95},
+  Volume                   = {61},
+
+  Owner                    = {jlarchibald},
+  Timestamp                = {2015.05.26}
+}
+
 @Book{footAtomicPhysics,
   Title                    = {Atomic Physics},
   Author                   = {C. J. Foot},
@@ -280,6 +292,19 @@
   Bdsk-file-1              = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDRBWJGNsYXNzV05TLmtleXNaTlMub2JqZWN0c4AHog4PgAKAA6IREoAEgAVccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QMi4uLy4uLy4uL3JlZmVyZW5jZS9hcnRpY2xlcy8xMzU1LTUxMTFfMTBfM18wMDYucGRm0gkXGBlXTlMuZGF0YYAGTxEBngAAAAABngACAAAJYXJjaGliYWxkAAAAAAAAAAAAAAAAAAAAAAAAx3Kd00grAAAACZYCFjEzNTUtNTExMV8xMF8zXzAwNi5wZGYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI6j8bLAsfsAAAAAAAAAAAAAwADAAAJIAAAAAAAAAAAAAAAAAAAAAhhcnRpY2xlcwAQAAgAAMdy8jMAAAARAAgAAMsDHEwAAAABABAACZYCAAmV4AAFq8sAAJGfAAIAPGFyY2hpYmFsZDpVc2VyczpqbDpyZWZlcmVuY2U6YXJ0aWNsZXM6MTM1NS01MTExXzEwXzNfMDA2LnBkZgAOAC4AFgAxADMANQA1AC0ANQAxADEAMQBfADEAMABfADMAXwAwADAANgAuAHAAZABmAA8AFAAJAGEAcgBjAGgAaQBiAGEAbABkABIAMlVzZXJzL2psL3JlZmVyZW5jZS9hcnRpY2xlcy8xMzU1LTUxMTFfMTBfM18wMDYucGRmABMAAS8AABUAAgAJ//8AANIbHB0eWiRjbGFzc25hbWVYJGNsYXNzZXNdTlNNdXRhYmxlRGF0YaMdHyBWTlNEYXRhWE5TT2JqZWN00hscIiNcTlNEaWN0aW9uYXJ5oiIgXxAPTlNLZXllZEFyY2hpdmVy0SYnVHJvb3SAAQAIABEAGgAjAC0AMgA3AEAARgBNAFQAXABnAGkAbABuAHAAcwB1AHcAhACOAMMAyADQANICdAJ5AoQCjQKbAp8CpgKvArQCwQLEAtYC2QLeAAAAAAAAAgEAAAAAAAAAKAAAAAAAAAAAAAAAAAAAAuA=},
   Date-added               = {2012-04-06 17:32:13 -0600},
   Date-modified            = {2012-04-06 17:34:29 -0600}
+}
+
+@Article{kurosu_trap_sr,
+  Title                    = {Laser Cooling and Trapping of Calcium and Strontium},
+  Author                   = {Takayuki Kurosu and Fujio Shimizu},
+  Journal                  = {Japanese Journal of Applied Physics},
+  Year                     = {1990},
+  Number                   = {11A},
+  Pages                    = {L2127},
+  Volume                   = {29},
+
+  Abstract                 = {Calcium and strontium atomic beams are cooled and trapped by using the 1 S 0 - 1 P 1 transition in the 400 nm region. The trapping of 8 isotopes, 40 Ca, 42 Ca, 43 Ca, 44 Ca, 84 Sr, 86 Sr, 87 Sr and 88 Sr, is observed. The decay rate of the trapped atom is found to be of the order of 10 ms and the average atomic velocity less than 1 m/s.},
+  Url                      = {http://stacks.iop.org/1347-4065/29/i=11A/a=L2127}
 }
 
 @Article{LVIS,
