@@ -3,33 +3,15 @@
 
 The system is designed to stimulate Raman transitions between the hyperfine $^2$S$_{1/2}$ ($5s$) ground states corresponding to $F=4$ and $F=5$. The intermediate state is the $^2$P$_{3/2}$ ($5p$) state. 
 
+\begin{figure}
+\centerline{
+\includegraphics[totalheight=0.3\textheight]{E_level_from_proposal}
+}
+\caption[Energy Level Diagram for $^{87}$Sr+]{Energy Level Diagram for $^{87}$Sr+. The hyperfine ground states are separated by a small energy. Diagram is not to scale: a scaled diagram would show the splitting between the $F=4$ and $F=5$ states to be about 147,000 times smaller than the splitting between the $^2$S$_{1/2}$ states and the $^2$P$_{3/2}$ states.}
+\end{figure}
+
 In Ref.\ \cite{cjeDiss}, this calculation is performed, but some of the details are left mysterious. We hope to reproduce this calculation with better details.  
 
-\section{Summary of First Approach to This Problem}
-
-According to Ref.\ \cite{cjeDiss}, the problem is a straightforward one.
-
-First, we take the well-known equation for the Rabi frequency, 
-
-\begin{equation}
-\Omega = \frac{-eE_0}{\hbar}\langle e |\vec{r}|g\rangle=\frac{\vec{d}E_0}{\hbar}
-\end{equation}
-
-Then, we write 
-
-\begin{equation}
-\Omega_\mathit{eff}=\sqrt{\Omega^2+\delta^2}
-\end{equation}
-
-Then, we see that 
-\begin{equation}
-\Omega_\mathit{eff}=\sqrt{\left(\frac{\Gamma^2S_0}{2}\right)^2 + \delta^2}
-\end{equation}
-
-Then, according to \cite{RamanBeamSplit} and \cite{footAtomicPhysics}, we can say that 
-\begin{equation} \label{KorsunskysJewel}
-\Omega_\mathit{Raman}=\frac{2\Omega_1\Omega_2}{\Delta}
-\end{equation}
 \section{Review of Hyperfine Splitting}
 
 The hyperfine splitting arises from interactions between the nucleus and the electrons. In general, we can split out the Hamiltonian of the Hyperfine interaction as follows: 
@@ -225,8 +207,10 @@ From \cite{demilleBudkerKimball}, we see that the value for $\langle f||d||i\ran
 So, for example, to find the coupling between the $^2 P_{3/2}$ state with $m_j=+3/2$, we would just take 
 
 \begin{equation}
-\langle ^2 P _{3/2}|T_q^{(k)}|^2 S_{1/2}\rangle = 
+\langle ^2 \textnormal{P} _{3/2}|T_q^{(k)}|^2 \textnormal{S}_{1/2}\rangle = 
 \end{equation}
+%note--old {\rm whatever} is deprecated. Classes need not define it. 
+%maybe use \textnormal
 
 %crap--what about spin? 
 
@@ -311,6 +295,31 @@ We carefully make sure that we're using the right dipole moment matrix elements.
 
 We can compare our result to Chris' thesis. 
 
+\section{Summary of First Approach to This Problem}
+
+According to Ref.\ \cite{cjeDiss}, the problem is a straightforward one.
+
+First, we take the well-known equation for the Rabi frequency, 
+
+\begin{equation}
+\Omega = \frac{-eE_0}{\hbar}\langle e |\vec{r}|g\rangle=\frac{\vec{d}E_0}{\hbar}
+\end{equation}
+
+Then, we write 
+
+\begin{equation}
+\Omega_\mathit{eff}=\sqrt{\Omega^2+\delta^2}
+\end{equation}
+
+Then, we see that 
+\begin{equation}
+\Omega_\mathit{eff}=\sqrt{\left(\frac{\Gamma^2S_0}{2}\right)^2 + \delta^2}
+\end{equation}
+
+Then, according to \cite{RamanBeamSplit} and \cite{footAtomicPhysics}, we can say that 
+\begin{equation} \label{KorsunskysJewel}
+\Omega_\mathit{Raman}=\frac{2\Omega_1\Omega_2}{\Delta}
+\end{equation}
 
   \section{Calculation of ideal intensities}
 

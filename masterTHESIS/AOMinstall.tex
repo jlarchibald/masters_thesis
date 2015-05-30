@@ -93,7 +93,7 @@ As a sanity check, we can calculate using an ABCD matrix (ray-transfer matrix) w
 
 According to \cite{SiegmanBeamQuality}, we can model the propagation of the ``embedded'' Gaussian beam. We could then, in principle, model our beam based on our knowledge of the $M^2$. However, recall that in our analysis, we've been dealing with the worst case scenario $M^2=1$ (worst-case in the sense that a beam with $M^2=1$ would have the highest intensities and would require the lowest laser power to avoid damaging the AOM. Thus, we will model our beam call the well-known rule for modelling the change of a Gaussian beam as it passes through a system described by ray transfer matrix with coefficients $A$,$B$,$C$ and $D$, which is 
 
-\begin{equation}
+\begin{equation} \label{ABCDlawforGaussianBeams}
 z'-iz_0'=\frac{A(z-iz_0)+B}{C(z-iz_0)+D}
 \end{equation}
 \cite{BYUOpticsBook}
