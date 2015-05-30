@@ -324,6 +324,23 @@
   Publisher                = {American Physical Society}
 }
 
+@Article{ludlow_science,
+  Title                    = {Sr Lattice Clock at 1 × 10–16 Fractional Uncertainty by Remote Optical Evaluation with a Ca Clock},
+  Author                   = {Ludlow, A. D. and Zelevinsky, T. and Campbell, G. K. and Blatt, S. and Boyd, M. M. and de Miranda, M. H. G. and Martin, M. J. and Thomsen, J. W. and Foreman, S. M. and Ye, Jun and Fortier, T. M. and Stalnaker, J. E. and Diddams, S. A. and Le Coq, Y. and Barber, Z. W. and Poli, N. and Lemke, N. D. and Beck, K. M. and Oates, C. W.},
+  Journal                  = {Science},
+  Year                     = {2008},
+  Number                   = {5871},
+  Pages                    = {1805-1808},
+  Volume                   = {319},
+
+  Abstract                 = {Optical atomic clocks promise timekeeping at the highest precision and accuracy, owing to their high operating frequencies. Rigorous evaluations of these clocks require direct comparisons between them. We have realized a high-performance remote comparison of optical clocks over kilometer-scale urban distances, a key step for development, dissemination, and application of these optical standards. Through this remote comparison and a proper design of lattice-confined neutral atoms for clock operation, we evaluate the uncertainty of a strontium (Sr) optical lattice clock at the 1 × 10–16 fractional level, surpassing the current best evaluations of cesium (Cs) primary standards. We also report on the observation of density-dependent effects in the spin-polarized fermionic sample and discuss the current limiting effect of blackbody radiation–induced frequency shifts.},
+  Doi                      = {10.1126/science.1153341},
+  Eprint                   = {http://www.sciencemag.org/content/319/5871/1805.full.pdf},
+  Owner                    = {jlarchibald},
+  Timestamp                = {2015.05.29},
+  Url                      = {http://www.sciencemag.org/content/319/5871/1805.abstract}
+}
+
 @Article{Mach,
   Title                    = {Ueber einen Interferenzrefraktor},
   Author                   = {Ludwig Mach},
