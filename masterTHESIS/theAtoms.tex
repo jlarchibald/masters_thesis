@@ -20,7 +20,7 @@ The hyperfine splitting arises from interactions between the nucleus and the ele
 H=H_0+H_{\mathrm{hfs}}
 \end{equation}
 
-where $H$ represents the total Hamiltonian of the sytsem, $H_0$ represents the Hamiltonian neglecting the hyperfine interaction and $H_{\mathrm{hfs}}$ represents the piece of the Hamiltonian that takes the hyperfine interaction into account. 
+where $H$ represents the total Hamiltonian of the system, $H_0$ represents the Hamiltonian neglecting the hyperfine interaction and $H_{\mathrm{hfs}}$ represents the piece of the Hamiltonian that takes the hyperfine interaction into account. 
 
 The standard expansion of $H_{\mathrm{hfs}}$ in the literature is:  
 
@@ -33,20 +33,23 @@ H_{\mathrm{hfs}}=\sum_k \mathbf{T}^{(k)} \cdot \mathbf{M}^{(k)} \label{hfs_hamil
 
 where $\mathbf{T}^{(k)}$ and $\mathbf{M}^{(k)}$ are irreducible spherical tensor operators of rank $k$. $\mathbf{T}^{(k)}$ represents the electron, while $\mathbf{M}^{(k)}$ represents the nucleus. $\mathbf{T}^{(k)}$ represents the 
 
-\footnote{The dot product is defined as always as
+\footnote{Recall that the dot product for spherical tensors of arbitrary rank is defined as follows:
 \begin{equation}
-\mathbf{T}^{(k)}\cdot\mathbf{M}^{(k)}=\sum (-1)^qT_q^{(k)}U_{-q}^{(k)}
+\mathbf{T}^{(k)}\cdot\mathbf{M}^{(k)}=\sum (-1)^qT_q^{(k)}M_{-q}^{(k)}
 \end{equation}
 }
 
 The expansion of the hyperfine interaction in Eq.\ \ref{hfs_hamiltonian_eqn} encapsulates some important ideas:
- First of all, Eq.\ \ref{hfs_hamiltonian_eqn} shows explicitly how the operator transforms under rotations. Specifically, it shows that, by using these tensors, we could the coupling should remain the same under rotations. Secondly, each term in the Hamiltonian represents coupling of a different electric or magnetic multipole moment. 
-Furthermore, it is the case that the odd values of $k$ correspond to magnetic interactions while the even values correspond to electric interactions. That is to say that there is no electric dipole interaction between the electrons and the nucleus, but there is a magnetic dipole ($k=1$), while there is an electric quadrupole coupling, but no magnetic quadrupole. 
-
-The reason that the coupling can be described entirely in terms of scalar products is that the electron and the nucleus are located in the same place. This is probably why it is not necessary to worry about coupling between values of different $k$.
-
+ First of all, Eq.\ \ref{hfs_hamiltonian_eqn} shows explicitly how the operator transforms under rotations. Specifically, it shows that, by using these tensors, we could the coupling should remain the same under rotations.
+Secondly, each term in the Hamiltonian represents coupling of a different electric or magnetic multipole moment. 
+It is interesting to note that the odd values of $k$ correspond to magnetic interactions while the even values correspond to electric interactions. That is to say that there is no electric dipole interaction between the electrons and the nucleus, but there is a magnetic dipole ($k=1$), while there is an electric quadrupole coupling, but no magnetic quadrupole, etc
+\cite{experimental_hyperfine_alkali_arimondo}
+.
+The reason that the coupling can be described entirely in terms of scalar products of spherical tensors probably arises from the fact that the electron and the nucleus are located in the same place. The electromagnetic fields created by the nucleus and the electronic wave function can both be expanded in terms of spherical harmonics. This can be seen in Ref.\ \cite{schwartz_hyperfine_expansion}. It can be seen that this more or less work in other, more ad-hoc discussions of hyperfine structure, like the one in Ref.\ \cite{cuaMITnotes}. 
 
 In general, the most important contributions to the Hyperfine splitting come from the magnetic dipole contribution and the electric quadrupole contribution. 
+
+
 
 
 \footnote{cite Chinese physics article }

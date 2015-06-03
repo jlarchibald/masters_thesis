@@ -2,6 +2,25 @@
 % Encoding: UTF-8
 
 
+@Article{experimental_hyperfine_alkali_arimondo,
+  Title                    = {Experimental determinations of the hyperfine structure in the alkali atoms},
+  Author                   = {Arimondo, E. and Inguscio, M. and Violino, P.},
+  Journal                  = {Rev. Mod. Phys.},
+  Year                     = {1977},
+
+  Month                    = {Jan},
+  Pages                    = {31--75},
+  Volume                   = {49},
+
+  Doi                      = {10.1103/RevModPhys.49.31},
+  Issue                    = {1},
+  Numpages                 = {0},
+  Owner                    = {jlarchibald},
+  Publisher                = {American Physical Society},
+  Timestamp                = {2015.06.01},
+  Url                      = {http://link.aps.org/doi/10.1103/RevModPhys.49.31}
+}
+
 @Article{C60_interferometry,
   Title                    = {Wave-particle duality of C60 molecules},
   Author                   = {Arndt, Markus and Nairz, Olaf and Vos-Andreae, Julian and Keller, Claudia and van der Zouw, Gerbrand and Zeilinger, AntonC},
@@ -279,6 +298,19 @@
   Publisher                = {American Physical Society},
   Timestamp                = {2015.05.25},
   Url                      = {http://link.aps.org/doi/10.1103/PhysRevLett.66.2693}
+}
+
+@Electronic{cuaMITnotes,
+  Title                    = {Physics 8.421 Lecture Notes},
+  Author                   = {Dan Kleppner and David E. Pritchard and John Doyle and Wolfgang Ketterle},
+  Language                 = {English},
+  Month                    = {February},
+  Organization             = {Center for Ultracold Atoms Massachusetts Institute of Technology},
+  Url                      = {http://cua.mit.edu/8.421_S06/},
+  Year                     = {2006},
+
+  Owner                    = {jlarchibald},
+  Timestamp                = {2015.06.02}
 }
 
 @Article{RamanBeamSplit,
