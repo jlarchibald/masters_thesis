@@ -638,6 +638,21 @@
   Date-modified            = {2010-07-12 17:03:51 -0600}
 }
 
+@Article{,
+  Title                    = {Calculations on the hyperfine constants of the ground states for lithium-like system},
+  Author                   = {Wu Xiao-Li and Yu Kai-Zhi and Gou Bing-Cong and Zhang Meng},
+  Journal                  = {Chinese Physics},
+  Year                     = {2007},
+  Number                   = {8},
+  Pages                    = {2389},
+  Volume                   = {16},
+
+  Abstract                 = {In this paper a relativistic many-body perturbation calculation is performed to calculate the hyperfine constants of the ground states for lithium-like isoelectronic sequence. Zeroth-order hyperfine constants are calculated with Dirac-Fock wavefunctions, and the finite basis sets of the Dirac-Fock equations are constructed by B splines. With the finite basis sets, the core polarization and the correlation effect are evaluated.},
+  Owner                    = {jlarchibald},
+  Timestamp                = {2015.06.04},
+  Url                      = {http://stacks.iop.org/1009-1963/16/i=8/a=039}
+}
+
 @Article{zehnder,
   Title                    = {Ein neuer Interferenzrefraktor},
   Author                   = {Ludwig Zehnder},

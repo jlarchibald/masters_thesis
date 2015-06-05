@@ -1,12 +1,8 @@
-\chapter{Laser Pieces}
+\chapter{Laser System Overview}
 %the sum of the whole is greater than the parts 
 
 
-The purpose of this system is to produce two lasers which are near resonant with the 5s $^2$S$_{1/2}$ to 5p$^2$P$_{3/2}$ transition in $^{87}$Sr$+$, but which differ in frequency by precisely the hyperfine ground state splitting. 
-
-This is necessary to make the stimulated Raman transitions for our experiment. 
-
-The laser system consists of several components arranged together on a breadboard. 
+The purpose of this system is to produce two lasers which are near resonant with the 5s $^2$S$_{1/2}$ to 5p$^2$P$_{3/2}$ transition in $^{87}$Sr$+$, but which differ in frequency by precisely the hyperfine ground state splitting. This is necessary to make the stimulated Raman transitions for our experiment. The laser system consists of several components arranged together on a breadboard. 
 
 \begin{figure}
     \centerline{\includegraphics[width=1\textwidth]{diagramOfSetup3}}
@@ -18,15 +14,19 @@ The laser system consists of several components arranged together on a breadboar
 
 There are three separate laser diodes in housings. One of them is designated the ``Master'' laser. The other two are designated ``Slave 1'' and ``Slave 2.'' 
 
-The actual light used in the experiment comes out of the two slaves. The master laser is supposed to serve as a stable frequency reference so that the slave lasers can be seeded by it. Thus, the basic objective is to make a stable master laser tuned near the mean of the frequencies that we desire out of the slave lasers. This will then be shifted by an AOM and coupled into the slave lasers. The slave lasers are adjusted so that they are able to amplify the light from the AOM and lase with the same frequency as the light that comes out at the AOM. This is what is meant by "injection locking."
+The light that will actually be used on the atoms in the experiment comes out of the two slaves. The master laser is supposed to serve as a stable frequency reference so that the slave lasers can be seeded by it. Thus, the basic objective is to make a stable master laser tuned near the mean of the frequencies that we desire out of the slave lasers. This will then be shifted by an AOM and coupled into the slave lasers. The slave lasers are adjusted so that they are able to amplify the light from the AOM and lase with the same frequency as the light that comes out at the AOM. This is what is meant by "injection locking."
 
 The advantage of this setup is that if the master laser were to drift, both slaves would presumably drift with it. As we will later see, the experiment is less sensitive to common mode drift between the two slave lasers than it is to the drifting of individual slaves.
 
 The master laser is grating stabilized using an extended cavity formed by a Thorlabs model number GH13-36U  %look this up
 diffraction grating mounted on a piezoelectric mount. The lasers use Thorlabs C570TM-A aspheric lenses on their outputs. 
 
-The master laser passes through two optical isolators. It is then passed through a pair of waveplates and a polarizing beam cube, which serves the dual purpose of allowing us to attenuate the portion of the beam that goes through the AOM and splitting off a beam that can be used in our spectrum analyzer. 
+The master laser passes through two optical isolators. These use Faraday rotation and a pair of glan polarizers to ensure that light travelling away from the master laser is allowed to propagate while light coming back into the master laser is prevented. 
 
-After this, the laser is passed twice through an Acousto-optic Modulator (AOM). The first pass creates a weakbeam that is shifted down (up). There is also a 0th order beam that is not shifted at all. We collimate this beam and retroreflect it and sent in the other direction. This pass produces a weak beam that is downshifted in frequency. We thus end up with two beams, one of which is shifted upwards by 2.5 GHz and the other of which is shifted downward by 2.5 GHz. These two beams are then coupled through optical isolators into the two slave lasers. The outputs of these two lasers are what we use in our experiment to achieve stimulated Raman transitions. 
+It is then passed through a pair of waveplates and a polarizing beam cube, which serves the dual purpose of allowing us to attenuate the portion of the beam that goes through the AOM and splitting off a beam that can be used in our spectrum analyzer. 
+
+After this, the laser is passed twice through an Acousto-optic Modulator (AOM). The first-order diffracted beam from the first pass through the AOM produces light that is shifted down (up)\footnote{hmmm. Will need to look at a picture}. However, most of the power is contained in the 0th order beam that passes through the AOM without being shifted at all. We collimate this beam and retroreflect it and send it in the other direction. This pass produces a weak beam that is downshifted in frequency. We thus end up with two beams, one of which is shifted upwards by 2.5 GHz and the other of which is shifted downward by 2.5 GHz. These two beams are then coupled through optical isolators into the two slave lasers. The outputs of these two lasers are what we use in our experiment to achieve stimulated Raman transitions. 
+
+%We could have maybe used light coming out the rejection ports to monitor second order effects from the AOM. 
 
 Both slaves are also redirected to the spectrum analyzer. 
