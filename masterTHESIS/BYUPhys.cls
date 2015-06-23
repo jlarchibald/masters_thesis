@@ -34,8 +34,8 @@
            and Must Be in the Inverted Pyramid Format When\\
            Additional Lines Are Needed]}
     \Author{[Student Name]}
-    \docname{senior thesis}
-    \degree{Bachelor of Science}
+    \docname{Master's Thesis}
+    \degree{Master of Science}
     \Advisor{[Advisor]}
     \AdvisorTitle{Advisor}
     \MemberA{}
