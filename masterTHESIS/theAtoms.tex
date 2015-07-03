@@ -12,9 +12,35 @@ The system is designed to stimulate Raman transitions between the hyperfine $^2$
 
 Our objective is to calculate the necessary intensity and beam waist that will allow our lasers to impart the $\pi$ and $\pi/2$ pulses to the atoms as they make their way through the chamber. 
 
-In order to do this, we first discuss hyperfine splitting in general. Then we move onto a discussion of the various states of this atom. We then begin calculating in hopes of obtaining an expression relating the magnitude and frequency of the electric field to the transition rate in our atoms. Finally, we calculate the beam parameters that will produce the requisite electric field strengths for the correct amounts of time to produce the transition. 
+In order to do this, we first review the various relevant states of this atom and the quantum numbers used to describe them. Then we move onto a discussion of some of the basic aspects of hyperfine structure. We will then model the atom as a three state system and obtain an expression relating the magnitude and frequency of the electric field to the Rabi frequencies of our two transitions. Finally, we calculate the total transition rate for the 3 state system and we tabulate the beam parameters that will produce the requisite electric field strengths for the correct amounts of time to produce the transition.
 
 In Ref.\ \cite{cjeDiss}, this calculation is performed, but some of the details are left mysterious. In particular, no source is cited for any of the physical parameters of the $^{87}$Sr+ atom (e.g. the dipole moment values, the transition width, the saturation parameter). We hope to reproduce this calculation with more details.  
+
+\section{Background}
+
+First, we will discuss the relevant states. We neglect all except the following states: %why does the ground state J not play into it at all?
+%I just realized I have no idea where to find the information on the hyperfine splitting of the Sr+ 
+%also, IDK what to do about the the Nuclear spin numbers of the upper state. 
+%I have this http://link.springer.com/article/10.1007%2FBF00568145
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|||r|}
+\hline
+$F=4$ $^2$S$_{1/2} (5s)$ & Ground state  \\ \hline
+$F=5$ $^2$S$_{1/2} (5s)$ & Ground state  \\ \hline
+$F=3$ $^2$P$_{3/2} (5p)$ & Intermediate state  \\ \hline
+$F=4$ $^2$P$_{3/2} (5p)$ & Intermediate state  \\ \hline
+$F=5$ $^2$P$_{3/2} (5p)$ & Intermediate state  \\ \hline
+$F=6$ $^2$P$_{3/2} (5p)$ & Intermediate state  \\ \hline
+\end{tabular}
+\caption{Relevant states}
+\label{tableOfStates}
+\end{table}
+
+Now, recall that when describing an atom neglecting the hyperfine structure and the spin of the nucleus, a typical choice would be to use $\mathbf{J}^2$, $\mathbf{L}^2$, $\mathbf{S}^2$ and $J_z$, since these are "good quantum numbers" for the atom's free space Hamiltonian. Recall that 
+\begin{equation}
+J=L+S
+\end{equation}
 
 \section{Review of Hyperfine Splitting}
 
@@ -36,16 +62,16 @@ H_{\mathrm{hfs}}=\sum_k \mathbf{T}^{(k)} \cdot \mathbf{M}^{(k)} \label{hfs_hamil
 \cite{chinesePhysics}
 \footnote{todo: cite that review article and the lecture notes you found}
 
-where $\mathbf{T}^{(k)}$ and $\mathbf{M}^{(k)}$ are irreducible spherical tensor operators of rank $k$. $\mathbf{T}^{(k)}$ represents the electron, while $\mathbf{M}^{(k)}$ represents the nucleus. $\mathbf{T}^{(k)}$ represents the nucleus.
+where $\mathbf{T}^{(k)}$ and $\mathbf{M}^{(k)}$ are irreducible spherical tensor operators of rank $k$. $\mathbf{T}^{(k)}$ represents the electron, while $\mathbf{M}^{(k)}$ represents the nucleus.\cite{experimental_hyperfine_alkali_arimondo}.
 
 \footnote{Recall that the dot product for spherical tensors of arbitrary rank is defined as follows:
 \begin{equation}
 \mathbf{T}^{(k)}\cdot\mathbf{M}^{(k)}=\sum (-1)^qT_q^{(k)}M_{-q}^{(k)}
 \end{equation}
 }
-
-The expansion of the hyperfine interaction in Eq.\ \ref{hfs_hamiltonian_eqn} encapsulates some important ideas:
- First of all, Eq.\ \ref{hfs_hamiltonian_eqn} shows explicitly how the operator transforms under rotations. Specifically, it shows that, by using these tensors, we could the coupling should remain the same under rotations.
+\cite{sobelman_spectra}
+Here are some rough ideas to motivate the expansion of the hyperfine interaction in Eq.\ \ref{hfs_hamiltonian_eqn}. 
+First of all, we expect that whatever our Eq.\ \ref{hfs_hamiltonian_eqn} shows explicitly how the operator transforms under rotations. Specifically, it shows that, by using these tensors, we could the coupling should remain the same under rotations.
 Secondly, each term in the Hamiltonian represents coupling of a different electric or magnetic multipole moment. 
 It is interesting to note that the odd values of $k$ correspond to magnetic interactions while the even values correspond to electric interactions. That is to say that there is no electric dipole interaction between the electrons and the nucleus, but there is a magnetic dipole ($k=1$), while there is an electric quadrupole coupling, but no magnetic quadrupole, etc
 \cite{experimental_hyperfine_alkali_arimondo}
@@ -96,29 +122,6 @@ $5p ^2$P$_{3/2}$&88.94MHz&271MHz$/b$$\times 0.327(24)$b$=88.68$MHz&88.5(54) \\ \
 \end{tabular}
 \end{center}
 
-
-\section{Background}
-
-First, we write the Hamiltonian of the system. We neglect all except the following states: %why does the ground state J not play into it at all?
-%I just realized I have no idea where to find the information on the hyperfine splitting of the Sr+ 
-%also, IDK what to do about the the Nuclear spin numbers of the upper state. 
-%I have this http://link.springer.com/article/10.1007%2FBF00568145
-\begin{center}
-\begin{tabular}{|l|l|||r|}
-\hline
-$F=4$ $^2$S$_{1/2} (5s)$ & Ground state  \\ \hline
-$F=5$ $^2$S$_{1/2} (5s)$ & Ground state  \\ \hline
-$F=3$ $^2$P$_{3/2} (5p)$ & Intermediate state  \\ \hline
-$F=4$ $^2$P$_{3/2} (5p)$ & Intermediate state  \\ \hline
-$F=5$ $^2$P$_{3/2} (5p)$ & Intermediate state  \\ \hline
-$F=6$ $^2$P$_{3/2} (5p)$ & Intermediate state  \\ \hline
-\end{tabular}
-\end{center}
-
-Now, recall that when describing an atom neglecting the hyperfine structure and the spin of the nucleus, a typical choice would be to use $\mathbf{J}^2$, $\mathbf{L}^2$, $\mathbf{S}^2$ and $J_z$, since these are "good quantum numbers" for the atom's free space Hamiltonian. Recall that 
-\begin{equation}
-J=L+S
-\end{equation}
 
 Now, to include the nuclear spin,$I$, we will use $F=J+I$. 
 
