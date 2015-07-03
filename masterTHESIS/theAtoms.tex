@@ -14,10 +14,47 @@ Our objective is to calculate the necessary intensity and beam waist that will a
 
 In order to do this, we first review the various relevant states of this atom and the quantum numbers used to describe them. Then we move onto a discussion of some of the basic aspects of hyperfine structure. We will then model the atom as a three state system and obtain an expression relating the magnitude and frequency of the electric field to the Rabi frequencies of our two transitions. Finally, we calculate the total transition rate for the 3 state system and we tabulate the beam parameters that will produce the requisite electric field strengths for the correct amounts of time to produce the transition.
 
+The discussion that follows is strictly geared towards
+
+
 In Ref.\ \cite{cjeDiss}, this calculation is performed, but some of the details are left mysterious. In particular, no source is cited for any of the physical parameters of the $^{87}$Sr+ atom (e.g. the dipole moment values, the transition width, the saturation parameter). We hope to reproduce this calculation with more details.  
 
-\section{Background}
+\section{States and Quantum Numbers}
 
+We model the Hamiltonian of the Strontium ions by analogy to the Hamiltonian of a single-electron atom. 
+In a single electron atom, the solution to the Schr\"odinger equation describing the electron is solved by separation of variables.
+ Each solution is a product of a spherically symmetric function that depends only on the distance $r$ from the nucleus and the spherical harmonics.
+This is because the orbital angular momentum operator $\mathbf{L}$ commutes with such a Hamiltonian. In fact, the orbital angular momentum operator commutes with any Hamiltonian with a spherically symmetric potential.
+Thus, the eigenstates of any spherically symmetrical Hamiltonian can be treated precisely as they are in a one-electron case. 
+
+In the case of $^{87}$Sr+, there is only one electron in the valence band. The inner shells are full and we assume that the symmetry is such that the eigenstates of the atom will also be eigenstates of the orbital angular momentum operator, $\mathbf{L}$.
+ The system also involves two other angular momentum operators: the spin operator for the valence electron, $\mathbf{S}$\footnote{The spin of the electrons on the inner shells cancels and adds to 0} and the spin of the nucleus $\mathbf{I}$.
+\footnote{Here and throughout, we will generally use the boldface $\mathbf{I}$ to mean the operator while the unbolded $I$ will mean the eigenvalue, though for the most part, context will be the best guide.}
+We will first approximate the Hamiltonian by assuming that The hyperfine interaction will be modeled as a perturbation on top of this.
+
+The ``good'' quantum numbers for describing the internal states of a $^{87}$Sr+ ion are $F$,$J$,$L$,$S$,$m_f$ and $n$\cite{experimental_hyperfine_alkali_arimondo}\cite{cuaMITnotes} where $F$,$J$,$L$,$S$,$m_f$ take on their usual meanings (see \ref{quantumNumberQuickref})
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+Quantum Number & Definition and comment \\ \hline \hline
+L & Orbital angular momentum of valence electron. \\ \hline
+S & Spin of valence electron. Takes on values $\pm 1/2$ \\ \hline
+I & Nuclear spin. For $^{87}$Sr$^+$, $I=9/2$ \\ \hline
+J & Total valence electron angular momentum. $\mathbf{J}=\mathbf{L}+\mathbf{S}$ \\ \hline
+F & Total angular momentum $\mathbf{F}=\mathbf{I}+\mathbf{J}$ \\ \hline
+$m_f$ & Eigenvalue of $\mathbf{F}_z$.\\ \hline
+\end{tabular}
+\caption{The quantum numbers used to describe the internal state of the $^{87}$Sr+ ion. These are conventional choices, the table is only for the reader's convenience.}
+\label{quantumNumberQuickref}
+\end{table}
+
+The Hamiltonian has the form 
+
+\begin{equation}
+H_0=\sum |F,J,L,S,M_f,n\rangle E \langle F,J,L,S,M_f,n|
+\end{equation}
 First, we will discuss the relevant states. We neglect all except the following states: %why does the ground state J not play into it at all?
 %I just realized I have no idea where to find the information on the hyperfine splitting of the Sr+ 
 %also, IDK what to do about the the Nuclear spin numbers of the upper state. 
@@ -150,11 +187,6 @@ We assume that our Hamiltonian has the form
 H=H_0+V
 \end{equation}
 
-where $H_0$ is the Hamiltonian of the unperturbed atom. I think that the "good" quantum numbers for the unperturbed Hamiltonian are $F$,$J$,$L$,$S$,$m_f$ and $n$\footnote{I'm not sure. There's a table on page 311 in Sakurai's QM book, but it doesn't include nuclear spin.} This Hamiltonian has the form 
-
-\begin{equation}
-H_0=\sum |F,J,L,S,M_f,n\rangle E \langle F,J,L,S,M_f,n|
-\end{equation}
 
 \footnote{Is there a static, external magnetic field? I seem to remember that there was.}
 
