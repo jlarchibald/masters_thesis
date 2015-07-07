@@ -30,7 +30,8 @@ Thus, the eigenstates of any spherically symmetrical Hamiltonian can be treated 
 In the case of $^{87}$Sr+, there is only one electron in the valence band. The inner shells are full and we assume that the symmetry is such that the eigenstates of the atom will also be eigenstates of the orbital angular momentum operator, $\mathbf{L}$.
  The system also involves two other angular momentum operators: the spin operator for the valence electron, $\mathbf{S}$\footnote{The spin of the electrons on the inner shells cancels and adds to 0} and the spin of the nucleus $\mathbf{I}$.
 \footnote{Here and throughout, we will generally use the boldface $\mathbf{I}$ to mean the operator while the unbolded $I$ will mean the eigenvalue, though for the most part, context will be the best guide.}
-We will first approximate the Hamiltonian by assuming that The hyperfine interaction will be modeled as a perturbation on top of this.
+We will first approximate the Hamiltonian by assuming that there is no coupling that is dependent on the spin. 
+The hyperfine interaction will be modeled as a perturbation on top of this.
 
 The ``good'' quantum numbers for describing the internal states of a $^{87}$Sr+ ion are $F$,$J$,$L$,$S$,$m_f$ and $n$\cite{experimental_hyperfine_alkali_arimondo}\cite{cuaMITnotes} where $F$,$J$,$L$,$S$,$m_f$ take on their usual meanings (see \ref{quantumNumberQuickref})
 
@@ -74,11 +75,6 @@ $F=6$ $^2$P$_{3/2} (5p)$ & Intermediate state  \\ \hline
 \label{tableOfStates}
 \end{table}
 
-Now, recall that when describing an atom neglecting the hyperfine structure and the spin of the nucleus, a typical choice would be to use $\mathbf{J}^2$, $\mathbf{L}^2$, $\mathbf{S}^2$ and $J_z$, since these are "good quantum numbers" for the atom's free space Hamiltonian. Recall that 
-\begin{equation}
-J=L+S
-\end{equation}
-
 \section{Review of Hyperfine Splitting}
 
 The hyperfine splitting arises from interactions between the nucleus and the electrons. In general, we can split out the Hamiltonian of the Hyperfine interaction as follows: 
@@ -97,9 +93,19 @@ H_{\mathrm{hfs}}=\sum_k \mathbf{T}^{(k)} \cdot \mathbf{M}^{(k)} \label{hfs_hamil
 \cite{schwartz_hyperfine_expansion}
 \cite{experimental_hyperfine_alkali_arimondo}
 \cite{chinesePhysics}
-\footnote{todo: cite that review article and the lecture notes you found}
+%\footnote{todo: cite that review article and the lecture notes you found}
 
-where $\mathbf{T}^{(k)}$ and $\mathbf{M}^{(k)}$ are irreducible spherical tensor operators of rank $k$. $\mathbf{T}^{(k)}$ represents the electron, while $\mathbf{M}^{(k)}$ represents the nucleus.\cite{experimental_hyperfine_alkali_arimondo}.
+where $\mathbf{T}^{(k)}$ and $\mathbf{M}^{(k)}$ are irreducible spherical tensor operators of rank $k$.
+ $\mathbf{T}^{(k)}$ represents information about the electron.
+The generator of its rotation group is the electron total angular momentum, $\mathbf{J}$. In other words, it satisfies the commutation relationship:
+
+\begin{equation}
+[\mathbf{J}_i,\mathbf{T}^{(k)}_q]=
+\end{equation}
+\footnote{I know this is in Sakurai, but I also looked at wikipedia.}
+
+while $\mathbf{M}^{(k)}$ represents the nucleus and the generator of its rotation group is the nuclear spin $\mathbf{I}$.\cite{experimental_hyperfine_alkali_arimondo}\cite{schwartz_hyperfine_expansion}
+%\footnote{In fact, \cite{schwartz_hyperfine_expansion} claims that it commutes with $\mathbf{J}$, but I don't believe this is possible. In order for it to be rotationally invariant, it must not commute with it}.
 
 \footnote{Recall that the dot product for spherical tensors of arbitrary rank is defined as follows:
 \begin{equation}
@@ -107,9 +113,14 @@ where $\mathbf{T}^{(k)}$ and $\mathbf{M}^{(k)}$ are irreducible spherical tensor
 \end{equation}
 }
 \cite{sobelman_spectra}
-Here are some rough ideas to motivate the expansion of the hyperfine interaction in Eq.\ \ref{hfs_hamiltonian_eqn}. 
-First of all, we expect that whatever our Eq.\ \ref{hfs_hamiltonian_eqn} shows explicitly how the operator transforms under rotations. Specifically, it shows that, by using these tensors, we could the coupling should remain the same under rotations.
+The product of these two gives a scalar that should be
+The idea behind the expansion of the hyperfine interaction in Eq.\ \ref{hfs_hamiltonian_eqn}.
+Notice \footnote{must the perturbed states exist before? Can it split?} Eq.\ \ref{hfs_hamiltonian_eqn} shows explicitly how the operator transforms under rotations. Specifically, it shows that, by using these tensors, we could the coupling should remain the same under rotations.
 Secondly, each term in the Hamiltonian represents coupling of a different electric or magnetic multipole moment. 
+
+So, for example, 
+
+
 It is interesting to note that the odd values of $k$ correspond to magnetic interactions while the even values correspond to electric interactions. That is to say that there is no electric dipole interaction between the electrons and the nucleus, but there is a magnetic dipole ($k=1$), while there is an electric quadrupole coupling, but no magnetic quadrupole, etc
 \cite{experimental_hyperfine_alkali_arimondo}
 .
