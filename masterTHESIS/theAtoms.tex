@@ -97,14 +97,14 @@ H_{\mathrm{hfs}}=\sum_k \mathbf{T}^{(k)} \cdot \mathbf{M}^{(k)} \label{hfs_hamil
 
 where $\mathbf{T}^{(k)}$ and $\mathbf{M}^{(k)}$ are irreducible spherical tensor operators of rank $k$.
 \footnote{Recall that the dot product for spherical tensors of arbitrary rank is defined as follows:
-\begin{equation}
+\begin{equation}\label{TkMk_hyperfine}
 \mathbf{T}^{(k)}\cdot\mathbf{M}^{(k)}=\sum (-1)^qT_q^{(k)}M_{-q}^{(k)}
 \end{equation}
 }
  $\mathbf{T}^{(k)}$ represents information about the electron.
 $\mathbf{M}^{(k)}$ represents the nucleus.\cite{experimental_hyperfine_alkali_arimondo}\cite{schwartz_hyperfine_expansion}
 \cite{sobelman_spectra}
-Writing the expansion in this form shows the dependence 
+Writing the expansion in this form shows explicitly the geometry of the operator.
 
 Before discussing what information $\mathbf{T}^{(k)}$ and $\mathbf{M}^{(k)}$ represent exactly,
 we pause to point out a few geometrical facts. Even if we had no knowledge of the mechanism by which hyperfine interactions occur, we might still arrive at Eq.\,\ref{hfs_hamiltonian_eqn} simply by geometrical considerations.
@@ -123,13 +123,24 @@ W_f=A\mathbf{I}\cdot\mathbf{J}
 \cite{sobelman_spectra}
 where $g_I$ represents the gyromagnetic ratio of the nucleus and $A$ represents a coupling factor between them. Note that here we are using the normal, three dimensional dot product (i.e. $\mathbf{I}\cdot\mathbf{J}=I_xJ_x+I_yJ_y+I_zJ_z$). 
 
-The quadrupole moment similarly can be found. Note that the electrostatic energy associated with two charge distributions can be written as follows: 
+The product $\mathbf{I}\cdot\mathbf{J}$ can be expanded by noticing that $\mathbf{F}^2=(\mathbf{I}+\mathbf{J})^2=\mathbf{I}^2+2 \mathbf{I}\cdot\mathbf{J}+\mathbf{J}^2$. This gives: 
+
+\begin{equation}
+W_f=\frac{1}{2}A(\mathbf{F}^2-\mathbf{J}^2-\mathbf{I}^2
+\end{equation}
+\footnote{todo: cite the MIT notes, and Sobelman}
+
+In a similar way, the $k=2$ term in Eq.\,\label{TkMk_hyperfine} can be shown to correspond to the electric quadrupole interaction. Chapter 6.2 of Ref.\,\cite{sobelman_spectra} gives a good explanation for this. The crux of the argument is that the electric quadrupole interaction  
 \begin{align}
 W&=\int\frac{\rho(\mathbf{r})\rho'(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|}d\mathbf{r}d\mathbf{r'}\\
 &=\int d\mathbf{r}d\mathbf{r'}
-\rho(\mathbf{r})\rho'(\mathbf{r}')\sum_k \frac{r'^k}{r^{k+1}}[C^k(\theta,\phi)\cdot C^k(\theta',\phi')]
+\rho(\mathbf{r})\rho'(\mathbf{r}')\sum_k \frac{r'^k}{r^{k+1}}[C^k(\theta,\phi)\cdot C^k(\theta',\phi')] \label{quadrupole_expanded}
 \end{align}
-OK Dallin--I'm not sure if I should even include this. 
+
+The $k=2$ term  in Eq.\,\ref{quadrupole_expanded} then takes the form of an inner product between two 
+
+
+\footnote{OK Dallin--I'm not sure if I should even include this.} 
 
 
 \subsection{Hyperfine $A$ and $B$ coefficients}
