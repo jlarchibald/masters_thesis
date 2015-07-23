@@ -131,25 +131,58 @@ W_f=\frac{1}{2}A(\mathbf{F}^2-\mathbf{J}^2-\mathbf{I}^2
 \footnote{todo: cite the MIT notes, and Sobelman}
 
 In a similar way, the $k=2$ term in Eq.\,\label{TkMk_hyperfine} can be shown to correspond to the electric quadrupole interaction. Chapter 6.2 of Ref.\,\cite{sobelman_spectra} gives a good explanation for this. The crux of the argument is that the electric quadrupole interaction  
-\begin{align}
+\begin{equation}
 W&=\int\frac{\rho(\mathbf{r})\rho'(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|}d\mathbf{r}d\mathbf{r'}\\
-&=\int d\mathbf{r}d\mathbf{r'}
+\end{equation}
+can  be expanded in terms of spherical harmonics: 
+\begin{equation}
+W=\int d\mathbf{r}d\mathbf{r'}
 \rho(\mathbf{r})\rho'(\mathbf{r}')\sum_k \frac{r'^k}{r^{k+1}}[C^k(\theta,\phi)\cdot C^k(\theta',\phi')] \label{quadrupole_expanded}
-\end{align}
+\end{equation}
 
-The $k=2$ term  in Eq.\,\ref{quadrupole_expanded} then takes the form of an inner product between two 
+The $k=2$ term in the integral contained in Eq.\,\ref{quadrupole_expanded} takes the form of an inner product between two rank 2 spherical tensors. This provides further motivation for the expansion in Eq.\,\cite{TkMk_hyperfine}.
+
+Such products can handily be evaluated using Eq. 4.169 from \cite{sobelman_spectra}\footnote{Should I cite Racah and Schwartz?}:
+
+%\begin{multline}
+%\langle\gamma J_1 J_2 M|(T^{(k)}M^{(k)})|\gamma' J_1' J_2' J M\rangle \\
+%=
+%(-1)^{J_1'+J_2'+J} \sum_{\gamma''} \langle\gamma J_1||T^{(k)}||\gamma''J_1'\rangle
+%\langle\gamma'' J_2 || U^{(k)}||\gamma' J_2'\rangle
+%\begin{Bmatrix}
+%J_1 & J_2 & J \\
+%J_2' & J_1' & k
+%\end{Bmatrix}
+%\end{multline}
+
+\begin{multline}
+\langle\gamma I J F M_f|(T^{(k)}M^{(k)})|\gamma J I F M_f\rangle \\
+=
+(-1)^{F+I+J} \sum_{\gamma} \langle\gamma J||T^{(k)}||\gamma J\rangle
+\langle\gamma I || M^{(k)} ||\gamma I\rangle
+\begin{Bmatrix}
+J & I & F \\
+I & J & k
+\end{Bmatrix}
+\end{multline}
+
+where 
+$\begin{Bmatrix}
+J & I & F \\
+I & J & k
+\end{Bmatrix}$ represents the Wigner $6j$ symbol. 
+
+Using the lookup for these\footnote{I will get this from Sobelman}, we see that the 
+
 
 
 \footnote{OK Dallin--I'm not sure if I should even include this.} 
 
-
 \subsection{Hyperfine $A$ and $B$ coefficients}
-There are various ways to estimate or calculate the hyperfine coefficients. However, for our purposes they are generally looked up and found by either experiment or numerical calculations. \cite{cuaMITnotes}. 
+There are various ways to estimate or calculate the hyperfine coefficients\footnote{todo:cite these}. However, for our purposes they are generally looked up and found by either experiment or numerical calculations. \cite{cuaMITnotes}. 
+The standard way to write the hyperfine splitting is in terms of the hyperfine $A$ and $B$ coefficients. These are related to 
 
-
-The magnetic dipole contribution to the Hyperfine splitting arises from coupling between the electron's total angular momentum and the 
-
-
+\footnote{These are \emph{not} the Einstein $A$ and $B$ coefficients relating to radiative transition rate.}
 
 \begin{equation}
 E_{\mathrm{hfs}}=\frac{1}{2}AC+BC(C+1)
