@@ -125,14 +125,14 @@ where $g_I$ represents the gyromagnetic ratio of the nucleus and $A$ represents 
 
 The product $\mathbf{I}\cdot\mathbf{J}$ can be expanded by noticing that $\mathbf{F}^2=(\mathbf{I}+\mathbf{J})^2=\mathbf{I}^2+2 \mathbf{I}\cdot\mathbf{J}+\mathbf{J}^2$. This gives: 
 
-\begin{equation}
-W_f=\frac{1}{2}A(\mathbf{F}^2-\mathbf{J}^2-\mathbf{I}^2
+\begin{equation}\label{Wf_dot_product}
+W_f=\frac{1}{2}A(\mathbf{F}^2-\mathbf{J}^2-\mathbf{I}^2)
 \end{equation}
 \footnote{todo: cite the MIT notes, and Sobelman}
 
 In a similar way, the $k=2$ term in Eq.\,\label{TkMk_hyperfine} can be shown to correspond to the electric quadrupole interaction. Chapter 6.2 of Ref.\,\cite{sobelman_spectra} gives a good explanation for this. The crux of the argument is that the electric quadrupole interaction  
 \begin{equation}
-W&=\int\frac{\rho(\mathbf{r})\rho'(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|}d\mathbf{r}d\mathbf{r'}\\
+W=\int\frac{\rho(\mathbf{r})\rho'(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|}d\mathbf{r}d\mathbf{r'}\\
 \end{equation}
 can  be expanded in terms of spherical harmonics: 
 \begin{equation}
@@ -155,7 +155,7 @@ Such products can handily be evaluated using Eq. 4.169 from \cite{sobelman_spect
 %\end{Bmatrix}
 %\end{multline}
 
-\begin{multline}
+\begin{multline}\label{4169_combine_diff_tensors}
 \langle\gamma I J F M_f|(T^{(k)}M^{(k)})|\gamma J I F M_f\rangle \\
 =
 (-1)^{F+I+J} \sum_{\gamma} \langle\gamma J||T^{(k)}||\gamma J\rangle
@@ -172,17 +172,8 @@ J & I & F \\
 I & J & k
 \end{Bmatrix}$ represents the Wigner $6j$ symbol. 
 
-Using the lookup for these\footnote{I will get this from Sobelman}, we see that the 
-
-
-
+Using the lookup for these\footnote{I will get this from Sobelman. He gives the Racah coefficients in 4.97 - 4.99}, we see that the equation for the electric quadrupole term for the hyperfine interaction takes the form:
 \footnote{OK Dallin--I'm not sure if I should even include this.} 
-
-\subsection{Hyperfine $A$ and $B$ coefficients}
-There are various ways to estimate or calculate the hyperfine coefficients\footnote{todo:cite these}. However, for our purposes they are generally looked up and found by either experiment or numerical calculations. \cite{cuaMITnotes}. 
-The standard way to write the hyperfine splitting is in terms of the hyperfine $A$ and $B$ coefficients. These are related to 
-
-\footnote{These are \emph{not} the Einstein $A$ and $B$ coefficients relating to radiative transition rate.}
 
 \begin{equation}
 E_{\mathrm{hfs}}=\frac{1}{2}AC+BC(C+1)
@@ -195,6 +186,14 @@ C=[F(F+1)-J(J+1)-I(I+1)]
 \end{equation}
 \cite{cuaMITnotes}
 
+Interestingly, Eq.\,\ref{Wf_dot_product} can also be found using Eq.\,\ref{4169_combine_diff_tensors} using $k=1$.
+
+The standard way to write the hyperfine splitting is in terms of the hyperfine $A$ and $B$ coefficients.
+
+\footnote{These are \emph{not} the Einstein $A$ and $B$ coefficients relating to radiative transition rate.}
+
+
+There are various ways to estimate or calculate the hyperfine coefficients\footnote{todo:cite these}. However, for our purposes they are generally looked up and found by either experiment or numerical calculations. \cite{cuaMITnotes}. 
 Ref.\ \cite{safronova2photon} gives and cites various values of the $A$ and $B$ coefficients. The ones relevant to our experiment are 
 
 \begin{table}[h]
@@ -205,28 +204,25 @@ Level &  $A^{\mathrm{(SDpT)}}$ &$A^{\mathrm{(theor)}}$ & $A^{\mathrm{(expt)}}$ \
 $5s ^2$S$_{1/2}$&-997.85 MHz& -1000 MHz& -1000.473673(11) MHz\\ \hline
 $5p ^2$P$_{3/2}$&-35.26 MHz&-35.3 MHz&-36.0(04) MHz\\ \hline
 \end{tabular}
-\end{table}
 
-\begin{table}[h]
-\centering
-\begin{tabular}{l|r|r|r|r}
+\begin{tabular}{l}
+%This is just fr spacing it
+%\quad \\
+\end{tabular}
+
+\begin{tabular}{|l|r|r|r|}
 \hline
 Level &  $B^{\mathrm{(SDpT)}}$ &$B^{\mathrm{(theor)}}$ & $B^{\mathrm{(expt)}}$ \\ \hline \hline
 $5s ^2$S$_{1/2}$&&0  MHz&  \\ \hline
-$5p ^2$P$_{3/2}$&88.94MHz&271MHz$/b$$\times 0.327(24)$b$=88.68$MHz&88.5(54) \\ \hline
+$5p ^2$P$_{3/2}$&88.94MHz&$88.68$MHz\footnote{271MHz$/b$$\times 0.327(24)$b$=88.68$ MHz}&88.5(54) \\ \hline
 \end{tabular}
+\caption{Values of A and B coefficients in MHz for relevant states taken from Ref.\,\cite{safronova2photon}. SDpT refers to the value calculated using one particular numerical approach. theor represents theoretically calculated values. expt refers to values found via experiment.}
 \end{table}
 
 
-Now, to include the nuclear spin,$I$, we will use $F=J+I$. 
 
-The Hamiltonian for a Hydrogen-like atom is: 
 
-\begin{equation}
-H=\frac{1}{2m}(\mathbf{p}-e\mathbf{A})^2+\phi(\mathbf{r})
-\end{equation}
-
-Normally, one takes this and then splits it into two Hamiltonians: 
+\section{Electric Dipole Interaction}
 
 \begin{equation}
 H=H_0+V
@@ -245,6 +241,13 @@ We assume that our Hamiltonian has the form
 H=H_0+V
 \end{equation}
 
+There are some selection rules\cite{sobelman_spectra}:
+\begin{align}
+&\Delta F=0,\pm 1\\
+&F+F'\geq 1
+\end{align}
+
+Now, the selection rules can be determined by the operation of the C-G coefficients. 
 
 \footnote{Is there a static, external magnetic field? I seem to remember that there was.}
 
