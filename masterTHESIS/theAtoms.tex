@@ -50,15 +50,17 @@ $m_f$ & Eigenvalue of $\mathbf{F}_z$.\\ \hline
 \label{quantumNumberQuickref}
 \end{table}
 
-The Hamiltonian has the form 
-
-\begin{equation}
-H_0=\sum |F,J,L,S,M_f,n\rangle E \langle F,J,L,S,M_f,n|
-\end{equation}
-We neglect all except the following states: %why does the ground state J not play into it at all?
+ %why does the ground state J not play into it at all?
 %I just realized I have no idea where to find the information on the hyperfine splitting of the Sr+ 
 %also, IDK what to do about the the Nuclear spin numbers of the upper state. 
 %I have this http://link.springer.com/article/10.1007%2FBF00568145
+There are some additional selection rules\cite{sobelman_spectra}:
+\begin{align}
+&\Delta F=0,\pm 1\\
+&F+F'\geq 1
+\end{align}
+
+Now, the selection rules can be determined by the operation of the C-G coefficients. 
 
 \begin{table}[h]
 \centering
@@ -227,7 +229,7 @@ C_{F=5} &= 4.5\\
 W_{F=4}-W_{F=5}&=5000 \quad \mathrm{MHz}
 \end{align}
 
-Furthermore, we can calculate the hyperfine splitting for all the $^2$P$_{3/2}$ states: 
+Furthermore, we can calculate the hyperfine splitting for all the $^2$P$_{3/2}$ states, which is contained in Table \ref{tableOfHyperfine deetuings}.
 
 
 \begin{table}[h]
@@ -256,6 +258,8 @@ $F=6$ $^2$P$_{3/2} (5p)$ &   17121 MHz\\ \hline
 
 \section{Electric Dipole Interaction}
 
+The Hamiltonian has the form 
+
 We assume that our Hamiltonian has the form 
 
 \begin{equation}
@@ -266,15 +270,6 @@ where $H_0$ is the unperturbed Hamiltonian of the system. $V$ will represen the 
 $V$ is written in terms of $\mathbf{A}$. We neglect the terms that are higher than second order in $\mathbf{A}$.
 
 
-
-
-There are some additional selection rules\cite{sobelman_spectra}:
-\begin{align}
-&\Delta F=0,\pm 1\\
-&F+F'\geq 1
-\end{align}
-
-Now, the selection rules can be determined by the operation of the C-G coefficients. 
 
 \footnote{Is there a static, external magnetic field? I seem to remember that there was.}
 
@@ -292,6 +287,9 @@ $F$, we find that we must combine this with yet another
 
 Here, we have opted to look at the simultaneous eigenstates of the $F$,the The $^2$S states can be rewritten as a sum of eigenstates of the $\vec{J}$ and $\vec{F}$ operators. 
 
+\begin{equation}
+H_0=\sum |F,J,L,S,M_f,n\rangle E \langle F,J,L,S,M_f,n|
+\end{equation}
 
 The Hamiltonian will be the sum of the original Hamiltonian 
 
