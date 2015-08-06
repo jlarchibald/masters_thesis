@@ -257,6 +257,17 @@
   Date-modified            = {2012-04-06 17:57:38 -0600}
 }
 
+@PhdThesis{gustavsonThesis,
+  Title                    = {Precision Rotation Sensing Using Atom Interferometry},
+  Author                   = {Todd Lyndell Gustavson},
+  School                   = {Stanford University},
+  Year                     = {2000},
+  Month                    = {February},
+
+  Owner                    = {jlarchibald},
+  Timestamp                = {2015.08.05}
+}
+
 @Article{hilbornNoGetConfused,
   Title                    = {Einstein coefficients, cross sections, f values, dipole moments, and all that},
   Author                   = {Robert C. Hilborn},

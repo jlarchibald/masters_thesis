@@ -172,6 +172,16 @@
   Url                      = {http://link.aps.org/doi/10.1103/PhysRev.30.705}
 }
 
+@Unpublished{DeMille_presentation,
+  Title                    = {Selection rules, Wigner-Eckhart, and all that},
+  Author                   = {DeMille, David},
+  Note                     = {Not sure who authored this.},
+
+  Owner                    = {jlarchibald},
+  Timestamp                = {2015.08.05},
+  Url                      = {http://www.yale.edu/demillegroup/sharedfiles/Phys687/Selection-rules-and-Wigner-Eckhart-and-Tensor-Operators.pdf}
+}
+
 @Book{demilleBudkerKimball,
   Title                    = {Atomic Physics: An exploration through problems and solutions},
   Author                   = {Dmitry Budker, Derek F. Kimball, David P. DeMille},
@@ -483,6 +493,25 @@
   Url                      = {http://link.aps.org/doi/10.1103/PhysRev.53.318}
 }
 
+@Article{Racah2,
+  Title                    = {Theory of Complex Spectra. II},
+  Author                   = {Racah, Giulio},
+  Journal                  = {Phys. Rev.},
+  Year                     = {1942},
+
+  Month                    = {Nov},
+  Pages                    = {438--462},
+  Volume                   = {62},
+
+  Doi                      = {10.1103/PhysRev.62.438},
+  Issue                    = {9-10},
+  Numpages                 = {0},
+  Owner                    = {jlarchibald},
+  Publisher                = {American Physical Society},
+  Timestamp                = {2015.07.09},
+  Url                      = {http://link.aps.org/doi/10.1103/PhysRev.62.438}
+}
+
 @Misc{NISTasd,
   Title                    = {NIST Atomic Spectra Database (version 3.1.5)},
 
@@ -661,6 +690,25 @@
   Owner                    = {jlarchibald},
   Timestamp                = {2015.06.04},
   Url                      = {http://stacks.iop.org/1009-1963/16/i=8/a=039}
+}
+
+@InCollection{Young1997363,
+  Title                    = {Precision Atom Interferometry with Light Pulses },
+  Author                   = {Brenton Young and Mark Kasevich and Steven Chu},
+  Booktitle                = {Atom Interferometry },
+  Publisher                = {Academic Press},
+  Year                     = {1997},
+
+  Address                  = {San Diego},
+  Editor                   = {Berman, Paul R. },
+  Pages                    = {363 - 406},
+
+  Abstract                 = {Publisher Summary This chapter presents the theory of atom interferometry based on optical pulses. The interference of magnetic spin states used in magnetic resonance and later generalized to electronically excited states of atoms is a mature field. Consequently, the wealth of theoretical and experimental techniques that have been developed for over a half century can be exploited for atom interferometry. The fundamental starting point of an atom interferometry based on optical pulses is that light can be used to detect the motion of atoms. Changes in the velocity of individual atoms are registered essentially through changes in the frequency of atomic resonances due to the Doppler effect. This chapter is concerned mainly with the high precision interferometers with long measurement times. It discusses interference of atoms in the ground state and analyzes momentum transfer based on stimulated Raman transitions. The chapter also discusses several applications of these techniques such as in gravitational acceleration, gradiometry, and gyroscopes. },
+  Doi                      = {http://dx.doi.org/10.1016/B978-012092460-8/50010-2},
+  ISBN                     = {978-0-12-092460-8},
+  Owner                    = {jlarchibald},
+  Timestamp                = {2015.08.05},
+  Url                      = {http://www.sciencedirect.com/science/article/pii/B9780120924608500102}
 }
 
 @Article{zehnder,
