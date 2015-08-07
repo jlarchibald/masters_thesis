@@ -219,7 +219,7 @@ $5p ^2$P$_{3/2}$&88.94MHz&$88.68$MHz\footnotemark&88.5(54) \\ \hline
 \caption{Values of A and B coefficients in MHz for relevant states taken from Ref.\,\cite{safronova2photon}. SDpT refers to the value calculated using one particular numerical approach. theor represents theoretically calculated values. expt refers to values found via experiment.\label{AB_table}
 }
 \end{table}
-\footnotetext{271MHz$/b$$\times 0.327(24)$b$=88.68$ MHz NOTICE: IDK how to get this footnote to be guaranteed to appear on the right page.}
+\footnotetext{271MHz$/b$$\times 0.327(24)$b$=88.68$ MHz }%NOTICE: IDK how to get this footnote to be guaranteed to appear on the right page.}
 
 Therefore, we may calculate the splitting between the $F=4$ and $F=5$ $^2$S$_{1/2}$ states using $I=9/2$, $F=4,5$, $L=0$ using Eq.\,\ref{Standard_hyperfine_AB}. In this case, we can see that with $A=1000$MHz, we can calculate the splitting between the $F=4$ and $F=5$ levels: 
 
@@ -246,7 +246,7 @@ $F=6$ $^2$P$_{3/2} (5p)$ &   17121 MHz\\ \hline
 \label{tableOfHyperfine deetuings}
 \end{table}
 
-\footnote{I think there is a constant quadrupole term we neglect? IDK}
+%\footnote{I think there is a constant quadrupole term we neglect? IDK}
 
 %\begin{table}
 %\begin{tabular}{|l|r|r|r|}
@@ -274,11 +274,83 @@ V=-\mathbf{d}\cdot\mathbf{E}
 \end{equation}
 %the equation actually comes from Gustavson thesis.
 
-Where $\mathbf{E}$ represents the electric field at the atom \footnote{which we also assume is constant over the entire length of the atom--this is actually part of the electric dipole approximation} and $\mathbf{d}$ represents the dipole moment operator for our states. We must therefore find the dipole moment operator. 
+Where $\mathbf{E}$ represents the electric field at the atom \footnote{which we also assume is constant over the entire length of the atom--this is actually part of the electric dipole approximation} and $\mathbf{d}$ represents the dipole moment operator for our states. 
 
-The electric dipole moment is defined as 
+We must now evaluate the dipole moment operator. 
+
+%The classical definition of the electric dipole moment is $\mathbf{p}=q \mathbf{d}$ where $\mathbf{p}$ is a vector representing the dipole moment, $q$ is the charge, and $\mathbf{d}$ is the displacement vect
+
+Classically, the dipole moment is a vector quantity that encapsulates the charges and the distance between them. The dipole moment operator that we are looking should, in the classical limit, equal the charge of the electron times some displacement vector that roughly represents the distance between the electron and the nucleus. The dipole moment operator is defined as 
+
+\begin{equation}
+\mathbf{d}=-e\mathbf{r}
+\end{equation}
+
+where $\mathbf{d}$ is the dipole moment operator, $e$ is the fundamental charge\footnote{recall, in our convention, it is positive} and $\mathbf{r}$ represents the vector operator describing the electron's position relative to the atom\cite{demilleBudkerKimball}.
 
 The electric dipole moment operator commutes with the $\mathbf{S}$ and $\mathbf{I}$ operators. The rotation operators that may be used to generate rotations of the electric dipole moment operator are $\mathbf{L}$, $\mathbf{J}$ and $\mathbf{F}$.\cite{DeMille_presentation}
+
+In order to evaluate the operator, we make use of an equation similar to Eq.\,\ref{4169_combine_diff_tensors} that is known in some places as the ``spectator theorem''\cite{DeMille_presentation}. Here, we are interested in finding the matrix elements of the dipole operator in terms of the  basis that we have selected.
+
+The theorem says that, given a system with two angular momenta, $J_1$ and $J_2$ and total angular momentum $J_{12}=J_1+J_2$ where ' will denote the final state, 
+
+\begin{multline}\label{spectatorTheorem}
+\langle\gamma J_1'J_2J_{12}'||T^{(k)}||\gamma J_1 J_2 J_{12}\rangle=
+\\(-1)^{J_1'+J_2+J+k}\langle\gamma'J_1'||T^{(k)}||\gamma J_1\rangle
+\sqrt{2J_{12}+1}\sqrt{2J_{12}'+1}
+\begin{Bmatrix}
+J_1' & J_{12}' & J_1 \\
+J_{12} & J_1 & k
+\end{Bmatrix}
+\end{multline}
+
+We will use this formula twice: once to separate out $I$ and $J$ from $F$ and then once to remove $J$ by splitting out the pieces related to $L$ and $S$.
+
+For the first one, we use Eq.\,\ref{spectatorTheorem} and make the following replacements:
+\begin{align}
+J_1&\rightarrow J\\
+J_2&\rightarrow I\\
+J_{12}&\rightarrow F\\
+\gamma &\rightarrow  n,L,S
+\end{align}
+
+This gives: 
+
+\begin{multline}\label{spectatorTheorem1}
+\langle n' L' S J' I F'||T^{(k)}||n L S J I F\rangle=
+\\(-1)^{J'+I+J+k}\langle n'L' S J'||T^{(k)}|| n L S J\rangle
+\sqrt{2F+1}\sqrt{2F'+1}
+\begin{Bmatrix}
+J' & F' & J \\
+F & J & k
+\end{Bmatrix}
+\end{multline}
+
+For the next one, we make the following substitutions: 
+
+\begin{align}
+J_1&\rightarrow L\\
+J_2&\rightarrow S\\
+J_{12}&\rightarrow J
+\gamma & \rightarrow n
+\end{align}
+
+\begin{multline}\label{spectatorTheorem2}
+\langle\gamma L'SJ'||T^{(k)}||\gamma L S J\rangle=
+\\(-1)^{L'+S+L+k}\langle\gamma'L'||T^{(k)}||\gamma L\rangle
+\sqrt{2J+1}\sqrt{2J'+1}
+\begin{Bmatrix}
+L' & J' & L \\
+J & L & k
+\end{Bmatrix}
+\end{multline}
+
+Combining Eqs.\,\ref{spectatorTheorem1} and \ref{spectatorTheorem2} gives 
+
+\begin{multline}
+\langle n' L' S J' I F' ||\mathbf{r}||n L S J I F\rangle = \\
+(-1)^{aa}
+\end{multline}
 
 %\footnote{Is there a static, external magnetic field? I seem to remember that there was.}
 
@@ -288,7 +360,6 @@ The electric dipole moment operator commutes with the $\mathbf{S}$ and $\mathbf{
 
 %OK, so I don't understand why it makes sense to take a $\mathbf{p}$ operator and use it on the $\mathbf{A}$ vector. Ah, well, $\mathbf{A}$ is an operator whose components interact with components of $\mathbf{r}$ in a regular way 
 Oh, OK. So we are summing over all the z components of F?
-
 
 $F$, we find that we must combine this with yet another 
 
