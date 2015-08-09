@@ -58,6 +58,7 @@ There are some additional selection rules\cite{sobelman_spectra}:
 \begin{align}
 &\Delta F=0,\pm 1\\
 &F+F'\geq 1
+\label{FselectionRules}
 \end{align}
 
 Now, the selection rules can be determined by the operation of the C-G coefficients. 
@@ -256,8 +257,6 @@ $F=6$ $^2$P$_{3/2} (5p)$ &   17121 MHz\\ \hline
 
 \section{Electric Dipole Interaction}
 
-The Hamiltonian has the form 
-
 We assume that our Hamiltonian has the form 
 
 \begin{equation}
@@ -321,7 +320,7 @@ This gives:
 \\(-1)^{J'+I+J+k}\langle n'L' S J'||T^{(k)}|| n L S J\rangle
 \sqrt{2F+1}\sqrt{2F'+1}
 \begin{Bmatrix}
-J' & F' & J \\
+J' & F' & I \\
 F & J & k
 \end{Bmatrix}
 \end{multline}
@@ -331,7 +330,7 @@ For the next one, we make the following substitutions:
 \begin{align}
 J_1&\rightarrow L\\
 J_2&\rightarrow S\\
-J_{12}&\rightarrow J
+J_{12}&\rightarrow J\\
 \gamma & \rightarrow n
 \end{align}
 
@@ -340,7 +339,7 @@ J_{12}&\rightarrow J
 \\(-1)^{L'+S+L+k}\langle\gamma'L'||T^{(k)}||\gamma L\rangle
 \sqrt{2J+1}\sqrt{2J'+1}
 \begin{Bmatrix}
-L' & J' & L \\
+L' & J' & S \\
 J & L & k
 \end{Bmatrix}
 \end{multline}
@@ -349,25 +348,70 @@ Combining Eqs.\,\ref{spectatorTheorem1} and \ref{spectatorTheorem2} gives
 
 \begin{multline}
 \langle n' L' S J' I F' ||\mathbf{r}||n L S J I F\rangle = \\
-(-1)^{aa}
+(-1)^{J'+I+J+k+L'+S+L+k}
+\sqrt{2F+1}\sqrt{2F'+1}\sqrt{2J+1}\sqrt{2J'+1} \quad \times \\
+\begin{Bmatrix}
+J' & F' & I\\
+F & J & k
+\end{Bmatrix}
+\begin{Bmatrix}
+L' & J' & S\\
+J & L & k
+\end{Bmatrix}
+\langle \gamma' L' ||\mathbf{r}^{(k)}|| \gamma L\rangle 
 \end{multline}
 
-%\footnote{Is there a static, external magnetic field? I seem to remember that there was.}
+Now, we can calculate the Wigner 6j symbols using Python \footnote{not sure how to cite: \url{http://docs.sympy.org/dev/modules/physics/wigner.html\#rasch03}}. We make our calculation in Table\, \ref{coefficient_calculated}. Evaluating the Wigner 6j coefficients confirms the selection rules in Eq.\,\ref{FselectionRules}. Secondly, it allows us to relate the reduced dipole moment matrix operator values as calculated using different basis states.
 
-%the 0 -- when things from different vector spaces are their 0s, they make the other one 0. I mean, it's almost like 0 transcends its own vector space in the direct product. 
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+$F'=3$,$F=4$,$k=1$&$\frac{ \sqrt{21}}{3}$\\ 
+$F'=4$,$F=4$,$k=1$&$- \frac{\sqrt{55}}{5}$ \\ 
+$F'=4$,$F=5$,$k=1$&$- \frac{2\sqrt{5}}{5}$\\ 
+$F'=5$,$F=4$,$k=1$&$\frac{\sqrt{330}}{15}$\\ 
+$F'=5$,$F=5$,$k=1$&$\frac{\sqrt{55}}{5}$\\ 
+$F'=6$,$F=5$,$k=1$&$- \frac{\sqrt{39}}{3}$\\ 
+\hline
+\end{tabular}
+\caption{Values of 
+%\begin{multline}
+%(-1)^{J'+I+J+k+L'+S+L+k}\sqrt{2F+1}\sqrt{2F'+1}\sqrt{2J+1}\sqrt{2J'+1} \quad \times \\
+%\begin{Bmatrix}J' & F' & I\\
+%F & J & k
+%\end{Bmatrix}
+%\begin{Bmatrix}
+%L' & J' & S\\
+%J & L & k
+%\end{Bmatrix}
+%\end{multline} 
+todo: finish this caption}
+\label{coefficient_calculated}
+\end{table}
 
-%OK, where does the energy plug in ? 
+\section{Evaluating the Dipole Moment Matrix Operator}
+We would like to carefully determine the value of this. According to Ref.\ \cite{safronova2photon} the magnitude of the dipole moment operator is -4.35075 a. u. \footnote{atomic units, $a_0 e$} as calculated using the all-order, relativistic SD method. It is useful to compare this to the value obtained from at least one other source \footnote{I want to make sure the units and conventions are what I think they are.}. According to the NIST atomic spectra database, $A_{ki}=1.41e8$ s$^{-1}$ \cite{NISTasd}. This seems to be the Einstein A coefficient associated only with the decays from this state. If this is the case, then we use this equation from Ref.\ \cite{demilleBudkerKimball}:  
+\begin{equation}
+|\langle f ||d|| i \rangle|^2 = (4 \pi \epsilon_0) \frac{3 \hbar c^3}{4 \omega_0^3} (2 J'+1) A_{ki}\label{budkerAeqn} 
+\end{equation}
 
-%OK, so I don't understand why it makes sense to take a $\mathbf{p}$ operator and use it on the $\mathbf{A}$ vector. Ah, well, $\mathbf{A}$ is an operator whose components interact with components of $\mathbf{r}$ in a regular way 
-Oh, OK. So we are summing over all the z components of F?
+This comes from slightly modifying Equation 3.117. It was necessary to convert it from Gaussian units by taking $d\rightarrow d \sqrt{4 \pi \epsilon_0}$. Furthermore, what Ref.\ \cite{demilleBudkerKimball} calls $\gamma$ must be renamed $A_{ki}$. Here $J'$ refers to the total angular momentum of the electron in the upper state, which in our case is $3/2$. Plugging in our values into Ref.\ \ref{budkerAeqn}, we get that the magnitude of $|\langle f ||d|| i \rangle|$ is \href{http://www.wolframalpha.com/input/?i=sqrt%283*hbar*c%5E3%2F%284*%282*pi*c%2F407.771+nm%29%5E3%29*4*pi*epsilon_0*4*1.41e8*1%2Fs%29}{4.344 electron Bohr Dipole Moments}.
+Thus, the agreement between the theoretical calculations of Ref.\ \cite{safronova2photon} and the experimentally-derived values of Ref.\ \cite{NISTasd} is very good.  
 
-$F$, we find that we must combine this with yet another 
+From \cite{demilleBudkerKimball}, we see that the value for $\langle f||d||i\rangle$ that we have obtained is the reduced dipole matrix element. In order to apply it to any one of our given states, we would need to apply the Wigner-Eckhart theorem. 
 
-Here, we have opted to look at the simultaneous eigenstates of the $F$,the The $^2$S states can be rewritten as a sum of eigenstates of the $\vec{J}$ and $\vec{F}$ operators. 
+So, for example, to find the coupling between the $^2 P_{3/2}$ state with $m_j=+3/2$, we would just take 
 
 \begin{equation}
-H_0=\sum |F,J,L,S,M_f,n\rangle E \langle F,J,L,S,M_f,n|
+\langle ^2 \textnormal{P} _{3/2}|T_q^{(k)}|^2 \textnormal{S}_{1/2}\rangle = 
 \end{equation}
+%note--old {\rm whatever} is deprecated. Classes need not define it. 
+%maybe use \textnormal
+
+%crap--what about spin? 
+
+\section{Dynamics}
 
 The Hamiltonian will be the sum of the original Hamiltonian 
 
@@ -386,83 +430,14 @@ Now, we can move to the interaction picture in the standard way. Let $|\alpha\ra
 \end{equation}
 
 Then, 
-%I don't know whether to use I or J. I mean, are there now tons of terms? 
 \begin{align}
 -i\hbar \frac{d}{dt}|n\rangle = 
 \end{align}
 
-\section{Finding the Dipole Moment Matrix Operator}
-We would like to carefully determine the value of this. According to Ref.\ \cite{safronova2photon} the magnitude of the dipole moment operator is -4.35075 a. u. \footnote{atomic units, $a_0 e$} as calculated using the all-order, relativistic SD method. It is useful to compare this to the value obtained from at least one other source \footnote{I want to make sure the units and conventions are what I think they are.}. According to the NIST atomic spectra database, $A_{ki}=1.41e8$ s$^{-1}$ \cite{NISTasd}. This seems to be the Einstein A coefficient associated only with the decays from this state. If this is the case, then we use this equation from Ref.\ \cite{demilleBudkerKimball}:  
-\begin{equation}
-|\langle f ||d|| i \rangle|^2 = (4 \pi \epsilon_0) \frac{3 \hbar c^3}{4 \omega_0^3} (2 J'+1) A_{ki}\label{budkerAeqn} 
-\end{equation}
+\section{Rabi Frequencies}
 
-This comes from slightly modifying Equation 3.117. It was necessary to convert it from Gaussian units by taking $d\rightarrow d \sqrt{4 \pi \epsilon_0}$. Furthermore, what Ref.\ \cite{demilleBudkerKimball} calls $\gamma$ must be renamed $A_{ki}$. Here $J'$ refers to the total angular momentum of the electron in the upper state, which in our case is $3/2$. Plugging in our values into Ref.\ \ref{budkerAeqn}, we get that the magnitude of $|\langle f ||d|| i \rangle|$ is \href{http://www.wolframalpha.com/input/?i=sqrt%283*hbar*c%5E3%2F%284*%282*pi*c%2F407.771+nm%29%5E3%29*4*pi*epsilon_0*4*1.41e8*1%2Fs%29}{4.344 electron Bohr Dipole Moments}.
-Thus, the agreement between the theoretical calculations of Ref.\ \cite{safronova2photon} and the experimentally-derived values of Ref.\ \cite{NISTasd} is very good.  
+We have gotten to the point where we model the dynamics of the system. We follow the work of Refs.\,\cite{Young1997363} and \cite{gustavsonThesis}.
 
-Based on the looks of this, it seems like we already have the reduced matrix element. 
-
-
-This is doubly true because DeMille et. al. already used the Wigner Eckhart theorem to get this. \footnote{But did they use the Wigner Eckhart theorem to combine the different states or did they use it to split them out?} 
-
-From \cite{demilleBudkerKimball}, we see that the value for $\langle f||d||i\rangle$ that we have obtained is the reduced dipole matrix element. In order to apply it to any one of our given states, we would need to apply the wigner-Eckhart theorem. 
-
-So, for example, to find the coupling between the $^2 P_{3/2}$ state with $m_j=+3/2$, we would just take 
-
-\begin{equation}
-\langle ^2 \textnormal{P} _{3/2}|T_q^{(k)}|^2 \textnormal{S}_{1/2}\rangle = 
-\end{equation}
-%note--old {\rm whatever} is deprecated. Classes need not define it. 
-%maybe use \textnormal
-
-%crap--what about spin? 
-
-\section{Finding the Density Matrices to describe the system}
-
-
-Now, we explicitly neglect any coupling there may be between the external laser field and the nucleur spin. We can write the laser thing like this: 
-
-%what is conserved? 
-
-We will write the states in terms of eigenvectors of the following: $J$, $L$, $s$, $F$, $m_j$.
-
-Oh, it seems like selection rules will tell us the answer. From $F=5$, we can go to $F=6$, from there, we can go to what? 
-
-%Oh, it seems like even though the external light field doesn't couple to the nucleus directly, it does couple other things, which can be rewritten in a basis etc. and get coupled themselves. 
-
-%Oh, also, it seems like maybe the upper state, we are not looking at all possible values of $L$.
-
-%Do I need to worry about Doppler broadening and all that? 
-Importantly, note that once we complete a perturbation, we just end up with a new Hamiltonian that takes a diagonalized form:
-
-\begin{equation}
-\begin{pmatrix}
-E_1 & 0 & \cdots & 0 \\
-0   & E_2 & \cdots & 0\\
-\vdots&\vdots&\ddots & \vdots\\
-0 & 0 & \cdots & E_n
-\end{pmatrix}
-\end{equation}
-
-We will then rewrite the Hamiltonian in terms of the total angular momentum. 
-
-How do we deal with multiple things? I mean, why does the multiplicity of states make it more likely to end up in those states? 
-
-OK, suppose that you made a mistake and put the same state in the system twice. Then, it starts to become very important to count the right number of states. But now, suppose there was something you didn't know about, like the hyperfine structure. This splits all the states, I guess. 
-
-Sure, now perturbations split states all the time. But can a perturbation split the states just by existing? By making two states where there was one, I mean? 
-
-Yes, of course. This is called a direct product. Everything is direct products. Really, the way to look at it is that the atom is a simple system. It is a direct product of a bunch of different Hamiltonians. Then these Hamiltonians are coupled in particular ways. You can really just throw away all the intuition that comes from the actual meaning of the quantum numbers. 
-
-
-We see that we already have the coupling constants for most of them. %Wait--how does the hyperfine thing come into it? Does it at all? 
-
-\begin{align}
-\langle ^2 P_{3/2}||\mathbf{d}||^2 S_{1/2} \rangle &= 4.35 \\
-\langle ^2 P_{2}||\mathbf{d}||^2 S_{1/2} \rangle &= 4.35
-\end{align}
-
-We can then treat it perturbatively. 
 
 We will then justify using this equation \cite{footAtomicPhysics} \cite{RamanBeamSplit}: 
 
