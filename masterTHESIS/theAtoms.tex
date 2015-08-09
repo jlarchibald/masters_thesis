@@ -195,7 +195,6 @@ E_{\mathrm{hfs}}=\frac{1}{2}AC+BC(C+1)
 
 \cite{cuaMITnotes}
 
-
 The hyperfine $A$ and $B$ coefficients as used in Eqs.\,\ref{Standard_hyperfine_AB} and \ref{Wf_dot_product} are a standard name and notation that can be looked up in the literature\cite{cuaMITnotes}.  Various values for the $A$ and $B$ coefficients for $^{87}$Sr+ can be found in Ref.\,\cite{safronova2photon} and are summarized in Table\,\ref{AB_table}.\footnote{These are \emph{not} the Einstein $A$ and $B$ coefficients relating to radiative transition rate.}   
 \begin{table}[h]
 \centering
@@ -391,7 +390,7 @@ todo: finish this caption}
 \end{table}
 
 \section{Evaluating the Dipole Moment Matrix Operator}
-We would like to carefully determine the value of this. According to Ref.\ \cite{safronova2photon} the magnitude of the dipole moment operator is -4.35075 a. u. \footnote{atomic units, $a_0 e$} as calculated using the all-order, relativistic SD method. It is useful to compare this to the value obtained from at least one other source \footnote{I want to make sure the units and conventions are what I think they are.}. According to the NIST atomic spectra database, $A_{ki}=1.41e8$ s$^{-1}$ \cite{NISTasd}. This seems to be the Einstein A coefficient associated only with the decays from this state. If this is the case, then we use this equation from Ref.\ \cite{demilleBudkerKimball}:  
+We would like to carefully determine the value of this. According to Ref.\ \cite{safronova2photon} the magnitude of the dipole moment operator is -4.35075 a. u. \footnote{atomic units, $a_0 e$} as calculated using the all-order, relativistic SD method. It is useful to compare this to the value obtained from at least one other source \footnote{I want to make sure the units and conventions are what I think they are.}. According to the NIST atomic spectra database, $A_{ki}=1.41e8$ s$^{-1}$ \cite{NISTasd}. This is the Einstein A coefficient associated with the decays from this state. If this is the case, then we use this equation from Ref.\ \cite{demilleBudkerKimball}:  
 \begin{equation}
 |\langle f ||d|| i \rangle|^2 = (4 \pi \epsilon_0) \frac{3 \hbar c^3}{4 \omega_0^3} (2 J'+1) A_{ki}\label{budkerAeqn} 
 \end{equation}
@@ -399,13 +398,14 @@ We would like to carefully determine the value of this. According to Ref.\ \cite
 This comes from slightly modifying Equation 3.117. It was necessary to convert it from Gaussian units by taking $d\rightarrow d \sqrt{4 \pi \epsilon_0}$. Furthermore, what Ref.\ \cite{demilleBudkerKimball} calls $\gamma$ must be renamed $A_{ki}$. Here $J'$ refers to the total angular momentum of the electron in the upper state, which in our case is $3/2$. Plugging in our values into Ref.\ \ref{budkerAeqn}, we get that the magnitude of $|\langle f ||d|| i \rangle|$ is \href{http://www.wolframalpha.com/input/?i=sqrt%283*hbar*c%5E3%2F%284*%282*pi*c%2F407.771+nm%29%5E3%29*4*pi*epsilon_0*4*1.41e8*1%2Fs%29}{4.344 electron Bohr Dipole Moments}.
 Thus, the agreement between the theoretical calculations of Ref.\ \cite{safronova2photon} and the experimentally-derived values of Ref.\ \cite{NISTasd} is very good.  
 
-From \cite{demilleBudkerKimball}, we see that the value for $\langle f||d||i\rangle$ that we have obtained is the reduced dipole matrix element. In order to apply it to any one of our given states, we would need to apply the Wigner-Eckhart theorem. 
 
-So, for example, to find the coupling between the $^2 P_{3/2}$ state with $m_j=+3/2$, we would just take 
+%From \cite{demilleBudkerKimball}, we see that the value for $\langle f||d||i\rangle$ that we have obtained is the reduced dipole matrix element. In order to apply it to any one of our given states, we would need to apply the Wigner-Eckhart theorem. 
+%
+%So, for example, to find the coupling between the $^2 P_{3/2}$ state with $m_j=+3/2$, we would just take 
 
-\begin{equation}
-\langle ^2 \textnormal{P} _{3/2}|T_q^{(k)}|^2 \textnormal{S}_{1/2}\rangle = 
-\end{equation}
+%\begin{equation}
+%\langle ^2 \textnormal{P} _{3/2}|T_q^{(k)}|^2 \textnormal{S}_{1/2}\rangle = 
+%\end{equation}
 %note--old {\rm whatever} is deprecated. Classes need not define it. 
 %maybe use \textnormal
 
@@ -413,77 +413,37 @@ So, for example, to find the coupling between the $^2 P_{3/2}$ state with $m_j=+
 
 \section{Dynamics}
 
-The Hamiltonian will be the sum of the original Hamiltonian 
+We have gotten to the point where we model the dynamics of the system. We follow the work of Refs.\,\cite{Young1997363}, \cite{gustavsonThesis}, \cite{footAtomicPhysics}, \cite{cjeDiss} and \cite{RamanBeamSplit}.
 
-First, we will write the complete Hamiltonian of the system.
-Then, the new Hamiltonian, $H$, is given by 
-
-\begin{equation}
-H=H_0+V
-\end{equation}
-rotating wave approximation (RWA). Let $H_0$ be the Hamiltonian of our unperturbed system (the atom) and let $V$ be the perturbation (which we will use to model the electric field). 
-
-Now, we can move to the interaction picture in the standard way. Let $|\alpha\rangle$ be the eigenstate of $H_0$, the unperturbed Hamiltonian: 
+We have now identified effectively three states and can simplify the Hamiltonian of the system to 
 
 \begin{equation}
-|\alpha\rangle_I=e^{-iE_\alpha t/h}|\alpha\rangle
+H=\frac{\mathbf{p}}{2m} + 
+\hbar\omega_e |e\rangle\langle e | +
+\hbar\omega_i |i\rangle\langle i | +
+\hbar\omega_g |g\rangle\langle g | -
+\mathbf{d}\cdot\mathbf{E}
 \end{equation}
 
-Then, 
-\begin{align}
--i\hbar \frac{d}{dt}|n\rangle = 
-\end{align}
+and the driving electric field will be
 
-\section{Rabi Frequencies}
+\begin{equation}
+\mathbf{E}=\mathbf{E_1} \cos(\mathbf{k}\cdot\mathbf{x} - \omega_1 t + \phi_1)
++\mathbf{E_2} \cos(\mathbf{k}_2\cdot\mathbf{x} - \omega_2 t + \phi_2)
+\end{equation}
 
-We have gotten to the point where we model the dynamics of the system. We follow the work of Refs.\,\cite{Young1997363} and \cite{gustavsonThesis}.
-
-
-We will then justify using this equation \cite{footAtomicPhysics} \cite{RamanBeamSplit}: 
+Ref.\,\cite{Young1997363} then shows that the effective Rabi frequency, $\Omega_{\textnormal{eff}}$ is given by 
 
 \begin{equation}
 \Omega_{\rm eff}=\frac{\Omega_{2i} \Omega_{i1}}{2 \Delta}
 \end{equation}
-where $\Omega_{2i}$ and $\Omega_{i1}$ are the Rabi frequencies corresponding to the transition from our $^2$S$_{1/2}$ ground state to the  $^2$P$_{3/2}$ state. 
-The key issue with this segment of the paper is that I want to make sure that we're doing the right thing with the dipole moment operators and the modelling of the atomic transition.  %what about the width of the transition? Ah, that should all come out of the soup. %basically, the dominant effect is . . . something? It's the dipole stuff and the tuning, etc., not an energy thing? well, no, it's just that changing the absolute energy doesn't matter much.  
-% It has just occurred to me (today, 2013-130) that we are doing the right thing. Well, I mean, in reality, the coupling of our two states to our lasers will be the same because the orbital angular momentum state is what matters for the purposes of calculating the coupling of an external field to our atom. 
 
-% Well, it has just occurred to me that I don't know about the angular momentum conservation. It is conserved, but strangely. 
+where $\Delta$ is the one photon detuning. \footnote{todo: unify conventions} 
 
-% So, wait--are there 0-0 transitions? Yes--one photon adds the angular momentum, the other one takes it away. 
-
- I would very much like to see the forbidding of the non-angular-momentum-conserving transitions come out of the soup, as they say. I mean, I would like to see a Hamiltonian that does not couple them at all. In addition, I would like to see the relationship between the magnetic field we have placed and see which direction the angular momentum from our lasers must go. 
-
-%I have very much been thinking about symmetries and ways to rewrite things. Like, if the additive inverse of 0100111 were encoded as 1011000. Then you could store same amount of information, but with different encoding. One way to encode would be to merely find 7 symmetry operators, I think. Such as what? I'm not sure.
-
-So write that Hamiltonian.  
-
-%Ah, so how do we make sure that our lasers both add angular momentum in the same way? Does it matter how they're oriented relative to the magnetic field? 
-
-The Rabi frequencies are given by 
-
-\begin{equation}
-\Omega=\frac{\mu E}{h}
-\end{equation} \cite{hilbornNoGetConfused}
-where $\mu$ is the dipole moment matrix element describing the coupling between the electric field and the atom. 
-
-Hilborn gives an expression for $\mu^2$ in terms of the oscillator strength, which I've found in two places \cite{safronovaTheory} \cite{NISTasd} to be about .7. However, I think I need to apply the Wigner-Eckhart theorem as explained in \cite{demilleBudkerKimball}. This also matches Gallagher's answer. 
-
-We carefully make sure that we're using the right dipole moment matrix elements. This is something I still need to do. 
-
-We can compare our result to Chris' thesis. 
-
-\section{Summary of First Approach to This Problem}
-
-According to Ref.\ \cite{cjeDiss}, the problem is a straightforward one.
-
-First, we take the well-known equation for the Rabi frequency, 
-
-\begin{equation}
-\Omega = \frac{-eE_0}{\hbar}\langle e |\vec{r}|g\rangle=\frac{\vec{d}E_0}{\hbar}
-\end{equation}
-
-Then, we write 
+\begin{align}
+\Omega_e&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_2 | e\rangle }{\hbar}\\
+\Omega_g&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_1 | g\rangle}{\hbar}
+\end{align}
 
 \begin{equation}
 \Omega_\mathit{eff}=\sqrt{\Omega^2+\delta^2}
@@ -494,10 +454,52 @@ Then, we see that
 \Omega_\mathit{eff}=\sqrt{\left(\frac{\Gamma^2S_0}{2}\right)^2 + \delta^2}
 \end{equation}
 
-Then, according to \cite{RamanBeamSplit} and \cite{footAtomicPhysics}, we can say that 
-\begin{equation} \label{KorsunskysJewel}
-\Omega_\mathit{Raman}=\frac{2\Omega_1\Omega_2}{\Delta}
+\begin{equation}
+\Omega = \frac{-eE_0}{\hbar}\langle e |\vec{r}|g\rangle=\frac{\vec{d}E_0}{\hbar}
 \end{equation}
+
+%Then, according to \cite{RamanBeamSplit} and \cite{footAtomicPhysics}, we can say that 
+%\begin{equation} \label{KorsunskysJewel}
+%\Omega_\mathit{Raman}=\frac{2\Omega_1\Omega_2}{\Delta}
+%\end{equation}
+%Recall the Hamiltonian was given by 
+%
+%\begin{equation}
+%H=H_0+V
+%\end{equation}
+%
+%where 
+
+
+%rotating wave approximation (RWA). Let $H_0$ be the Hamiltonian of our unperturbed system (the atom) and let $V$ be the perturbation (which we will use to model the electric field). 
+%
+%Now, we can move to the interaction picture in the standard way. Let $|\alpha\rangle$ be the eigenstate of $H_0$, the unperturbed Hamiltonian: 
+%
+%\begin{equation}
+%|\alpha\rangle_I=e^{-iE_\alpha t/h}|\alpha\rangle
+%\end{equation}
+%
+%Then, 
+%\begin{align}
+%-i\hbar \frac{d}{dt}|n\rangle = 
+%\end{align}
+
+
+%The Rabi frequencies are given by 
+%
+%\begin{equation}
+%\Omega=\frac{\mu E}{h}
+%\end{equation} \cite{hilbornNoGetConfused}
+%where $\mu$ is the dipole moment matrix element describing the coupling between the electric field and the atom. 
+
+Hilborn gives an expression for $\mu^2$ in terms of the oscillator strength, which I've found in two places \cite{safronovaTheory} \cite{NISTasd} to be about .7. However, I think I need to apply the Wigner-Eckhart theorem as explained in \cite{demilleBudkerKimball}. This also matches Gallagher's answer. 
+
+Therefore, we see that 
+
+
+
+
+
 
   \section{Calculation of ideal intensities}
 
