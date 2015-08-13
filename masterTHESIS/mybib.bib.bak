@@ -257,6 +257,17 @@
   Date-modified            = {2012-04-06 17:57:38 -0600}
 }
 
+@PhdThesis{gustavsonThesis,
+  Title                    = {Precision Rotation Sensing Using Atom Interferometry},
+  Author                   = {Todd Lyndell Gustavson},
+  School                   = {Stanford University},
+  Year                     = {2000},
+  Month                    = {February},
+
+  Owner                    = {jlarchibald},
+  Timestamp                = {2015.08.05}
+}
+
 @Article{hilbornNoGetConfused,
   Title                    = {Einstein coefficients, cross sections, f values, dipole moments, and all that},
   Author                   = {Robert C. Hilborn},
@@ -334,6 +345,18 @@
   Bdsk-file-1              = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDRBWJGNsYXNzV05TLmtleXNaTlMub2JqZWN0c4AHog4PgAKAA6IREoAEgAVccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QMi4uLy4uLy4uL3JlZmVyZW5jZS9hcnRpY2xlcy8xMzU1LTUxMTFfMTBfM18wMDYucGRm0gkXGBlXTlMuZGF0YYAGTxEBngAAAAABngACAAAJYXJjaGliYWxkAAAAAAAAAAAAAAAAAAAAAAAAx3Kd00grAAAACZYCFjEzNTUtNTExMV8xMF8zXzAwNi5wZGYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI6j8bLAsfsAAAAAAAAAAAAAwADAAAJIAAAAAAAAAAAAAAAAAAAAAhhcnRpY2xlcwAQAAgAAMdy8jMAAAARAAgAAMsDHEwAAAABABAACZYCAAmV4AAFq8sAAJGfAAIAPGFyY2hpYmFsZDpVc2VyczpqbDpyZWZlcmVuY2U6YXJ0aWNsZXM6MTM1NS01MTExXzEwXzNfMDA2LnBkZgAOAC4AFgAxADMANQA1AC0ANQAxADEAMQBfADEAMABfADMAXwAwADAANgAuAHAAZABmAA8AFAAJAGEAcgBjAGgAaQBiAGEAbABkABIAMlVzZXJzL2psL3JlZmVyZW5jZS9hcnRpY2xlcy8xMzU1LTUxMTFfMTBfM18wMDYucGRmABMAAS8AABUAAgAJ//8AANIbHB0eWiRjbGFzc25hbWVYJGNsYXNzZXNdTlNNdXRhYmxlRGF0YaMdHyBWTlNEYXRhWE5TT2JqZWN00hscIiNcTlNEaWN0aW9uYXJ5oiIgXxAPTlNLZXllZEFyY2hpdmVy0SYnVHJvb3SAAQAIABEAGgAjAC0AMgA3AEAARgBNAFQAXABnAGkAbABuAHAAcwB1AHcAhACOAMMAyADQANICdAJ5AoQCjQKbAp8CpgKvArQCwQLEAtYC2QLeAAAAAAAAAgEAAAAAAAAAKAAAAAAAAAAAAAAAAAAAAuA=},
   Date-added               = {2012-04-06 17:32:13 -0600},
   Date-modified            = {2012-04-06 17:34:29 -0600}
+}
+
+@Electronic{geodude,
+  Title                    = {Cavendish’s phenomenological derivation of Coulomb’s law},
+  Author                   = {Mike Kovarik},
+  Month                    = {December},
+  Note                     = {retrieved 2015-08-12},
+  Url                      = {https://geometrydude.wordpress.com/2012/12/22/cavendishs-phenomenological-derivation-of-coulombs-law/},
+  Year                     = {2012},
+
+  Owner                    = {jlarchibald},
+  Timestamp                = {2015.08.12}
 }
 
 @Article{kurosu_trap_sr,
