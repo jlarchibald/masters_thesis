@@ -4,22 +4,37 @@ In this chapter, we will discuss the design and construction of the Master Laser
 
 \section{Stabilization of Master Laser}
 \subsection{Master Laser Layout}
-The master laser is a 408 nm extended cavity diode laser.
+The master laser is a 408 nm extended cavity diode laser. It consists of a laser diode mounted in a temperature-controlled housing from the Thorlabs LDM21 family of products. It is collimated by a small, aspherical lens\footnote{Thorlabs C570TM-A}. See Fig.\,\ref{master_laser_photo}.
 
-The laser 
+We installed a 3600 lines/inch diffracting grating in a custom mount approximately 2 cm from the aperture of collimating lens. The grating is mounted at such an angle that it selectively couples light with a wavelength near 408 nm back into the laser cavity. The resonant space between the diffraction grating and the collimating lens is what the phrase ``extended cavity'' refers to. The additional boundary conditions imposed on the resonant modes of the laser by the external grating result in a narrowing of the laser's linewidth. 
 
-The diodes themselves are single-spatial mode InGaN diodes that are similar to the diodes used in blu-ray players.
+\begin{figure}
+\centerline{
+\includegraphics[width=0.95\textwidth]{master_laser}}
+\caption[Photograph of Master Laser]{\label{master_laser_photo} The master laser is housed in the black box in the upper right of the picture. The diffraction grating that is used for feedback is mounted on a custom mount close to the master laser aperture. The use of the metal rods that mount the laser directly to the grating and the close proximity of the grating to the laser were found to be necessary for good stability via a process of trial and error.}
+\end{figure}
 
-We first used a Sharp GH04020A2GE low power diode, but then quickly switched to the Sharp GH04P21A2GE diodes for the Master laser \footnote{these were not wavelength-selected.}. However, in order to tune the diode, we tried maintaining a diode at 60$^\circ$C, but this resulted in rapid degradation of the diode and loss of power. 
+\subsection{Master Laser Diodes}
+The diodes are single-spatial mode InGaN diodes that are very similar to the diode lasers used in Blu-ray players. 
+%I think 
 
-Thus, we found ourselves obligated to acquire several diodes that had been wavelength selected by the manufacturer. As backup diodes, we also bought some diodes that had been removed from blu-ray players on eBay and wavelength-selected them ourselves. \footnote{I have no idea what accounts for the variation between diodes}. 
+We ordered a wavelength-selected diode from the distributor (i.e. the distributor performed measurements and binned the parts based on their output wavelengths).The current Master Laser is a Mitsubishi ML320G2. 
+As backup diodes, we also bought $\sim 10^1$ diodes on eBay that had been removed from Blu-ray or HDDVD players and measured their wavelengths in order to bin them ourselves. Some of these diodes were ultimately used in the slave lasers.
+
+We initially tried to build the Master Laser using a non-wavelength-selected Sharp GH04020A2GE low power diode, which we could not stabilize for unknown reasons. We quickly switched to a non-wavelength-selected Sharp GH04P21A2GE diode for the Master laser. However, this laser's free-running wavelength at 25$^\circ$C was far too low. In order to tune this diode to the correct wavelength, we found that we had to maintain the diode at a temperature of $\sim$60$^\circ$C. This resulted in rapid degradation of the diode and loss of power. 
+
+%unless it was the 3.6 mm form factor, but I don't think so. 
+
 
 \subsection{Master Laser Temperature and Current Selection}
 
-Two factors affecting the wavelength of the Master Laser are the temperature and the current. Using a grating spectrometer, we measured the center wavelength of the bare laser (no grating installed). We have a graph of the temperature and current for all of our lasers. We see that the variation of the center wavelength of the laser is linear to a good approximation over reasonable values of temperature and current.
+The temperature and the current of the laser are two of the main ways we can affect the wavelength of the Master Laser. Using a grating spectrometer, we measured the center wavelength of the bare laser (no grating installed). We have a graph of the temperature and current for all of our lasers. We see that the variation of the center wavelength of the laser is linear to a good approximation over reasonable values of temperature and current.
 
 We used an Ocean Optics spectrometer. The spectrometer has 2048 pixels. The difference in wavelength between adjacent pixels is typically ~.061 nm. % This according to /research/octave/ooSpectrumData12Sep/MasterFile.m using the lambdas variable defined in there.
 Because the wavelength changes only a few nanometers over the entire range of possible temperatures and currents, we calibrated to a mercury source both before and after looking at the spectrum of the laser. 
+
+
+%\footnote{I have no idea what accounts for the variation between diodes}. 
 
 \subsection{Placement of the Grating}
 
@@ -27,12 +42,11 @@ Because the wavelength changes only a few nanometers over the entire range of po
 
 %Installation of a diffraction grating allows us to selectively couple light of particular wavelengths back into 
 
-The fundamental process involved in lasing is amplification of light resonant with a particular mode of the laser cavity via stimulated emission. Ideally, we would like to favor a mode within the diode laser corresponding to our desired wavelength. Furthermore, we can additionally favor modes and narrow the linewidth of our laser by adding yet another resonant cavity outside our laser. We thus install an element to selectively couple light at particular wavelengths back to the laser that will. 
+The fundamental process involved in lasing is amplification of light resonant with a particular mode of the laser cavity via stimulated emission. Ideally, we would like to favor a mode within the diode laser corresponding to our desired wavelength. Furthermore, we can additionally favor modes and narrow the linewidth of our laser by adding yet another resonant cavity outside our laser. We thus install an element to selectively couple light at particular wavelengths back into the laser. 
 
-To do this we construct an Extended Cavity for our diode laser (thereby creating an Extended Cavity Diode Laser or ECDL). The cavity is formed between the front face of the laser and the diffraction grating that we installed. We must ensure that the diffraction grating is installed such that both the angle and the cavity length match our desired wavelength. To this end, we install the grating on a Thorlabs piezoelectric mount.
+To do this we construct an Extended Cavity for our diode laser (thereby creating an Extended Cavity Diode Laser or ECDL). The extended cavity is formed between the front face of the laser and the diffraction grating that we installed. We must ensure that the diffraction grating is installed such that both the angle and the cavity length match our desired wavelength. To this end, we install the grating on a Thorlabs piezoelectric mount.
 
-The custom-made grating holder that I fabricated is on display in figure XXXX. 
-The motion of the piezoelectric mount is not entirely trivial. The PID controller used to keep the things mounted %did I ever tune this up? 
+The custom-made grating holder that I fabricated is on display in Figure\,\ref{master_laser_photo}. The motion of the piezoelectric mount is not entirely trivial. The PID controller used to keep the things mounted %did I ever tune this up? 
 allows for several gains to be set. The ratio between each of these is strategically calculated to ensure that the output of the PID controller circuitry corresponds to motion on the piezos that allows the favored angle for the diffraction grating to track along with the overall change in length of the cavity. 
  
 The diffraction grating is angled so that the 407.771 nm light that we want is directed back into the laser. The condition for this to be the case is 
