@@ -4,14 +4,19 @@ In this chapter, we will discuss the design and construction of the Master Laser
 
 \section{Stabilization of Master Laser}
 \subsection{Master Laser Layout}
-The master laser is a 408 nm extended cavity diode laser(ECDL). It consists of a laser diode mounted in a temperature-controlled housing from the Thorlabs LDM21 family of products. It is collimated by a small, aspherical lens (Thorlabs C570TM-A). See Fig.\,\ref{master_laser_photo}.
+The master laser is a 408 nm extended cavity diode laser(ECDL). It consists of a laser diode mounted in a temperature-controlled housing from the Thorlabs LDM21 family of products. It is collimated by a small, aspherical lens (Thorlabs C570TM-A). A picture of the maseter laser can be seen in Fig.\,\ref{master_laser_photo}.
 
 \begin{figure}
 \centerline{
-\includegraphics[width=0.95\textwidth]{master_laser}}
+\includegraphics[width=0.95\textwidth]{master_laser.JPG}}
 \caption[Photograph of Master Laser]{\label{master_laser_photo} The master laser is housed in the black box in the upper right of the picture. The diffraction grating that is used for feedback is mounted on a custom mount close to the master laser aperture. We initially tried several other configurations. However, after several iterations, we found that the use of the metal rods to directly mechanically couple the laser and grating were necessary for stable single-mode operation. We also found through trial and error that the distance of $\sim$2 cm seemed to work. }
 \end{figure}
 
+\begin{figure}
+\centerline{
+\includegraphics[width=0.95\textwidth]{laser_on_in_housing.JPG}}
+\caption[Photograph of Master Laser Diode]{\label{master_laser_interior_photo} The master laser in its housing. We modified the housing to include an additional temperature sensor (the AD592), which can be seen glued to the top of the copper plate.}
+\end{figure}
 %why did we do the rods? Do I have it in my notes?
 
 \subsection{Master Laser Diodes}
@@ -26,26 +31,50 @@ We initially tried to build the Master Laser using a non-wavelength-selected Sha
 
 We used a compact grating spectrometer from the Ocean Optics USB2000 series to measure the center frequency of the bare laser diodes. This spectrometer uses a diffraction grating to separate light based on its constituent wavelenghts. Light scattered off the diffraction grating is detected by a CCD array consisting of 2048 pixels that is also enclosed in the spectrometer. The average difference in wavelength between adjacent pixels is $\sim$.061 nm. % This according to /research/octave/ooSpectrumData12Sep/MasterFile.m using the lambdas variable defined in there.
 
-The spectrometer resolution and accuracy were both barely good enough for our purposes. The center wavelength of the bare diodes changed only a few nanometers over the entire range of possible temperatures and currents. In order to ensure accurate absolute wavelength measurements, we calibrated to a mercury source both before and after looking at the spectra of the various lasers. We feel confident in our calibrations since Mercury conveniently has spectral lines at 405 and 436 nm, which are close to our target wavelength of 407.771 nm. In order to squeeze the maximum resolution out of the spectrometer, we 
+We tried to maximize the resolution and accuracy of our measurements. The center wavelength of the bare diodes changed only a few nanometers over the entire range of possible temperatures and currents. In order to ensure accurate absolute wavelength measurements, we calibrated to a mercury source both before and after looking at the spectra of the various lasers. We feel confident in our calibrations since Mercury conveniently has spectral lines at 405 and 436 nm, which are close to our target wavelength of 407.771 nm. When analyzing the peaks, we fit the measured data to a Gaussian distribution in hopes of squeezing out some sub-pixel level resolution of the peak location. 
+
+
 
 We also had a Bristol 521 Wavelength meter, which uses a Michelson-Morley interferometer to measure wavelength. However, for the free-running lasers, we used the spectrometer since the linewidth of the free-running diodes was too large for use with the wavelength meter. 
 
 %diagram of which method to use where? 
+The basic 
+
 
 \subsection{Master Laser Temperature and Current Selection}
 
-The temperature and the current of the laser are two of the main means we have for affecting the wavelength of the Master Laser. Using a grating spectrometer, we measured the center wavelength of the bare laser (no grating installed). We were 
+The temperature and the current of the laser are two of the main means we have for affecting the wavelength of the Master Laser. Using a grating spectrometer, we measured the center wavelength of the bare laser (no grating installed). 
+
 
 
 We have a graph of the temperature and current for all of our lasers. We see that the variation of the center wavelength of the laser is linear to a good approximation over reasonable values of temperature and current.
 
 \begin{figure}
-\centerline{
-\includegraphics[width=0.95\textwidth]{Current_and_temperature}}
-\caption[Photograph of Master Laser]{\label{3dCurrentandTgraph} The master laser is housed in the black box in the upper right of the picture. The diffraction grating that is used for feedback is mounted on a custom mount close to the master laser aperture. We initially tried several other configurations. However, after several iterations, we found that the use of the metal rods to directly mechanically couple the laser and grating were necessary for stable single-mode operation. We also found through trial and error that the distance of $\sim$2 cm seemed to work. }
+\centering
+\includegraphics[width=0.7\textwidth]{TVlambda3} 
+\includegraphics[width=0.7\textwidth]{TVlambda2}
+\caption[Graph of Temperatures and Currents]{\label{3dCurrentandTgraph} Representative data of the free-running wavelength of our master laser as a function of nominal current and nominal temperature.}
 \end{figure}
+%possibly not the master? ehhh. IDK. 
 
 %\footnote{I have no idea what accounts for the variation between diodes}. 
+
+\begin{figure}
+\centering
+\includegraphics[width=0.95\textwidth]{wavelength_selected} 
+\caption[Graph of Temperatures and Currents]{\label{3dCurrentandTgraph} Representative data of the free-running wavelength of our master laser as a function of nominal current and nominal temperature.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=0.95\textwidth]{calibrationData} 
+\caption[Graph of Temperatures and Currents]{\label{calibrationData} Data from the calibration using the mercury lamp. We deliberately allowed some of the farther away peaks to saturate in order to improve our signal for the peaks near 408 nm. The black lines represent spectral lines taken from \cite{}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.95\textwidth]{temperatureFit} 
+\caption[Graph of Temperatures and Currents]{\label{3dCurrentandTgraph} Representative data of the free-running wavelength of our master laser as a function of nominal current and nominal temperature.}
+\end{figure}
 
 \subsection{Placement of the Grating}
 
