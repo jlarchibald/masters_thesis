@@ -22,13 +22,13 @@ As backup diodes, we also bought $\sim 10^1$ diodes on eBay that had been remove
 
 We initially tried to build the Master Laser using a non-wavelength-selected Sharp GH04020A2GE low power diode, which we could not stabilize for unknown reasons. We quickly switched to a non-wavelength-selected Sharp GH04P21A2GE diode for the Master laser. However, this laser's free-running wavelength at 25$^\circ$C was far too low. In order to tune this diode to the correct wavelength, we found that we had to maintain the diode at a temperature of $\sim$60$^\circ$C. This resulted in degradation of the diode and loss of power over the course of $\sim 10^2$ days.
 
-\subsection{Method for Measuring Wavelength}
+\subsection{Grating Spectrometer Wavelength Measurements}
 
 We used a compact grating spectrometer from the Ocean Optics USB2000 series to measure the center frequency of the bare laser diodes. This spectrometer uses a diffraction grating to separate light based on its constituent wavelenghts. Light scattered off the diffraction grating is detected by a CCD array consisting of 2048 pixels that is also enclosed in the spectrometer. The average difference in wavelength between adjacent pixels is $\sim$.061 nm. % This according to /research/octave/ooSpectrumData12Sep/MasterFile.m using the lambdas variable defined in there.
 
-The spectrometer resolution and accuracy were both barely good enough for our purposes. The center wavelength of the bare diodes changed only a few nanometers over the entire range of possible temperatures and currents. In order to ensure accurate absolute wavelength measurements, we calibrated to a mercury source both before and after looking at the spectra of the various lasers. We feel confident in our calibrations since Mercury conveniently has spectral lines at 405 and 436 nm, which are close to our target wavelength of 407.771 nm.
+The spectrometer resolution and accuracy were both barely good enough for our purposes. The center wavelength of the bare diodes changed only a few nanometers over the entire range of possible temperatures and currents. In order to ensure accurate absolute wavelength measurements, we calibrated to a mercury source both before and after looking at the spectra of the various lasers. We feel confident in our calibrations since Mercury conveniently has spectral lines at 405 and 436 nm, which are close to our target wavelength of 407.771 nm. In order to squeeze the maximum resolution out of the spectrometer, we 
 
-We used the spectrometer for measuring the free-running lasers instead of, e.g. a Mthe Bristol 521 wavelength meter that we had because the Bristol wavelength meter did 
+We also had a Bristol 521 Wavelength meter, which uses a Michelson-Morley interferometer to measure wavelength. However, for the free-running lasers, we used the spectrometer since the linewidth of the free-running diodes was too large for use with the wavelength meter. 
 
 %diagram of which method to use where? 
 
@@ -39,6 +39,11 @@ The temperature and the current of the laser are two of the main means we have f
 
 We have a graph of the temperature and current for all of our lasers. We see that the variation of the center wavelength of the laser is linear to a good approximation over reasonable values of temperature and current.
 
+\begin{figure}
+\centerline{
+\includegraphics[width=0.95\textwidth]{Current_and_temperature}}
+\caption[Photograph of Master Laser]{\label{3dCurrentandTgraph} The master laser is housed in the black box in the upper right of the picture. The diffraction grating that is used for feedback is mounted on a custom mount close to the master laser aperture. We initially tried several other configurations. However, after several iterations, we found that the use of the metal rods to directly mechanically couple the laser and grating were necessary for stable single-mode operation. We also found through trial and error that the distance of $\sim$2 cm seemed to work. }
+\end{figure}
 
 %\footnote{I have no idea what accounts for the variation between diodes}. 
 
