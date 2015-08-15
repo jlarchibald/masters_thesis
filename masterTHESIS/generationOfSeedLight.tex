@@ -56,18 +56,16 @@ We have a graph of the temperature and current for all of our lasers. We see tha
 \caption[Graph of Temperatures and Currents]{\label{3dCurrentandTgraph} Representative data of the free-running wavelength of our master laser as a function of nominal current and nominal temperature.}
 \end{figure}
 %possibly not the master? ehhh. IDK. 
-
 %\footnote{I have no idea what accounts for the variation between diodes}. 
-
 \begin{figure}
 \centering
 \includegraphics[width=0.95\textwidth]{wavelength_selected} 
-\caption[Graph of Temperatures and Currents]{\label{3dCurrentandTgraph} Representative data of the free-running wavelength of our master laser as a function of nominal current and nominal temperature.}
+\caption[Wavelength selected diodes]{\label{3dCurrentandTgraph} Representative data of the free-running wavelength of several wavelength selected lasers taken at 120 mA.} %temperature? %the ones we picked or someone else did? 
 \end{figure}
 \begin{figure}
 \centering
 \includegraphics[width=0.95\textwidth]{calibrationData} 
-\caption[Graph of Temperatures and Currents]{\label{calibrationData} Data from the calibration using the mercury lamp. We deliberately allowed some of the farther away peaks to saturate in order to improve our signal for the peaks near 408 nm. The black lines represent spectral lines taken from \cite{}}
+\caption[Graph of Temperatures and Currents]{\label{calibrationData} Data from the calibration using the mercury lamp. We deliberately allowed some of the farther away peaks to saturate in order to improve our signal for the peaks near 408 nm. The black lines represent spectral lines taken from the NIST Atomic Spectra Database\cite{NISTasd}. The detected peaks in measured spectrum refers to the peaks that we found in the measured data from the Hg lamp using Octave}
 \end{figure}
 
 \begin{figure}
@@ -82,9 +80,11 @@ We have a graph of the temperature and current for all of our lasers. We see tha
 
 %Installation of a diffraction grating allows us to selectively couple light of particular wavelengths back into 
 
-The fundamental process involved in lasing is amplification of light resonant with a particular mode of the laser cavity via stimulated emission. Ideally, we would like to favor a mode within the diode laser corresponding to our desired wavelength. Furthermore, we can additionally favor modes and narrow the linewidth of our laser by adding yet another resonant cavity outside our laser. We thus install an element to selectively couple light at particular wavelengths back into the laser. 
+The fundamental process involved in lasing is amplification of light resonant with a particular mode of the laser cavity via stimulated emission. Ideally, we would like to favor a mode within the diode laser corresponding to our desired wavelength. 
 
-To do this we construct an Extended Cavity for our diode laser (thereby creating an Extended Cavity Diode Laser or ECDL). The extended cavity is formed between the front face of the laser and the diffraction grating that we installed. We must ensure that the diffraction grating is installed such that both the angle and the cavity length match our desired wavelength. To this end, we install the grating on a Thorlabs piezoelectric mount.
+For this reason, as was mentioned in the introduction, we add yet another resonant cavity outside our laser that can couple light back into the laser.install a diffraction grating in such a way that it couples light back into the laser. This also narrows the linewidth of our laser by  We (as we mentioned in the laser system overview) install an element to selectively couple light at particular wavelengths back into the laser. 
+ Extended Cavity for our diode laser (thereby creating an Extended Cavity Diode Laser or ECDL).
+To do this we construct an The extended cavity is formed between the front face of the laser and the diffraction grating that we installed. We must ensure that the diffraction grating is installed such that both the angle and the cavity length match our desired wavelength. To this end, we install the grating on a Thorlabs piezoelectric mount.
 
 The master laser is grating stabilized using an extended cavity formed by a diffraction grating mounted on a piezoelectric mount.  
 We installed a 3600 lines/inch diffracting grating (Thorlabs model number GH13-36U) in a custom mount approximately 2 cm from the aperture of collimating lens. The grating is mounted at such an angle that it selectively couples light with a wavelength near 408 nm back into the laser cavity. The resonant space between the diffraction grating and the collimating lens is what the phrase ``extended cavity'' refers to. The additional boundary conditions imposed on the resonant modes of the laser by the external grating result in a narrowing of the laser's linewidth. 
