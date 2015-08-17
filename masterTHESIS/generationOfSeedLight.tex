@@ -80,22 +80,31 @@ We have a graph of the temperature and current for all of our lasers. We see tha
 
 %Installation of a diffraction grating allows us to selectively couple light of particular wavelengths back into 
 
-The fundamental process involved in lasing is amplification of light resonant with a particular mode of the laser cavity via stimulated emission. Ideally, we would like to favor a mode within the diode laser corresponding to our desired wavelength. 
+Lasers work by amplifying light resonant with a particular mode of the laser cavity via stimulated emission. Ideally, we would like to favor a mode within the diode laser corresponding to our desired wavelength. In order to accomplish this, we add yet another resonant cavity outside our laser that can couple light back into the laser. 
 
-For this reason, as was mentioned in the introduction, we add yet another resonant cavity outside our laser that can couple light back into the laser.install a diffraction grating in such a way that it couples light back into the laser. This also narrows the linewidth of our laser by  We (as we mentioned in the laser system overview) install an element to selectively couple light at particular wavelengths back into the laser. 
- Extended Cavity for our diode laser (thereby creating an Extended Cavity Diode Laser or ECDL).
-To do this we construct an The extended cavity is formed between the front face of the laser and the diffraction grating that we installed. We must ensure that the diffraction grating is installed such that both the angle and the cavity length match our desired wavelength. To this end, we install the grating on a Thorlabs piezoelectric mount.
+This cavity is formed by a diffraction grating on one side and the entrance of the laser on the other side. This configuration is called an Extended Cavity Diode Laser (ECDL). The grating we selected was a Thorlabs model number GH13-36U, which has 3600 lines/mm. A picture of the grating can be seen in Figure\,\ref{diffractionGratingPhoto}. 
 
-The master laser is grating stabilized using an extended cavity formed by a diffraction grating mounted on a piezoelectric mount.  
-We installed a 3600 lines/inch diffracting grating (Thorlabs model number GH13-36U) in a custom mount approximately 2 cm from the aperture of collimating lens. The grating is mounted at such an angle that it selectively couples light with a wavelength near 408 nm back into the laser cavity. The resonant space between the diffraction grating and the collimating lens is what the phrase ``extended cavity'' refers to. The additional boundary conditions imposed on the resonant modes of the laser by the external grating result in a narrowing of the laser's linewidth. 
-The custom-made grating holder that I fabricated is on display in Figure\,\ref{master_laser_photo}. The motion of the piezoelectric mount is not entirely trivial. The PID controller used to keep the things mounted %did I ever tune this up? 
-allows for several gains to be set. The ratio between each of these is strategically calculated to ensure that the output of the PID controller circuitry corresponds to motion on the piezos that allows the favored angle for the diffraction grating to track along with the overall change in length of the cavity. 
- 
-The diffraction grating is angled so that the 407.771 nm light that we want is directed back into the laser. The condition for this to be the case is 
+
+\begin{figure}
+\centerline{
+\includegraphics[width=0.95\textwidth]{diffractionGrating.JPG}}
+\caption[Photograph of Diffraction Grating]{\label{diffractionGratingPhoto} The diffraction grating before it is installed.}
+\end{figure}
+
+The diffraction grating is angled so that the first order diffraction peak at 407.771 nm light is directed back into the laser. The condition for this to be the case is 
 
 \begin{equation}
-n \lambda = 2 d \cos(\theta),
+n \lambda = 2 d \sin (\theta),
 \end{equation}
+
+where $n$ is the order of the diffraction peak (in our case, $n=1$), $d$ is the spacing between slits (in our case $d=1 inch/3600 = 7.05 \mu m$) and $\theta$ is the angle relative to the normal of our grating. We can therefore calculate that the $\theta$ should be approximately
+\href{http://www.wolframalpha.com/input/?i=arcsin%28+407.771+nm+%2F%282*%281+mm%2F3600%29%29%29+in+degrees}{$47.2^\circ$}.
+
+ We machined a custom grating holder out of Aluminum, which can be seen in Figure\,\ref{master_laser_photo}. The aluminum holder was mounted in a Thorlabs piezoelectric mount, which allows us the necessary fine control of the grating's location and angle over a narrow range of angles.  The grating was mounted approximately 2 cm from the aperture of collimating lens.
+% The grating is mounted at such an angle that it selectively couples light with a wavelength near 408 nm back into the laser cavity. The resonant space between the diffraction grating and the collimating lens is what the phrase ``extended cavity'' refers to. The additional boundary conditions imposed on the resonant modes of the laser by the external grating result in a narrowing of the laser's linewidth. 
+We must ensure that the diffraction grating is installed such that both the angle and the cavity length match our desired wavelength. In order to get the grating aligned initially, we installed a beautiful 
+ The motion of the piezoelectric mount is not entirely trivial. The PID controller used to keep the things mounted %did I ever tune this up? 
+allows for several gains to be set. The ratio between each of these is strategically calculated to ensure that the output of the PID controller circuitry corresponds to motion on the piezos that allows the favored angle for the diffraction grating to track along with the overall change in length of the cavity. 
 
 Where $d$ is the grating spacing, $n$ is an integer and $\theta$ is the angle of incidence to the grating. 
 
