@@ -9,7 +9,7 @@ The master laser is a 408 nm extended cavity diode laser(ECDL). It consists of a
 \begin{figure}
 \centerline{
 \includegraphics[width=0.95\textwidth]{master_laser.JPG}}
-\caption[Photograph of Master Laser]{\label{master_laser_photo} The master laser is housed in the black box in the upper right of the picture. The diffraction grating that is used for feedback is mounted on a custom mount close to the master laser aperture. We initially tried several other configurations. However, after several iterations, we found that the use of the metal rods to directly mechanically couple the laser and grating were necessary for stable single-mode operation. We also found through trial and error that the distance of $\sim$2 cm seemed to work. }
+\caption[Photograph of Master Laser]{\label{master_laser_photo} The master laser is housed in the black box in the upper right of the picture. The diffraction grating that is used for feedback is mounted on a custom mount close to the master laser aperture. We initially tried several other configurations. However, after several iterations, we found that the use of the metal rods to directly mechanically couple the laser and grating were necessary for stable single-mode operation. We also found through trial and error that the distance of $\sim$4 cm seemed to work. }
 \end{figure}
 
 \begin{figure}
@@ -93,46 +93,51 @@ This cavity is formed by a diffraction grating on one side and the entrance of t
 
 The diffraction grating is angled so that the first order diffraction peak at 407.771 nm light is directed back into the laser. The condition for this to be the case is 
 
-\begin{equation}
+\begin{equation} \label{gratingEQn}
 n \lambda = 2 d \sin (\theta),
 \end{equation}
 
-where $n$ is the order of the diffraction peak (in our case, $n=1$), $d$ is the spacing between slits (in our case $d=1 inch/3600 = 7.05 \mu m$) and $\theta$ is the angle relative to the normal of our grating. We can therefore calculate that the $\theta$ should be approximately
+where $n$ is the order of the diffraction peak (in our case, $n=1$), $d$ is the spacing between slits (in our case $d=1 inch/3600 = 7.05 \mu m$) and $\theta$ is the angle of incidence to the grating. We can therefore calculate that the $\theta$ should be approximately
 \href{http://www.wolframalpha.com/input/?i=arcsin%28+407.771+nm+%2F%282*%281+mm%2F3600%29%29%29+in+degrees}{$47.2^\circ$}.
 
- We machined a custom grating holder out of Aluminum, which can be seen in Figure\,\ref{master_laser_photo}. The aluminum holder was mounted in a Thorlabs piezoelectric mount, which allows us the necessary fine control of the grating's location and angle over a narrow range of angles.  The grating was mounted approximately 2 cm from the aperture of collimating lens.
+ We machined a custom grating holder out of Aluminum, which can be seen in Figure\,\ref{master_laser_photo}. The aluminum holder was mounted in a Thorlabs piezoelectric mount, which allows us the necessary fine control of the grating's location and angle over a narrow range of angles.  The grating was mounted approximately 4 cm from the aperture of collimating lens.
 % The grating is mounted at such an angle that it selectively couples light with a wavelength near 408 nm back into the laser cavity. The resonant space between the diffraction grating and the collimating lens is what the phrase ``extended cavity'' refers to. The additional boundary conditions imposed on the resonant modes of the laser by the external grating result in a narrowing of the laser's linewidth. 
-We must ensure that the diffraction grating is installed such that both the angle and the cavity length match our desired wavelength. In order to get the grating aligned initially, we installed a beautiful 
- The motion of the piezoelectric mount is not entirely trivial. The PID controller used to keep the things mounted %did I ever tune this up? 
-allows for several gains to be set. The ratio between each of these is strategically calculated to ensure that the output of the PID controller circuitry corresponds to motion on the piezos that allows the favored angle for the diffraction grating to track along with the overall change in length of the cavity. 
+ We must ensure that the diffraction grating is installed such that both the angle and the cavity length match our desired wavelength. In order to get the grating aligned initially, we turned on the current to the laser until the laser was just below the threshold when it would begin lasing. We then aligned the grating using the threaded actuators on the piezoelectric mount until we saw the output power of the laser increase. This corresponds to the laser starting to lase. The output power of the laser can be monitored by eye or by instrument and it is fairly easy to get a feel for what it should look like when the grating first couples to the laser.
 
-Where $d$ is the grating spacing, $n$ is an integer and $\theta$ is the angle of incidence to the grating. 
+%did I ever tune it to the right wavelength using the Bristol wave meter? 
+In order to stimulate the transition, the master laser must also be tunable over some range. Therefore, the Piezoelectric actuators can be connected to control circuitry that can be used to tune the laser based on a signal derived from transmission through a Strontium vapor cell. 
 
-Furthermore, we would like our cavity's length to increase proportionally with the change in the angle. Thus, from the equilibrium position, we want 
+The control circuitry will consist of a simple PID controller similar in design to the PID controllers used elsewhere in the lab \cite{cjeDiss}. The vapor cell will produce a signal from which we can derive an error signal. The PID controller takes the error signal and produces a feedback signal. This feedback signal can then be used to control the voltage on the Piezoelectric actuators along with the current to the laser. There PID controller's output stage allows the user to select various gains that control the movement of each of the Piezoelectric actuators. 
+%did I ever tune this up? 
+
+We would like to discuss the problem of how to set the relative gains between the piezoelectric actuators. Our goal is to ensure that the grating moves in such a way that the resonance of the cavity it creates changes as smoothly as possible over as wide a range of wavelengths as possible. 
+
+The change in the wavelength reflected from the grating as a function of $\theta$ can be found by examining Eq.\,\ref{gratingEQn}
 
 \begin{equation}
-\frac{d \lambda}{d k} = \frac{d \lambda}{d k},
+    \frac{d\lambda}{d \theta}= \frac{2d}{\lambda} cos(\theta)
+\end{equation}.
+
+However, as we move the grating, we also want to make sure that the cavity length ($L$) changes in such a way that $L/\lambda$ remains constant. 
+
+\begin{equation}
+    \frac{d \lambda}{d L}= \textnormal{constant} 
 \end{equation}
 
-where the LHS represents the derivative of the wavelength favored by the grating angle as a function of the output from the PID controller and the RHS represents the derivative of the wavelength favored by the cavity length as a function of angle. 
+We note that $L$ and $\theta$ are both functions of the piezo actuators. The geometry is straightforward, but involves a lot of terms. We model this in a well-commented Mathematica Notebook included in Appendix\,\ref{GratingRatioAppendix}. The ratio that we find to be about right is 0.478755. In practice we would fine tune this ratio by scanning the piezos and making adjustments to maximize the size of the range over which the laser does not mode hop. However, the calculation is nice to have since some geometries result in surprising ratios (for example, one of the lasers discussed in Ref.\,\cite{cjeDiss} required that the piezos move in opposite directions).
 
-%on some level, we need to know what longitudinal order our wavelength was. I mean, it's not that we just move it out one cavity length to change it by a free spectral range. I don't understand why it doesn't always work better with more light coupled back in. Lasers are weird. 
 
-%couldn't we have done much better? I'm not sure. 
+%\subsection{Calculation of Maximum Safe Intensity}
+%
+%The specifications in the datasheet for the laser diode are valid only when the diode is free running. However, using the laser in an ECDL configuration requires coupling power back into the laser diode. In order to ensure that we did not damage our laser, we performed a brief calculation. We assumed that the maximum current for which the diode is rated corresponds to the maximum amount of power that can be emerging through the front facet of the laser. We put the maximum recommended current of 25 mA through the laser and measured the output to be \footnote{I need to look up where I did these calculations}. Then we measured the efficiency of the grating by moving the grating so that the light was not reflected into the laser. This way, we could could model the external cavity and deduce what the maximum allowable power coming out of the the cavity corresponded to the maximum power coming out of the laser. The maximum allowable current turned out to be around 100 mA. 
 
-\subsection{Calculation of Maximum Safe Intensity}
-In order to avoid killing the laser diode, we assumed that the maximum current for which the diode is rated corresponds to the maximum amount of power that can be emerging through the front facet of the laser. We put the maximum recommended current of 25 mA through the laser and measured the output to be \footnote{I need to look up where I did these calculations}. Then we measured the efficiency of the grating by moving the grating so that the light was not reflected into the laser. This way, we could could model the external cavity and deduce what the maximum allowable power coming out of the the cavity corresponded to the maximum power coming out of the laser. The maximum allowable current turned out to be around 100 mA. 
+%calculation is in part II page 20 
 
 %TODO: look at the peaks of the laser cavity that you did before when Dallin said ``You better make good notes and put that in your thesis''
  
-TODO: put in the T and I vs $\lambda$ graphs. 
 
-We installed the diffraction grating on a custom-made mount. 
 
-TODO: figure out what grating you used 
+%should I discuss how we tuned it to the Bristol Wavemeter? 
 
-Standard 
 
-%check out ooSpectrumData
 
-%do I have wavelength vs. temperature readings? Yes of course. 
