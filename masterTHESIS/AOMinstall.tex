@@ -1,11 +1,19 @@
 \chapter{Installation of AOM}\label{AOMInstallChapter}
 
-We generate shifted beams by sending the seed light through an Acousto-optic Frequency Shifter (AOM)\footnote{haha. Acousto-optic modulator.} using a double pass configuration.\footnote{see figure}. 
+We generate shifted beams by sending the seed light through an Acousto-optic Modulator (AOM)\footnote{also known as an Acousto-optic frequency shifter} using a double pass configuration. This is illustrated in Figure\,\ref{aomDiagramDetail}. A photograph of the AOM can be seen in Figure\,\ref{aom_upclose}.
 
-It is crucially important that we not put too much intensity through the AOM. 
+\begin{figure}
+\centerline{
+\includegraphics[width=0.95\textwidth]{aom_upclose.JPG}}
+\caption[Photograph of AOM]{\label{aom_upclose} The AOM in its place. The aluminum plate that can be seen butting up against the AOM was used only as a guide for initial AOM alignment and was removed in the final system.}
+\end{figure}
+\begin{figure}
+\centerline{
+\includegraphics[width=0.95\textwidth]{diagramOfJustAOM}}
+\caption[AOM diagram]{\label{aomDiagramDetail} Detail of Figure\,\ref{figdiagramOfSetup}. The light from the master laser is depicted entering from the top of the diagram. This beams travels into the AOM itself. The red shifted light is depicted travelling towards the lens and mirror near the lower left side of the diagram. The zeroth order diffracted beam is recollimated and then retroreflected. The blue shifted light is depicted exiting the AOM towards teh top right of the figure.}
+\end{figure}
 
-The AOM we used was a TEF-2500-200-405 made by Brimrose Corporation of America. \footnote{The crystal material was Tellurium Flouride, the center carrier frequency is 2500 MHz, the bandwidth (3dB) was 200 MHz the wavelengtht that it and the associated AR coatings was designed for was 405 nm.} 
-
+The AOM we used was a TEF-2500-200-405 made by Brimrose Corporation of America. The crystal material was Tellurium Flouride, the center carrier frequency is 2500 MHz, the bandwidth (3dB) was 200 MHz. The AOM's anti-reflective coatings are specified to work at 405 nm. 
 \section{Principle of Operation}
 
 The AOM is a crystal with a piezoelectric transducer attached to one side and an acoustic absorber attached to the other side. Acoustic waves are produced by the tranducer. These waves travel across the active area of the AOM crystal and are absorbed by the absorber on the other side. The compression and decompression caused by the travelling acoustic waves changes the index of refraction at various points within the crystal. The resulting alternating pattern of areas of higher and lower index of refraction gives a travelling grating off of which the light can experience Bragg reflection. Because the effective reflective surface is moving, the light scattered off these features is Doppler-shifted and emerges at a distinct angle compared to the incoming light. This allows the AOM to produce frequency-shifted beams. 
@@ -86,7 +94,7 @@ The possibility of using a camera exists. There is an appendix with information 
 
 
 \subsection{Ray Transfer Matrix Analysis of System}
-As a sanity check, we can calculate using an ABCD matrix (ray-transfer matrix) what the beam waist should be for our optical setup. This model can be used to estimate our sensitivity to small changes in the setup. 
+It is crucially important that we not put too much intensity through the AOM. As a sanity check, we can calculate using an ABCD matrix (ray-transfer matrix) what the beam waist should be for our optical setup. This model can be used to estimate our sensitivity to small changes in the setup. So, for example, if the laser diode 
 
 %This is in a lab notebook somewhere. You need to find it there, I think. Or it's in a Mathematica file. 
 %found: the Mathematica files are generalABCDfinding.nb, ABCDwillWeBreakAOM.nb . The m files, well, I think the ones I want are in checkTheWaists_realDATA. 

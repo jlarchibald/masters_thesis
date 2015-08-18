@@ -11,19 +11,6 @@
 In this chapter, we discuss the spectrum analyzer that we built to analyze this system. 
 
 
-\section{Basic Design}
-\begin{figure}
-%    \centerline{\includegraphics[trim=100pt 100pt 100pt 100pt, clip=true, totalheight=0.5\textheight,angle=90]{spectrumAnalyzer}}
-    \centerline{\includegraphics[totalheight=0.3\textheight ]{spectrumAnalyzer}}
-    %\includegraphics[totalheight=0.3\textheight]{testfigure}
-    \caption[]{\label{fig:spectrumAnalyzer}
-    A diagram of the spectrum analyzer. both lasers are coupled to the cavity. One of the mirrors is mounted on piezoelectric devices that allow fine control of its motion. 
-}
-\end{figure} 
-
-The spectrum analyzer is a semiconfocal cavity of length 200 mm. The flat, partially reflective mirror through which light enters the cavity is mounted on a mount that features piezo-electric actuators. At the other end is a curved mirror of focal length 200 mm. Behind this is a photodiode \footnote{the Thorlabs DET XXXXX--probably a DET100A/M or something similar.}.
-The length of the optical cavity in the spectrum analyzer is thus modulated by sweeping the voltage that we put across the piezoelectric crystals. When the cavity length is such that the coupled light is close to a resonance of the cavity, we expect to see higher signal on the photodiode. 
-The piezoelectric actuators are connected to a commercially available piezo control box that sweeps the voltage in a sawtooth wave type pattern, with a frequency $\sim$20Hz. 
 
 \section{Resonance Conditions}
 In order to calculate the Free Spectral Range (FSR) of the cavity, we search for the amount by which the frequency of the coupled light must change as we move from one resonance to the other.\footnote{Look, I was very confused about the factor of 8 for a long time. I now realize that I was simply misinterpreting the normal ray transfer diagram I had in my mind of a confocal cavity. Also, I was not very clear on why semiconfocal was the one where different transverse modes overlap. Since I've found the answers, I figured I might as well put them here.} 
