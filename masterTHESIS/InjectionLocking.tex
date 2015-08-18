@@ -2,7 +2,7 @@
  %(mode matching, measuring photocurrent from lasers, details of optimizing the isolators, some important caveats about not letting the wrong light couple back into the other laser. 
 
 
-In order to achieve injection locking, we must couple the first order diffracted light that came out of the AOM into the laser cavities of each of the slave lasers. In this way, we seed the Slave lasers thereby ensure that they will be coupled to the master laser. 
+In order to achieve injection locking, we must couple the first order diffracted light that came out of the AOM into the laser cavities of each of the slave lasers. In this way, we seed the Slave lasers, thereby ensuring that they will be coupled to the master laser. 
 The reason for doing this was to get more power than would have been available from just the shifted beams from the master laser alone. 
 
 \section{Theory of Operation}
@@ -10,19 +10,23 @@ The reason for doing this was to get more power than would have been available f
 %why did this work at all? How did we know how much light would work? 
 
 The laser operates on the principle of stimulated emission of radiation. In a free running laser, the laser's output is determined by the interplay of several factors, including the resonant modes of the laser cavity and the spectral characteristics of the laser gain medium. As light from one mode is amplified, more of the circulating power is in that mode. 
-"Mode competition" is the process whereby the power circulating in the laser begins to concentrate in certain, more dominant modes at the expense of others. Since the gain saturation of the diode laser is determined largely by the rate at which electron-hole pairs can be created, it is possible for one mode to dominate the other modes by reaching not only self-saturation, but cross-saturating the gain medium for the other modes. \footnote{saw this on \href{<http://www.rp-photonics.com/gain_saturation.html>}{here}}. 
+"Mode competition" is the process whereby the power circulating in the laser begins to concentrate in certain, more dominant modes at the expense of others. Since the gain saturation of the diode laser is determined largely by the rate at which electron-hole pairs can be created, it is possible for one mode to dominate the other modes by reaching not only self-saturation, but cross-saturating the gain medium for the other modes\cite{RPPhotonicsEncyclopediaAndBuyersGuide}.
 
 Therefore, intuitively, the goal of injection locking is to merely couple enough light into a suitable mode of the slave laser so that this mode has a slight advantage over the other modes. 
 
 %did this stuff even work? 
-\section{Trying to get the Slaves to have suitable modes}
+\section{Initial Slave Configuration}
 
-We selected the slave lasers in a similar way to how we selected the master laser. We used the wavelength-selected diodes \footnote{am I sure?} with the data we took on the Ocean Optics spectrum analyzer. We also adjusted the temperature of the lasers to XXXXXXXXXX.
+We selected the slave lasers in a similar way to how we selected the master laser. We used the wavelength-selected diodes with the data we took on the Ocean Optics spectrometer. The setup and configuration of the slaves was very similar to what we did with the Master Laser, including all the part numbers and control electronics.
+
+
+%Notice that there was something about stray light reflections that we had to be careful of, I think. 
 
 \section{Matching the mode properly}
+We optimized coupling to the laser diode by turning off the slave lasers and disconnecting them from their current supplies. We then used the slave laser diode as a photodiode. We coupled light from the AOM into the laser and measured the photocurrent produced by the laser.
+%In order to couple to the slave lasers, we used the following technique: was that we detached the lasers from their current supplies and then used the lasers 
+%For Slave 1, the half-intensity angle was rated to be 9$^\circ$ in the direction parallel to the polarization. and 19$^\circ$ in the perpendicular direction. 
 
-For Slave 1, the half-intensity angle was rated to be 9$^\circ$ in the direction parallel to the polarization\footnote{note sure, just has symbols for parallel and perpendicular} and 19$^\circ$ in the perpendicular direction. 
+We also adjusted the temperatures of the lasers in order to maximize the range of currents over which they would stay injected. Slave 2 was injection locked. The current produced when coupling the light in from the AOM was 8.2$\mu$A. The current at which it was working was 71.752 mA %(27292 counts on the digital controller) 
+and the temperature was found to be 311.309K. %(59112 counts on the digital controller)\footnote{Lab Notebook section V page 66}. 
 
-Slave 2 was injection locked. The current produced when coupling the light in from the AOM was 8.2$\mu$A. The current at which it was working was 71.752 mA (27292 counts on the digital controller) and the temperature was found to be 311.309K (59112 counts on the digital controller)\footnote{Lab Notebook section V page 66}. 
-
-Notice that there was something about stray light reflections that we had to be careful of, I think. 
