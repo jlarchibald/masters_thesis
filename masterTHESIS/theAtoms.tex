@@ -227,9 +227,21 @@ $F=4$ $^2$P$_{3/2} (5p)$ &  5803 MHz\\ \hline
 $F=5$ $^2$P$_{3/2} (5p)$ &  306 MHz\\ \hline
 $F=6$ $^2$P$_{3/2} (5p)$ &   17121 MHz\\ \hline
 \end{tabular}
-\caption{Hyperfine splitting on higher level.}
+\caption{Hyperfine splitting on $^2$P$_{3/2}$ states}
 \label{tableOfHyperfine deetuings}
 \end{table}
+
+%\section{Magnetic Field}
+
+%Our experiment also has a constant magnetic field pointing in the $\hat{z}$ direction in the interferometry segment of the of the field. This is to break the degeneracy of some of the $M_f$ sublevels that we might couple to. It also prevents the atoms from precessing around stray magnetic fields, which would take them out of the lab-centric coordinate system we would like to keep them in. The derivation of this involves many of the concepts we have discussed in the previous section. However, in the interest of brevity, we simply quote the results from Ref.\,\cite{sobelman_spectra}: 
+%%todo: cite wikipedia (!)
+%%page 195
+%
+%\begin{equation}
+%\Delta E_{M_J M_I}
+%\end{equation}
+
+
 
 %\footnote{I think there is a constant quadrupole term we neglect? IDK}
 
@@ -238,6 +250,8 @@ $F=6$ $^2$P$_{3/2} (5p)$ &   17121 MHz\\ \hline
 %Level & W
 %\end{tabular}
 %\end{table} 
+
+
 
 \section{Electric Dipole Interaction}
 
@@ -292,7 +306,9 @@ where we have used $J_{1}$,$J_{2}$ and $J_{12}$ to refer to the initial values f
 
 We will use this formula twice: once to separate out $I$ and $J$ from $F$ and then once to remove $J$ by splitting out the pieces related to $L$ and $S$.
 
-For the first one, we use Eq.\,\ref{spectatorTheorem} and make the following replacements:
+%credit deMille for the HW problem?
+
+First, we eliminate $F$, we use Eq.\,\ref{spectatorTheorem} and make the following replacements:
 \begin{align}
 J_1&\rightarrow J\\
 J_2&\rightarrow I\\
@@ -312,7 +328,7 @@ F & J & k
 \end{Bmatrix}
 \end{multline}
 
-For the next one, we make the following substitutions: 
+Next, we we make the following substitutions: 
 
 \begin{align}
 J_1&\rightarrow L\\
@@ -333,7 +349,7 @@ J & L & k
 
 Combining Eqs.\,\ref{spectatorTheorem1} and \ref{spectatorTheorem2} gives 
 
-\begin{multline}
+\begin{multline} \label{afterSpectators}
 \langle n' L' S J' I F' ||\mathbf{r}||n L S J I F\rangle = \\
 (-1)^{J'+I+J+k+L'+S+L+k}
 \sqrt{2F+1}\sqrt{2F'+1}\sqrt{2J+1}\sqrt{2J'+1} \quad \times \\
@@ -362,7 +378,7 @@ $F'=5$,$F=5$,$k=1$&$\frac{\sqrt{55}}{5}$\\
 $F'=6$,$F=5$,$k=1$&$- \frac{\sqrt{39}}{3}$\\ 
 \hline
 \end{tabular}
-\caption{Values of 
+\caption{Values of $\langle n' L' S J' I F' ||\mathbf{r}||n L S J I F\rangle / \langle \gamma' L' ||\mathbf{r}^{(k)}|| \gamma L\rangle$ as given in Eq.\,\ref{afterSpectators}
 %\begin{multline}
 %(-1)^{J'+I+J+k+L'+S+L+k}\sqrt{2F+1}\sqrt{2F'+1}\sqrt{2J+1}\sqrt{2J'+1} \quad \times \\
 %\begin{Bmatrix}J' & F' & I\\
@@ -373,7 +389,7 @@ $F'=6$,$F=5$,$k=1$&$- \frac{\sqrt{39}}{3}$\\
 %J & L & k
 %\end{Bmatrix}
 %\end{multline} 
-todo: finish this caption}
+}
 \label{coefficient_calculated}
 \end{table}
 
@@ -386,20 +402,25 @@ We would like to carefully determine the value of this. According to Ref.\ \cite
 \end{equation}
 
 This comes from slightly modifying Equation 3.117. It was necessary to convert it from Gaussian units by taking $d\rightarrow d \sqrt{4 \pi \epsilon_0}$. Furthermore, what Ref.\ \cite{demilleBudkerKimball} calls $\gamma$ must be renamed $A_{ki}$. Here $J'$ refers to the total angular momentum of the electron in the upper state, which in our case is $3/2$. Plugging in our values into Ref.\ \ref{budkerAeqn}, we get that the magnitude of $|\langle f ||d|| i \rangle|$ is \href{http://www.wolframalpha.com/input/?i=sqrt%283*hbar*c%5E3%2F%284*%282*pi*c%2F407.771+nm%29%5E3%29*4*pi*epsilon_0*4*1.41e8*1%2Fs%29}{4.344 electron Bohr Dipole Moments}.
+
 Thus, the agreement between the theoretical calculations of Ref.\ \cite{safronova2photon} and the experimentally-derived values of Ref.\ \cite{NISTasd} is very good.  
 
+\section{Exact specification of states}
 
-%From \cite{demilleBudkerKimball}, we see that the value for $\langle f||d||i\rangle$ that we have obtained is the reduced dipole matrix element. In order to apply it to any one of our given states, we would need to apply the Wigner-Eckhart theorem. 
-%
-%So, for example, to find the coupling between the $^2 P_{3/2}$ state with $m_j=+3/2$, we would just take 
+The last step before calculating the dynamics of our system is to identify the three states that are relevant and calculate the elements of the dipole matrix operator between them
 
-%\begin{equation}
-%\langle ^2 \textnormal{P} _{3/2}|T_q^{(k)}|^2 \textnormal{S}_{1/2}\rangle = 
-%\end{equation}
-%note--old {\rm whatever} is deprecated. Classes need not define it. 
-%maybe use \textnormal
+The slave laser frequency will be tuned so that their frequency is too low to drive a population into the $^2$P$_{3/2}$ states. Therefore, we focus onthe $F=5$ state, since this has the lowest energy (see Table\,\ref{tableOfHyperfine deetuings}).
 
-%crap--what about spin? 
+As for the lower states, both will be in use.
+
+We also assume that we can deal strictly with the $M_f=F$ state for each of our points. This is because we have a magnetic field applied in the $\hat{z}$ direction that breaks our degeneracy, but is small otherwise.
+
+Therefore, in order to calculate our transition rate, we need to use the Wigner-Eckart theorem to calculate the $\mathbf{r}$ operator 
+
+
+Dallin---I will use the Wigner Eckart here. 
+
+
 
 \section{Dynamics}
 
