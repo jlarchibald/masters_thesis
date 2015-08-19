@@ -364,7 +364,8 @@ J & L & k
 \langle \gamma' L' ||\mathbf{r}^{(k)}|| \gamma L\rangle 
 \end{multline}
 
-Now, we can calculate the Wigner 6j symbols using Python \footnote{not sure how to cite: \url{http://docs.sympy.org/dev/modules/physics/wigner.html\#rasch03}}. We make our calculation in Table\, \ref{coefficient_calculated}. Evaluating the Wigner 6j coefficients confirms the selection rules in Eq.\,\ref{FselectionRules}. Secondly, it allows us to relate the reduced dipole moment matrix operator values as calculated using different basis states.
+Now, we can calculate the Wigner 6j symbols using Python %\footnote{not sure how to cite: \url{http://docs.sympy.org/dev/modules/physics/wigner.html\#rasch03}}.
+We make our calculation in Table\, \ref{coefficient_calculated}. Evaluating the Wigner 6j coefficients confirms the selection rules in Eq.\,\ref{FselectionRules}. Secondly, it allows us to relate the reduced dipole moment matrix operator values as calculated using different basis states.
 
 \begin{table}[h!]
 \centering
@@ -415,11 +416,7 @@ As for the lower states, both will be in use.
 
 We also assume that we can deal strictly with the $M_f=F$ state for each of our points. This is because we have a magnetic field applied in the $\hat{z}$ direction that breaks our degeneracy, but is small otherwise.
 
-Therefore, in order to calculate our transition rate, we need to use the Wigner-Eckart theorem to calculate the $\mathbf{r}$ operator 
-
-
-Dallin---I will use the Wigner Eckart here. 
-
+Therefore, in order to calculate our transition rate, we need to use the Wigner-Eckart theorem to calculate the $\mathbf{r}$ operator for the $M_f=4,5$ states.
 
 
 \section{Dynamics}
@@ -449,7 +446,7 @@ Ref.\,\cite{Young1997363} then shows that the effective Rabi frequency, $\Omega_
 \Omega_{\rm eff}=\frac{\Omega_{2i} \Omega_{i1}}{2 \Delta}
 \end{equation}
 
-where $\Delta$ is the one photon detuning. \footnote{todo: unify conventions} 
+where $\Delta$ is the one photon detuning. %\footnote{todo: unify conventions} 
 
 \begin{align}
 \Omega_e&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_2 | e\rangle }{\hbar}\\
@@ -503,17 +500,9 @@ Then, we see that
 %\end{equation} \cite{hilbornNoGetConfused}
 %where $\mu$ is the dipole moment matrix element describing the coupling between the electric field and the atom. 
 
-Hilborn gives an expression for $\mu^2$ in terms of the oscillator strength, which I've found in two places \cite{safronovaTheory} \cite{NISTasd} to be about .7. However, I think I need to apply the Wigner-Eckhart theorem as explained in \cite{demilleBudkerKimball}. This also matches Gallagher's answer. 
+%Hilborn gives an expression for $\mu^2$ in terms of the oscillator strength, which I've found in two places \cite{safronovaTheory} \cite{NISTasd} to be about .7. However, I think I need to apply the Wigner-Eckhart theorem as explained in \cite{demilleBudkerKimball}. This also matches Gallagher's answer. 
 
-Therefore, we see that 
-
-
-
-
-
-
-  \section{Calculation of ideal intensities}
-
-We use the derived formula above to calculate the necessary beam geometries. We can compare this to Chris' thesis. 
+%\section{Calculation of ideal intensities}
+We can use this derived formula above to calculate the necessary beam geometries. %We can compare this to Chris' thesis.
 
 

@@ -94,18 +94,18 @@ We let $\xi\approx e^{.366 (2 \pi)}$ as specified by the waveplate. Then, to rep
 By numerical experimentation, we found that there was a set of angles where we could mount our two waveplates that would result in a polarization for the outgoing light that is orthogonal to the polarization of the incoming light. 
 
 \begin{figure}
-    \centerline{\includegraphics{numericalMethod}}
+    \centerline{\includegraphics{NewNotesSymmetricFig}}
     \caption[Numerical method]{\label{fig:numericalLightControlMethod}
-    Just plot the magnitude of the vertically polarized component as a function of $\theta_1$. I used the slider to control $\theta_2$. Obviously, I'll illustrate this better at some point.}
+    A plot the magnitude of the fraction of the power at the original polarization as a function of the angle of the second waveplate for various retardances.}
 \end{figure}
 
-We found that when we mount one of the waveplates at angle XXXX, we can adjust the vertical component of the polarization of the outgoing light to anywhere between 0 and one as we adjust it from angle XXXX to YYYY. We did this numerically. 
+We found that when we mount one of the waveplates at one particular angle, we can adjust the vertical component of the polarization of the outgoing light to anywhere between 0 and one as we adjust it between two other angles thatwe could calculate. We did this numerically. 
 
 By physical and numerical experimentation, we found that you can achieve these angles by subsequently adjusting each of the two waveplates in turn. Keeping 100\% of the light vertically polarized is easy and can be achieved for any fixed value of $\theta_2$ since $\theta_1$ can simply be adjusted so that the fast axis of the first waveplate aligns with the slow axis of the second. In this way, the total phase shift experienced by all the components is equal.
 
 Thus, to correctly place the second waveplate at the angle  $\theta_2$, we adjust both angles until the outgoing light is entirely horizontally polarized (as measured by the output of the polarizing beam cube). I found that mounting the waveplates at the approximate angles I calculated followed by alternately adjusting each waveplate to minimize the amount of light transmitted achieved the desired result. 
 
-There is some intuition to be had here. One thing I noticed was that, when the waveplates are adjusted so that the outgoing light is horizontally polarized, the magnitude of the components of light in each polarization between the waveplates is equal. This suggests some symmetry. 
+We can build some intuition about this: Notice that when the waveplates are adjusted so that the outgoing light is horizontally polarized, the magnitude of the components of light in each polarization between the waveplates is equal. This suggests some symmetry. 
 
 %Consider that, in this part of the setup, we have a time-reversal symmetry. What I mean is, if we send the outgoing light in backwards, we get the incoming light going backwards. Now, I am going to, at some future point write about the following: 
 
@@ -121,6 +121,13 @@ Now, consider what this would look like time-reversed. If, for example, the phas
 
 Consider light with the second desired polarization being sent backwards into the second polarizer. By symmetry, we can orient the second polarizer such that the components of the light, when described in the basis comprised of our unit vectors that point along the directions of the respective fast axes of the two polarizing waveplates 
 
+We were lucky in our case that the two waveplates had the same retardance and that they both had a retardance between 0.25 and 0.75. In the case that the waveplates have different retardances, we see via numerical solution that one cannot always select an arbitrary amount of power to put at any particular polarization. See figure \ref{asymmetric}
+
+\begin{figure}
+    \centerline{\includegraphics{NewNotesAsymmetricFigure}}
+    \caption[Numerical method]{\label{asymmetric}
+   The maximum power that one can extinguish through the polarizing beam cube given the retardance of the two waveplates. As one expects, if either waveplate has a retardance of 0.5 waves, one can get the full range of possible outgoing polarizations. However, this is only possible for certain combinations of waveplate retardances}
+\end{figure}
 
 %maybe do it differentially? You know? 
 
