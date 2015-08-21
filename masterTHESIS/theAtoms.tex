@@ -48,44 +48,47 @@ J & Total valence electron angular momentum. $\mathbf{J}=\mathbf{L}+\mathbf{S}$ 
 F & Total angular momentum $\mathbf{F}=\mathbf{I}+\mathbf{J}$ \\ \hline
 $m_f$ & Eigenvalue of $\mathbf{F}_z$.\\ \hline
 \end{tabular}
-\caption{The quantum numbers used to describe the internal state of the $^{87}$Sr+ ion. These are conventional choices, the table is only for the reader's convenience.}
+\caption{The quantum numbers used to describe the internal state of the $^{87}$Sr+ ion. These are conventional choices, the table is provided only for convenience.}
 \label{quantumNumberQuickref}
 \end{table}
 
- %why does the ground state J not play into it at all?
+%why does the ground state J not play into it at all?
 %I just realized I have no idea where to find the information on the hyperfine splitting of the Sr+ 
 %also, IDK what to do about the the Nuclear spin numbers of the upper state. 
 %I have this http://link.springer.com/article/10.1007%2FBF00568145
 
+Our experiment is designed to use the $^2$S$_{1/2}$ and $^2$P$_{3/2}$ states. Each of these spectroscopic terms refers to many states: First, we must account for the states that correspond to different values of $F$. Since $\mathbf{F}=\mathbf{I}+\mathbf{J}$, $F$ can take on any values between $|I-J|,|I-J+1|,...,|I+J|$. So, for example, since $I=9/2$, the valid values of $F$ for the $^2$S$_{1/2}$ state are $F=4$ and $F=5$. For the upper states, where $J=3/2$, $F$ can take on the values $3,4,5,6$ 
 
-Our experiment is designed to use the $^2$S$_{1/2}$ and $^2$P$_{3/2}$ states. Each of these spectroscopic terms refers to many states: First, we must account for the states that correspond to different values of $F$. Since $\mathbf{F}=\mathbf{I}+\mathbf{J}$, $F$ can take on any values between $|I-J|,|I-J+1|,...,|I+J|$. So, for example, since $I=9/2$, the valid values of $F$ for the $^2$S$_{1/2}$ state are $F=4$ and $F=5$. For the upper states, $F$ can take on many values. However, in the interest of brevity, we note that there are some dipole transition selection rules governing $F$ \cite{sobelman_spectra}:
-\begin{align}
-&\Delta F=0,\pm 1\\
-&F+F'\geq 1
-\label{FselectionRules}
-\end{align}
-This allows us to immediately restrict our discussion of the $^2$P$_{3/2}$ states to only include the ones with $F=3,4,5,6$. 
-
+%there are some dipole transition selection rules governing $F$ \cite{sobelman_spectra}:
+%\begin{align}
+%&\Delta F=0,\pm 1\\
+%&F+F'\geq 1
+%\label{FselectionRules}
+%\end{align}
+%This allows us to immediately restrict our discussion of the $^2$P$_{3/2}$ states to only include the ones with $F=3,4,5,6$. We have 
+%
 %Now, the selection rules can be determined by the operation of the C-G coefficients. 
 
-\begin{table}[h]
-\centering
-\begin{tabular}{|l|l|||r|}
-\hline
-$F=4$ $^2$S$_{1/2} (5s)$ & Ground state  \\ \hline
-$F=5$ $^2$S$_{1/2} (5s)$ & Ground state  \\ \hline
-$F=3$ $^2$P$_{3/2} (5p)$ & Intermediate state  \\ \hline
-$F=4$ $^2$P$_{3/2} (5p)$ & Intermediate state  \\ \hline
-$F=5$ $^2$P$_{3/2} (5p)$ & Intermediate state  \\ \hline
-$F=6$ $^2$P$_{3/2} (5p)$ & Intermediate state  \\ \hline
-\end{tabular}
-\caption{Relevant states}
-\label{tableOfStates}
-\end{table}
+%\begin{table}[h]
+%\centering
+%\begin{tabular}{|l|l|||r|}
+%\hline
+%$F=4$ $^2$S$_{1/2} (5s)$ & Ground state  \\ \hline
+%$F=5$ $^2$S$_{1/2} (5s)$ & Ground state  \\ \hline
+%$F=3$ $^2$P$_{3/2} (5p)$ & Intermediate state  \\ \hline
+%$F=4$ $^2$P$_{3/2} (5p)$ & Intermediate state  \\ \hline
+%$F=5$ $^2$P$_{3/2} (5p)$ & Intermediate state  \\ \hline
+%$F=6$ $^2$P$_{3/2} (5p)$ & Intermediate state  \\ \hline
+%\end{tabular}
+%\caption{Relevant states}
+%\label{tableOfStates}
+%\end{table}
 
 \section{Review of Hyperfine Splitting}
 
 We now discuss the Hyperfine contribution to our overall Hamiltonian. We will need to understand the hyperfine splitting to allow us to model the 5GHz energy difference between the $F=4$ and $F=5$ $^2$S$_{1/2}$ states. Our discussion will allow us to calculate hyperfine shifts for all the energy levels in our atom based on the hyperfine $A$ and $B$ coefficients, for which we have found experimental and numerical estimates in the literature.
+
+\subsection{Hyperfine basics}
 
 The hyperfine splitting arises from interactions between the nucleus and the electrons. In general, we can split out the Hamiltonian of the Hyperfine interaction as follows: 
 
@@ -93,7 +96,7 @@ The hyperfine splitting arises from interactions between the nucleus and the ele
 H=H_0+H_{\mathrm{hfs}}
 \end{equation}
 
-where $H$ represents the total Hamiltonian of the system, $H_0$ represents the Hamiltonian neglecting the hyperfine interaction and $H_{\mathrm{hfs}}$ represents the piece of the Hamiltonian that takes the hyperfine interaction into account. 
+where $H$ represents the total Hamiltonian of the system, $H_0$ represents the Hamiltonian neglecting the hyperfine interaction and $H_{\mathrm{hfs}}$ represents the piece of the Hamiltonian that models the hyperfine interaction. 
 
 The standard expansion of $H_{\mathrm{hfs}}$ in the literature is:  
 
@@ -119,16 +122,16 @@ Writing the expansion in this form shows explicitly the geometry of the operator
 Before discussing what information $\mathbf{T}^{(k)}$ and $\mathbf{M}^{(k)}$ represent exactly,
 we pause to point out a few geometrical facts. Even if we had no knowledge of the mechanism by which hyperfine interactions occur, we might still arrive at Eq.\,\ref{hfs_hamiltonian_eqn} simply by geometrical considerations.
 Notice that the generator of rotations under which $\mathbf{T}^{(k)}$ is valid is the electron total angular momentum, $\mathbf{J}$, while $\mathbf{M}^{(k)}$ is subject to rotations defined in terms of the nuclear angular momentum operator $\mathbf{I}$. 
-The direct product of these two gives us a value that can be validly rotated using the group generated by the combined angular momentum operator $\mathbf{F}$.\cite{Racah2}\cite{sobelman_spectra}. Thus, each term of our expansion has two parts: one that is a valid tensor operator associated with the geometry of the nucleus and one that is a valid tensor operator associated with the geometry of the electron. By taking the dot product, we see that each term turns out to be a valid tensor operator for the entire atomic system. This is exactly what we would expect.
+The direct product of these two gives us a value that can be validly rotated using the group generated by the combined angular momentum operator $\mathbf{F}$.\cite{Racah2}\cite{sobelman_spectra}. Thus, each term of our expansion has two parts: one that is a valid tensor operator associated with the geometry of the nucleus and one that is a valid tensor operator associated with the geometry of the electron. By combining these two parts using a dot product, we see that each term turns out to be a valid tensor operator for the entire atomic system. This is exactly what we would expect.
 
-The most important contributions to the Hyperfine splitting come from the magnetic dipole contribution and the electric quadrupole contribution \cite{sobelman_spectra}\cite{schwartz_hyperfine_expansion}\cite{cuaMITnotes}. These correspond to the $k=1$ and $k=2$ terms in Eq.\,\ref{TkMk_hyperfine} respectively\cite{experimental_hyperfine_alkali_arimondo}
+The most important contributions to the Hyperfine splitting come from magnetic dipole interactions and electric quadrupole interactions \cite{sobelman_spectra}\cite{schwartz_hyperfine_expansion}\cite{cuaMITnotes}. These correspond to the $k=1$ and $k=2$ terms in Eq.\,\ref{TkMk_hyperfine} respectively\cite{experimental_hyperfine_alkali_arimondo}
 .%\footnote{It is interesting to note that the odd values of $k$ correspond to magnetic interactions while the even values correspond to electric interactions. That is to say that there is no electric dipole interaction between the electrons and the nucleus, but there is a magnetic dipole ($k=1$), while there is an electric quadrupole coupling, but no magnetic quadrupole, etc}
+\subsection{Magnetic Dipole Interaction}
 
-The magnetic dipole contribution can be written as follows: 
-\begin{equation}
+First, we discuss the $k=1$ term, or magnetic dipole interaction term from the expansion in Eq.\,\ref{TkMk_hyperfine}. Classically, we know that the potential energy of a dipole in a magnetic field is proportional to the dot product of the magnetic dipole moment vector with the magnetic field vector ($U=-\mathbf{\mu}\cdot\mathbf{B}$). We also know that the magnetic field at the center of a classical dipole points in the direction of the dipole moment. Therefore, it seems reasonable that the energy due to the interaction of the electron and the nucleus might be somehow proportional to a dot product of two vectors representing their respective angular momenta. Indeed, this turns out to be the case: the magnetic dipole interaction can be written as follows\cite{sobelman_spectra}: 
+\begin{equation}\label{IdotJ}
 W_f=A\mathbf{I}\cdot\mathbf{J}
 \end{equation}
-\cite{sobelman_spectra}
 where $W_f$ represents the energy associated with this coupling and $A$ encapsulates a coupling factor between the nuclear and electronic magnetic moments. 
 %Note that here we are using the normal, three dimensional dot product (i.e. $\mathbf{I}\cdot\mathbf{J}=I_xJ_x+I_yJ_y+I_zJ_z$). 
 
@@ -138,7 +141,10 @@ The product $\mathbf{I}\cdot\mathbf{J}$ can be expanded by noticing that $\mathb
 W_f=\frac{1}{2}A(\mathbf{F}^2-\mathbf{J}^2-\mathbf{I}^2)
 \end{equation}
 
-In a similar way, the $k=2$ term in Eq.\,\label{TkMk_hyperfine} can be shown to correspond to the electric quadrupole interaction. Chapter 6.2 of Ref.\,\cite{sobelman_spectra} gives a good explanation for this. The crux of the argument is that the electric quadrupole interaction  
+We can also see how Eq.\,\ref{IdotJ} represents the $k=1$ term in Eq.\,\ref{TkMk_hyperfine}. We clearly have one tensor operator from the Nuclear angular momentum space ($\mathbf{I}$) along with one vector from the electron angular momentum space ($\mathbf{J}$). The product we get is a scalar that will be invariant under rotations in the total space\footnote{A quick note about constants. In the expansion in Eq.\,\ref{TkMk_hyperfine}, there are different conventions \cite{schwartz_hyperfine_expansion} for deciding which coefficients are pulled into which operators. However, as we will see, the coefficient $A$ as used in Eq.\,\ref{IdotJ} is defined in a standard way and can be looked up in the literature. For this reason, we are specifying $T$ and $M$ only up to a constant. This is fine since the point of showing the expansion is really just to make a comment about the geometry of hyperfine interactions, while the actual calculations only involve the first two terms}.
+
+\subsection{Electric Quadrupole Interaction}
+In a similar way, the $k=2$ term in Eq.\,\label{TkMk_hyperfine} can be shown to correspond to the electric quadrupole interaction. Chapter 6.2 of Ref.\,\cite{sobelman_spectra} gives a good explanation for this. The crux of the argument is that the electric quadrupole interaction,
 \begin{equation}
 W=\int\frac{\rho(\mathbf{r})\rho'(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|}d\mathbf{r}d\mathbf{r'}\\
 \end{equation}
@@ -148,7 +154,7 @@ W=\int d\mathbf{r}d\mathbf{r'}
 \rho(\mathbf{r})\rho'(\mathbf{r}')\sum_k \frac{r'^k}{r^{k+1}}[C^k(\theta,\phi)\cdot C^k(\theta',\phi')] \label{quadrupole_expanded}
 \end{equation}
 
-The $k=2$ term in the integral contained in Eq.\,\ref{quadrupole_expanded} takes the form of an inner product between two rank 2 spherical tensors. This further justifies our expansion of the hyperfine interaction in Eq.\,\cite{TkMk_hyperfine}.
+The $k=2$ term in the integral contained in Eq.\,\ref{quadrupole_expanded} takes the form of an inner product between two rank 2 spherical tensors. Thus, we are satisfied that we have found the $k=2$ terms in Eq.\,\cite{TkMk_hyperfine}.
 
 The inner product between two rank 2 spherical tensors can be easily evaluated using Eq. 4.169 from Sobelman \cite{sobelman_spectra} (the formula can also be found in Ref.\,\cite{Racah2} and is also referred to in Ref.\,\cite{schwartz_hyperfine_expansion}):
 
@@ -166,11 +172,12 @@ where
 $\begin{Bmatrix}
 J & I & F \\
 I & J & k
-\end{Bmatrix}$ represents the Wigner $6j$ symbol. 
+\end{Bmatrix}$ represents the Wigner $6j$ symbol. This formula 
 
 Using the properties of the Wigner $6j$ symbols, it can be shown that \cite{cuaMITnotes}\cite{sobelman_spectra}, 
 
-%\footnote{I will get this from Sobelman. He gives the Racah coefficients in 4.97 - 4.99}, the equation for the electric quadrupole term in the hyperfine interaction takes the form:
+%\footnote{I will get this from Sobelman. He gives the Racah coefficients in 4.97 - 4.99} 
+the equation for the electric quadrupole term in the hyperfine interaction takes the form:
 %\footnote{OK Dallin--I'm not sure if I should even include this.} 
 
 \begin{equation}\label{justQuadrupole}
@@ -181,14 +188,17 @@ where
 C=[F(F+1)-J(J+1)-I(I+1)]
 \end{equation}
 
-We can rewrite Eq.\,\ref{dot_product} in terms of $C$ \footnote{Interestingly, Eq.\,\ref{Wf_dot_product} can also be evaluated using Eq.\,\ref{4169_combine_diff_tensors} using $k=1$.}
+(Interestingly, Eq.\,\ref{Wf_dot_product} can also be evaluated using Eq.\,\ref{4169_combine_diff_tensors} using $k=1$.)
+
+\subsection{Write both hyperfine terms in terms of standard constants}
+We can rewrite Eq.\,\ref{dot_product} in terms of $C$ 
 and then combine it with Eq.\,\ref{justQuadrupole} to get the full hyperfine splitting\cite{cuaMITnotes}: 
 
 \begin{equation}\label{Standard_hyperfine_AB}
 E_{\mathrm{hfs}}=\frac{1}{2}AC+BC(C+1)
 \end{equation}
 
-The coefficients $A$ and $B$ as used in Eqs.\,\ref{Standard_hyperfine_AB} and \ref{Wf_dot_product} are the hyperfine A and B coefficients. $A$ and $B$ are a standard name and notation used in calculating hyperfine energy shifts. Their values can be looked up in the literature\cite{cuaMITnotes}.  We found values for the $A$ and $B$ coefficients for $^{87}$Sr+ in Ref.\,\cite{safronova2photon}. These are summarized in Table\,\ref{AB_table}\footnote{These are \emph{not} the Einstein $A$ and $B$ coefficients relating to radiative transition rate.}.  
+The coefficients $A$ and $B$ as used in Eqs.\,\ref{Standard_hyperfine_AB} and \ref{Wf_dot_product} are the hyperfine A and B coefficients. $A$ and $B$ are a standard name and notation used in calculating hyperfine energy shifts. Their values can be looked up in the literature\cite{cuaMITnotes}.  We found values for the $A$ and $B$ coefficients for $^{87}$Sr+ in Ref.\,\cite{safronova2photon}. These are summarized in Table\,\ref{AB_table}\footnote{These are \emph{not} the Einstein $A$ and $B$ coefficients relating to radiative transition rate. Though, unfortunately, we will have to mention the Einstein $A$ and $B$ coefficients later.}.  
 
 \begin{table}[h]
 \centering
@@ -215,6 +225,7 @@ $5p ^2$P$_{3/2}$&88.94MHz&$88.68$MHz\footnotemark&88.5(54) \\ \hline
 \end{table}
 \footnotetext{Ref.\ref{safronova2photon} reports $B/Q$ as 271MHz$/$b and also says that $Q=0.327(24)$b. We multiplied 271MHz$/$b$\times 0.327(24)$b$=88.68$ MHz, to get the value that appears here.}%NOTICE: IDK how to get this footnote to be guaranteed to appear on the right page.}
 
+\subsection{Calculate hyperfine energy shifts}
 Therefore, we may calculate the splitting between the $F=4$ and $F=5$ $^2$S$_{1/2}$ states using $I=9/2$, $F=4,5$, $L=0$ using Eq.\,\ref{Standard_hyperfine_AB}. In this case, we can see that with $A=1000$MHz, we can calculate the splitting between the $F=4$ and $F=5$ levels: 
 
 \begin{align}
