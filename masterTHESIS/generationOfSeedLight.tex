@@ -20,31 +20,26 @@ The master laser is a 408 nm extended cavity diode laser(ECDL). It consists of a
 %why did we do the rods? Do I have it in my notes?
 
 \subsection{Master Laser Diodes}
-The diodes are single-spatial mode InGaN diodes that are very similar to the diode lasers used in Blu-ray players. 
+The diode used in the master laser is a single-spatial mode InGaN diode that was very similar to the diode lasers used in Blu-ray players. 
 
 The diode in the master laser is a Mitsubishi ML320G2, which was wavelength-selected diode by the distributor (i.e. the distributor performed measurements and binned the parts based on their output wavelengths; we then ordered lasers from their 408 nm bin).
-As backup diodes, we also bought $\sim 10^1$ diodes on eBay that had been removed from Blu-ray or HD-DVD players and measured their wavelengths in order to bin them ourselves. Some of these diodes were ultimately used in the slave lasers.
+As backup diodes, we also bought 30 diodes on eBay that had been removed from Blu-ray or HD-DVD players and measured their wavelengths in order to bin them ourselves. Some of these diodes were ultimately used in the slave lasers.
 
-We initially tried to build the Master Laser using a non-wavelength-selected Sharp GH04020A2GE low power diode, which we could not stabilize for unknown reasons. We quickly switched to a non-wavelength-selected Sharp GH04P21A2GE diode for the Master laser. However, this laser's free-running wavelength at 25$^\circ$C was far too low. In order to tune this diode to the correct wavelength, we found that we had to maintain the diode at a temperature of $\sim$60$^\circ$C. This resulted in degradation of the diode and loss of power over the course of $\sim 10^2$ days.
+We initially tried to build the Master Laser using a non-wavelength-selected Sharp GH04020A2GE low power diode, which we could not stabilize for unknown reasons. We quickly switched to a non-wavelength-selected Sharp GH04P21A2GE diode for the Master laser. However, this laser's free-running wavelength at 25$^\circ$C was far too low. In order to tune this diode to the correct wavelength, we found that we had to maintain the diode at a temperature of $\sim$60$^\circ$C. This resulted in degradation of the diode and loss of power over the course of a few months.
 
 \subsection{Grating Spectrometer Wavelength Measurements}
 
-We used a compact grating spectrometer from the Ocean Optics USB2000 series to measure the center frequency of the bare laser diodes. This spectrometer uses a diffraction grating to separate light based on its constituent wavelenghts. Light scattered off the diffraction grating is detected by a CCD array consisting of 2048 pixels that is also enclosed in the spectrometer. The average difference in wavelength between adjacent pixels is $\sim$.061 nm. % This according to /research/octave/ooSpectrumData12Sep/MasterFile.m using the lambdas variable defined in there.
+In order to tune the master laser to precisely the correct wavelength and to measure the room temperature free running wavelength of the uncharacterized lasers (i.e. the lasers that were bought on eBay and later used in the slave lasers), we used a compact grating spectrometer from the Ocean Optics USB2000 series to measure the center frequency of the bare laser diodes. This spectrometer uses a diffraction grating to separate light based on its constituent wavelenghts. Light scattered off the diffraction grating is detected by a CCD array consisting of 2048 pixels that is also enclosed in the spectrometer. The average difference in wavelength between adjacent pixels is $\sim$.061 nm. % This according to /research/octave/ooSpectrumData12Sep/MasterFile.m using the lambdas variable defined in there.
 
 We tried to maximize the resolution and accuracy of our measurements. The center wavelength of the bare diodes changed only a few nanometers over the entire range of possible temperatures and currents. In order to ensure accurate absolute wavelength measurements, we calibrated to a mercury source both before and after looking at the spectra of the various lasers. We feel confident in our calibrations since Mercury conveniently has spectral lines at 405 and 436 nm, which are close to our target wavelength of 407.771 nm. When analyzing the peaks, we fit the measured data to a Gaussian distribution in hopes of squeezing out some sub-pixel level resolution of the peak location. 
 
-
-
 We also had a Bristol 521 Wavelength meter, which uses a Michelson-Morley interferometer to measure wavelength. However, for the free-running lasers, we used the spectrometer since the linewidth of the free-running diodes was too large for use with the wavelength meter. 
-
 %diagram of which method to use where? 
-The basic 
+%The basic 
 
-
-\subsection{Master Laser Temperature and Current Selection}
+%\subsection{Master Laser Temperature and Current Selection}
 
 The temperature and the current of the laser are two of the main means we have for affecting the wavelength of the Master Laser. Using a grating spectrometer, we measured the center wavelength of the bare laser (no grating installed). 
-
 
 
 We have a graph of the temperature and current for all of our lasers. We see that the variation of the center wavelength of the laser is linear to a good approximation over reasonable values of temperature and current.
