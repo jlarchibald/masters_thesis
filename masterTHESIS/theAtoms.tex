@@ -331,9 +331,10 @@ J_{12} & J_1 & k
 %where we have used $J_{1(2)}$ is the initial quantum number for $\mathbf{J}_{1(2)}$ and $J_{1(2)}'$
 where we have used $J_{1}$,$J_{2}$ and $J_{12}$ to refer to the initial values for their respective operators and $J_{1}'$,$J_{2}'$ and $J_{12}'$ correspond to the final values.
 
-We will use this formula twice: once to separate out $I$ and $J$ from $F$ and then once to remove $J$ by splitting out the pieces related to $L$ and $S$.
+%We will use this formula twice: once to separate out $I$ and $J$ from $F$ and then once to remove $J$ by splitting out the pieces related to $L$ and $S$.
+We will use this formula to separate out $I$ and $J$ from $F$.
 %credit deMille for the HW problem?
-First, we eliminate $F$, we use Eq.\,\ref{spectatorTheorem} and make the following replacements:
+We eliminate $F$, by making the following replacements in Eq.\,\ref{spectatorTheorem}:
 \begin{align}
 J_1&\rightarrow J\\
 J_2&\rightarrow I\\
@@ -353,46 +354,48 @@ F & J & k
 \end{Bmatrix}
 \end{multline}
 
-Next, we make the following substitutions: 
+We could use Eq.\,\ref{spectatorTheorem} again, making additional substitutions in order to get an expression that relates $\langle n' L' S J' I F' ||\mathbf{r}||n L S J I F\rangle$ to $\langle n' L' S J' I F' ||\mathbf{r}||n L S J I F\rangle$. In some ways, this would be the most natural thing to do since the electric dipole moment fundamentally arises out of $L$ and is not related to electron spin. As we mentioned before, the electron spin operator $\mathbf{S}$ commutes with the electric dipole operator. In this sense, the electron spin is a so-called ``spectator'' operator that could be accounted for with the spectator theorem. However, it turns out that values for the reduced electric dipole moment matrix operator that we found in the literature (this is discussed in Section \ref{lookItUp}) are the ones in the $J$ basis (i.e. $\langle n'L'S J'||d^{(k)}||n L S J I F\rangle$).
 
-\begin{align}
-J_1&\rightarrow L\\
-J_2&\rightarrow S\\
-J_{12}&\rightarrow J\\
-\gamma & \rightarrow n
-\end{align}
+%Next, we would make the following substitutions: 
+%
+%\begin{align}
+%J_1&\rightarrow L\\
+%J_2&\rightarrow S\\
+%J_{12}&\rightarrow J\\
+%\gamma & \rightarrow n
+%\end{align}
+%
+%\begin{multline}\label{spectatorTheorem2}
+%\langle\gamma L'SJ'||T^{(k)}||\gamma L S J\rangle=
+%\\(-1)^{L'+S+L+k}\langle\gamma'L'||T^{(k)}||\gamma L\rangle
+%\sqrt{2J+1}\sqrt{2J'+1}
+%\begin{Bmatrix}
+%L' & J' & S \\
+%J & L & k
+%\end{Bmatrix}
+%\end{multline}
+%
+%Combining Eqs.\,\ref{spectatorTheorem1} and \ref{spectatorTheorem2} gives 
 
-\begin{multline}\label{spectatorTheorem2}
-\langle\gamma L'SJ'||T^{(k)}||\gamma L S J\rangle=
-\\(-1)^{L'+S+L+k}\langle\gamma'L'||T^{(k)}||\gamma L\rangle
-\sqrt{2J+1}\sqrt{2J'+1}
-\begin{Bmatrix}
-L' & J' & S \\
-J & L & k
-\end{Bmatrix}
-\end{multline}
-
-Combining Eqs.\,\ref{spectatorTheorem1} and \ref{spectatorTheorem2} gives 
-
-\begin{multline} \label{afterSpectators}
-\langle n' L' S J' I F' ||\mathbf{r}||n L S J I F\rangle = \\
-(-1)^{J'+I+J+k+L'+S+L+k}
-\sqrt{2F+1}\sqrt{2F'+1}\sqrt{2J+1}\sqrt{2J'+1} \quad \times \\
-\begin{Bmatrix}
-J' & F' & I\\
-F & J & k
-\end{Bmatrix}
-\begin{Bmatrix}
-L' & J' & S\\
-J & L & k
-\end{Bmatrix}
-\langle \gamma' L' ||\mathbf{r}^{(k)}|| \gamma L\rangle 
-\end{multline}
+%\begin{multline} \label{afterSpectators}
+%\langle n' L' S J' I F' ||\mathbf{r}||n L S J I F\rangle = \\
+%(-1)^{J'+I+J+k+L'+S+L+k}
+%\sqrt{2F+1}\sqrt{2F'+1}\sqrt{2J+1}\sqrt{2J'+1} \quad \times \\
+%\begin{Bmatrix}
+%J' & F' & I\\
+%F & J & k
+%\end{Bmatrix}
+%\begin{Bmatrix}
+%L' & J' & S\\
+%J & L & k
+%\end{Bmatrix}
+%\langle \gamma' L' ||\mathbf{r}^{(k)}|| \gamma L\rangle 
+%\end{multline}
 
 Now, we can calculate the Wigner 6j symbols using the SymPy module in Python\cite{sympy}\cite{rasch6j}
  %\footnote{not sure how to cite: \url{http://docs.sympy.org/dev/modules/physics/wigner.html\#rasch03}}.
-We make our calculation in Table\, \ref{coefficient_calculated}. %Evaluating the Wigner 6j coefficients confirms the selection rules in Eq.\,\ref{FselectionRules}. 
-This allows us to calculate transition rates to specific hyperfine states in terms of the reduced dipole matrix elements that would be used for $L$ states.
+We make our calculation in Table\,\ref{coefficient_calculated}. %Evaluating the Wigner 6j coefficients confirms the selection rules in Eq.\,\ref{FselectionRules}. 
+This allows us to calculate transition rates to specific hyperfine states in terms of the reduced dipole matrix elements that would be used for $J$ states.
 
 \begin{table}[h!]
 \centering
@@ -407,21 +410,37 @@ $F'=6$,$F=5$,$k=1$&$- \frac{\sqrt{39}}{3}$\\
 \hline
 \end{tabular}
 \caption{Values of $\langle n' L' S J' I F' ||\mathbf{r}||n L S J I F\rangle / \langle \gamma' L' ||\mathbf{r}^{(k)}|| \gamma L\rangle$ as given in Eq.\,\ref{afterSpectators}
-%\begin{multline}
-%(-1)^{J'+I+J+k+L'+S+L+k}\sqrt{2F+1}\sqrt{2F'+1}\sqrt{2J+1}\sqrt{2J'+1} \quad \times \\
-%\begin{Bmatrix}J' & F' & I\\
-%F & J & k
-%\end{Bmatrix}
-%\begin{Bmatrix}
-%L' & J' & S\\
-%J & L & k
-%\end{Bmatrix}
-%\end{multline} 
-}
-\label{coefficient_calculated}
+\label{coefficient_calculated}}
 \end{table}
 
-\section{Looking up the reduced Dipole Moment Matrix Operator}
+%\begin{table}[h!]
+%\centering
+%\begin{tabular}{|c|l|}
+%\hline
+%$F'=3$,$F=4$,$k=1$&$\frac{ \sqrt{21}}{3}$\\ 
+%$F'=4$,$F=4$,$k=1$&$- \frac{\sqrt{55}}{5}$ \\ 
+%$F'=4$,$F=5$,$k=1$&$- \frac{2\sqrt{5}}{5}$\\ 
+%$F'=5$,$F=4$,$k=1$&$\frac{\sqrt{330}}{15}$\\ 
+%$F'=5$,$F=5$,$k=1$&$\frac{\sqrt{55}}{5}$\\ 
+%$F'=6$,$F=5$,$k=1$&$- \frac{\sqrt{39}}{3}$\\ 
+%\hline
+%\end{tabular}
+%\caption{Values of $\langle n' L' S J' I F' ||\mathbf{r}||n L S J I F\rangle / \langle \gamma' L' ||\mathbf{r}^{(k)}|| \gamma L\rangle$ as given in Eq.\,\ref{afterSpectators}
+%%\begin{multline}
+%%(-1)^{J'+I+J+k+L'+S+L+k}\sqrt{2F+1}\sqrt{2F'+1}\sqrt{2J+1}\sqrt{2J'+1} \quad \times \\
+%%\begin{Bmatrix}J' & F' & I\\
+%%F & J & k
+%%\end{Bmatrix}
+%%\begin{Bmatrix}
+%%L' & J' & S\\
+%%J & L & k
+%%\end{Bmatrix}
+%%\end{multline} 
+%}
+%\label{coefficient_calculated}
+%\end{table}
+
+\section{Looking up the reduced Dipole Moment Matrix Operator} \label{lookItUp}
 We would like to carefully determine the value of this. According to Ref.\ \cite{safronova2photon} the magnitude of the dipole moment operator is -4.35075 a. u.(atomic units, $a_0 e$, where $a_0$ is the Bohr radius and $e$ the fundamental charge) as calculated using the all-order, relativistic SD method. It is useful to compare this to the value obtained from at least one other source\footnote{It is easy to make simple mistakes regarding units and conventions.}. According to the NIST atomic spectra database, $A_{ki}=1.41e8$ s$^{-1}$ \cite{NISTasd}. This is the Einstein A coefficient associated with the decays from this state. If this is the case, then we use this equation from Ref.\ \cite{demilleBudkerKimball}:  
 \begin{equation}
 |\langle f ||d|| i \rangle|^2 = (4 \pi \epsilon_0) \frac{3 \hbar c^3}{4 \omega_0^3} (2 J'+1) A_{ki}\label{budkerAeqn}
