@@ -251,7 +251,7 @@ $F=6$ $^2$P$_{3/2} (5p)$ &   17121 MHz\\ \hline
 \label{tableOfHyperfine deetuings}
 \end{table}
 
-\section{Magnetic Field}
+\section{Magnetic Field}\label{zeeman}
 
 The next feature of our system Hamiltonian we need to model involves the constant magnetic field pointing in the $\hat{z}$ direction that exists throughout the entire area where the interferometry will take place. This field has been placed there intentionally to break the degeneracy of some of the $M_f$ sublevels that we might couple to. It also prevents the atoms from precessing around stray magnetic fields, which would take them out of the lab-centric coordinate system we would like to keep them in.
 
@@ -319,17 +319,17 @@ However, our Hamiltonian is still specified using the $F,J,I,L,M_f$ basis. Thus,
 The theorem says that, given a system with two angular momenta, $\mathbf{J}_1$ and $\mathbf{J}_2$ and total angular momentum $\mathbf{J}_{12}=\mathbf{J}_1+\mathbf{J}_2$ 
 
 \begin{multline}\label{spectatorTheorem}
-\langle\gamma J_1'J_2J_{12}'||T^{(k)}||\gamma J_1 J_2 J_{12}\rangle=
+\langle\gamma' J_1'J_2J_{12}'||T^{(k)}||\gamma J_1 J_2 J_{12}\rangle=
 \\(-1)^{J_1'+J_2+J+k}\langle\gamma'J_1'||T^{(k)}||\gamma J_1\rangle
 \sqrt{2J_{12}+1}\sqrt{2J_{12}'+1}
 \begin{Bmatrix}
-J_1' & J_{12}' & J_1 \\
+J_1' & J_{12}' & J_2 \\
 J_{12} & J_1 & k
 \end{Bmatrix}
 \end{multline}
 
 %where we have used $J_{1(2)}$ is the initial quantum number for $\mathbf{J}_{1(2)}$ and $J_{1(2)}'$
-where we have used $J_{1}$,$J_{2}$ and $J_{12}$ to refer to the initial values for their respective operators and $J_{1}'$,$J_{2}'$ and $J_{12}'$ correspond to the final values.
+where we have used $J_{1}$,$J_{2}$ and $J_{12}$ to refer to the initial values for their respective operators and $J_{1}'$,$J_{2}'$ and $J_{12}'$ correspond to the final values. $\gamma$ and $\gamma'$ represent the initial and final values of all other quantum numbers that describe the system.
 
 %We will use this formula twice: once to separate out $I$ and $J$ from $F$ and then once to remove $J$ by splitting out the pieces related to $L$ and $S$.
 We will use this formula to separate out $I$ and $J$ from $F$.
@@ -354,7 +354,7 @@ F & J & k
 \end{Bmatrix}
 \end{multline}
 
-We could use Eq.\,\ref{spectatorTheorem} again, making additional substitutions in order to get an expression that relates $\langle n' L' S J' I F' ||\mathbf{r}||n L S J I F\rangle$ to $\langle n' L' S J' I F' ||\mathbf{r}||n L S J I F\rangle$. In some ways, this would be the most natural thing to do since the electric dipole moment fundamentally arises out of $L$ and is not related to electron spin. As we mentioned before, the electron spin operator $\mathbf{S}$ commutes with the electric dipole operator. In this sense, the electron spin is a so-called ``spectator'' operator that could be accounted for with the spectator theorem. However, it turns out that values for the reduced electric dipole moment matrix operator that we found in the literature (this is discussed in Section \ref{lookItUp}) are the ones in the $J$ basis (i.e. $\langle n'L'S J'||d^{(k)}||n L S J I F\rangle$).
+We could use Eq.\,\ref{spectatorTheorem} again, making additional substitutions in order to get an expression that relates $\langle n' L' S J' I F' ||\mathbf{r}||n L S J I F\rangle$ to $\langle n' L'||\mathbf{r}||n L \rangle$. In some ways, this would be the most natural thing to do since the electric dipole moment is associated with $L$ and is not related to electron spin. As we mentioned before, the electron spin operator $\mathbf{S}$ commutes with the electric dipole operator. In this sense, the electron spin is a so-called ``spectator'' operator that could be accounted for with the spectator theorem (as we have just done with $F$). However, it turns out that values for the reduced electric dipole moment matrix operator that we found in the literature (this is discussed in Section \ref{lookItUp}) are given in the $J$ basis (i.e. $\langle n'L'S J'||d^{(k)}||n L S J I F\rangle$).
 
 %Next, we would make the following substitutions: 
 %
@@ -392,24 +392,24 @@ We could use Eq.\,\ref{spectatorTheorem} again, making additional substitutions 
 %\langle \gamma' L' ||\mathbf{r}^{(k)}|| \gamma L\rangle 
 %\end{multline}
 
-Now, we can calculate the Wigner 6j symbols using the SymPy module in Python\cite{sympy}\cite{rasch6j}
+Now, we can calculate the Wigner 6j symbols using the SymPy module in Python\cite{sympy}\cite{rasch6j}.
  %\footnote{not sure how to cite: \url{http://docs.sympy.org/dev/modules/physics/wigner.html\#rasch03}}.
 We make our calculation in Table\,\ref{coefficient_calculated}. %Evaluating the Wigner 6j coefficients confirms the selection rules in Eq.\,\ref{FselectionRules}. 
 This allows us to calculate transition rates to specific hyperfine states in terms of the reduced dipole matrix elements that would be used for $J$ states.
 
 \begin{table}[h!]
 \centering
-\begin{tabular}{|c|l|}
+\begin{tabular}{|c|l|l|}
 \hline
-$F'=3$,$F=4$,$k=1$&$\frac{ \sqrt{21}}{3}$\\ 
-$F'=4$,$F=4$,$k=1$&$- \frac{\sqrt{55}}{5}$ \\ 
-$F'=4$,$F=5$,$k=1$&$- \frac{2\sqrt{5}}{5}$\\ 
-$F'=5$,$F=4$,$k=1$&$\frac{\sqrt{330}}{15}$\\ 
-$F'=5$,$F=5$,$k=1$&$\frac{\sqrt{55}}{5}$\\ 
-$F'=6$,$F=5$,$k=1$&$- \frac{\sqrt{39}}{3}$\\ 
+$F'=3$,$F=4$&$0.5 \sqrt{7}$&1.32\\ 
+$F'=4$,$F=4$&$- 0.1 \sqrt{165}$&-1.28\\ 
+$F'=4$,$F=5$&$0.2 \sqrt{15}$&0.775\\ 
+$F'=5$,$F=4$&$0.1 \sqrt{110}$&1.05\\ 
+$F'=5$,$F=5$&$- 0.1 \sqrt{165}$&-1.28\\ 
+$F'=6$,$F=5$&$0.5 \sqrt{13}$&1.80\\ 
 \hline
 \end{tabular}
-\caption{Values of $\langle n' L' S J' I F' ||\mathbf{r}||n L S J I F\rangle / \langle \gamma' L' ||\mathbf{r}^{(k)}|| \gamma L\rangle$ as given in Eq.\,\ref{afterSpectators}
+\caption{Values of $\langle n' L' S J' I F' ||\mathbf{r}||n L S J I F\rangle / \langle n'L' S J'||T^{(k)}|| n L S J\rangle$ as given in Eq.\,\ref{afterSpectators}
 \label{coefficient_calculated}}
 \end{table}
 
@@ -450,21 +450,40 @@ We would like to carefully determine the value of this. According to Ref.\ \cite
 
 Plugging in our values into Eq.\,\ref{budkerAeqn}, we get that the magnitude of $|\langle f ||d|| i \rangle|$ is \href{http://www.wolframalpha.com/input/?i=sqrt%283*hbar*c%5E3%2F%284*%282*pi*c%2F407.771+nm%29%5E3%29*4*pi*epsilon_0*4*1.41e8*1%2Fs%29}{4.344 electron Bohr Dipole Moments}.
 
-Thus, the agreement between the theoretical calculations of Ref.\,\cite{safronova2photon} and the experimentally-derived values of Ref.\,\cite{NISTasd} is very good.  
-
-We interpret these values to be  $\langle \gamma' L' ||\mathbf{r}^{(k)}|| \gamma L\rangle$.
+Thus, the agreement between the theoretical calculations of Ref.\,\cite{safronova2photon} and the experimentally-derived values of Ref.\,\cite{NISTasd} is very good. As a practical matter, this gives us enormous confidence since, not only do the experimental and theoretical approaches to finding the electric dipole reduced matrix element match one another, but we can also be sure that our sources are using the same conventions for, e.g. the Wigner Eckart theorem as we are.
 
 \section{Evaluation of Dipole Moment Matrix Operator}
 
 Now we will use the Wigner-Eckart theorem in order to calculate the dipole moment matrix elements using the reduced dipole moment matrix operator. 
 
-The Wigner-Eckart theorem states that 
+The Wigner-Eckart theorem allows us to evaluate the dipole moment operators for all our quantum numbers using the reduced dipole moment matrix operator.
 
-\begin{equation}
+\begin{equation}\label{wignerEckart}
 \langle \xi',j',m'|T^k_q|\xi,j,m\rangle = \frac{\langle \xi',j'||T^k||\xi,j\rangle}{\sqrt{2j'+1}}\langle j,m,k,q|j',m'\rangle
 \end{equation}
 
-We would like to take the reduced dipole matrix operator from the previous section and use it to figure out which states we are using. 
+We evaluated many of the possibly relevant Clebsch Gordan coefficients. We quickly saw that, even though Eq.\,\ref{wignerEckart} shows that there are a lot of different states that we could be coupling between. In order to keep our equations manageable, we would like to briefly pause and make the argument that we can eliminate some of the states from our consideration.
+
+\section{States to be used in the experiment}
+
+In Section \ref{zeeman}, we discussed how we will be using a magnetic field to break the degeneracy between the $m_f$ sublevels of our state.
+In Section \ref{dynamicsSection}, we will discuss the driving of the Raman transitions. There, we will assume that the one photon detuning $\Delta$, is much greater than the two-photon detuning $\delta$. We also expect that our sensitivity to the two-photon detuning $\delta$ is such that by tuning our lasers, we can address any $m_f$ levels we like.
+
+Since we are free to choose which $m_f$ levels to address, we will focus on driving $m_f=0\rightarrow m_f=0$ transitions between the $F=4$ and $F=5$ $^2 S_{0}$ states since these states will be the least sensitive to drifts in the applied magnetic field. 
+
+However, even though we expect the Zeeman splitting to plays a large role in determining which $m_f$ sublevels on the $^2$S$_{1/2}$ states we can couple to, the Zeeman splitting will be much less important in determining which $^2$P$_{3/2}$ we can neglect. In fact, $\Delta$ will be much larger than the splitting between the $m_f$ levels. Therefore, we need to consider all possible intermediate states that can support electric dipole transitions with both ground states. The upper states will
+
+%We can model the upper states as one effective state if they have sufficiently close energies by simply defining some effective state and setting the dipole coupling equal to the sum of the couplings between the other states.
+
+Furthermore, based on the other calculations in Ref.\,\cite{cjeDiss}, we expect that the detuning $\Delta$ will be about the same order of magnitude as the Hyperfine splitting. Therefore, we plan to tune our lasers so that $\Delta$ is below the lowest of the hyperfine levels of the $^2$P$_{3/2}$. According to Ref.\,\cite{tableOfHyperfine deetuings}, this means that we expect to be able to focus exclusively on the $F=5$ states of the $^2$P$_{3/2}$ level.
+
+In other words, we now restrict our analysis to $m_f=0$ for the $^2$S$_{3/2}$ states and the $F=5$$^2$P$_{3/2}$ states.
+
+\section{Evaluation of Clebsch Gordan Coefficients}
+
+We wrote a script to evaluate the Clebsch Gordan coefficients for our system in order to see identify which of the possible $^2$P$_{3/2}$ states we are coupling to. The condition for an intermediate state to be valid is that its $F=5$
+
+We would like to take the reduced dipole matrix operator from the previous section(Section\,\ref{lookItUp})and use it to figure out which states we are using. 
 
 In the experiment, we will couple only to the lowest of these. 
 We are planning to have the answer fairly quickly.
@@ -483,7 +502,7 @@ Therefore, in order to calculate our transition rate, we need to use the Wigner-
 
 
 
-\section{Dynamics}
+\section{Dynamics}\label{dynamicsSection}
 
 We have gotten to the point where we model the dynamics of the system. We follow the work of Refs.\,\cite{Young1997363}, \cite{gustavsonThesis}, \cite{footAtomicPhysics}, \cite{cjeDiss} and \cite{RamanBeamSplit}.
 
