@@ -48,7 +48,7 @@ J & Total valence electron angular momentum. $\mathbf{J}=\mathbf{L}+\mathbf{S}$ 
 F & Total angular momentum $\mathbf{F}=\mathbf{I}+\mathbf{J}$ \\ \hline
 $m_f$ & Eigenvalue of $\mathbf{F}_z$.\\ \hline
 \end{tabular}
-\caption{The quantum numbers used to describe the internal state of the $^{87}$Sr+ ion. These are conventional choices, the table is provided only for convenience.}
+\caption{The quantum numbers used to describe the internal state of the $^{87}$Sr+ ion. These are conventional choices; the table is provided only for convenience.}
 \label{quantumNumberQuickref}
 \end{table}
 
@@ -172,7 +172,7 @@ where
 $\begin{Bmatrix}
 J & I & F \\
 I & J & k
-\end{Bmatrix}$ represents the Wigner $6j$ symbol. This formula 
+\end{Bmatrix}$ represents the Wigner $6j$ symbol. 
 
 Using the properties of the Wigner $6j$ symbols, it can be shown that \cite{cuaMITnotes}\cite{sobelman_spectra}, 
 
@@ -253,7 +253,7 @@ $F=6$ $^2$P$_{3/2} (5p)$ &   17121 MHz\\ \hline
 
 \section{Magnetic Field}\label{zeeman}
 
-The next feature of our system Hamiltonian we need to model involves the constant magnetic field pointing in the $\hat{z}$ direction that exists throughout the entire area where the interferometry will take place. This field has been placed there intentionally to break the degeneracy of some of the $M_f$ sublevels that we might couple to. It also prevents the atoms from precessing around stray magnetic fields, which would take them out of the lab-centric coordinate system we would like to keep them in.
+The next feature of our system Hamiltonian that we need to model involves the constant magnetic field pointing in the $\hat{z}$ direction that exists throughout the entire area where the interferometry will take place. This field has been placed there intentionally to break the degeneracy of some of the $M_f$ sublevels that we might couple to. It also prevents the atoms from precessing around stray magnetic fields, which would take them out of the lab-centric coordinate system we would like to keep them in.
 
 The energy shift due to the Zeeman interaction is simply \cite{sobelman_spectra}: 
 
@@ -471,7 +471,7 @@ In Section \ref{dynamicsSection}, we will discuss the driving of the Raman trans
 
 Since we are free to choose which $m_f$ levels to address, we will focus on driving $m_f=0\rightarrow m_f=0$ transitions between the $F=4$ and $F=5$ $^2 S_{0}$ states since these states will be the least sensitive to drifts in the applied magnetic field. 
 
-However, even though we expect the Zeeman splitting to plays a large role in determining which $m_f$ sublevels on the $^2$S$_{1/2}$ states we can couple to, the Zeeman splitting will be much less important in determining which $^2$P$_{3/2}$ we can neglect. In fact, $\Delta$ will be much larger than the splitting between the $m_f$ levels. Therefore, we need to consider all possible intermediate states that can support electric dipole transitions with both ground states. The upper states will
+However, even though we expect the Zeeman splitting to plays a large role in determining which $m_f$ sublevels on the $^2$S$_{1/2}$ states we can couple to, the Zeeman splitting will be much less important in determining which $^2$P$_{3/2}$ we can neglect. In fact, $\Delta$ will be much larger than the splitting between the $m_f$ levels. Therefore, we need to consider all possible intermediate states that can support electric dipole transitions with both ground states. %since we don't expect them to become populated and they have the same energy, we think that we can just add the couplings to get an effective state.
 
 %We can model the upper states as one effective state if they have sufficiently close energies by simply defining some effective state and setting the dipole coupling equal to the sum of the couplings between the other states.
 
@@ -481,14 +481,16 @@ In other words, we now restrict our analysis to $m_f=0$ for the $^2$S$_{3/2}$ st
 
 \section{Evaluation of Clebsch Gordan Coefficients}
 
-We wrote a script to evaluate the Clebsch Gordan coefficients for our system in order to see identify which of the possible $^2$P$_{3/2}$ states we are coupling to. The condition for an intermediate state to be valid is that its $F=5$
+We can automatically evaluate the Clebsch Gordan coefficients for our system in order to see identify which of the possible $^2$P$_{3/2}$ states we are coupling to. The condition for an intermediate state to be valid is that we must be able to drive a dipole transition to it from the $F=5$$^2$S$_{1/2}$ state and that we must be able to use our other laser to drive the atom from that state to the $F=4$$^2$S$_{1/2}$ state.
+
+This can be stated more mathematically. Let the intermediate state be represented by numbers $F'=5$,$m_f'$. Then, in order to allow dipole transitions from the $F=5$ ground state, 
+\begin{equation}
+\langle (^2P_{3/2}) F',m_f'|\mathbf{d}|(^2S_{1/2})F=5,m_f=0
+\end{equation}
 
 We would like to take the reduced dipole matrix operator from the previous section(Section\,\ref{lookItUp})and use it to figure out which states we are using. 
 
-In the experiment, we will couple only to the lowest of these. 
-We are planning to have the answer fairly quickly.
-
-The last step before calculating the dynamics of our system is to identify the three states that are relevant and calculate the elements of the dipole matrix operator between them
+The last step before calculating the dynamics of our system is to identify the three states that are relevant and calculate the elements of the dipole matrix operator between them 
 
 The slave laser frequency will be tuned so that their frequency is too low to drive a population into the $^2$P$_{3/2}$ states. Therefore, we focus on the $F=5$ state, since this has the lowest energy (see Table\,\ref{tableOfHyperfine deetuings}).
 
