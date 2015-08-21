@@ -11,18 +11,18 @@ In this chapter, we discuss the Fabry-Perot spectrum analyzer that we built to a
 \section{Spectrum Analyzer Design}
 One of the mirrors is mounted on a Thorlabs kinematic piezo mount and attached to a piezo driver designed specifically for spectrum analyzers.
 
-The cavity is designed to be nearly semiconfocal\footnote{I used to think that this was because the transverse modes of a semiconfocal cavity overlap. However, it seems that a concentric cavity would be more likely to have this property. Oh wait. I get it. The semiconfocal cavity has all its transverse modes very small.} This is because the transverse modes of a semiconfocal cavity correspond to longitudinal modes with comparable lengths. This ensures that it is relatively easy to couple the laser to the cavity since we are relatively insensitive to which of the transverse modes we are coupling to. 
+The cavity is designed to be nearly semiconfocal.%\footnote{I used to think that this was because the transverse modes of a semiconfocal cavity overlap. However, it seems that a concentric cavity would be more likely to have this property. Oh wait. I get it. The semiconfocal cavity has all its transverse modes very small.} 
+This is because a semiconfocal configuration is one of several in which many modes are degenerate, such that liht coupling to different transverse modes come into resonnance at the same frequency. This makes it possible to get very sharp, clear features without having to carefully couple to one specific transverse mode of the cavity. 
 
 %\footnote{How do I know whether I'm semiconfocal for all practical purposes? I mean, somehow lower finesse should make me less sensitive to small variations in the cavity length. Furthermore, are there models where the errors never really go away? You know? I guess I mean where it doesn't just become part of the noise. I suppose chaos is one example of this--where arbitrarily high precision is needed to predict even the macroscopic behavior of the system. Is any aspect of this system chaotic?}
 
 \section{Free Spectral Range Basics}
-The Free Spectral Range (FSR) of the cavity is defined as the frequency difference between the cavity's adjacent modes. It is easy to think about this in terms of wavelength. 
-
-For example, if we suppose we have a cavity with just one transverse mode and we have some wavelength $\lambda$ that is resonant with our cavity, then the resonant condition would be that 
+The Free Spectral Range (FSR) of the cavity is defined as the difference in frequency between adjacent resonant longitudinal modes of the cavity. It always works out to be $c/2L$. 
+It is easy to condsider the example of a one-dimensional cavity with just one transverse mode. If we suppose that we have some wavelength $\lambda$ that is resonant with our cavity, then the resonant condition would be that 
 \begin{equation}
 m\lambda=2L
 \end{equation}
-where $m$ is an integer and $L$ is the cavity length (center to center distance between the surfaces of the cavity mirrors). In other words, we require that for a mode to be resonant with our cavity, the cavity length must be divisible by the wavelength of the light. We can find other wavelengths of light that satisfy the resonance condition. So, for example, we might be able to find some wavelength $\lambda'$ that satisifes
+where $m$ is an integer and $L$ is the cavity length (center to center distance between the surfaces of the cavity mirrors). In other words, we require that for a mode to be resonant with our cavity, the total optical path length of a trip around the cavity (in this case, twice the cavity length) must be divisible by the wavelength of the light. We can find other wavelengths of light that satisfy the resonance condition. So, for example, we might be able to find some wavelength $\lambda'$ that satisifes
 \begin{equation}
 (m+1)\lambda'=2L
 \end{equation}
@@ -40,30 +40,31 @@ f-f'&= \frac{(m+1)c}{2L}-\frac{m c}{2L}\\
 where $f'$ and $f'$ are the frequencies associated with $\lambda$ and $\lambda'$ respectively. 
 
 \section{Free Spectral Range for Real Cavities}
-However, in general, there will be more than one transverse mode. The free spectral range may not be easy to calculate because of the different modes of the cavity. One could, in principle, suppress some of the modes by carefully coupling the beam to the cavity.
+In general, there will be more than one transverse mode. The free spectral range remains $c/2L$. However, between any two peaks corresponding to one transverse mode, there will be other resonant peaks corresponding to other transverse modes. Thus, there will be resonances of our cavity spaced closer than the free spectral range. One could, in principle, couple to just a single transverse mode by carefully coupling the beam to the cavity.
 
-However, in our system this is not necessary. We have designed our cavity to be semiconfocal (hemiconfocal), which has the convenient property that many of the transverse modes have the exact same frequency.
+However, in our system this is not necessary. We use a semiconfocal (hemiconfocal), which has the convenient property that the various transverse modes line up in such a way that they fall into four distinct, evenly-spaced groups. Therefore, if we couple to many transverse modes of the cavity, we expect that our effective free spectral range will be $c/8L$.
 
 %\footnote{Look, I was very confused about the factor of 8 for a long time. I now realize that I was simply misinterpreting the normal ray transfer diagram I had in my mind of a confocal cavity. Also, I was not very clear on why semiconfocal was the one where different transverse modes overlap. Since I've found the answers, I figured I might as well put them here.} 
-
-This can be illustrated with a simple ray-tracing argument can also be used. 
+\section{Derivation of $c/8L$}
 \begin{figure}
 \centerline{\includegraphics[height=3cm]{spectrum_analyzer_path.png}}
-\caption{\label{completePath}Illustration of the optical path that makes a complete trip around the semiconfocal cavity. Note that the ray traverses the entire length of the path four times before doubling back on itself. It traverses the path 8 times before ending up in the same place again. This diagram similar to one found on page 277 of Ref.\ \cite{lasersMilonniEberly}}
+\caption{\label{completePath}Illustration of the optical path that makes a complete trip around the semiconfocal cavity. Note that the ray traverses the entire length of the path four times before doubling back on itself. It traverses the path 8 times before ending up in the same place again. This diagram similar to one found on page 277 of Ref.\ \cite{lasersMilonniEberly}. Here, we assume that the ray travels nearly parallel to the central axis of the cavity so that the length of each leg is well-approximated by the length of the cavity, $L$.}
 \end{figure}
 
+This can be illustrated with a simple ray-tracing argument. 
 In order for the cavity to be resonant with our light, the full optical path of the light must be an integer number of wavelengths. The resonance condition is 
 \begin{equation}
 n \lambda = d
 \end{equation}
-where $n$ is an integer, $\lambda$ is the wavelength and $n$ is the length of the optical path in the cavity. 
-For a semiconfocal cavity, we can convince ourselves visually (see Fig.\,\ref{completePath}) that a ray parallel to the optical axis would have to traverse the cavity length 8 times before finally getting back to its starting point.
-We therefore expect that any mode of the cavity will find resonances spaced by $c/8L$. 
+where $n$ is an integer, $\lambda$ is the wavelength and $d$ is the length of the optical path in the cavity. 
+For a semiconfocal cavity, we can convince ourselves visually (see Fig.\,\ref{completePath}) that a ray parallel to the optical axis would traverse the entire length of the cavity 8 times before finally getting back to its starting point. Thus, we expect that $d\approx 8L$.
+We therefore expect that modes in the cavity will have resonant frequencies spaced by $c/8L$. 
 
 
 \section{Using the Paraxial Wave Equation}
 
-We can also show this by solving the paraxial wave equation.
+A more rigorous treatment of this can be done by solving the paraxial wave equation. This model will also allow us to model the exact behavior of our real life cavity (note that in the real cavity, we look at just a handful of wavelengths but we scan the cavity length).
+
 \subsection{Review of Paraxial Wave Equation}
 
 We first examine the equation describing the electric field for different modes of the cavity. This can be derived directly from Maxwell's equations using the paraxial approximation (see, e.g., Refs.\ \cite{lasersMilonniEberly} and \cite{bergeson_amo_notes} for a complete discussion of this). The argument in brief is basically this: 
@@ -90,8 +91,7 @@ The solutions to Eq.\ \ref{final_paraxial_wave_eqn} can be shown to be of the fo
 &\times \exp(ik(x^2+y^2)/2R(z)) \exp(-(x^2+y^2)/w^2(z))
 \end{align}
 
-Here,$\mathcal{E}$ is the magnitude of the electric field. $H_m$ and $H_n$ are the (physicists') Hermite polynomials of degree $m$ and $n$ \footnote{If we ever were to need a real solution to the equation, we could find one by simply taking: $\mathcal{E}+\mathcal{E}*$.}
-. $R(z)$,$z_0$,$w_z$ and $w_0$ are defined in the same way that they are for a Gaussian mode:
+Here, $\mathcal{E}$ is the magnitude of the electric field. $H_m$ and $H_n$ are the (physicists') Hermite polynomials of degree $m$ and $n$\footnote{If we ever were to need a real solution to the equation, we could find one by simply taking: $\mathcal{E}+\mathcal{E}*$.}. $R(z)$,$z_0$,$w_z$ and $w_0$ are defined in the same way that they are for a Gaussian mode:
 
 \begin{align}
 w(z)&=w_0 \sqrt{1+\frac{z^2}{z_0^2}} \\
@@ -103,7 +103,7 @@ z_0&=\frac{\pi w_0^2}{\lambda }
 
 \subsection{Frequencies of Resonant Modes}
 Now, the propagation of the solution to the paraxial wave equation from \ref{solutionToParaxial} can be calculated using Eq.\ \ref{ABCDlawforGaussianBeams}. The resonant condition is that after propagating across the cavity an arbitrary number of times, a beam must be the same\cite{lasersMilonniEberly}.
-Alternatively, we may demand simply that $R(z)$ (which we interpret as the radius of the wavefronts) at the location of each of the mirrors match the radius of the mirror. In order to have a resonant mode (as opposed to a mode that is merely stable), the light must also accumulate a phase change that is some integer multiple of $2\pi$ after traversin the cavity a finite number of times.
+Alternatively, we may demand simply that $R(z)$ (which we interpret as the radius of the wavefronts) at the location of each of the mirrors match the radius of the mirror. This condition on $R$ is sufficient to guarantee that the cavity mode the light is traversing is stable. In order to have a resonant mode (as opposed to a mode that is merely stable), the light must also accumulate a phase change that is some integer multiple of $2\pi$ after traversing the cavity a finite number of times.
 %and that the the cavity length be an integer multiple of wavelength. 
 
 Following this reasoning, Ref.\ \cite{lasersMilonniEberly} gives the following equation for the resonant frequencies of the longitudinal modes of our cavity:
@@ -113,7 +113,7 @@ Following this reasoning, Ref.\ \cite{lasersMilonniEberly} gives the following e
 \end{equation}
 
 %if we model the resonant modes as Laguerre-Gaussian modes. 
-Here, $L$ is the length of the cavity; $q$ is a nonnegative integer; $m$ and $n$ are integers representing the order of the Hermite polynomials in the solution in the $x$ and $y$ directions. $g_i$ is defined for each mirror and is given by $1-L/R_i$.
+Here, $L$ is the length of the cavity; $q$ is a nonnegative integer; $m$ and $n$ are integers representing the order of the Hermite polynomials in the solution in the $x$ and $y$ directions. $g_i$ is defined for each mirror and is given by $1-L/R_i$. The term involving $g_1$ and $g_2$ will depend strictly on our cavity geometry\footnote{It may seem strange that Eq.\,\ref{eqModeF} depends on the sign of $g_1$ and not $g_2$. However, this equation is valid only for stable cavities and the condition for a stable cavity is that $0\leq g_1 g_2 \leq 1$. Thus, we can assume that $g_1$ and $g_2$ have the same sign.}.
 
 From Eq.\,\ref{eqModeF}, we see that the hemiconfocal cavity has the special property that many of the resonances align. One of our mirrors is flat, so $g_1=1-L/\infty=1$, while the other's focal length, $f_2$ is equal to the length of the cavity. Recalling that the normal relationship between radius of curvature and focal length is $R_2=2 f_2$, we see that $g_2=1-L/R_2=1-L/(2 f_2)=1-L/(2 L)=1/2$. Thus, 
 
