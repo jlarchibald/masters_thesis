@@ -460,13 +460,15 @@ Now we will use the Wigner-Eckart theorem in order to calculate the dipole momen
 \langle \xi',j',m'|T^k_q|\xi,j,m\rangle = \frac{\langle \xi',j'||T^k||\xi,j\rangle}{\sqrt{2j'+1}}\langle j,m,k,q|j',m'\rangle
 \end{equation}
 
-where $T^k$ is a rank $k$ spherical tensor, $j'$ and $j$ represent the angular momentum of the final and initial states respectively, $\xi'$ and $\xi$ represent the final and initial values of all other quantum numbers respectively and $\langle j,m,k,q|j',m'\rangle$ is a Clebsch Gordan coefficient. In our case, we are looking to calculate matrix elements  $\langle F',J',L',I',S',m_f'|\mathbf{d}|F,J,L,I,S,m_f\rangle$ in terms of the reduced dipole moment matrix elements we already found using Eq.\,\ref{spectatorTheorem1} and the values we found in Section\,\ref{lookItUp}. Therefore, for us, 
-
+where $T^k$ is a rank $k$ spherical tensor, $j'$ and $j$ represent the angular momentum of the final and initial states respectively, $\xi'$ and $\xi$ represent the final and initial values of all other quantum numbers respectively and $\langle j,m,k,q|j',m'\rangle$ is a Clebsch Gordan coefficient. In our case, we are looking to calculate matrix elements  $\langle F',J',L',I',S',m_f'|\mathbf{d}|F,J,L,I,S,m_f\rangle$, so we have:
 \begin{equation}\label{wignerEckartForUs}
 \langle F',I',J',L',S',m_f'|d^{(1)}_q|F,I,J,L,S,m_f\rangle = \frac{\langle F',I',J',L',S'||T^k||F,I,J,L,S\rangle}{\sqrt{2F'+1}}\langle F,m_f,k=1,q|F',m_f'\rangle
 \end{equation}
 
-Evaluation of the Clebsch Gordan coefficients in Eq.\,\ref{wignerEckartForUs} eliminates most of the possible states.However, there are still many states that do couple. We quickly saw that there are a lot of different states that we could ostensibly drive with dipole radiation. In order to keep our equations manageable, we would like to briefly pause and make the case for eliminating some of the states from our consideration.
+The reduced dipole moment matrix elements that appear here can be evaluated using Eq.\,\ref{spectatorTheorem1} and the values we found in Section\,\ref{lookItUp}. 
+
+However, before we perform these calculations, we would like to we would like to briefly pause and make the case for eliminating some of the states from our consideration in order to keep our equations manageable. 
+Evaluation of the Clebsch Gordan coefficients in Eq.\,\ref{wignerEckartForUs} eliminates most of the possible states.However, there are still many states with dipole-allowed transitions to worry about. 
 
 \section{States to be used in the experiment}
 
@@ -485,51 +487,48 @@ In other words, we now restrict our analysis to $m_f=0$ for the $^2$S$_{3/2}$ st
 
 \section{Evaluation of Clebsch Gordan Coefficients}
 
-We can automatically evaluate the Clebsch Gordan coefficients for our system in order to identify which of the possible $^2$P$_{3/2}$ states we are coupling to. The condition for an intermediate state to be valid is that we must be able to drive a dipole transition to it from the $F=5$$^2$S$_{1/2}$ state and that we must be able to use our other laser to drive the atom from that state to the $F=4$$^2$S$_{1/2}$ state.
-
-This can be stated more mathematically. Let the intermediate state be represented by numbers $F'=5$,$m_f'$. Then, in order to allow dipole transitions from the $F=5$ ground state, 
+We can automatically evaluate the Clebsch Gordan coefficients for our system in order to identify which of the possible $^2$P$_{3/2}$ states we are coupling to. The condition for an intermediate state to be valid is that we must be able to drive a dipole transition to it from the $F=5$ $^2$S$_{1/2}$ state and that we must be able to use our other laser to drive the atom from that state to the $F=4$ $^2$S$_{1/2}$ state. If we let the intermediate state be represented by quantum numbers $F_i=5$,$m_{f,i}$, we can write this condition mathematically as  
 \begin{equation}
-\langle (^2P_{3/2}) F',m_f'|\mathbf{d}|(^2S_{1/2})F=5,m_f=0
+\langle (^2P_{3/2}) F_i,m_{f,i}|\mathbf{d}_{q_1}|(^2S_{1/2})F=5,m_f=0\rangle\neq 0 \Rightarrow \langle F=5,m_f=0,1,q_1|F_i,m_{f,i}\rangle \neq 0  \label{thing1}
+\end{equation}
+In order for the other laser to couple our upper state to the $F=4$ ground state, 
+\begin{equation}
+\langle ((^2S_{1/2})F=4,m_f=0|\mathbf{d}_{q_2}|(^2P_{3/2}) F_i,m_{f,i}\rangle\neq 0 \Rightarrow \langle F_i,m_{f,i},1,q_2|F=4,m_f=0 \rangle \neq 0 \label{thing2}
 \end{equation}
 
-We would like to take the reduced dipole matrix operator from the previous section(Section\,\ref{lookItUp})and use it to figure out which states we are using. 
+Where $q_1$ and $q_2$ represent the components of polarization of the light from Slave 1 and Slave 2 respectively. $q=0$ corresponds to linearly polarized light in the $z$ direction, while $q=\pm 1$ corresponds to cicularly polarized light of different handedness.
 
-The last step before calculating the dynamics of our system is to identify the three states that are relevant and calculate the elements of the dipole matrix operator between them 
+Evaluating the coefficients by brute force, we see that this condition is met only for a handful of coefficients. These are tabulated in Table \ref{nonzeroCG}. Based on the values in the table, we see that we must ensure that our lasers are circularly polarized such that one provides $\sigma+$ light and the other provides $\sigma-$ light. Furthermore, we see that the only state with $F=5$ that we couple to will be the $m_f=1$ or $m_f=-1$ state. For concreteness, we opt for the $q_1=1$, $q_2=-1$,$m_{f,i}=1$ state. 
 
-The slave laser frequency will be tuned so that their frequency is too low to drive a population into the $^2$P$_{3/2}$ states. Therefore, we focus on the $F=5$ state, since this has the lowest energy (see Table\,\ref{tableOfHyperfine deetuings}).
-
-As for the lower states, both will be in use.
-
-We also assume that we can deal strictly with the $M_f=0$ state for each of our points. This is because we have a magnetic field applied in the $\hat{z}$ direction that breaks our degeneracy, but is small otherwise.
-
-Therefore, in order to calculate our transition rate, we need to use the Wigner-Eckart theorem to calculate the $\mathbf{r}$ operator for the $M_f=4,5$ states. 
-
-\section{Selection of States}
-
-
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+$F_i$ & $q_1$ & $q_2$ & $m_{f,i}$ &$\langle  F_i,m_{f,i}|\mathbf{d}_{q_1}|F=5,m_f=0\rangle$&$\langle F=4,m_f=0|\mathbf{d}_{q_2}|F_i,m_{f,i}\rangle$ \\ 
+\hline
+4 & -1 & 1 & -1 &$ \frac{\sqrt{22}}{11} $&$ - \frac{\sqrt{2}}{2} $ \\ 
+4 & 1 & -1 & 1 &$ \frac{\sqrt{22}}{11} $&$ \frac{\sqrt{2}}{2} $ \\ 
+5 & -1 & 1 & -1 &$ \frac{\sqrt{2}}{2} $&$ \frac{\sqrt{33}}{11} $ \\ 
+5 & 1 & -1 & 1 &$ - \frac{\sqrt{2}}{2} $&$ \frac{\sqrt{33}}{11} $ \\
+\end{tabular}
+\caption{The couplings that turn out to give nonzero values for both Eq.\,\ref{thing1} and Eq.\,\ref{thing2}}
+\label{nonzeroCG}
+\end{table}
 
 \section{Dynamics}\label{dynamicsSection}
 
-We have gotten to the point where we model the dynamics of the system. We follow the work of Refs.\,\cite{Young1997363}, \cite{gustavsonThesis}, \cite{footAtomicPhysics}, \cite{cjeDiss} and \cite{RamanBeamSplit}.
+We will now model the dynamics of the system. We mostly quote the work of Refs.\,\cite{Young1997363}, \cite{gustavsonThesis}, \cite{footAtomicPhysics}, \cite{cjeDiss} and \cite{RamanBeamSplit}.
 
-For the most part, we quote the results of Ref.\,\cite{Young1997363}. 
-
-We have now identified three states and we can simplify the Hamiltonian of the system to 
+Following the notation of Ref.\,\cite{Young1997363}, we rewrite our Hamiltonian in terms of three states:
 
 \begin{equation}
 H=\frac{\mathbf{p}}{2m} + 
-\hbar\omega_1 |1\rangle\langle 1 | +
-\hbar\omega_2 |2\rangle\langle 2 | +
+\hbar\omega_e |e\rangle\langle e | +
+\hbar\omega_g |g\rangle\langle g | +
 \hbar\omega_i |i\rangle\langle i | -
 \mathbf{d}\cdot\mathbf{E}
 \end{equation}
 
-where $\omega_1$ is the frequency of Slave 1, while $\omega_2$ is the frequency of Slave 2. 
-
-\begin{equation}
-\mathbf{E}=\mathbf{E_1} \cos(\mathbf{k}\cdot\mathbf{x} - \omega_1 t + \phi_1)
-+\mathbf{E_2} \cos(\mathbf{k}_2\cdot\mathbf{x} - \omega_2 t + \phi_2)
-\end{equation}
+where $|e\rangle$ represents the $F=4$,$m_f=0$,$^2$S$_{1/2}$ state, $|g\rangle$ represents the $F=5$,$m_f=0$,$^2$S$_{1/2}$ state and $|i\rangle$ represents the $F=5$,$m_f=1$,$^2$P$_{3/2}$ state. $\omega_x$ represents the energy of the subscripted state.
 
 Ref.\,\cite{Young1997363} then shows that the effective Rabi frequency, $\Omega_{\textnormal{eff}}$ is given by 
 
@@ -539,10 +538,14 @@ Ref.\,\cite{Young1997363} then shows that the effective Rabi frequency, $\Omega_
 
 where $\Delta$ is the one photon detuning. %\footnote{todo: unify conventions} 
 
+The one photon Rabi Frequencies are defined as:
+
 \begin{align}
 \Omega_e&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_2 | e\rangle }{\hbar}\\
 \Omega_g&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_1 | g\rangle}{\hbar}
 \end{align}
+
+Using the work of the previous sections, we can evaluate $-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_2 | e\rangle$
 
 \begin{equation}
 \Omega_\mathit{eff}=\sqrt{\Omega^2+\delta^2}
