@@ -1,7 +1,15 @@
 \chapter{The Atoms} \label{ChapterAboutTheAtoms}
 \section{Overview of relevant atomic transitions}
 
-The system is designed to stimulate Raman transitions between the hyperfine $^2$S$_{1/2}$ ($5s$) ground states corresponding to $F=4$ and $F=5$. The intermediate state is the $^2$P$_{3/2}$ ($5p$) state. 
+Our objective in this chapter is to calculate the necessary intensity and beam waist that will allow our lasers to impart the $\pi$ and $\pi/2$ pulses to the atoms as they make their way through the chamber. In order to show why we believe our laser can provide the $\pi$ and $\pi/2$ pulses, we must first take a detailed look at the Raman transitions we are trying to drive. 
+
+Thus, the purpose of this chapter is threefold:
+\begin{itemize}
+\item Identify the relevant states of our atoms.
+\item Find and interpret appropriate numerical values for relevant parameters in our Hamiltonian.
+\item Model the dynamics of the atom.
+\item Calculate the appropriate intensity, width and polarization of our laser beams that will allow us to impart the $\pi$ and $\pi/2$ pulses to the atom. 
+\end{itemize}
 
 \begin{figure}
 \centerline{
@@ -10,15 +18,7 @@ The system is designed to stimulate Raman transitions between the hyperfine $^2$
 \caption[Energy Level Diagram for $^{87}$Sr+]{Energy Level Diagram for $^{87}$Sr+. The hyperfine ground states are separated by a small energy. Diagram is not to scale: a scaled diagram would show the splitting between the $F=4$ and $F=5$ states to be about 147,000 times smaller than the splitting between the $^2$S$_{1/2}$ states and the $^2$P$_{3/2}$ states.}
 \end{figure}
 
-Our objective in this chapter is to calculate the necessary intensity and beam waist that will allow our lasers to impart the $\pi$ and $\pi/2$ pulses to the atoms as they make their way through the chamber. In order to do this, we first review the various relevant states of this atom and the quantum numbers used to describe them. Then we move onto a discussion of some of the basic aspects of hyperfine structure. We will then model the atom as a three state system and obtain an expression relating the magnitude and frequency of the electric field to the Rabi frequencies of our two transitions. Finally, we calculate the total transition rate for the 3 state system and we tabulate the beam parameters that will produce the requisite electric field strengths for the correct amounts of time to produce the transition.
-
-The discussion that follows is for calculating the transition amplitudes using values of physical parameters found in the literature. 
-
-In Ref.\ \cite{cjeDiss}, this calculation is performed, but some of the details are left mysterious. In particular, no source is cited for any of the physical parameters of the $^{87}$Sr+ atom (e.g. the dipole moment values, the transition width, the saturation parameter). We hope to reproduce this calculation with more details.  
-
-%\section{Outline of the derivation}
-%
-%First, we will discuss the states of our atom and the relevant quantum numbers. Second, we will start to examine the Hamiltonian, including various perturbations and adjustments that will be needed to make it complete. Next, we will discuss the interaction Hamiltonian by modelling the laser light as a classical radiation field. At this point, we will have shown that, after we have taken into account the complete Hamiltonian and the various selection rules and geometrical considerations, that there are really only three states 
+%In Ref.\ \cite{cjeDiss}, this calculation is performed, but some of the details are left mysterious. In particular, no source is cited for any of the physical parameters of the $^{87}$Sr+ atom (e.g. the dipole moment values, the transition width, the saturation parameter). We hope to reproduce this calculation with more details.  
 
 \section{States and Quantum Numbers}
 
@@ -26,15 +26,15 @@ The Hamiltonian of the Strontium ions is analagous to the Hamiltonian of a singl
 In a single electron atom, the solution to the Schr\"odinger equation describing the electron is solved by separation of variables.
  Each solution is a product of a spherically symmetric function that depends only on the distance $r$ from the nucleus and the spherical harmonics.
 This is because the orbital angular momentum operator $\mathbf{L}$ commutes with such a Hamiltonian. In fact, the orbital angular momentum operator commutes with any Hamiltonian with a spherically symmetric potential.
-Thus, we can use the familiar angular momentum quantum numbers for the eigenstates of any spherically symmetrical Hamiltonian can 
+Thus, we can use the familiar angular momentum quantum numbers for the eigenstates of any spherically symmetrical Hamiltonian.
 
 In the case of $^{87}$Sr+, there is only one electron in the valence band. The inner shells are full and we assume that the symmetry is such that the eigenstates of the atom will also be eigenstates of the orbital angular momentum operator, $\mathbf{L}$.
  The system also involves two other angular momentum operators: the spin operator for the valence electron, $\mathbf{S}$%\footnote{The spin of the electrons on the inner shells cancels and adds to 0} 
-and the spin of the nucleus $\mathbf{I}$ \footnote{Here and throughout, we will use the boldface $\mathbf{I}$ to mean the operator while the unbolded $I$ will mean the eigenvalue.}.
-We will first approximate the Hamiltonian by assuming that there is no coupling that is dependent on the spin. 
-The hyperfine interaction will be modeled as a perturbation on top of this.
+and the spin of the nucleus $\mathbf{I}$ \footnote{Here and throughout, we will use the boldface $\mathbf{I}$ to mean the operator while the unbolded letter ($I$) will mean the associated eigenvalue.}.
+%We will first approximate the Hamiltonian by assuming that there is no coupling that is dependent on the spin. 
+%The hyperfine interaction will be modeled as a perturbation on top of this.
 
-The ``good'' quantum numbers for describing the internal states of a $^{87}$Sr+ ion are $F$,$J$,$L$,$S$,$m_f$ and $n$\cite{experimental_hyperfine_alkali_arimondo}\cite{cuaMITnotes} where $F$,$J$,$L$,$S$,$m_f$ take on their usual meanings (see Table\,\ref{quantumNumberQuickref})
+The ``good'' quantum numbers for describing the internal states of a $^{87}$Sr+ ion are $F$,$J$,$L$,$S$,$m_f$ and $n$\cite{experimental_hyperfine_alkali_arimondo}\cite{cuaMITnotes} where $F$,$J$,$L$,$S$,$m_f$ take on their usual meanings (see Table\,\ref{quantumNumberQuickref}). This is because the Hamiltonian is diagonal in this basis.
 
 \begin{table}[h!]
 \centering
@@ -56,14 +56,17 @@ $m_f$ & Eigenvalue of $\mathbf{F}_z$.\\ \hline
 %I just realized I have no idea where to find the information on the hyperfine splitting of the Sr+ 
 %also, IDK what to do about the the Nuclear spin numbers of the upper state. 
 %I have this http://link.springer.com/article/10.1007%2FBF00568145
-There are some additional selection rules\cite{sobelman_spectra}:
+
+
+Our experiment is designed to use the $^2$S$_{1/2}$ and $^2$P$_{3/2}$ states. Each of these spectroscopic terms refers to many states: First, we must account for the states that correspond to different values of $F$. Since $\mathbf{F}=\mathbf{I}+\mathbf{J}$, $F$ can take on any values between $|I-J|,|I-J+1|,...,|I+J|$. So, for example, since $I=9/2$, the valid values of $F$ for the $^2$S$_{1/2}$ state are $F=4$ and $F=5$. For the upper states, $F$ can take on many values. However, in the interest of brevity, we note that there are some dipole transition selection rules governing $F$ \cite{sobelman_spectra}:
 \begin{align}
 &\Delta F=0,\pm 1\\
 &F+F'\geq 1
 \label{FselectionRules}
 \end{align}
+This allows us to immediately restrict our discussion of the $^2$P$_{3/2}$ states to only include the ones with $F=3,4,5,6$. 
 
-Now, the selection rules can be determined by the operation of the C-G coefficients. 
+%Now, the selection rules can be determined by the operation of the C-G coefficients. 
 
 \begin{table}[h]
 \centering
@@ -81,6 +84,8 @@ $F=6$ $^2$P$_{3/2} (5p)$ & Intermediate state  \\ \hline
 \end{table}
 
 \section{Review of Hyperfine Splitting}
+
+We now discuss the Hyperfine contribution to our overall Hamiltonian. We will need to understand the hyperfine splitting to allow us to model the 5GHz energy difference between the $F=4$ and $F=5$ $^2$S$_{1/2}$ states. Our discussion will allow us to calculate hyperfine shifts for all the energy levels in our atom based on the hyperfine $A$ and $B$ coefficients, for which we have found experimental and numerical estimates in the literature.
 
 The hyperfine splitting arises from interactions between the nucleus and the electrons. In general, we can split out the Hamiltonian of the Hyperfine interaction as follows: 
 
@@ -237,7 +242,7 @@ $F=6$ $^2$P$_{3/2} (5p)$ &   17121 MHz\\ \hline
 
 \section{Magnetic Field}
 
-Our experiment also has a constant magnetic field pointing in the $\hat{z}$ direction that exists throughout the entire area where the interferometry will take place. This is to break the degeneracy of some of the $M_f$ sublevels that we might couple to. It also prevents the atoms from precessing around stray magnetic fields, which would take them out of the lab-centric coordinate system we would like to keep them in.
+The next feature of our system Hamiltonian we need to model involves the constant magnetic field pointing in the $\hat{z}$ direction that exists throughout the entire area where the interferometry will take place. This field has been placed there intentionally to break the degeneracy of some of the $M_f$ sublevels that we might couple to. It also prevents the atoms from precessing around stray magnetic fields, which would take them out of the lab-centric coordinate system we would like to keep them in.
 
 The energy shift due to the Zeeman interaction is simply \cite{sobelman_spectra}: 
 
@@ -257,37 +262,20 @@ For low magnetic fields, we can use the following equation: \cite{sobelman_spect
 \langle{\gamma JIFM|W|\gamma JIFM\rangle = \mu_0 g \frac{F(F+1)+J(J+1)-I(I+1)}{2F(F+1)}m_f H}
 \end{equation}
 
-Eq.\,\ref{zeemanSobelman} shows that the Zeeman splitting is linear as a function of $m_f$. The splitting depends on $g$, the Land\'e $g$ factor of the atom and the magnetic field. We expect the Land\'e $g$ factor to be of order $1$. We could perform a more in-depth analysis of the exact splitting. However, in the experiment, the magnetic field is adjustable and will be tuned to just barely remove the degeneracy between the $m_f$ sublevels. In other words, we will adjust $H$ until the separation between adjacent $m_f$ sublevels is just a few times greater than the linewidth of our laser, which will be on the order of a few hundred Megahertz. Therefore, for the purposes of our calculations here, we will simply assume that the $m_f$ sublevels for each of our states are not degenerate and that the energies differ by 100 MHz.
-% \cite{wikilandeg}: %could use this guy to approximate the dipole moment
-%paschen bach? ehh, idk. 
-
-%The derivation of this involves many of the concepts we have discussed in the previous section. However, in the interest of brevity, we simply quote the results from Ref.\,\cite{sobelman_spectra}: 
-%%todo: cite wikipedia (!)
-%%page 195
-%
-
-%\footnote{I think there is a constant quadrupole term we neglect? IDK}
-
-%\begin{table}
-%\begin{tabular}{|l|r|r|r|}
-%Level & W
-%\end{tabular}
-%\end{table} 
-
-
+Eq.\,\ref{zeemanSobelman} shows that the Zeeman splitting is linear as a function of $m_f$. The splitting depends on $g$, the Land\'e $g$ factor of the atom and the magnetic field. We expect the Land\'e $g$ factor to be of order $1$. We could perform a more in-depth analysis of the exact splitting. However, in the experiment, the magnetic field is adjustable and will be tuned to just barely remove the degeneracy between the $m_f$ sublevels. In other words, we will adjust $H$ until the separation between adjacent $m_f$ sublevels is just a few times greater than the linewidth of our laser, which is on the order of a few hundred Megahertz. Therefore, for the purposes of our calculations here, we will simply assume that the $m_f$ sublevels for each of our states are not degenerate and that the energies differ by 100 MHz.
 
 \section{Electric Dipole Interaction}
 
-We assume that our Hamiltonian has the form 
+The next piece of the Hamiltonian that we need to model involves the interaction with the laser. For our purposes, we will model the laser as an entirely classical light field.  
+
+We start by assuming that our Hamiltonian has the form 
 
 \begin{equation}
-H=H+H_{int}
+H=H+H_{\textnormal{int}}
 \end{equation}
-where $H_0$ is the unperturbed Hamiltonian of the system. $V$ will represen the effect of the lasers on the states. We expect that $V$ will couple the various states together. 
+where $H$ is the unperturbed Hamiltonian of the system. $H_{\textnormal{int}}$ will represen the effect of the lasers on the states. $H_\textnormal{int}$ is time-dependent and it will introduce off-diagonal elements into our matrix that will couple together the different states. 
 
-%$V$ is written in terms of $\mathbf{A}$. We neglect the terms that are higher than second order in $\mathbf{A}$. \cite{demilleBudkerKimball}\cite{cuaMITnotes}.
-
-We make the electric dipole approximation and we assume that $V$ can be written in terms of a dipole interaction:  \cite{demilleBudkerKimball}\cite{cuaMITnotes}\cite{gustavsonThesis}\cite{Young1997363}
+We make the electric dipole approximation and we assume that $H_\textnormal{int}$ can be written in terms of a dipole interaction:  \cite{demilleBudkerKimball}\cite{cuaMITnotes}\cite{gustavsonThesis}\cite{Young1997363}
 
 \begin{equation}
 V=-\mathbf{d}\cdot\mathbf{E}
@@ -297,10 +285,10 @@ V=-\mathbf{d}\cdot\mathbf{E}
 Where $\mathbf{E}$ represents the electric field at the atom %\footnote{which we also assume is constant over the entire length of the atom--this is actually part of the electric dipole approximation} 
 and $\mathbf{d}$ represents the dipole moment operator for our states. 
 
-We must now evaluate the dipole moment operator. 
 
 %The classical definition of the electric dipole moment is $\mathbf{p}=q \mathbf{d}$ where $\mathbf{p}$ is a vector representing the dipole moment, $q$ is the charge, and $\mathbf{d}$ is the displacement vect
 
+We must now evaluate the dipole moment operator. 
 Classically, the dipole moment is a vector quantity that encapsulates the charges and the distance between them. The dipole moment operator that we are looking should, in the classical limit, equal the charge of the electron times some displacement vector that roughly represents the distance between the electron and the nucleus. The dipole moment operator is defined as 
 
 \begin{equation}
@@ -309,9 +297,9 @@ Classically, the dipole moment is a vector quantity that encapsulates the charge
 
 where $\mathbf{d}$ is the dipole moment operator, $e$ is the fundamental charge\footnote{recall, in our convention, it is positive} and $\mathbf{r}$ represents the vector operator describing the electron's position relative to the atom\cite{demilleBudkerKimball}.
 
-The electric dipole moment operator commutes with the $\mathbf{S}$ and $\mathbf{I}$ operators. The rotation operators that may be used to generate rotations of the electric dipole moment operator are $\mathbf{L}$, $\mathbf{J}$ and $\mathbf{F}$.\cite{DeMille_presentation}
+The electric dipole moment operator commutes with the $\mathbf{S}$ and $\mathbf{I}$ operators. The rotation operators that may be used to generate rotations of the electric dipole moment operator are $\mathbf{L}$, $\mathbf{J}$ and $\mathbf{F}$.\cite{DeMille_presentation} This is to say that the electric dipole moment operator is really easiest to talk about and deal with in a basis where we have  $L$ and $m_l$ as quantum numbers. 
 
-In order to evaluate the operator, we make use of an equation similar to Eq.\,\ref{4169_combine_diff_tensors} that is known in some places as the ``spectator theorem''\cite{DeMille_presentation}. Here, we are interested in finding the matrix elements of the dipole operator in terms of the  basis that we have selected.
+However, in our case, we are using $F,J,I,L,M_f$ as our quantum numbers. Thus, we must rewrite the dipole moment operator in our basis. In order to do this, we make use of an equation similar to Eq.\,\ref{4169_combine_diff_tensors} that is known in some places as the ``spectator theorem''\cite{DeMille_presentation}. % Here, we are interested in finding the matrix elements of the dipole operator in terms of the  basis that we have selected.
 
 The theorem says that, given a system with two angular momenta, $\mathbf{J}_1$ and $\mathbf{J}_2$ and total angular momentum $\mathbf{J}_{12}=\mathbf{J}_1+\mathbf{J}_2$ 
 
@@ -443,8 +431,6 @@ The Wigner-Eckart theorem states that
 We would like to take the reduced dipole matrix operator from the previous section and use it to figure out which states we are using. 
 
 We are planning to have the answer fairly quickly.
-
-\section{Exact specification of states}
 
 The last step before calculating the dynamics of our system is to identify the three states that are relevant and calculate the elements of the dipole matrix operator between them
 
