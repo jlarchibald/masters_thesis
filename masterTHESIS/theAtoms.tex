@@ -454,15 +454,19 @@ Thus, the agreement between the theoretical calculations of Ref.\,\cite{safronov
 
 \section{Evaluation of Dipole Moment Matrix Operator}
 
-Now we will use the Wigner-Eckart theorem in order to calculate the dipole moment matrix elements using the reduced dipole moment matrix operator. 
-
-The Wigner-Eckart theorem allows us to evaluate the dipole moment operators for all our quantum numbers using the reduced dipole moment matrix operator.
+Now we will use the Wigner-Eckart theorem in order to calculate the dipole moment matrix elements using the reduced dipole moment matrix operator. The Wigner-Eckart theorem allows us to evaluate the dipole moment operators for all our quantum numbers using the reduced dipole moment matrix operator:
 
 \begin{equation}\label{wignerEckart}
 \langle \xi',j',m'|T^k_q|\xi,j,m\rangle = \frac{\langle \xi',j'||T^k||\xi,j\rangle}{\sqrt{2j'+1}}\langle j,m,k,q|j',m'\rangle
 \end{equation}
 
-We evaluated many of the possibly relevant Clebsch Gordan coefficients. We quickly saw that, even though Eq.\,\ref{wignerEckart} shows that there are a lot of different states that we could be coupling between. In order to keep our equations manageable, we would like to briefly pause and make the argument that we can eliminate some of the states from our consideration.
+where $T^k$ is a rank $k$ spherical tensor, $j'$ and $j$ represent the angular momentum of the final and initial states respectively, $\xi'$ and $\xi$ represent the final and initial values of all other quantum numbers respectively and $\langle j,m,k,q|j',m'\rangle$ is a Clebsch Gordan coefficient. In our case, we are looking to calculate matrix elements  $\langle F',J',L',I',S',m_f'|\mathbf{d}|F,J,L,I,S,m_f\rangle$ in terms of the reduced dipole moment matrix elements we already found using Eq.\,\ref{spectatorTheorem1} and the values we found in Section\,\ref{lookItUp}. Therefore, for us, 
+
+\begin{equation}\label{wignerEckartForUs}
+\langle F',I',J',L',S',m_f'|d^{(1)}_q|F,I,J,L,S,m_f\rangle = \frac{\langle F',I',J',L',S'||T^k||F,I,J,L,S\rangle}{\sqrt{2F'+1}}\langle F,m_f,k=1,q|F',m_f'\rangle
+\end{equation}
+
+Evaluation of the Clebsch Gordan coefficients in Eq.\,\ref{wignerEckartForUs} eliminates most of the possible states.However, there are still many states that do couple. We quickly saw that there are a lot of different states that we could ostensibly drive with dipole radiation. In order to keep our equations manageable, we would like to briefly pause and make the case for eliminating some of the states from our consideration.
 
 \section{States to be used in the experiment}
 
@@ -481,7 +485,7 @@ In other words, we now restrict our analysis to $m_f=0$ for the $^2$S$_{3/2}$ st
 
 \section{Evaluation of Clebsch Gordan Coefficients}
 
-We can automatically evaluate the Clebsch Gordan coefficients for our system in order to see identify which of the possible $^2$P$_{3/2}$ states we are coupling to. The condition for an intermediate state to be valid is that we must be able to drive a dipole transition to it from the $F=5$$^2$S$_{1/2}$ state and that we must be able to use our other laser to drive the atom from that state to the $F=4$$^2$S$_{1/2}$ state.
+We can automatically evaluate the Clebsch Gordan coefficients for our system in order to identify which of the possible $^2$P$_{3/2}$ states we are coupling to. The condition for an intermediate state to be valid is that we must be able to drive a dipole transition to it from the $F=5$$^2$S$_{1/2}$ state and that we must be able to use our other laser to drive the atom from that state to the $F=4$$^2$S$_{1/2}$ state.
 
 This can be stated more mathematically. Let the intermediate state be represented by numbers $F'=5$,$m_f'$. Then, in order to allow dipole transitions from the $F=5$ ground state, 
 \begin{equation}
@@ -508,17 +512,19 @@ Therefore, in order to calculate our transition rate, we need to use the Wigner-
 
 We have gotten to the point where we model the dynamics of the system. We follow the work of Refs.\,\cite{Young1997363}, \cite{gustavsonThesis}, \cite{footAtomicPhysics}, \cite{cjeDiss} and \cite{RamanBeamSplit}.
 
-We have now identified effectively three states and can simplify the Hamiltonian of the system to 
+For the most part, we quote the results of Ref.\,\cite{Young1997363}. 
+
+We have now identified three states and we can simplify the Hamiltonian of the system to 
 
 \begin{equation}
 H=\frac{\mathbf{p}}{2m} + 
-\hbar\omega_e |e\rangle\langle e | +
-\hbar\omega_i |i\rangle\langle i | +
-\hbar\omega_g |g\rangle\langle g | -
+\hbar\omega_1 |1\rangle\langle 1 | +
+\hbar\omega_2 |2\rangle\langle 2 | +
+\hbar\omega_i |i\rangle\langle i | -
 \mathbf{d}\cdot\mathbf{E}
 \end{equation}
 
-and the driving electric field will be
+where $\omega_1$ is the frequency of Slave 1, while $\omega_2$ is the frequency of Slave 2. 
 
 \begin{equation}
 \mathbf{E}=\mathbf{E_1} \cos(\mathbf{k}\cdot\mathbf{x} - \omega_1 t + \phi_1)
