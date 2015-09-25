@@ -71,15 +71,14 @@ In order to send the ions along two distinct paths, we have designed the system 
 \begin{equation}
 \frac{1}{\sqrt{2}}e^{i\phi} |e\rangle \otimes |\mathbf{p}_e\rangle +
 \frac{1}{\sqrt{2}} |g\rangle \otimes |\mathbf{p}_g\rangle
-\end{equation}.
-This is known as a $\pi/2$ pulse.
+\end{equation}
 
 where $\phi$ represents any arbitrary phase shift the ions might acquire during this first interaction. The second pair of beams must drive the 
 \begin{align}
 |e\rangle \otimes |\mathbf{p}_e\rangle &\rightarrow e^{i\phi'} |g\rangle \otimes |\mathbf{p}_g\rangle \\
 |g\rangle \otimes |\mathbf{p}_g\rangle & \rightarrow e^{i\phi''}|e\rangle \otimes |\mathbf{p}_e\rangle 
 \end{align} 
-transitions where $\phi'$ and $\phi''$ represent phase changes. This interaction is known as a $\pi$ pulse.
+transitions where $\phi'$ and $\phi''$ represent phase changes. 
 %the waves that are interfered are the quantum mechanical matter waves of our atoms. I borrowed the words "atomic wave function" phrase from chu and kasevich atom 
 
 The final pair of beams 
