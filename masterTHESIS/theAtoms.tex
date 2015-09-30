@@ -1,15 +1,72 @@
 \chapter{The Atoms} \label{ChapterAboutTheAtoms}
 \section{Overview of relevant atomic transitions}
 
-Our objective in this chapter is to calculate the necessary intensity and beam waist that will allow our lasers to impart the $\pi$ and $\pi/2$ pulses to the atoms as they make their way through the chamber. In order to show why we believe our laser can provide the $\pi$ and $\pi/2$ pulses, we must first take a detailed look at the Raman transitions we are trying to drive. 
+Our objective in this chapter is to find the intensity and beam waist that will allow our lasers to impart the $\pi$ and $\pi/2$ pulses to the atoms as they make their way through the chamber. In order to show that the 408 nm 5 GHz detuned laser can provide the $\pi$ and $\pi/2$ pulses, one must first take a detailed look at the Raman transitions that the laser system is intended to stimulate.
 
 Thus, the purpose of this chapter is threefold:
 \begin{itemize}
-\item Identify the relevant states of our atoms.
-\item Find and interpret appropriate numerical values for relevant parameters in our Hamiltonian.
 \item Model the dynamics of the atom.
-\item Calculate the appropriate intensity, width and polarization of our laser beams that will allow us to impart the $\pi$ and $\pi/2$ pulses to the atom. 
+\item Identify the relevant states of the $^{87}Sr$ atoms.
+\item Find and interpret appropriate numerical values for relevant physical parameters in the Hamiltonian.
+\item Calculate the appropriate intensity, width and polarization of our laser beams that will allow the laser to impart the $\pi$ and $\pi/2$ pulses to the atom. 
 \end{itemize}
+
+\section{Dynamics}\label{dynamicsSection}
+
+We will now model the dynamics of the system. We mostly quote the work of Refs.\,\cite{Young1997363}, \cite{gustavsonThesis}, \cite{footAtomicPhysics}, \cite{cjeDiss} and \cite{RamanBeamSplit}.
+
+Following the notation of Ref.\,\cite{Young1997363}, we rewrite our Hamiltonian in terms of three states:
+
+\begin{equation}
+H=\frac{\mathbf{p}}{2m} + 
+\hbar\omega_e |e\rangle\langle e | +
+\hbar\omega_g |g\rangle\langle g | +
+\hbar\omega_i |i\rangle\langle i | -
+\mathbf{d}\cdot\mathbf{E}
+\end{equation}
+
+where $|e\rangle$ represents the $F=4$,$m_f=0$,$^2$S$_{1/2}$ state, $|g\rangle$ represents the $F=5$,$m_f=0$,$^2$S$_{1/2}$ state and $|i\rangle$ represents the $F=5$,$m_f=1$,$^2$P$_{3/2}$ state. $\omega_x$ represents the energy of the subscripted state.
+
+Ref.\,\cite{Young1997363} then shows that the effective Rabi frequency, $\Omega_{\textnormal{eff}}$ is given by 
+
+\begin{equation}
+\Omega_{\rm eff}=\frac{\Omega_{e} \Omega_{g}}{2 \Delta}
+\end{equation}
+
+where $\Delta$ is the one photon detuning. %\footnote{todo: unify conventions} 
+
+The one photon Rabi Frequencies are defined as:
+
+\begin{align}
+\Omega_e&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_2 | e\rangle }{\hbar}\\
+\Omega_g&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_1 | g\rangle}{\hbar}
+\end{align}
+
+Using the work of the previous sections, we can evaluate $\langle i | \mathbf{d}\cdot \mathbf{E}_2 | e\rangle$
+
+\begin{equation}
+\Omega_\mathit{r}=\sqrt{\Omega_\mathit{eff}^2+\delta^2}
+\end{equation}
+
+Then, we see that 
+\begin{equation}
+\Omega_\mathit{eff}=\sqrt{\left(\frac{\Gamma^2S_0}{2}\right)^2 + \delta^2}
+\end{equation}
+
+\begin{equation}
+\Omega = \frac{-eE_0}{\hbar}\langle e |\vec{r}|g\rangle=\frac{\vec{d}E_0}{\hbar}
+\end{equation}
+
+This is all valid in the case where 
+
+\begin{equation}
+\delta<<\Delta
+\end{equation}
+
+
+%In Ref.\ \cite{cjeDiss}, this calculation is performed, but some of the details are left mysterious. In particular, no source is cited for any of the physical parameters of the $^{87}$Sr+ atom (e.g. the dipole moment values, the transition width, the saturation parameter). We hope to reproduce this calculation with more details.  
+
+\section{States and Quantum Numbers}
 
 \begin{figure}
 \centerline{
@@ -17,10 +74,6 @@ Thus, the purpose of this chapter is threefold:
 }
 \caption[Energy Level Diagram for $^{87}$Sr+]{Energy Level Diagram for $^{87}$Sr+. The hyperfine ground states are separated by a small energy. Diagram is not to scale: a scaled diagram would show the splitting between the $F=4$ and $F=5$ states to be about 147,000 times smaller than the splitting between the $^2$S$_{1/2}$ states and the $^2$P$_{3/2}$ states.}
 \end{figure}
-
-%In Ref.\ \cite{cjeDiss}, this calculation is performed, but some of the details are left mysterious. In particular, no source is cited for any of the physical parameters of the $^{87}$Sr+ atom (e.g. the dipole moment values, the transition width, the saturation parameter). We hope to reproduce this calculation with more details.  
-
-\section{States and Quantum Numbers}
 
 The Hamiltonian of the Strontium ions is analagous to the Hamiltonian of a single-electron atom. 
 In a single electron atom, the solution to the Schr\"odinger equation describing the electron is solved by separation of variables.
@@ -30,7 +83,7 @@ Thus, we can use the familiar angular momentum quantum numbers for the eigenstat
 
 In the case of $^{87}$Sr+, there is only one electron in the valence band. The inner shells are full and we assume that the symmetry is such that the eigenstates of the atom will also be eigenstates of the orbital angular momentum operator, $\mathbf{L}$.
  The system also involves two other angular momentum operators: the spin operator for the valence electron, $\mathbf{S}$%\footnote{The spin of the electrons on the inner shells cancels and adds to 0} 
-and the spin of the nucleus $\mathbf{I}$ \footnote{Here and throughout, we will use the boldface $\mathbf{I}$ to mean the operator while the unbolded letter ($I$) will mean the associated eigenvalue.}.
+ and the spin of the nucleus $\mathbf{I}$ \footnote{Here and throughout, we will use the boldface $\mathbf{I}$ to mean the operator while the unbolded letter ($I$) will mean the associated eigenvalue.}.
 %We will first approximate the Hamiltonian by assuming that there is no coupling that is dependent on the spin. 
 %The hyperfine interaction will be modeled as a perturbation on top of this.
 
@@ -48,7 +101,7 @@ J & Total valence electron angular momentum. $\mathbf{J}=\mathbf{L}+\mathbf{S}$ 
 F & Total angular momentum $\mathbf{F}=\mathbf{I}+\mathbf{J}$ \\ \hline
 $m_f$ & Eigenvalue of $\mathbf{F}_z$.\\ \hline
 \end{tabular}
-\caption{The quantum numbers used to describe the internal state of the $^{87}$Sr+ ion. These are conventional choices; the table is provided only for convenience.}
+\caption{The quantum numbers used to describe the internal state of the $^{87}$Sr+ ion.}
 \label{quantumNumberQuickref}
 \end{table}
 
@@ -514,57 +567,6 @@ $F_i$ & $q_1$ & $q_2$ & $m_{f,i}$ &$\langle  F_i,m_{f,i}|\mathbf{d}_{q_1}|F=5,m_
 \label{nonzeroCG}
 \end{table}
 
-\section{Dynamics}\label{dynamicsSection}
-
-We will now model the dynamics of the system. We mostly quote the work of Refs.\,\cite{Young1997363}, \cite{gustavsonThesis}, \cite{footAtomicPhysics}, \cite{cjeDiss} and \cite{RamanBeamSplit}.
-
-Following the notation of Ref.\,\cite{Young1997363}, we rewrite our Hamiltonian in terms of three states:
-
-\begin{equation}
-H=\frac{\mathbf{p}}{2m} + 
-\hbar\omega_e |e\rangle\langle e | +
-\hbar\omega_g |g\rangle\langle g | +
-\hbar\omega_i |i\rangle\langle i | -
-\mathbf{d}\cdot\mathbf{E}
-\end{equation}
-
-where $|e\rangle$ represents the $F=4$,$m_f=0$,$^2$S$_{1/2}$ state, $|g\rangle$ represents the $F=5$,$m_f=0$,$^2$S$_{1/2}$ state and $|i\rangle$ represents the $F=5$,$m_f=1$,$^2$P$_{3/2}$ state. $\omega_x$ represents the energy of the subscripted state.
-
-Ref.\,\cite{Young1997363} then shows that the effective Rabi frequency, $\Omega_{\textnormal{eff}}$ is given by 
-
-\begin{equation}
-\Omega_{\rm eff}=\frac{\Omega_{e} \Omega_{g}}{2 \Delta}
-\end{equation}
-
-where $\Delta$ is the one photon detuning. %\footnote{todo: unify conventions} 
-
-The one photon Rabi Frequencies are defined as:
-
-\begin{align}
-\Omega_e&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_2 | e\rangle }{\hbar}\\
-\Omega_g&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_1 | g\rangle}{\hbar}
-\end{align}
-
-Using the work of the previous sections, we can evaluate $\langle i | \mathbf{d}\cdot \mathbf{E}_2 | e\rangle$
-
-\begin{equation}
-\Omega_\mathit{r}=\sqrt{\Omega_\mathit{eff}^2+\delta^2}
-\end{equation}
-
-Then, we see that 
-\begin{equation}
-\Omega_\mathit{eff}=\sqrt{\left(\frac{\Gamma^2S_0}{2}\right)^2 + \delta^2}
-\end{equation}
-
-\begin{equation}
-\Omega = \frac{-eE_0}{\hbar}\langle e |\vec{r}|g\rangle=\frac{\vec{d}E_0}{\hbar}
-\end{equation}
-
-This is all valid in the case where 
-
-\begin{equation}
-\delta<<\Delta
-\end{equation}
 
 %Then, according to \cite{RamanBeamSplit} and \cite{footAtomicPhysics}, we can say that 
 %\begin{equation} \label{KorsunskysJewel}
