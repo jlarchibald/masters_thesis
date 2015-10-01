@@ -172,6 +172,16 @@
   Url                      = {http://link.aps.org/doi/10.1103/PhysRevD.80.016002}
 }
 
+@Book{cohenTannoudji,
+  Title                    = {Atom-Photon Interactions: Basic Processes and Applications},
+  Author                   = {Claude Cohen-Tannoudji and Jacques Dupont-Roc and Gilbert Grynberg},
+  Publisher                = {John Wiley \& Sons, Inc.},
+  Year                     = {1992},
+
+  Owner                    = {jlarchibald},
+  Timestamp                = {2015.09.30}
+}
+
 @Article{Kronin_RMP,
   Title                    = {Optics and interferometry with atoms and molecules},
   Author                   = {Cronin, Alexander D. and Schmiedmayer, J\"org and Pritchard, David E.},

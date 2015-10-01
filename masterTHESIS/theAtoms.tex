@@ -5,20 +5,49 @@ The objective of this chapter is to find the intensity and beam waist that will 
 
 Thus, the purpose of this chapter is threefold:
 \begin{itemize}
-\item Model the dynamics of the atom.
-\item Identify the relevant states of the $^{87}Sr$ atoms.
+\item Model the dynamics of a generic three state atom
+\item Identify the relevant states of the $^{87}$Sr$^+$ ions.
 \item Find and interpret appropriate numerical values for relevant physical parameters in the Hamiltonian.
 \item Calculate the appropriate intensity, width and polarization of our laser beams that will allow the laser to impart the $\pi$ and $\pi/2$ pulses to the atom. 
 \end{itemize}
 
 \section{Dynamics}\label{dynamicsSection}
 
-We will now model the dynamics of the system. We mostly quote the work of Refs.\,\cite{Young1997363}, \cite{gustavsonThesis}, \cite{footAtomicPhysics}, \cite{cjeDiss} and \cite{RamanBeamSplit}.
+I will now model the dynamics of the system. Much of this discussion is based on Refs.\,\cite{Young1997363}, \cite{gustavsonThesis}, \cite{footAtomicPhysics}, \cite{cjeDiss} and \cite{RamanBeamSplit}. 
+
+The first step to understanding the physics of the Raman transitions is to understand the dynamics of a two state atom. Discussions of this can be found in many places, including Refs.\,\cite{cohenTannoudji}, \cite{demilleBudkerKimball}, and \cite{Young1997363}. The Hamiltonian for a two level atom under periodic perturbation from an electric field can be written as 
+
+\begin{equation}
+H = \hbar \omega_e |e\rangle\langle e| + \hbar \omega_g |g\rangle\langle g| - \mathbf{d}\cdot\mathbf{E}
+\end{equation}  
+where $\omega_e$ and $\omega_g$ are the frequencies of the excited and ground states respectively and $\mathbf{d}$ is the dipole moment operator. The electric field $\mathbf{E}$ is given by 
+\begin{equation}
+\mathbf{E} = \mathbf{E_0} \cos (\omega t + \phi)
+\end{equation}
+\cite{Young1997363}. 
+
+The dynamics of this system are well-known. These equations can be solved by moving into the interaction picture, applying the rotating wave approximation, and diagonalizing the resulting matrix to find its eigenvalues and eigenstates. The reader is again referred to Refs.\,\cite{cohenTannoudji}, \cite{demilleBudkerKimball}, and \cite{Young1997363} for full explanations of this system. 
+
+In the interaction picture, the relevant states can be written as 
+
+In the case where $\omega<<\omega_g,\omega_e$, the result is that the interaction picture state $|\Psi (t_0)\rangle$ can be written as 
+
+\begin{equation}
+\Psi (t_0)\rangle = c_e(t_0)
+\end{equation}
+
+%cite the notes? 
+%cite Optical resonance and two level atoms? 
+
+%momentum entangled?
+
+In the case of 
+
 
 Following the notation of Ref.\,\cite{Young1997363}, we rewrite our Hamiltonian in terms of three states:
 
 \begin{equation}
-H=\frac{\mathbf{p}}{2m} + 
+H=\frac{\mathbf{p}^2}{2m} + 
 \hbar\omega_e |e\rangle\langle e | +
 \hbar\omega_g |g\rangle\langle g | +
 \hbar\omega_i |i\rangle\langle i | -
