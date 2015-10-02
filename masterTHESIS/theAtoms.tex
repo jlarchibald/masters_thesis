@@ -26,15 +26,29 @@ where $\omega_e$ and $\omega_g$ are the frequencies of the excited and ground st
 \end{equation}
 \cite{Young1997363}. 
 
-The dynamics of this system are well-known. These equations can be solved by moving into the interaction picture, applying the rotating wave approximation, and diagonalizing the resulting matrix to find its eigenvalues and eigenstates. The reader is again referred to Refs.\,\cite{cohenTannoudji}, \cite{demilleBudkerKimball}, and \cite{Young1997363} for full explanations of this system. 
+The dynamics of this system are well-known. These equations can be solved by moving into the interaction picture, applying the rotating wave approximation, and diagonalizing the resulting matrix to find its eigenvalues and eigenstates. The reader is again referred to Refs.\,\cite{cohenTannoudji}, \cite{demilleBudkerKimball}, and \cite{Young1997363} for more complete explanations of this system. 
 
-In the interaction picture, the relevant states can be written as 
+The system is most naturally talked about in the interaction picture. In order to do this, I divide the Hamiltonian into two pieces: 
+\begin{equation}
+H=H_0+V
+\end{equation} 
+
+where $H$ is the total Hamiltonian, $H_0=\hbar \omega_e |e\rangle\langle e| + \hbar \omega_g|g\rangle\langle g|$ is the Hamiltonian of the atom not including the contribution from the external electric field and $V=\mathbf{d}\cdot\mathbf{E}$ represents the part of the Hamiltonian that describes the interaction of the laser with the system. To do this, I must make the standard transformations to the interaction picture. I get \cite{merzbacher} \cite{sakurai}, 
+
+\begin{align}
+|\psi\rangle_I &= e^{i H_0 t/\hbar} |\psi \rangle \\
+V_I &= e^{i H_0 t/\hbar} V e^{-i H_0 t/\hbar}
+\end{align}
 
 In the case where $\omega<<\omega_g,\omega_e$, the result is that the interaction picture state $|\Psi (t_0)\rangle$ can be written as 
 
 \begin{equation}
-\Psi (t_0)\rangle = c_e(t_0)
+\Psi (t_0)\rangle = c_e(t_0) |e\rangle + c_g(t_0) |g\rangle
 \end{equation}
+
+where $c_e(t_0)$ and $c_g(t_0)$ represent the time-dependent coefficients describing the evolution of the state from one state to another. 
+
+Now, it is important to remember that this result depends on the Rotating Wave Approximation. Antiresonant and fast oscillating terms have been neglected. These assumptions and the relative sizes of the frequencies involved mean that $c_g$ and $c_e$
 
 %cite the notes? 
 %cite Optical resonance and two level atoms? 

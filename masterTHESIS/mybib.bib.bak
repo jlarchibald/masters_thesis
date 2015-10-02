@@ -561,6 +561,16 @@
   Url                      = {http://link.aps.org/doi/10.1103/PhysRev.85.1057}
 }
 
+@Book{merzbacher,
+  Title                    = {Quantum Mechanics},
+  Author                   = {Eugen Merzbacher},
+  Publisher                = {John Wiley \& Sons, Inc.},
+  Year                     = {1998},
+
+  Owner                    = {jlarchibald},
+  Timestamp                = {2015.10.01}
+}
+
 @Book{lasersMilonniEberly,
   Title                    = {Laser Physics},
   Author                   = {Peter W. Milonni and Joseph H. Eberly},
@@ -766,6 +776,17 @@
   Date-modified            = {2012-04-06 16:20:10 -0600},
   Rating                   = {3},
   Read                     = {1}
+}
+
+@Book{sakurai,
+  Title                    = {Modern Quantum Mechanics},
+  Author                   = {J. J. Sakurai},
+  Editor                   = {San Fu Tuan},
+  Publisher                = {Addison-Wesley Publishing Company, Inc.},
+  Year                     = {1994},
+
+  Owner                    = {jlarchibald},
+  Timestamp                = {2015.10.01}
 }
 
 @Article{schwartz_hyperfine_expansion,
