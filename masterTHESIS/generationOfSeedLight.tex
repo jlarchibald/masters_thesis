@@ -54,9 +54,18 @@ We have data on the wavelength dependence on temperature and current for our las
 \caption[Calibration spectrum from Hg Lamp]{\label{calibrationData} Data from the calibration using the mercury lamp. I deliberately allowed some of the farther away peaks to saturate in order to improve our signal for the peaks near 408 nm. The black lines represent spectral lines taken from the NIST Atomic Spectra Database\cite{NISTasd}. The average of the premeasured and postmeasured Hg spectra was sent through an Octave script I wrote that automatically identified peaks in the spectrum, displayed the peaks, and then allowed the user to select which peak in the NIST Hg spectrum these peaks corresponded to. The peaks found by this script are displayed with the label, ``detected peaks in measured spectrum.''}
 \end{figure}
 \begin{figure}
+\begin{subfigure}{.5\textwidth}
 \centering
-%\includegraphics[width=0.7\textwidth]{TVlambda3} 
-\includegraphics[width=0.7\textwidth]{TVlambda2}
+\includegraphics[width=0.7\linewidth]{TVlambda3} 
+\caption{a}
+\label{currentandT:sfiga}
+\end{subfigure}
+\begin{subfigure}
+\centering
+\includegraphics[width=0.7\linewidth]{TVlambda2}
+\caption{b}
+\label{currentandT:sfigb}
+\end{subfigure}
 \caption[Graph of Temperatures and Currents]{\label{3dCurrentandTgraph} Representative data of the free-running wavelength of our master laser as a function of nominal current and nominal temperature.}
 \end{figure}
 %possibly not the master? ehhh. IDK. 
