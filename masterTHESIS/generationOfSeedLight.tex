@@ -6,7 +6,7 @@ The main goal of the master laser system is to produce a stable oscillator from 
 
 \section{Stabilization of Master Laser}
 \subsection{Master Laser Layout}
-The master laser is a 408 nm extended cavity diode laser (ECDL). It consists of a laser diode mounted in a temperature-controlled housing from the Thorlabs LDM21 family of products. It is collimated by a small, aspherical lens (Thorlabs C570TM-A). The master laser ECDL also has a grating mounted outside of the temperature controlled housing. The grating is mounted on a Thorlabs KC1-PZ piezoelectric kinematic mount. A picture of the master laser can be seen in Fig.\,\ref{master_laser_photo}, while a picture of the inside of the housing can be seen in Fig.\,\ref{master_laser_interior_photo}.
+The master laser is a 408 nm extended cavity diode laser (ECDL). It consists of a laser diode mounted in a temperature-controlled housing from the Thorlabs LDM21 family of products. It is collimated by a small, aspherical lens (Thorlabs C570TM-A). The master laser ECDL also has a grating mounted outside of the temperature-controlled housing. The grating is mounted on a Thorlabs KC1-PZ piezoelectric kinematic mount, which is attached to the laser via a series of rods. A picture of the master laser can be seen in Fig.\,\ref{master_laser_photo}, while a picture of the inside of the housing can be seen in Fig.\,\ref{master_laser_interior_photo}.
 
 \begin{figure}
 \centerline{
@@ -22,14 +22,17 @@ The master laser is a 408 nm extended cavity diode laser (ECDL). It consists of 
 %why did we do the rods? Do I have it in my notes?
 
 \subsection{Master Laser Diodes}
+\label{masterLaserDiodes}
 The diode used in the master laser is a single-spatial mode InGaN diode. Its model number is Mitsubishi ML320G2. The master laser was wavelength-selected by the distributor (i.e. the distributor performed measurements and binned the parts based on their output wavelengths; we then ordered lasers from their 408 nm bin). The diode is very similar to the diode lasers used in Blu-ray players. 
-In fact, we also bought 30 diodes on eBay that had been removed from actual Blu-ray or HD-DVD players as backup diodes. We measured the free running wavelengths of these diodes in order to bin them ourselves. Some of these diodes were ultimately used in the slave lasers.
+In fact, we also bought 30 diodes on eBay that had been removed from actual Blu-ray or HD-DVD players as backup diodes. We measured the free running wavelengths of these diodes in order to bin them ourselves using techniques that I will describe in Section\,\ref{gratingSpectrometerWavelengthMeasurements}. Some of these diodes were ultimately used in the slave lasers, whose configuration will be described in Section\,\ref{initialSlaveConfiguration}.
+
+
 %Mark? Did he do this? 
 
 The selection of laser diodes required a few iterations before I found diodes that would work properly. I initially tried to build the master laser using a non-wavelength-selected Sharp GH04020A2GE low power diode, which I could not stabilize for unknown reasons. I quickly switched to a non-wavelength-selected Sharp GH04P21A2GE diode for the master laser. However, this laser's free-running wavelength at 25$^\circ$C was far too low. In order to tune this diode to the correct wavelength, I found that I had to maintain the diode at a temperature of $\sim$60$^\circ$C. Running at such a high temperature resulted in degradation of the diode and loss of power over the course of a few months. It was this experience that prompted me to use wavelength selected diodes. In this way, I was able to get a laser that could lase at the wavelength we needed without having to risk seriously diminishing the operational lifetime of the laser.
 
 \subsection{Grating Spectrometer Wavelength Measurements}
-
+\label{gratingSpectrometerWavelengthMeasurements}
 In order to tune the master laser to precisely the correct wavelength and to measure the room temperature free running wavelength of the uncharacterized lasers (i.e. the lasers that were bought on eBay and later used in the slave lasers), I used a compact grating spectrometer from the Ocean Optics USB2000 series to measure the center frequency of the free-running laser diodes. This spectrometer uses a diffraction grating to separate light based on its constituent wavelenghts. Light scattered off the diffraction grating is detected by a CCD array consisting of 2048 pixels that is also enclosed in the spectrometer. The average difference in wavelength between adjacent pixels is $\sim$.061 nm. % This according to /research/octave/ooSpectrumData12Sep/MasterFile.m using the lambdas variable defined in there.
 
 I tried several techniques to maximize the resolution and accuracy of these measurements. The center wavelength of the bare diodes changed only a few nanometers over the entire range of possible temperatures and currents. In order to ensure accurate absolute wavelength measurements, we calibrated to a mercury source both before and after looking at the spectra of the various lasers. We feel confident in our calibrations since mercury conveniently has spectral lines at 405 and 436 nm, which are close to our target wavelength of 407.771 nm. A typical before and after calibration spectrum taken using the mercury lamp can be seen in Figure\,\ref{calibrationData}. When analyzing the peaks produced by the laser on the grating spectrometer, we fit the measured data to a Gaussian distribution in hopes of squeezing out some sub-pixel level resolution of the peak location. Examples of this type of analysis are shown in Figures\,\ref{Temperaturespectra} and \ref{wavelengthselected}.
@@ -90,16 +93,16 @@ The diffraction grating is angled so that the first order diffraction peak at 40
 \begin{equation} \label{gratingEQn}
 n \lambda = 2 d \sin (\theta),
 \end{equation}
-
 where $n$ is the order of the diffraction peak (in our case, $n=1$), $d$ is the spacing between slits (in our case $d=1$ mm$/3600 = 278 $ nm) and $\theta$ is the angle of incidence to the grating. We can therefore calculate that the $\theta$ should be approximately
 \href{http://www.wolframalpha.com/input/?i=arcsin%28+407.771+nm+%2F%282*%281+mm%2F3600%29%29%29+in+degrees}{$47.2^\circ$}.
 
  We machined a custom grating holder out of Aluminum, which can be seen in Figure\,\ref{master_laser_photo}. The aluminum holder was mounted in a Thorlabs KC1-PZ piezoelectric mount, which allows us the necessary fine control of the grating's location and angle over a narrow range of angles.  The grating was mounted approximately 4 cm from the aperture of collimating lens.
 % The grating is mounted at such an angle that it selectively couples light with a wavelength near 408 nm back into the laser cavity. The resonant space between the diffraction grating and the collimating lens is what the phrase ``extended cavity'' refers to. The additional boundary conditions imposed on the resonant modes of the laser by the external grating result in a narrowing of the laser's linewidth. 
- We must ensure that the diffraction grating is installed such that both the angle and the cavity length match our desired wavelength. In order to get the grating aligned initially, we turned on the current to the laser until the laser was just below the threshold where it would begin lasing. We then aligned the grating using the threaded actuators on the piezoelectric mount until we saw the output power of the laser increase. When this happens, it indicates that we are successfully coupling light to the laser cavity. The output power of the laser can be monitored by eye or by instrument and it is fairly easy to get a feel for what it should look like when the grating first couples to a laser operating just below threshold.
+I must ensure that the diffraction grating is installed such that both the angle and the cavity length match our desired wavelength. In order to get the grating aligned initially, we turned on the current to the laser until the laser was just below the threshold where it would begin lasing. We then aligned the grating using the threaded actuators on the piezoelectric mount until we saw the output power of the laser increase. When this happens, it indicates that we are successfully coupling light to the laser cavity. The output power of the laser can be monitored by eye or by instrument and it is fairly easy to get a feel for what it should look like when the grating first couples to a laser operating just below threshold.
 
 %did I ever tune it to the right wavelength using the Bristol wave meter? 
-In order to stimulate the transition, the master laser must also be tunable over some range. Therefore, the piezoelectric actuators can be connected to control circuitry that can be used to tune the laser based on a signal derived from transmission through a Strontium vapor cell. 
+%todo: figure out whether we need to lock it to a cell. 
+the master laser must also be tunable over some range. Therefore, the piezoelectric actuators can be connected to control circuitry that can be used to tune the laser based on a signal derived from transmission through a Strontium vapor cell. 
 
 The control circuitry will consist of a simple PID controller similar in design to the PID controllers used elsewhere in the lab \cite{cjeDiss}. The vapor cell will produce a signal from which we can derive an error signal. The PID controller takes the error signal and produces a feedback signal. This feedback signal can then be used to control the voltage on the piezoelectric actuators along with the current to the laser. The PID controller's output stage allows the user to select various gains that control the movement of each of the piezoelectric actuators. 
 %did I ever tune this up? 
