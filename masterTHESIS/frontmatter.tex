@@ -10,8 +10,7 @@
 
 % Allow the inclusion of graphics
 \usepackage{graphicx}
-\usepackage{subfigure}
-\usepackage{subcaption}
+%\usepackage{subfigure}
 \usepackage{pdfpages}
 
 % The fancyhdr package allows you to easily customize the page header.
@@ -31,6 +30,11 @@
 \usepackage[margin=0.3in,labelfont=bf,labelsep=none]{caption}
  \DeclareCaptionFormat{suggested}{\singlespace#1#2 #3\par\doublespace}
  \captionsetup{format=suggested}
+
+%Added by James Archibald 2015-10-03.
+%This package is the current preferred way to make subfigures. It seemed to give me trouble
+%when I tried to put this statement before the \usepackage{caption} statement.
+\usepackage{subcaption}
 
 
 % The cite package cleans up the way citations are handled.  For example, it
