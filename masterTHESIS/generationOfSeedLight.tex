@@ -15,9 +15,17 @@ The master laser is a 408 nm extended cavity diode laser (ECDL). It consists of 
 \end{figure}
 
 \begin{figure}
-\centerline{
-\includegraphics[width=0.7\textwidth]{laser_on_in_housing.JPG}}
-\caption[Photograph of Master Laser Diode]{\label{master_laser_interior_photo} The master laser in its housing. We modified the housing to include an additional temperature sensor (the AD592), which can be seen glued to the top of the copper plate.}
+\centering
+\begin{subfigure}[b]{0.4\textwidth}
+\includegraphics[width=1\textwidth]{laser_on_in_housing.JPG}
+\caption[Photograph of Master Laser Diode]{\label{master_laser_interior_photo} The master laser in its housing..}
+\end{subfigure}
+\begin{subfigure}[b]{0.4\textwidth}
+\includegraphics[width=1\textwidth]{diffractionGrating.JPG}
+\caption[Photograph of Diffraction Grating]{\label{diffractionGratingPhoto} The diffraction grating before it is installed.}
+\end{subfigure}
+\caption[Photographs of Master Laser Components]{The master laser in its housing and the diffraction grating before it was installed. We modified the housing to include an additional temperature sensor (the AD592), which can be seen glued to the top of the copper plate}
+
 \end{figure}
 %why did we do the rods? Do I have it in my notes?
 
@@ -56,18 +64,15 @@ We have data on the wavelength dependence on temperature and current for our las
 
 \begin{figure}
 \centering
-\begin{subfigure}[b]{0.4\textwidth}
+\begin{subfigure}[b]{0.55\textwidth}
 \includegraphics[width=1\textwidth]{TVlambda3} 
-\caption{a}
 \label{currentandT:sfiga}
 \end{subfigure}
-~
-\begin{subfigure}[b]{0.5\textwidth}
+\begin{subfigure}[b]{0.40\textwidth}
 \includegraphics[width=1\textwidth]{TVlambda2}
-\caption{b}
 \label{currentandT:sfigb}
 \end{subfigure}
-\caption[Graph of Temperatures and Currents]{\label{3dCurrentandTgraph} Representative data of the free-running wavelength of our master laser as a function of nominal current and nominal temperature.}
+\caption[Graph of Temperatures and Currents]{\label{3dCurrentandTgraph} Representative data of the free-running wavelength of our master laser as a function of nominal current and nominal temperature. Both plots show the same data.}
 \end{figure}
 
 
@@ -93,13 +98,6 @@ We have data on the wavelength dependence on temperature and current for our las
 Lasers work by amplifying light resonant with a particular mode of the laser cavity via stimulated emission. Ideally, we would like to favor a mode within the diode laser corresponding to our desired wavelength. In order to accomplish this, we add yet another resonant cavity outside our laser that can couple light back into the laser. 
 
 This cavity is formed by a diffraction grating on one side and the entrance of the laser on the other side. This configuration is called an Extended Cavity Diode Laser (ECDL). The grating we selected was a Thorlabs model number GH13-36U, which has 3600 lines/mm. A picture of the grating can be seen in Figure\,\ref{diffractionGratingPhoto}. 
-
-\begin{figure}
-\centerline{
-\includegraphics[width=0.4\textwidth]{diffractionGrating.JPG}
-}
-\caption[Photograph of Diffraction Grating]{\label{diffractionGratingPhoto} The diffraction grating before it is installed.}
-\end{figure}
 
 The diffraction grating is angled so that the first order diffraction peak at 407.771 nm light is directed back into the laser. The condition for this to be the case is 
 
