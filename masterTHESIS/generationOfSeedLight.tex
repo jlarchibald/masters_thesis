@@ -24,11 +24,6 @@ The master laser is a 408 nm extended cavity diode laser (ECDL). It consists of 
 \caption[Photograph of Master Laser]{\label{master_laser_photo} The master laser system. The diffraction grating that provides feedback to the laser is mounted on a custom machined grating holder that is attached to the Thorlabs KC1-PZ piezoelectric kinematic mount. . I initially tried several other configurations. However, after several iterations, I found that the use of the metal rods to provide direct  mechanical coupling between the laser and grating mount were necessary for stable, single-mode operation. I also found through trial and error that placing the grating a distance of $\sim$4 cm from the aperture seemed to work for this particular laser.}
 \end{figure}
 
-\begin{figure}
-\centering
-\includegraphics[width=1\textwidth]{laser_on_in_housing.JPG}
-\caption[Photographs of Master Laser Components]{The master laser in its housing and the diffraction grating before it was installed (inset). We modified the housing to include an additional temperature sensor (the AD592), which can be seen glued to the top of the copper plate.}
-\end{figure}
 %why did we do the rods? Do I have it in my notes?
 %do I mention how we ran them sideways? I mean, we had holes in the sides and all that? 
 
@@ -37,10 +32,17 @@ The master laser is a 408 nm extended cavity diode laser (ECDL). It consists of 
 The diode used in the master laser is a single-spatial mode InGaN diode. Its model number is Mitsubishi ML320G2. The master laser was wavelength-selected by the distributor (i.e. the distributor performed measurements and binned the parts based on their output wavelengths; we then ordered lasers from their 408 nm bin). The diode is very similar to the diode lasers used in Blu-ray players. 
 In fact, we also bought 30 diodes on eBay that had been removed from actual Blu-ray or HD-DVD players as backup diodes. We measured the free running wavelengths of these diodes in order to bin them ourselves using techniques that I will describe in Section\,\ref{gratingSpectrometerWavelengthMeasurements}. Some of these diodes were ultimately used in the slave lasers, whose configuration will be described in Section\,\ref{initialSlaveConfiguration}.
 
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{laser_on_in_housing.JPG}
+\caption[Photographs of Master Laser Components]{The master laser in its housing and the diffraction grating before it was installed (inset). We modified the housing to include an additional temperature sensor (the AD592), which can be seen glued to the top of the copper plate.\label{master_laser_interior_photo}
+}
+\end{figure}
 
 %Mark? Did he do this? 
 
 The selection of laser diodes required a few iterations before I found diodes that would work properly. I initially tried to build the master laser using a non-wavelength-selected Sharp GH04020A2GE low power diode, which I could not stabilize for unknown reasons. I quickly switched to a non-wavelength-selected Sharp GH04P21A2GE diode for the master laser. However, this laser's free-running wavelength at 25$^\circ$C was far too low. In order to tune this diode to the correct wavelength, I found that I had to maintain the diode at a temperature of $\sim$60$^\circ$C. Running at such a high temperature resulted in degradation of the diode and loss of power over the course of a few months. It was this experience that prompted me to use wavelength selected diodes. In this way, I was able to get a laser that could lase at the wavelength we needed without having to risk seriously diminishing the operational lifetime of the laser.
+
 
 \subsection{Grating Spectrometer Wavelength Measurements}
 \label{gratingSpectrometerWavelengthMeasurements}
@@ -48,6 +50,22 @@ In order to tune the master laser to precisely the correct wavelength and to mea
 
 I tried several techniques to maximize the resolution and accuracy of these measurements. The center wavelength of the bare diodes changed only a few nanometers over the entire range of possible temperatures and currents. In order to ensure accurate absolute wavelength measurements, we calibrated to a mercury source both before and after looking at the spectra of the various lasers. We feel confident in our calibrations since mercury conveniently has spectral lines at 405 and 436 nm, which are close to our target wavelength of 407.771 nm. A typical before and after calibration spectrum taken using the mercury lamp can be seen in Figure\,\ref{calibrationData}. When analyzing the peaks produced by the laser on the grating spectrometer, we fit the measured data to a Gaussian distribution in hopes of squeezing out some sub-pixel level resolution of the peak location. Examples of this type of analysis are shown in Figures\,\ref{Temperaturespectra} and \ref{wavelengthselected}.
 
+\begin{figure}
+\centering
+\includegraphics[width=0.95\textwidth]{calibrationData} 
+\caption[Calibration spectrum from Hg Lamp]{\label{calibrationData} Data from the calibration using the mercury lamp. I deliberately allowed some of the farther away peaks to saturate in order to improve our signal for the peaks near 408 nm. The black lines represent spectral lines taken from the NIST Atomic Spectra Database\cite{NISTasd}. The average of the premeasured and postmeasured Hg spectra was sent through an Octave script I wrote that automatically identified peaks in the spectrum, displayed the peaks, and then allowed the user to select which peak in the NIST Hg spectrum these peaks corresponded to. The peaks found by this script are displayed with the label, ``detected peaks in measured spectrum.''}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=0.95\textwidth]{temperatureFit} 
+\caption[Wavelength of master laser at different temperatures]{\label{Temperaturespectra} Representative data of the free-running wavelength of our master laser as a function of temperature.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.95\textwidth]{wavelength_selected} 
+\caption[Wavelength selected diodes]{\label{wavelengthselected} Representative data of the free-running (i.e. no grating feedback or extended cavity) wavelength of several wavelength selected lasers taken at 120 mA.} %temperature? %the ones we picked or someone else did? 
+\end{figure}
 %diagram of which method to use where? 
 %The basic 
 
@@ -58,11 +76,9 @@ The temperature and the current of the laser are two of the main means we have f
 
 We have data on the wavelength dependence on temperature and current for our laser. This data is plotted in Fig.\,\ref{3dCurrentandTgraph}. We see that the variation of the center wavelength of the laser is roughly linear over reasonable values of temperature and current.
 
-\begin{figure}
-\centering
-\includegraphics[width=0.95\textwidth]{calibrationData} 
-\caption[Calibration spectrum from Hg Lamp]{\label{calibrationData} Data from the calibration using the mercury lamp. I deliberately allowed some of the farther away peaks to saturate in order to improve our signal for the peaks near 408 nm. The black lines represent spectral lines taken from the NIST Atomic Spectra Database\cite{NISTasd}. The average of the premeasured and postmeasured Hg spectra was sent through an Octave script I wrote that automatically identified peaks in the spectrum, displayed the peaks, and then allowed the user to select which peak in the NIST Hg spectrum these peaks corresponded to. The peaks found by this script are displayed with the label, ``detected peaks in measured spectrum.''}
-\end{figure}
+
+%possibly not the master? ehhh. IDK. 
+%\footnote{I have no idea what accounts for the variation between diodes}. 
 
 \begin{figure}
 \centering
@@ -78,18 +94,6 @@ We have data on the wavelength dependence on temperature and current for our las
 \end{figure}
 
 
-%possibly not the master? ehhh. IDK. 
-%\footnote{I have no idea what accounts for the variation between diodes}. 
-\begin{figure}
-\centering
-\includegraphics[width=0.95\textwidth]{wavelength_selected} 
-\caption[Wavelength selected diodes]{\label{wavelengthselected} Representative data of the free-running (i.e. no grating feedback or extended cavity) wavelength of several wavelength selected lasers taken at 120 mA.} %temperature? %the ones we picked or someone else did? 
-\end{figure}
-\begin{figure}
-\centering
-\includegraphics[width=0.95\textwidth]{temperatureFit} 
-\caption[Wavelength of master laser at different temperatures]{\label{Temperaturespectra} Representative data of the free-running wavelength of our master laser as a function of temperature.}
-\end{figure}
 
 \subsection{Placement of the Grating}
 
@@ -126,9 +130,10 @@ The control circuitry will be similar to the PID controllers desribed in Ref.\,\
 
 \begin{figure}
 \centerline{
-\includegraphics[width=0.95\textwidth]{PID from cje diss.png}}
-\caption[Schematic of PID circuit]{\label{circuit} Schematic of the PID circuit developed by others in the lab that we use on the master laser. The PID stages are depicted at the bottom left of the diagram and these will be used only if we lock the laser system to an external reference. At the top left of the diagram is a DAC that allows us to set a digital offset. The signal from this DAC is added directly to the feedback signal that comes out of the PID stages. Even if we do not lock the laser to a vapor cell, we can a do use the DC offset signal. }
+\includegraphics[width=0.95\textwidth]{PIDfromCJEdiss}}
+\caption[Schematic of PID circuit]{\label{circuit} Schematic of the PID circuit that we use on the master laser. The PID stages are depicted at the bottom left of the diagram and these will be used only if we lock the laser system to an external reference. At the top left of the diagram is a DAC that allows us to set a digital offset. The signal from this DAC is added directly to the feedback signal that comes out of the PID stages. Even if we do not lock the laser to a vapor cell, we can a do use the DC offset signal. }
 \end{figure}
+%is that the right one? 
 
 %However, even if we do not lock the laser to some external reference, the PID controller described in Ref.\,\cite{cjeDiss} also contains a series of amplifiers that take the feedback signal us to easily modulate the current of the laser along with the This feedback signal can then be used to control the voltage on the piezoelectric actuators along with the current to the laser. The PID controller's output stage allows the user to select various gains that control the movement of each of the piezoelectric actuators. However, even if we do not use the PID control features, 
 %did I ever tune this up? 
