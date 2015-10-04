@@ -139,24 +139,31 @@ The control circuitry will be similar to the PID controllers desribed in Ref.\,\
 %did I ever tune this up? 
 
 %todo: figure out whether we need to lock it to a cell. 
-However, in order for this to work, we must properly set the gains in the scan balancer. here is some insight to be gained by modeling the ideal relative motion of the piezoelectric actuators that will ensure that the grating moves in such a way that the resonance of the cavity it creates changes as smoothly as possible over as wide a range of wavelengths as possible. 
-
-
+However, in order for this to work, we must properly set the gains in the scan balancer. There is some insight to be gained by modeling the ideal relative motion of the piezoelectric actuators. We would like to find a way to ensure that the grating moves and rotates in such a way that the resonance of the cavity it creates changes as smoothly as possible over as wide a range of wavelengths as possible. 
+%wait--does it not matter the phase of the wave at the face of the laser? I guess that would stay constant, but what about the resonance of the laser cavity itself? Well, we also try to get that working.
+%that data about the resonances.
 %Our goal is to ensure that the grating moves in such a way that the resonance of the cavity it creates changes as smoothly as possible over as wide a range of wavelengths as possible. 
 
 The change in the wavelength reflected from the grating as a function of $\theta$ can be found by taking the derivative of Eq.\,\ref{gratingEQn} with $n=1$:
-
 \begin{equation}
     \frac{d\lambda}{d \theta}= \frac{2d}{\lambda} \cos(\theta)
 \end{equation}.
-
 However, as we move the grating, we also want to make sure that the cavity length ($L$) changes in such a way that $L/\lambda$ remains constant. 
-
 \begin{equation}
     \frac{d \lambda}{d L}= \textnormal{constant} 
-\end{equation}
+\end{equation}.
+%some better piezoratio
 
-We note that $L$ and $\theta$ are both functions of the piezo actuators. The geometry is straightforward, but involves a lot of terms. We model this in a well-commented Mathematica Notebook included in Appendix\,\ref{GratingRatioAppendix}. The ratio that we find to be about right is 0.478755. In practice, we would fine tune this ratio by scanning the piezos and iteratively making adjustments to maximize the size of the range over which the laser operates single mode. However, the calculation is nice to have since it gives a good starting point and some geometries result in surprising ratios (for example, one of the lasers discussed in Ref.\,\cite{cjeDiss} required that the piezos scan in opposite directions, which required a change to the scan balancer circuitry).
+We note that $L$ and $\theta$ are both functions of the displacement of the piezo actuators. For small changes in $L$ and $\theta$, we can assume that the piezoelectric actuators need to provide displacements in a constant ratio. That is, if we let $x_1$ be the displacement of the linear actuator on one side from its initial position and allow $x_2$ to be the displacement of the linear actuator on the other side, we define the Piezo ratio $R$ as 
+\begin{equation}
+\textnormal{Piezo ratio}=x_2/x_1
+\end{equation}.
+We would like to find some value of $R$ such that
+\begin{equation}
+    \frac{d\lambda}{d \theta(x_1,R x_1)}= \frac{d \lambda}{d L(x_1,R x_1}
+\end{equation}.
+This problem depends heavily on the geometry of the system. The solution involves a lot of terms and geometric bookkeeping. Our model is detailed in a well-commented Mathematica Notebook included in Appendix\,\ref{GratingRatioAppendix}. The result is that we calculate that $R=0.478755$ is the ratio between the displacement of our piezoelectric actuators that will rotate and move the grating properly given the geometry of our grating mount. In practice, we would fine tune this ratio by scanning the piezos and iteratively making adjustments to maximize the size of the range over which the laser operates single mode. However, the calculation is nice to have since it gives a good starting point. The calculation is also useful since some diffraction grating mount geometries result in surprising ratios (for example, one of the lasers discussed in Ref.\,\cite{cjeDiss} required that the piezos scan in opposite directions (i.e. have a negative ratio), which required a change to the scan balancer circuitry).
+
 
 
 \subsection{Calculation of Maximum Safe Intensity}

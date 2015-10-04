@@ -10,28 +10,26 @@ We generate shifted beams by sending the seed light through an Acousto-optic Mod
 \begin{figure}
 \centerline{
 \includegraphics[width=0.95\textwidth]{diagramOfAOM}}
-\caption[AOM diagram]{\label{aomDiagramDetail} Detail of Figure\,\ref{figdiagramOfSetup}. The light from the master laser is depicted entering from the top of the diagram. This beam travels into the AOM, which is depicted in the center of the diagram. The red shifted light is depicted travelling towards the lens and mirror near the lower left side of the diagram. The zeroth order diffracted beam is recollimated and then retroreflected. The blue shifted light is depicted exiting the AOM towards the top right of the figure.}
+\caption[AOM diagram]{\label{aomDiagramDetail} Detail of Figure\,\ref{diagramOfSetup3}. The light from the master laser is depicted entering from the top of the diagram. This beam travels into the AOM, which is depicted in the center of the diagram. The upshifted light (upshifted in frequency, or blue shifted) is depicted travelling towards the lens and mirror near the lower left side of the diagram. The zeroth order diffracted beam is recollimated and then retroreflected. The downshifted light (red shifted) is depicted exiting the AOM towards the top right of the figure.}
 \end{figure}
 
-The AOM we used was a TEF-2500-200-405 made by Brimrose Corporation of America. The crystal material was Tellurium Flouride, the center carrier frequency is 2500 MHz, the bandwidth (3dB) was 200 MHz. The AOM's anti-reflective coatings are specified to work at 405 nm. 
+The AOM we use is model number TEF-2500-200-405 made by Brimrose Corporation of America. The crystal material is Tellurium Flouride; the center carrier frequency is 2500 MHz; the bandwidth (3dB) is 200 MHz. The AOM's anti-reflective coatings are specified to work at 405 nm. 
 \section{Principle of Operation}
 
-The AOM is a crystal with a piezoelectric transducer attached to one side and an acoustic absorber attached to the other side. Acoustic waves are produced by the tranducer. These waves travel across the active area of the AOM crystal and are absorbed by the absorber on the other side. The compression and decompression caused by the travelling acoustic waves changes the index of refraction within the crystal and because of this, the light can experience Bragg reflection off the acoustic wavefronts. Because the effective reflective surface is moving, the light scattered off these features is Doppler-shifted and emerges at a distinct angle compared to the incoming light. This allows the AOM to produce frequency-shifted beams. 
+The AOM is a crystal with a piezoelectric transducer attached to one side and an acoustic absorber attached to the other side. Acoustic waves are produced by the tranducer. These waves travel across the active area of the AOM crystal and are absorbed by the absorber on the other side. The compression and decompression caused by the travelling acoustic waves changes the index of refraction within the crystal as a function of both space and time. This creates what are effectively a series of travelling Bragg planes that correspond to the acoustic wavefrounts travelling across the crystal. Light crossing through the crystal can experience Bragg reflection off these planes and, because the effective reflective surface is moving, the light scattered off these features is Doppler-shifted and emerges at a distinct angle compared to the incoming light. This allows the AOM to produce frequency-shifted beams. 
 
 The calculation of the frequency shift and Bragg angle of an AOM are well-known. The relationship between the driving frequency and the Bragg angle is 
-
-
 \begin{equation}
-\sin{\theta}=\frac{m \lambda}{2 \Lambda}
+\sin{\theta}=\frac{m \lambda}{\Lambda}
 \end{equation}
+where $\theta$ is the Bragg angle, or the angle at which the light is deflected after going through the AOM, $\lambda$ is the wavelength of the laser, $\Lambda$ is the wavelength of the acoustic wave in the crystal medium, and $m$ is an integer representing the diffraction order. Only $m=0,1$ are relevant to the experiment. The $m=1$ beams are the ones used to injection lock the slave lasers. The $m=0$ beam refers to the laser light that passes straight through the AOM with no frequency shift. Most of the power emerges in the $m=0$ diffraction order. The $m=0$ order beam from the first pass is retroreflected to produce the second pass.
 
 The relationship between the driving frequency and the shift in the frequency of the light simply turns out to be 
-
 \begin{equation}
-    f_{\textnormal{driving}}=\Delta f_{\textnormal{laser}}.
-\end{equation}
-
-Ultimately, getting the AOM to work properly involves optimizing just a few parameters. We must ensure that the AOM is installed at the right angle relative to the incoming beam. We must ensure that as much of the incoming beam as possible hits the active area of the AOM. This requires alignment in the X and Y dimensions, but it also means that we attempt to maneuver the AOM so that the focal point of the incoming beam is approximately in the center of the crystal. The power used to drive the piezoelectric transducer must be optimized. Furthermore, the intensity and shape of the incoming beam must be adjusted to ensure that we do not exceed the maximum allowable intensity for the AOM, which is specified as 50 W/mm$^2$.
+    mf_{\textnormal{driving}}=\Delta f_{\textnormal{laser}}.
+\end{equation}.
+%put in datasheet
+Ultimately, getting the AOM to work properly involves optimizing just a few parameters. The AOM must be installed at the right angle relative to the incoming beam. I must ensure that as much of the incoming beam as possible hits the active aperture of the AOM, which is specified as having dimension 0.05 mm. This requires alignment in the X and Y directions, but it also means that I attempted to maneuver the AOM so that the focal point of the incoming beam was approximately in the center of the crystal in the Z direction as well (direction of propagation). This way, we keep the beam small on both apertures of the AOM. I also optimized the power used to drive the piezoelectric transducer. Furthermore, the intensity and shape of the incoming beam were adjusted to ensure that we do not exceed the maximum allowable intensity for the AOM, which is specified as 50 W/mm$^2$.
 %shape instead of waist?
 Thus, we will first discuss some work we did to characterize our incoming beam.
 
