@@ -31,27 +31,24 @@ The relationship between the driving frequency and the shift in the frequency of
 %put in datasheet
 Ultimately, getting the AOM to work properly involves optimizing just a few parameters. The AOM must be installed at the right angle relative to the incoming beam. I must ensure that as much of the incoming beam as possible hits the active aperture of the AOM, which is specified as having dimension 0.05 mm. This requires alignment in the X and Y directions, but it also means that I attempted to maneuver the AOM so that the focal point of the incoming beam was approximately in the center of the crystal in the Z direction as well (direction of propagation). This way, we keep the beam small on both apertures of the AOM. I also optimized the power used to drive the piezoelectric transducer. Furthermore, the intensity and shape of the incoming beam were adjusted to ensure that we do not exceed the maximum allowable intensity for the AOM, which is specified as 50 W/mm$^2$.
 %shape instead of waist?
-Thus, we will first discuss some work we did to characterize our incoming beam.
+Thus, we will first discuss some work we did to characterize the incoming beam.
 
 \section{Optimization of Beam Waist}
-First, we would like to control our beam so that, at its focus, the majority of the beam fits within the active area of the AOM 
+First, we would like to control the beam so that at its focus nearly all of the beam ($\sim99.96$\%) fits within the active area of the AOM.
 %\footnote{I did explore the possibility of just sending in a huge beam with lots of extra power in hopes that the part scattering off the active part of the AOM would work. Preliminary tests showed little promise for the technique. Furthermore, we would expect the possibility of severe distortion of the transverse mode of our laser.}
-This area is specified as being .05 mm wide. 
-
-Our goal is to have a beam waist radius that will be $\approx$4 times smaller than this 0.05 mm value\footnote{Note I am comparing the beam waist \emph{radius} to the \emph{width} of the active area.}. If our waist is too small, we have to reduce the power to avoid damaging the AOM. Also, the diffraction efficiency decreases because the beam will interact with fewer Bragg planes. If the waist is too large, only a small portion of the beam would be within the active area of the AOM and would thus possibly suffer distortion of its transverse mode. A beam that is focused to too large a size would also reflect less light.
+This area is specified as being .05 mm wide. Our goal is to have a beam waist radius that will be $\approx$4 times smaller than this 0.05 mm value.\footnote{Note that I am comparing the beam waist \emph{radius} to the \emph{width} of the active area.} If the beam waist is too small, we have to reduce the power to avoid damaging the AOM. Also, the diffraction efficiency decreases because the beam will interact with fewer Bragg planes. If the waist is too large, only a small portion of the beam would be within the active area of the AOM and would thus possibly suffer distortion of its transverse mode. A beam that is focused to too large a size would also reflect less light.
 
 We can model the laser as a Gaussian beam. Gaussian beams have the property that their intensity profile always takes a Gaussian shape, i.e. \cite{lasersMilonniEberly}
 \begin{equation}
     I(\mathbf{r})=I_0\exp{-2(r^2/w(z)^2)}
-\end{equation}
-
-The waist of a Gaussian Beam is given by:
+\end{equation},
+where $z$ and $r$ are spherical polar coordinates. $z$ represents position along the axis of propagation with the point $z=0$ defined to be the point along the beam path at which the beam is narrowest, while $r$ is the coordinate describing the distance from the $z$ axis. $I_0$ represents the intensity of the beam at $z=0, r=0$ and $w(z)$ is a function that gives the waist of a Gaussian beam, which is given by:
 
 \begin{equation}
     w(z)=\sqrt{s+\frac{z^2}{z_0^2}}
-\end{equation}
+\end{equation}.
 
-where $w(z)$ is the distance from the center of the beam to the point where the intensity of the beam has fallen by a factor of $1/e^2$ (i.e. the spot size), $z$ is the distance along the direction of propagation between the beam waist and the plane where we are evaluating $w(z)$ and $z0$ is the Rayleigh range, which also satisfies the relation 
+$w(z)$ is also the distance from the center of the beam to the point where the intensity of the beam has fallen by a factor of $1/e^2$ (i.e. the spot size). $z0$ is the Rayleigh range, which also satisfies the relation 
 
 \begin{equation}
     z_0=\pi w_0^2/\lambda
