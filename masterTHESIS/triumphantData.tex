@@ -1,8 +1,10 @@
 \chapter{Results and Conclusions}\label{triumphantDataChapter}
 
-The injection locking was successful and we successfully produced two working beams with an adjustable detuning. We have proven that both beams' frequencies are coupled to and offset from the master laser. Furthermore, the output from the slaves is sufficient to drive the transition. 
+The injection locking was successful and I successfully produced two working beams with an adjustable detuning. I have proven that both beams' frequencies are coupled to and offset from the master laser. Furthermore, the output from the slaves is sufficient to drive the transition. 
 
-First, we see that we can put one slave and the master laser on the spectrum analyzer and scan the master laser and see that the slave scans with it.This is illustrated in Figure\,\ref{fig:slaveMaster}.
+\section{Tracking Slave Lasers with Master Laser}
+
+First, when we look at one slave and the master laser on the spectrum analyzer and scan the master laser, we see that the slave scans with the master laser. This is illustrated in Figure\,\ref{fig:slaveMaster}.
 
 \begin{figure}
     %\centerline{\includegraphics[trim=100pt 100pt 100pt 100pt, clip=true, totalheight=0.5\textheight,angle=90]{testfigure}}
@@ -10,21 +12,21 @@ First, we see that we can put one slave and the master laser on the spectrum ana
     \centerline{\includegraphics{Slave2AndMasterScanningMaster}}
     %\includegraphics[totalheight=0.3\textheight]{testfigure}
     \caption[]{\label{fig:slaveMaster}
-    The slave and master laser on the spectrum analyzer. The y axis is the signal on the spectrum analyzer. There are three traces here, each showing the maseter laser at a different frequency. The slave laser is the taller peak, while the other peak belongs to the masdter laser. We can see that the peaks corresponding to the master laser and the slave laser move together.}
+    The slave and master laser on the spectrum analyzer. The y axis is the signal on the spectrum analyzer. There are three traces here, each showing the master laser at a different frequency. The slave laser is the taller peak, while the other peak belongs to the master laser. The peaks corresponding to the master laser and the slave laser move together.}
 \end{figure}
 
-Second, we examined the output of the spectrum analyzer while both slave lasers were coupled into it. 
+\section{Verifying that the Slave Frequencies can be Adjusted with the RF Oscillator}
+Second, I examined the output of the spectrum analyzer while both slave lasers were coupled into it. 
 The two peaks clearly corresponded to the two slave lasers, which we verified by alternatively blocking each of the slaves. 
 
 %We can see that there is a lot of power 
 
-
-Finally, we performed and experiment where we adjusted the driving frequency of the rf frequency generator driving the AOM. We observed that the peaks on the spectrum analyzer shifted by an amount corresponding to the change in the frequency. This provides strong evidence that the two slaves were injection locked to the modulated beams coming out of the AOM. This data is presented in Figure\,\ref{fig:typicaldata}.
+I performed and experiment where I adjusted the driving frequency of the rf frequency generator driving the AOM. I observed that the peaks on the spectrum analyzer shifted by an amount corresponding to the change in the frequency of the rf oscillator. This provides strong evidence that the two slaves were, indeed, injection locked to the modulated beams coming out of the AOM. This data is presented in Figure\,\ref{fig:typicaldata}.
 
 %This test has the further benefit of confirming that we have calculated the free spectral range of the cavity in the spectrum analyzer correctly. 
 
 %where is the energy going? I think it goes from reflecting to transmitting
-
+%I'm curious about finding the contribution to the linewidth of the cavity from the peaks.
  
 \begin{figure}
     %\centerline{\includegraphics[trim=100pt 100pt 100pt 100pt, clip=true, totalheight=0.5\textheight,angle=90]{testfigure}}
@@ -43,6 +45,12 @@ Spectrum analyzer data for }
 
 %Also, I have data that I can analyze to examine the feasibility of a Chu lock. I recorded 999 traces that showed the output of the spectrum analyzer, the current and the voltage. I recorded these over several hours, during which the laser drifted into and out of good, single mode operation. In principle, this data could be analyzed. 
 
-We have shown that we can change the oscillator frequency and thereby change the detuning. There are two limiting factors on the extent that we can do this. (Notice in Fig.\ \ref{fig:alldata} that the peaks get small as we continue to detune.) Both factors are geometrical in nature: First, the AOM diffraction efficiency decreases because the Bragg angle changes. Second, the diffraction angle changes, leading to a misalignment of the injected beams and a weakening of injection. However, even for large detunings, the injection lock can be achieved simply by realigning the output beams. We demonstrated this by successfully tuning the AOM driving frequency to the point where injection was lost, realigning (using the lasers as photodiodes) and then reachieving successful injection lock.
+We have shown that we can change the rf oscillator frequency and thereby change the detuning. There are two limiting factors on the extent that we can do this. (Notice in Fig.\ \ref{fig:alldata} that the peaks get small as we continue to detune.) Both factors are geometrical in nature: First, the AOM diffraction efficiency decreases because the Bragg angle changes. Second, the diffraction angle changes, leading to a misalignment of the injected beams and a weakening of injection. However, even for large detunings, the injection lock can be achieved simply by realigning the output beams. We demonstrated this by successfully tuning the AOM driving frequency to the point where injection was lost, realigning (using the lasers as photodiodes) and then reachieving successful injection lock.
+
+\section{Future Work}
+
+In order to ensure that the 408 nm 5 GHz detuned laser system works, we will need to actually drive stimulated Raman transitions in $^{87}$Sr$^+$. Completion of this requires the completion of the LVIS and other parts of the experiment. Getting the transition rate right will also likely require tweaks to many of the parameters of the current system. There are also additional optics that need to be installed to get the beams produced by this laser system to the atomic chamber. We will need to split the beams and then install optics to control their phase. 
+
+The 408 nm 5GHz detuned laser system could be improved in many ways. One thing that would be a great benefit is to increase the amount of time that the laser can operate without mode hopping. There was a technique described in Ref.\,\cite{chiowChuLock} for improving the stability of an ECDL by creating a closed feedback loop to monitor and minimize the laser's amplitude noise. I developed some circuitry and took some data to investigate a variation on this, but this is not included in this thesis. 
 
 
