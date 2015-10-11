@@ -36,17 +36,21 @@ If we let
 |\Psi(t)\rangle = c_e(t)e^{-i\omega_e t}|e\rangle + c_g e^{-i\omega_g t}|g\rangle
 \end{equation}
 represent the Schr\"odinger picture solution to the equation, then the solution in the case where $c_g(0)=1,c_e(0)=0$ is 
-\begin{equation}
-c_e(\tau)=-i \sin \left(\frac{\Omega_{eg} \tau}{2}\right) e^{-i\phi},
-\end{equation}
+\begin{align}
+c_e(\tau)&=-i e^{-i(\delta \tau/2+\phi)} \frac{\Omega_{eg}}{\Omega_{r}} \sin\left(\frac{\Omega_r \tau}{2}\right)\\
+c_g(\tau)&=e^{i(\delta \tau/2)} \left(
+\cos\left(\frac{\Omega_r \tau}{2}\right)
+- i\frac{\delta}{\Omega_r} \sin\left(\frac{\Omega_r \tau}{2}\right)\right)
+\end{align}
 which gives
-\begin{equation}
-|c_e(\tau)|^2=\frac{1}{2}\left[1- \cos \left(\Omega_{eg} \tau \right)\right] .
-\end{equation}
+\begin{align}
+|c_e(\tau)|^2=
+|c_g(\tau)|^2=\frac{1}{2}\left[1- \cos \left(\Omega_{eg} \tau \right)\right]
+\end{align}
+for the total population in each state. 
 Here, we define 
-\begin{\equation}
-
-\end{\equation}
+\begin{equation}
+\end{equation}
 \cite{Young1997363}
 %
 %The system is most naturally talked about in the interaction picture. In order to do this, I divide the Hamiltonian into two pieces: 
