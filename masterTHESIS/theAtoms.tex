@@ -37,25 +37,45 @@ If we let
 \end{equation}
 represent the Schr\"odinger picture solution to the equation, then the solution in the case where $c_g(0)=1,c_e(0)=0$ is 
 \begin{align}
-c_e(\tau)&=-i e^{-i(\delta \tau/2+\phi)} \frac{\Omega_{eg}}{\Omega_{r}} \sin\left(\frac{\Omega_r \tau}{2}\right)\\
+c_e(\tau)&=-i e^{-i(\delta \tau/2+\phi)} \frac{\Omega_{eg}}{\Omega_{r}} \sin\left(\frac{\Omega_r \tau}{2}\right)\label{eqn:ce2stateRabi}\\
 c_g(\tau)&=e^{i(\delta \tau/2)} \left(
 \cos\left(\frac{\Omega_r \tau}{2}\right)
 - i\frac{\delta}{\Omega_r} \sin\left(\frac{\Omega_r \tau}{2}\right)\right)
+\label{eqn:cg2stateRabi}
 \end{align}
-which gives
+where $\Omega_{eg}$ represents the on resonance Rabi frequency, which is defined as 
+\begin{equation}
+\Omega_{eg}=-\frac{\langle e |\mathbf{d}\cdot\mathbf{E}|g \rangle }{\hbar}.
+\end{equation}
+The effective Rabi frequency $\Omega_r$ is defined as 
+\begin{equation}
+\Omega_r=\sqrt{\Omega_{eg}^2+\delta^2},
+\end{equation}
+and $\delta$ is the detuning, or 
+\begin{equation}
+\delta=\omega-(\omega_e-\omega_g)
+\end{equation}.
+Equations\,\ref{eqn:ce2stateRabi} and \ref{eqn:cg2stateRabi} can be squared to find the total likelihood of finding the system in a particular state as a function of time (or, alternatively, we can interpret this as the population of the upper and lower states as a function of time):
 \begin{align}
 |c_e(\tau)|^2&=\left(\frac{\Omega_{eg}}{\Omega_r}\right)^2 \sin^2\left(\frac{\Omega_r\tau}{2}\right)
-=\frac{\Omega_{eg}^2}{2\Omega_r^2}(1-\cos(\Omega_r\tau))
-|c_g(\tau)|^2&=1-\left(1-\frac{\delta^2}{\Omega_r^2}\right)\sin^2\left(\frac{\Omega_r \tau}{2}\right)
-=1-()(1+\cos(\Omega_r\tau))
+=\frac{\Omega_{eg}^2}{2\Omega_r^2}(1-\cos(\Omega_r\tau))\\
+|c_g(\tau)|^2&=1-\left(1-\frac{\delta^2}{\Omega_r^2}\right)\sin^2
+\left(\frac{\Omega_r \tau}{2}\right)
+=1-\frac{\Omega_{eg}^2}{2\Omega_r^2} + \left(\frac{\Omega_{eg}^2}{2\Omega_r^2}\right)\cos(\Omega_r \tau)
 \end{align}
-
 %should I put \Omega_r^2 just to see? No. 
-for the total population in each state. 
-Here, we define 
+These results are quoted from Ref.\,\cite{Young1997363}, which gives a reasonably good explanation of the methods used.
+The two state Rabi system has some important properties. For one, we see that the only way to move 100\% of the population from the ground state to the excited state is to drive the system on resonance (i.e. with $\delta=0$). Also, we see that the system oscillates between populating the excited and ground states with frequency $\Omega_{r}$. The stronger the coupling between the laser and the system (which is encapsulated in $\langle e|\mathbf{d}\cdot\mathbf{E}|\rangle$), the more rapidly these oscillations occur. 
+
+A $\pi$ pulse is a laser pulse that swaps the populations of the excited and ground states. In other words, if we were to use an operator $\Pi$ to represent a $\pi$ pulse, it would take the form:
 \begin{equation}
+\Pi=e^{i\phi_1}|e\rangle\langle g|+e^{i\phi_2}|g\rangle\langle e|
 \end{equation}
-\cite{Young1997363}
+where $\phi_1$ and $\phi_2$ are arbitrary phases. 
+%with some phase? shoot. 
+One way to impart a $\pi$ pulse to the atomic system, would be to turn on our laser field for some finite amount of time such that the system undergoes half of one complete oscillation during the course of our pulse. We can estimate the necessary length of such a pulse to be simply the period associated with the effective Rabi rate, or in other words $T = 2\pi/\omega$.
+
+
 %
 %The system is most naturally talked about in the interaction picture. In order to do this, I divide the Hamiltonian into two pieces: 
 %\begin{equation}
