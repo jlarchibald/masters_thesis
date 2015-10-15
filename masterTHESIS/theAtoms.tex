@@ -119,18 +119,66 @@ H_0&=
 \hbar\omega_i |i\rangle\langle i | \\ 
 V&=-\mathbf{d}\cdot\mathbf{E}.
 \end{align}
-Here, $|e\rangle$,$|g\rangle$, and $|i\rangle$ represent particular internal states of the atom. They are all eigenstates of $H_0$. In Section\,\ref{figureOutStatesSection} we will show that $|e\rangle$ can represent the $F=4$,$m_f=0$,$^2$S$_{1/2}$ state, $|g\rangle$ can represent the $F=5$,$m_f=0$,$^2$S$_{1/2}$ state, and $|i\rangle$ can represent the $F=5$,$m_f=1$,$^2$P$_{3/2}$ state\footnote{Our analysis is general, though, and other states can be used depending on the polarization of the laser light at the atom}. The energies of the states are represented by $\hbar\omega_e,\hbar\omega_g,$ and $\hbar\omega_i$. We model the laser as a classical, oscillating electric field, $\mathbf{E}$, while $\mathbf{d}$ represents the dipole moment matrix operator of our atomic system. The electric field at the location of our atom takes the form 
+Here, $|e\rangle$,$|g\rangle$, and $|i\rangle$ represent particular internal states of the atom. They are all eigenstates of $H_0$. In Section\,\ref{figureOutStatesSection} we will show that $|e\rangle$ can represent the $F=4$,$m_f=0$,$^2$S$_{1/2}$ state, $|g\rangle$ can represent the $F=5$,$m_f=0$,$^2$S$_{1/2}$ state, and $|i\rangle$ can represent the $F=5$,$m_f=1$,$^2$P$_{3/2}$ state\footnote{Our analysis applies equally well to other sets of three states within the ions. We can select which states are involved by selecting our laser polarization and making sure that the laser is tuned to these states.}. The energies of the states are represented by $\hbar\omega_e,\hbar\omega_g,$ and $\hbar\omega_i$. We model the laser as a classical, oscillating electric field, $\mathbf{E}$, while $\mathbf{d}$ represents the dipole moment matrix operator of our atomic system. The electric field at the location of our atom takes the form 
 \begin{equation}
 \mathbf{E}=\mathbf{E_1} \cos(\omega_1 t + \phi_1) + \mathbf{E_2} \cos(\omega_2t + \phi_2). \label{eqn:Efield}
 \end{equation}
 Here, $E_1$ and $E_2$ contain the electric field magnitude and polarization for two different lasers that oscillate with angular frequencies $\omega_1$ and $\omega_2$ respectively\footnote{PROBLEM: This does not allow for circularly polarized light :(}. $\phi_1$ and $\phi_2$ represent arbitrary phases. We choose to let $\omega_1>\omega_2$. Thus, the $\mathbf{E_1}, \omega_1$ laser is closer tuned for the transitions between $|g\rangle$ and $|i\rangle$, while the $\mathbf{E_2}, \omega_2$ laser is the one that has more to do with the transitions involving $|e\rangle$ and $|i\rangle$. Conveniently, this numbering both matches the conventions in Ref.\,\cite{Young1997363} and it matches the numbering scheme of our slave lasers (i.e. slave 1 outputs a higher frequency than slave 2). 
 
-The dipole moment matrix operator will be evaluated and discussed in Section\,\label{ElectricDipoleInteraction}. However, for now, notice that by writing the interaction between the lasers and the atoms in the form $\mathbf{d}\cdot\mathbf{E}$, we have already assumed that the electric field produced by both lasers is uniform in the regime of the atoms. This is known as the ``dipole approximation.'' We also know that all of the on diagonal dipole moment matrix elements are zero \cite{cohenTannoudji}.
+The dipole moment matrix operator will be evaluated and discussed in Section\,\label{ElectricDipoleInteraction}. However, for now, notice that by writing the interaction between the lasers and the atoms in the form $\mathbf{d}\cdot\mathbf{E}$, we have already assumed that the electric field produced by both lasers is uniform in the regime of the atoms. This is known as the ``electric dipole approximation.'' We also know that all of the on diagonal dipole moment matrix elements are zero \cite{cohenTannoudji}. We also assume that there is no coupling betweeen $|e\rangle$ and $|g\rangle$, or in other words, that $\langle e|\mathbf{d}\cdot\mathbf{E}|g\rangle=0$ Therefore, we expect the dipole matrix element operator to take the form: 
+\begin{equation}
+\label{VSchrod}
+\begin{blockarray}{cccc}
+%&|e\rangle & |g\rangle & |i\rangle\\
+&\langle e| & \langle g| & \langle i|\\
+\begin{block}{c[ccc]}
+|e\rangle & 0 & 0 & \langle e |\mathbf{d}\cdot\mathbf{E}|i\rangle \\
+|g\rangle & 0 & 0 & \langle g |\mathbf{d}\cdot\mathbf{E}|i\rangle\\
+|i\rangle & \langle i |\mathbf{d}\cdot\mathbf{E}|e\rangle & \langle i |\mathbf{d}\cdot\mathbf{E}|g\rangle& 0 \\
+\end{block} 
+\end{blockarray}
+\end{equation}.
+%I should have been using \eqref all along 
+
+For convenience, we define the following frequencies:
+\begin{align}
+\Omega_e&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_2 | e\rangle }{\hbar}\\
+\Omega_g&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_1 | g\rangle}{\hbar}.
+\end{align}
+These are called the one photon on-resonance Rabi frequencies.
+
+First, we move to the interaction picture. The interaction picture is related to the Schr\"odinger picture by the following transformations: 
+\begin{align}
+\label{intTransforms}
+|e\rangle_I&=e^{iH_0t/\hbar}|e\rangle\\
+|g\rangle_I&=e^{iH_0t/\hbar}|g\rangle\\
+|i\rangle_I&=e^{iH_0t/\hbar}|i\rangle\\
+V_I&=e^{iH_0t/\hbar}Ve^{-iH_0t/\hbar}
+\end{align}
+In general, we may let $|\psi\rangle$ represent any generic state in the Schr\"odinger picture and $|\psi\rangle_I=\exp(iH_0t/\hbar)|e\rangle$ represent the interaction picture version of the state. The equations of motion satisfied by the states is 
+\begin{equation}
+i\hbar \frac{\partial}{\partial t}|\psi\rangle_I= V_I|\psi\rangle_I.
+\end{equation}
+Refs.\,\cite{sakurai} and \cite{merzbacher} explain this. Note that the basis $|e\rangle$,$|g\rangle$,$|i\rangle$, we can write $\exp(iH_0t/\hbar)$ as 
+\begin{equation}
+\label{expH0}
+\exp(iH_0t/\hbar)=e^{i\omega_e t}|e\rangle\langle e|+e^{i\omega_g t}|g\rangle \langle g|+e^{i\omega_i t}|i\rangle\langle i|
+\end{equation}
+We can write $V_I$ explicitly using Eqs.\,\eqref{VSchrod}, \eqref{intTransforms}, and \eqref{expH0}:
+\begin{equation}
+V_I=
+\begin{bmatrix}
+0 & 0 & \langle e |\mathbf{d}\cdot\mathbf{E}|i\rangle e^{i(-\omega_e+\omega_i)t}\\
+0 & 0 & \langle g |\mathbf{d}\cdot\mathbf{E}|i\rangle e^{i(-\omega_g+\omega_i)t\\
+\langle i |\mathbf{d}\cdot\mathbf{E}|e\rangle & \langle i |\mathbf{d}\cdot\mathbf{E}|g\rangle& 0 \\
+\end{bmatrix}
+\end{equation}
 
 In order to solve for the dynamics, we first apply the rotating wave approximation. This means that we rewrite $\mathbf{E}$ from Eq.\,\ref{eqn:Efield} as 
-\begin{equation}
-\mathbf{E}=\mathbf{E_1}\frac{\exp(i (\omega_1 t + \phi_1))+\exp(-i(\omega_1 t +\phi_1))}{2}
-\end{equation}
+\begin{multline}
+\mathbf{E}=\mathbf{E_1}\frac{\exp(i (\omega_1 t + \phi_1))+\exp(-i(\omega_1 t +\phi_1))}{2}\\
++\mathbf{E_2}\frac{\exp(i (\omega_2 t + \phi_2))+\exp(-i(\omega_2 t +\phi_2))}{2}
+\end{multline}
 
 Ref.\,\cite{Young1997363} then shows that the effective Rabi frequency, $\Omega_{\textnormal{eff}}$ is given by 
 
@@ -140,12 +188,7 @@ Ref.\,\cite{Young1997363} then shows that the effective Rabi frequency, $\Omega_
 
 where $\Delta$ is the one photon detuning. %\footnote{todo: unify conventions} 
 
-The one photon Rabi Frequencies are defined as:
 
-\begin{align}
-\Omega_e&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_2 | e\rangle }{\hbar}\\
-\Omega_g&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_1 | g\rangle}{\hbar}
-\end{align}
 
 Using the work of the previous sections, we can evaluate $\langle i | \mathbf{d}\cdot \mathbf{E}_2 | e\rangle$
 
