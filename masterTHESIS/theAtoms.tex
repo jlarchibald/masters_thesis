@@ -162,9 +162,22 @@ i\hbar \frac{\partial}{\partial t}|\psi\rangle_I= V_I|\psi\rangle_I.
 Refs.\,\cite{sakurai} and \cite{merzbacher} explain this. Note that the basis $|e\rangle$,$|g\rangle$,$|i\rangle$, we can write $\exp(iH_0t/\hbar)$ as 
 \begin{equation}
 \label{expH0}
-\exp(iH_0t/\hbar)=e^{i\omega_e t}|e\rangle\langle e|+e^{i\omega_g t}|g\rangle \langle g|+e^{i\omega_i t}|i\rangle\langle i|
+\exp(iH_0t/\hbar)=e^{i\omega_e t}|e\rangle\langle e|+e^{i\omega_g t}|g\rangle \langle g|+e^{i\omega_i t}|i\rangle\langle i|.
 \end{equation}
-We can write $V_I$ explicitly using Eqs.\,\eqref{VSchrod}, \eqref{intTransforms}, and \eqref{expH0}:
+This has the effect of moving the trivial evolution of the ion into the operators. Now, the state of the system may be written as  
+\begin{equation}
+|\psi(t)\rangle_I = c_e(t)|e\rangle_I+c_g(t)|g\rangle_I+c_i(t)|i\rangle_I
+\end{equation}
+where $c_e,c_g,c_i$ are slow-changing coefficients.
+
+In order to solve for the dynamics, we must apply the rotating wave approximation. This means that we rewrite $\mathbf{E}$ from Eq.\,\ref{eqn:Efield} as 
+\begin{multline}
+\label{Ebreakdown}
+\mathbf{E}=\mathbf{E_1}\frac{\exp(i (\omega_1 t + \phi_1))+\exp(-i(\omega_1 t +\phi_1))}{2}\\
++\mathbf{E_2}\frac{\exp(i (\omega_2 t + \phi_2))+\exp(-i(\omega_2 t +\phi_2))}{2}
+\end{multline}
+Basically, the rotating wave approximation is that we ignore the off-resonant terms. So, for example, if I wanted to look at $_I\langle e |V_I|e\rangle_I$, 
+We can write $V_I$ explicitly using Eqs.\,\eqref{VSchrod}, \eqref{intTransforms}, \eqref{expH0}, and \eqref{Ebreakdown}:
 \begin{equation}
 V_I=
 \begin{bmatrix}
@@ -174,11 +187,6 @@ V_I=
 \end{bmatrix}
 \end{equation}
 
-In order to solve for the dynamics, we first apply the rotating wave approximation. This means that we rewrite $\mathbf{E}$ from Eq.\,\ref{eqn:Efield} as 
-\begin{multline}
-\mathbf{E}=\mathbf{E_1}\frac{\exp(i (\omega_1 t + \phi_1))+\exp(-i(\omega_1 t +\phi_1))}{2}\\
-+\mathbf{E_2}\frac{\exp(i (\omega_2 t + \phi_2))+\exp(-i(\omega_2 t +\phi_2))}{2}
-\end{multline}
 
 Ref.\,\cite{Young1997363} then shows that the effective Rabi frequency, $\Omega_{\textnormal{eff}}$ is given by 
 
