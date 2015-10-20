@@ -193,12 +193,27 @@ In order to solve for the dynamics, we must apply the rotating wave approximatio
 \mathbf{E}=\mathbf{E_1}\frac{\exp(i (\omega_1 t + \phi_1))+\exp(-i(\omega_1 t +\phi_1))}{2}\\
 +\mathbf{E_2}\frac{\exp(i (\omega_2 t + \phi_2))+\exp(-i(\omega_2 t +\phi_2))}{2},
 \end{multline}
-and then we will ignore the off-resonant terms. So, for example, if we look at the $\langle i |V_I|e\rangle$, we would have 
-\begin{align}
-\langle i|V_I|e\rangle &= \langle i|e^{i H_0 t/\hbar} (\mathbf{d}\cdot\mathbf{E}) e^{-iH_0 t/\hbar}|e\rangle\\
-&=  \frac{1}{2}e^{i (\omega_i-\omega_e) t} \left(\langle i|\mathbf{d}\cdot\mathbf{E_1}|e\rangle ( e^{i (\omega_1 t + \phi_1)}+ e^{-i (\omega_1 t + \phi_1)}) +\langle i|\mathbf{d}\cdot\mathbf{E_2}|e\rangle ( e^{i (\omega_2 t + \phi_2)}+ e^{-i (\omega_2 t + \phi_2)})\right)\\
-&=  \frac{1}{2}e^{i (\omega_i-\omega_e+\omega_1) t + \phi_1} \left(\langle i|\mathbf{d}\cdot\mathbf{E_1}|e\rangle ( e^{i (\omega_1 t + \phi_1)}+ e^{-i (\omega_1 t + \phi_1)}) +\langle i|\mathbf{d}\cdot\mathbf{E_2}|e\rangle ( e^{i (\omega_2 t + \phi_2)}+ e^{-i (\omega_2 t + \phi_2)})\right)\\
-\end{align}
+and then we will assume that only the slowly-oscillating terms will make non-zero contributions to the dynamics of the system. In other words, we now 
+
+\begin{multline}
+\label{Ebreakdown}
+\mathbf{E}=\mathbf{E_1}\frac{\exp(i (\omega_1 t + \phi_1))+\exp(-i(\omega_1 t +\phi_1))}{2}\\
++\mathbf{E_2}\frac{\exp(i (\omega_2 t + \phi_2))+\exp(-i(\omega_2 t +\phi_2))}{2},
+\end{multline}
+
+So, for example, if we look at the $\langle i |V_I|e\rangle$, we would have some terms with 
+%\begin{align}
+%\langle i|V_I|e\rangle &= \langle i|e^{i H_0 t/\hbar} (\mathbf{d}\cdot\mathbf{E}) e^{-iH_0 t/\hbar}|e\rangle\\
+%&=  \frac{1}{2}e^{i (\omega_i-\omega_e) t} 
+%\left(\langle i|\mathbf{d}\cdot\mathbf{E_1}|e\rangle 
+%( e^{i (\omega_1 t + \phi_1)}+ e^{-i (\omega_1 t + \phi_1)}) +
+%\langle i|\mathbf{d}\cdot\mathbf{E_2}|e\rangle 
+%( e^{i (\omega_2 t + \phi_2)}+ e^{-i (\omega_2 t + \phi_2)})\right)\\
+%&=  \frac{1}{2}e^{i (\omega_i-\omega_e+\omega_1) t + \phi_1} 
+%\left(\langle i|\mathbf{d}\cdot\mathbf{E_1}|e\rangle 
+%( e^{i (\omega_1 t + \phi_1)}+ 
+%e^{-i (\omega_1 t + \phi_1)}) +\langle i|\mathbf{d}\cdot\mathbf{E_2}|e\rangle ( e^{i (\omega_2 t + \phi_2)}+ e^{-i (\omega_2 t + \phi_2)})\right)\\
+%\end{align}
 
 
 We can write $V_I$ explicitly using Eqs.\,\eqref{VSchrod}, \eqref{intTransforms}, \eqref{expH0}, and \eqref{Ebreakdown}:
