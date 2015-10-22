@@ -255,7 +255,16 @@ Now, the solution to this equation is very similar to the solution to the two st
 \end{equation}
 Where $\delta^{AC}= \frac{|\Omega_e|^2}{4\Delta}-\frac{|\Omega_g|^2}{4\Delta}$, which accounts for certain AC Stark shifts of the levels. 
 %(\Omega_e^{AC}-\Omega_g^{AC})$. The symbols $\Omega_e^{AC}$ and $\Omega_g^{AC}$ represent the AC Stark shifts 
-Then, we see that the population of our states are 
+
+Then, we see that the population in our two states for the case where $|c_g(\tau=0)|^2=1$ and $|c_e(\tau=0)|^2=0$ is given by 
+\begin{align}
+|c_e(\tau)|^2&
+=\frac{\Omega_{\mathit{eff}}^2}{2\Omega_r^2}(1-\cos(\Omega_r\tau))\\
+|c_g(\tau)|^2&=
+1-\frac{\Omega_{\mathit{eff}}^2}{2\Omega_r^2} + \left(\frac{\Omega_{\mathit{eff}}^2}{2\Omega_r^2}\right)\cos(\Omega_r \tau).
+\end{align}
+Here again we see that in order to coherently move the population, we need to ensure that $\Omega_{\mathit{eff}}=\Omega_r$.
+
 %\begin{equation}
 %\Omega_\mathit{eff}=\sqrt{\left(\frac{\Gamma^2S_0}{2}\right)^2 + \delta^2}
 %\end{equation}
@@ -275,7 +284,6 @@ Then, we see that the population of our states are
 
 \section{States and Quantum Numbers}
 
-
 The Hamiltonian of the Strontium ions is analagous to the Hamiltonian of a single-electron atom. 
 In a single electron atom, the solution to the Schr\"odinger equation describing the electron is solved by separation of variables.
  Each solution is a product of a spherically symmetric function that depends only on the distance $r$ from the nucleus and the spherical harmonics.
@@ -288,7 +296,7 @@ In the case of $^{87}$Sr+, there is only one electron in the valence band. The i
 %We will first approximate the Hamiltonian by assuming that there is no coupling that is dependent on the spin. 
 %The hyperfine interaction will be modeled as a perturbation on top of this.
 
-The ``good'' quantum numbers for describing the internal states of a $^{87}$Sr+ ion are $F$,$J$,$L$,$S$,$m_f$ and $n$\cite{experimental_hyperfine_alkali_arimondo}\cite{cuaMITnotes} where $F$,$J$,$L$,$S$,$m_f$ take on their usual meanings (see Table\,\ref{quantumNumberQuickref}). This is because the Hamiltonian is diagonal in this basis.
+The ``good'' quantum numbers for describing the internal states of a $^{87}$Sr+ ion are $F$,$J$,$L$,$S$,$m_f$ and $n$\cite{experimental_hyperfine_alkali_arimondo}\cite{cuaMITnotes} where $F$,$J$,$L$,$S$,$m_f$ take on their usual meanings (see Table\,\ref{quantumNumberQuickref}). This is because the Hamiltonian for the unperturbed atom is diagonal in this basis. However, a few of the external stimuli to the ions (like the constant magnetic field or the interaction of the lasers) can be most naturally modelled in terms of the eigenstates of the $L,m_l,S,m_s,I,m_I$ quantum numbers.   
 
 \begin{table}[h!]
 \centering
@@ -305,11 +313,6 @@ $m_f$ & Eigenvalue of $\mathbf{F}_z$.\\ \hline
 \caption{The quantum numbers used to describe the internal state of the $^{87}$Sr+ ion.}
 \label{quantumNumberQuickref}
 \end{table}
-
-%why does the ground state J not play into it at all?
-%I just realized I have no idea where to find the information on the hyperfine splitting of the Sr+ 
-%also, IDK what to do about the the Nuclear spin numbers of the upper state. 
-%I have this http://link.springer.com/article/10.1007%2FBF00568145
 
 Our experiment is designed to use the $^2$S$_{1/2}$ and $^2$P$_{3/2}$ states. Each of these spectroscopic terms refers to many states: First, we must account for the states that correspond to different values of $F$. Since $\mathbf{F}=\mathbf{I}+\mathbf{J}$, $F$ can take on any values between $|I-J|,|I-J+1|,...,|I+J|$. So, for example, since $I=9/2$, the valid values of $F$ for the $^2$S$_{1/2}$ state are $F=4$ and $F=5$. For the upper states, where $J=3/2$, $F$ can take on the values $3,4,5,6$ 
 
