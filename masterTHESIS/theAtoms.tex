@@ -139,12 +139,6 @@ The dipole moment matrix operator will be evaluated and discussed in Section\,\r
 \end{equation}.
 %I should have been using \eqref all along 
 
-For convenience, we define the following frequencies:
-\begin{align}
-\Omega_e&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_2 | e\rangle }{\hbar}\\
-\Omega_g&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_1 | g\rangle}{\hbar}.
-\end{align}
-These are called the one photon on-resonance Rabi frequencies.
 
 First, we move to the interaction picture. The interaction picture is related to the Schr\"odinger picture by the following transformations: 
 \begin{align}
@@ -198,6 +192,7 @@ which means that the first few terms of $V_I$ can be written in the interaction 
 %The thing to copy and paste. 
 %\frac{1}{2}e^{i(\omega_x-\omega_y+\omega_z)t+\phi_z}\langle x|\mathbf{d}\cdot\mathbf{E}_z| y\rangle + \frac{1}{2}e^{i(\omega_x-\omega_y-\omega_z)t-\phi_z}\langle x|\mathbf{d}\cdot\mathbf{E}_z| y\rangle
 \begin{multline}
+\label{Vbreakdown}
 V_I=\frac{1}{2}e^{i(\omega_e-\omega_i+\omega_1)t+\phi_1}|e\rangle\langle e|\mathbf{d}\cdot\mathbf{E}_1| i\rangle\langle i | + \frac{1}{2}e^{i(\omega_e-\omega_i-\omega_1)t-\phi_1}|e\rangle\langle e|\mathbf{d}\cdot\mathbf{E}_1| i\rangle\langle i| \\
 +
 \frac{1}{2}e^{i(\omega_e-\omega_i+\omega_2)t+\phi_2}|e\rangle\langle e|\mathbf{d}\cdot\mathbf{E}_2| i\rangle\langle i| + \frac{1}{2}e^{i(\omega_e-\omega_i-\omega_2)t-\phi_2}|e\rangle\langle e|\mathbf{d}\cdot\mathbf{E}_2| i\rangle\langle i| +
@@ -211,40 +206,27 @@ V_I=\frac{1}{2}e^{i(\omega_i-\omega_g-\omega_1)t+\phi_1}|i\rangle\langle i|\math
 \frac{1}{2}e^{i(\omega_i-\omega_e-\omega_2)t+\phi_2}|i\rangle\langle i|\mathbf{d}\cdot\mathbf{E}_2| e\rangle\langle e| + \frac{1}{2}e^{i(\omega_e-\omega_i+\omega_2)t-\phi_2}|e\rangle\langle e|\mathbf{d}\cdot\mathbf{E}_2| i\rangle\langle i| 
 \end{multline}
 
-  If we define 
-
+For convenience, we define the following frequencies: 
 \begin{align}
-\delta_{ei}=
+\label{frequencyDiffs}
+\Delta_{1g}&=\omega_i-\omega_g-\omega_1\\
+\Delta_{2e}&=\omega_i-\omega_e-\omega_2.
+\delta=(\omega_e-\omega_g)-(\omega_1-\omega_2).
 \end{align}
+We assume that $\delta\ll\Delta_{1g}$ and that $\delta\ll\Delta_{2e}$, or in other words that $\Delta_{1g}\approx\Delta{2e}$.
+We also define these:
+\begin{align}
+\label{RabiFrequencies}
+\Omega_e&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_2 | e\rangle }{\hbar}\\
+\Omega_g&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_1 | g\rangle}{\hbar}.
+\end{align}
+These are called the one photon on-resonance Rabi frequencies.
 
-
-
-\begin{multline}
-\label{Ebreakdown}
-\mathbf{E}=\mathbf{E_1}\frac{\exp(i (\omega_1 t + \phi_1))+\exp(-i(\omega_1 t +\phi_1))}{2}\\
-+\mathbf{E_2}\frac{\exp(i (\omega_2 t + \phi_2))+\exp(-i(\omega_2 t +\phi_2))}{2},
-\end{multline}
-
-So, for example, if we look at the $\langle i |V_I|e\rangle$, we would have some terms with 
-%\begin{align}
-%\langle i|V_I|e\rangle &= \langle i|e^{i H_0 t/\hbar} (\mathbf{d}\cdot\mathbf{E}) e^{-iH_0 t/\hbar}|e\rangle\\
-%&=  \frac{1}{2}e^{i (\omega_i-\omega_e) t} 
-%\left(\langle i|\mathbf{d}\cdot\mathbf{E_1}|e\rangle 
-%( e^{i (\omega_1 t + \phi_1)}+ e^{-i (\omega_1 t + \phi_1)}) +
-%\langle i|\mathbf{d}\cdot\mathbf{E_2}|e\rangle 
-%( e^{i (\omega_2 t + \phi_2)}+ e^{-i (\omega_2 t + \phi_2)})\right)\\
-%&=  \frac{1}{2}e^{i (\omega_i-\omega_e+\omega_1) t + \phi_1} 
-%\left(\langle i|\mathbf{d}\cdot\mathbf{E_1}|e\rangle 
-%( e^{i (\omega_1 t + \phi_1)}+ 
-%e^{-i (\omega_1 t + \phi_1)}) +\langle i|\mathbf{d}\cdot\mathbf{E_2}|e\rangle ( e^{i (\omega_2 t + \phi_2)}+ e^{-i (\omega_2 t + \phi_2)})\right)\\
-%\end{align}
-
-
-We can write $V_I$ explicitly using Eqs.\,\eqref{VSchrod}, \eqref{intTransforms}, \eqref{expH0}, and \eqref{Ebreakdown}:
+We can write $V_I$ explicitly using Eqs.\,\eqref{Vbreakdown}, \eqref{frequencyDiffs}, and \eqref{RabiFrequencies}:
 \begin{equation}
 V_I=
 \begin{bmatrix}
-0 & 0 & \langle e |\mathbf{d}\cdot\mathbf{E}|i\rangle e^{i(-\omega_e+\omega_i)t}\\
+0 & 0 & }\\
 0 & 0 & \langle g |\mathbf{d}\cdot\mathbf{E}|i\rangle e^{i(-\omega_g+\omega_i)t}\\
 \langle i |\mathbf{d}\cdot\mathbf{E}|e\rangle & \langle i |\mathbf{d}\cdot\mathbf{E}|g\rangle & 0 \\
 \end{bmatrix}
