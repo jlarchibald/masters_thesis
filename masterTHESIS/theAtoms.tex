@@ -75,7 +75,6 @@ A $\pi$ pulse is a laser pulse that swaps the populations of the excited and gro
 where $\phi_{eg}$ and $\phi_{ge}$ are arbitrary phases. 
 %with some phase? shoot. 
 One way to impart a $\pi$ pulse to the atomic system, would be to turn on the laser field for some finite amount of time such that the system undergoes half of one complete Rabi oscillation during the course of our pulse. We can estimate the necessary length of such a pulse to be simply the period associated with the effective Rabi rate, or in other words $T = 2\pi/\omega$.
-
 %
 %The system is most naturally talked about in the interaction picture. In order to do this, I divide the Hamiltonian into two pieces: 
 %\begin{equation}
@@ -187,13 +186,24 @@ $\Omega_{\mathit{eff}}$ & \\ \hline
 \label{frequencyTable}
 \end{table}
 
-In order to solve for the dynamics, we must apply the rotating wave approximation. This means that we rewrite $\mathbf{E}$ from Eq.\,\ref{eqn:Efield} as 
+In order to solve for the dynamics, we must apply the rotating wave approximation. 
+%todo: cite Rabi? Sure. 
+In order to do this, we first rewrite $\mathbf{E}$ from Eq.\,\ref{eqn:Efield} as 
 \begin{multline}
 \label{Ebreakdown}
 \mathbf{E}=\mathbf{E_1}\frac{\exp(i (\omega_1 t + \phi_1))+\exp(-i(\omega_1 t +\phi_1))}{2}\\
 +\mathbf{E_2}\frac{\exp(i (\omega_2 t + \phi_2))+\exp(-i(\omega_2 t +\phi_2))}{2},
 \end{multline}
-and then we will assume that only the slowly-oscillating terms will make non-zero contributions to the dynamics of the system. In other words, we now 
+which means that the first few terms of $V_I$ can be written in the interaction picture as
+%The thing to copy and paste. 
+%\frac{1}{2}e^{i(\omega_x-\omega_y+\omega_z)t+\phi_z}\langle x|\mathbf{d}\cdot\mathbf{E}_z| y\rangle + \frac{1}{2}e^{i(\omega_x-\omega_y-\omega_z)t-\phi_z}\langle x|\mathbf{d}\cdot\mathbf{E}_z| y\rangle
+\begin{multline}
+V_I=\frac{1}{2}e^{i(\omega_e-\omega_i+\omega_1)t+\phi_1}|e\rangle\langle e|\mathbf{d}\cdot\mathbf{E}_1| i\rangle\langle i | + \frac{1}{2}e^{i(\omega_e-\omega_i-\omega_1)t-\phi_1}|e\rangle\langle e|\mathbf{d}\cdot\mathbf{E}_1| i\rangle\langle i| \\
++
+\frac{1}{2}e^{i(\omega_e-\omega_i+\omega_2)t+\phi_2}\langle e|\mathbf{d}\cdot\mathbf{E}_2| i\rangle + \frac{1}{2}e^{i(\omega_e-\omega_i-\omega_2)t-\phi_2}\langle e|\mathbf{d}\cdot\mathbf{E}_2| i\rangle +
+\ldots
+\end{multline}
+The rotating wave approximation is to assume that only the slowly-oscillating terms will make non-zero contributions to the dynamics of the system\cite{Young1997363}. Thus, we can write 
 
 \begin{multline}
 \label{Ebreakdown}
