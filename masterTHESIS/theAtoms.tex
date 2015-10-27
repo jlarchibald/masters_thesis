@@ -232,12 +232,13 @@ These are called the one photon on-resonance Rabi frequencies.
 
 We can write $V_I$ explicitly using Eqs.\,\eqref{Vbreakdown}, \eqref{frequencyDiffs}, and \eqref{RabiFrequencies}:
 \begin{equation}
+\label{VI_matrix_simplified}
 V_I=
 \hbar
 \begin{bmatrix}
 0 & 0 & -\frac{\Omega_e^*}{2}e^{-i\Delta_{2e}t} \\
 0 & 0 & -\frac{\Omega_g^*}{2}e^{-i\Delta_{1g}t}\\
--\frac{\Omega_e}{2}e^{i\Delta_{2e}t} & -\frac{\Omega_{1g}}{2}e^{i\Delta_{1g}t} & 0 \\
+-\frac{\Omega_e}{2}e^{i\Delta_{2e}t} & -\frac{\Omega_{g}}{2}e^{i\Delta_{1g}t} & 0 \\
 \end{bmatrix}
 \end{equation}
 
@@ -249,24 +250,47 @@ Ref.\,\cite{Young1997363} then shows that the effective Rabi frequency, $\Omega_
 
 where $\Delta$ is the one photon detuning. 
 
-In order to solve the system, we use adiabatic elimination to make this look like the two state system. There are three ways to do this: 
-
-\begin{enumerate}
-\item Write the state vector in the Schr\"odinger picture as 
+In order to solve the system, we use adiabatic elimination to make this look like the two state system. There are several ways to do this. One method is to write the solution as 
 \begin{equation} 
 |\psi\rangle = 
 \begin{bmatrix}c_e(t)\\c_g(t)\\c_i(t)
 \end{bmatrix}
 \end{equation}.
-Then find the three coupled differential equations that describe the evolution of the sytem and solve them assuming that $\frac{\partial c_i(t)}{\partial t}=0$. .\cite{brionLambdaAdiabatic}
-\item Examine the perturbative series. 
-\item Use projector operators. 
-\end{enumerate}
+Then find the three coupled differential equations that describe the evolution of the sytem and solve them assuming that $\frac{\partial c_i(t)}{\partial t}=0$. There are some subtleties to this method (for one thing, $\dot{c_i}=0$ in the Schr\"odinger picture, not for time-dependent coefficients defined in other pictures) that are well-explained in Ref.\,\cite{brionLambdaAdiabatic}. In fact, Ref.\,\cite{brionLambdaAdiabatic} gives an excellent discussion of adiabatic elimination for a three state system like ours. 
+Ref.\,\cite{brionLambdaAdiabatic} also describes a method using Green's functions as explained in \cite{cohenTannoudji}. This method involves using the resolvent and projection operators to describe the system. The Green's function of the system is defined as 
+\begin{equation}
+G(z)=\frac{1}{z-\mathbf{H}}
+\end{equation}
+Where $z$ is a parameter over which we will eventually integrate and $H$ represents the Hamiltonian of the system. This is to be interpreted essentially as 
+\begin{equation}
+\frac{1}{z-H}=\left(z\mathds{1}-\mathbf{H}\right)^{-1}
+\end{equation}
+The time evolution of the system can be written as a contour integral in the complex plane:
+\begin{equation}
+U(t)=\frac{1}{2\pi i}\int_{C_+\cup C_-}dz e^{-izt/\hbar}G(z)
+\end{equation}
+where $U(t)$ is the time evolution operator and $C_+\cup C_-$ is a contour integral taken from $-\infty$ to $\infty$ where $C_-$ is just below the real axis that points in the positive real direction and $C_+$ is a contour just above the real axis that points towards the negative real numbers. 
+If we define two projections operators, $P=|e\rangle\langle e| + |g\rangle\langle g|$ and $Q=|i\rangle\langle i|$, it is shown in Ref.\,\cite{cohenTannoudji} that $G(z)$ can be written as 
+\begin{equation}
+PG(z)P=\frac{P}{z-PH_0P-P\left(V+V\frac{Q}{z-QH_0Q-QVQ}V\right)P}
+\end{equation}.
+Ref.\,\cite{brionLambdaAdiabatic} then shows that poles of a certain order can be omitted in the ``pole approximation.'' 
 
-So, in Ref.\,\cite{brionLambdaAdiabatic}, the authors describe a method using techniques that are best explained in \cite{cohenTannoudji}. Here, we use the resolvent and projection operators to describe the system. The time evolution of the system can be written as 
+We can also get to the two state equations of motion using classic perturbation theory. If we take the standard time-dependent perturbation to second order, we get:
 
 \begin{equation}
-U(t)=
+U_I(t)=\mathds{1}-\frac{i}{\hbar}\int_{t_0}^t dt' V_I(t') + \left(-\frac{i}{\hbar}\right)^2 \int_{t_0}^t dt' V_I(t')\int_{t_0}^{t'}dt'' V_I(t'')
+\end{equation}
+If we use Eq.\,\eqref{VI_matrix_simplified}, we get 
+\begin{equation}
+U_I(t)=\mathds{1}-\frac{i}{\hbar}\int_{t_0}^t dt'  \hbar
+\begin{bmatrix}
+0 & 0 & -\frac{\Omega_e^*}{2}e^{-i\Delta_{2e}t} \\
+0 & 0 & -\frac{\Omega_g^*}{2}e^{-i\Delta_{1g}t}\\
+-\frac{\Omega_e}{2}e^{i\Delta_{2e}t} & -\frac{\Omega_{g}}{2}e^{i\Delta_{1g}t} & 0 \\
++ \left(-\frac{i}{\hbar}\right)^2 \int_{t_0}^t dt' V_I(t')\int_{t_0}^{t'}dt'' V_I(t'')
+
+\end{bmatrix}
 \end{equation}
 
 Now, the solution to this equation is very similar to the solution to the two state system discussed in \ref{twoStateSection}. Here, the quantity analagous to the off-resonance Rabi frequency is given by \cite{Young1997363}: 
