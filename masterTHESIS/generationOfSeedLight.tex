@@ -21,7 +21,7 @@ The master laser is a 408 nm extended cavity diode laser (ECDL). It consists of 
 \begin{figure}
 \centerline{
 \includegraphics[width=0.95\textwidth]{master_laser.JPG}}
-\caption[Photograph of Master Laser]{\label{master_laser_photo} The master laser system. The diffraction grating that provides feedback to the laser is mounted on a custom machined grating holder that is attached to the Thorlabs KC1-PZ piezoelectric kinematic mount. . I initially tried several other configurations. However, after several iterations, I found that the use of the metal rods to provide direct  mechanical coupling between the laser and grating mount were necessary for stable, single-mode operation. I also found through trial and error that placing the grating a distance of $\sim$4 cm from the aperture seemed to work for this particular laser.}
+\caption[Photograph of master laser]{\label{master_laser_photo} The master laser system. The diffraction grating that provides feedback to the laser is mounted on a custom machined grating holder that is attached to the Thorlabs KC1-PZ piezoelectric kinematic mount. . I initially tried several other configurations. However, after several iterations, I found that the use of the metal rods to provide direct  mechanical coupling between the laser and grating mount were necessary for stable, single-mode operation. I also found through trial and error that placing the grating a distance of $\sim$4 cm from the aperture seemed to work for this particular laser.}
 \end{figure}
 
 %why did we do the rods? Do I have it in my notes?
@@ -35,7 +35,7 @@ In fact, we also bought 30 diodes on eBay that had been removed from actual Blu-
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth]{laser_on_in_housing.JPG}
-\caption[Photographs of Master Laser Components]{The master laser in its housing and the diffraction grating before it was installed (inset). We modified the housing to include an additional temperature sensor (the AD592), which can be seen glued to the top of the copper plate.\label{master_laser_interior_photo}
+\caption[Photographs of master laser components]{The master laser in its housing and the diffraction grating before it was installed (inset). We modified the housing to include an additional temperature sensor (the AD592), which can be seen glued to the top of the copper plate.\label{master_laser_interior_photo}
 }
 \end{figure}
 
@@ -53,7 +53,7 @@ I tried several techniques to maximize the resolution and accuracy of these meas
 \begin{figure}
 \centering
 \includegraphics[width=0.95\textwidth]{calibrationData} 
-\caption[Calibration spectrum from Hg Lamp]{\label{calibrationData} Data from the calibration using the mercury lamp. I deliberately allowed some of the farther away peaks to saturate in order to improve our signal for the peaks near 408 nm. The black lines represent spectral lines taken from the NIST Atomic Spectra Database\cite{NISTasd}. The average of the premeasured and postmeasured Hg spectra was sent through an Octave script I wrote that automatically identified peaks in the spectrum, displayed the peaks, and then allowed the user to select which peak in the NIST Hg spectrum these peaks corresponded to. The peaks found by this script are displayed with the label, ``detected peaks in measured spectrum.''}
+\caption[Calibration spectrum from Hg lamp]{\label{calibrationData} Data from the calibration using the mercury lamp. I deliberately allowed some of the farther away peaks to saturate in order to improve our signal for the peaks near 408 nm. The black lines represent spectral lines taken from the NIST Atomic Spectra Database\cite{NISTasd}. The average of the premeasured and postmeasured Hg spectra was sent through an Octave script I wrote that automatically identified peaks in the spectrum, displayed the peaks, and then allowed the user to select which peak in the NIST Hg spectrum these peaks corresponded to. The peaks found by this script are displayed with the label, ``detected peaks in measured spectrum.''}
 \end{figure}
 \begin{figure}
 \centering
@@ -64,7 +64,7 @@ I tried several techniques to maximize the resolution and accuracy of these meas
 \begin{figure}
 \centering
 \includegraphics[width=0.95\textwidth]{wavelength_selected} 
-\caption[Wavelength selected diodes]{\label{wavelengthselected} Representative data of the free-running (i.e. no grating feedback or extended cavity) wavelength of several wavelength selected lasers taken at 120 mA.} %temperature? %the ones we picked or someone else did? 
+\caption[Wavelength of different laser diodes]{\label{wavelengthselected} Representative data of the free-running (i.e. no grating feedback or extended cavity) wavelength of several wavelength selected lasers taken at 120 mA.} %temperature? %the ones we picked or someone else did? 
 \end{figure}
 %diagram of which method to use where? 
 %The basic 
@@ -90,7 +90,7 @@ We have data on the wavelength dependence on temperature and current for our las
 \includegraphics[width=1\textwidth]{TVlambda2}
 \label{currentandT:sfigb}
 \end{subfigure}
-\caption[Graph of Temperatures and Currents]{\label{3dCurrentandTgraph} Representative data of the free-running wavelength of our master laser as a function of nominal current and nominal temperature. Both plots show the same data.}
+\caption[Wavelength vs temperature and current]{\label{3dCurrentandTgraph} Representative data of the free-running wavelength of our master laser as a function of nominal current and nominal temperature. Both plots show the same data.}
 \end{figure}
 
 
@@ -121,6 +121,7 @@ After this, I used a Bristol 521 wavelength meter to measure the wavelength. The
 
 %did I ever tune it to the right wavelength using the Bristol wave meter? 
 \subsection{Ensuring ability to fine tune}
+\label{ensuringAbilityToFineTune}
 
 The piezoelectric actuators on the grating mount can also be moved electrically. It is important that we find a way to move the piezeoelectric actuators in concert in such a way that we maximize the range over which we can scan the laser frequency without the laser mode hopping. When the $^{87}$Sr$^+$ ion interferometer is operational, we might need this for several reasons: First, it may be the case that we decide to lock the laser to an external reference like a vapor cell or a cavity. In this case, the laser frequency will need to be adjusted based on an error signal that we derive from our stable reference. In the current setup, we do not lock the laser to any external reference (we probably do not need to since we plan to operate the lasers fairly far from the resonance and the system has been show to be relatively insensitive to the overall frequency). However, we never know if we might decide we want to on some later date. Second, the ability to modulate the laser with a single knob is very handy. In fact, this is what we did to verify that the slave laser frequencies were properly tracking with the master laser frequency (see Fig.\,\ref{fig:slaveMaster}). Experimenters running the ion interferometer experiment will likely appreciate a simple way to tune the laser manually that does not involve rather having to adjust several pieces separately. 
 

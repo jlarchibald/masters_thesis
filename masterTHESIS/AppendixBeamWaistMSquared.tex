@@ -86,7 +86,7 @@ To investigate the camera's feasibility, we wanted to verify that the camera was
 \centerline{
 \includegraphics[width=0.95\textwidth]{cameraimage}
 }
-\caption[Sample Images]{Three images taken using the camera. Each was the same laser beam with the attenuation adjusted using our waveplate and polarizer setup. The total power was measured using a photodiode and the relative total power is shown in the lower right corner of each image. By comparing the pixel values of similar spots within the image, we were able to bootstrap some calibration parameters for the camera.}
+\caption[Sample camera images]{Three images taken using the camera. Each was the same laser beam with the attenuation adjusted using our waveplate and polarizer setup. The total power was measured using a photodiode and the relative total power is shown in the lower right corner of each image. By comparing the pixel values of similar spots within the image, we were able to bootstrap some calibration parameters for the camera.}
 \end{figure}
 
 Our idea was that, if the camera is linear and the pixels act independently, the following statements should be true: 
@@ -126,7 +126,7 @@ We used this function to calculate what correction function to use. We did a cou
 \centerline{
 \includegraphics[width=0.95\textwidth]{cameraPixelFit}
 }
-\caption[Camera Linearity and Offset]{On the x axis is the inferred pixel reading based on our assumptions about the ratios of pixel readings. On the y axis, we can see the actual readings of the pixels. This illustrates clearly the threshold issue of the camera.}
+\caption[Camera linearity and offset]{On the x axis is the inferred pixel reading based on our assumptions about the ratios of pixel readings. On the y axis, we can see the actual readings of the pixels. This illustrates clearly the threshold issue of the camera.}
 \end{figure}
 
 In the end, the camera offset and nonlinearity made it unsuitable for sensitive measurements of the second moment width of the beam. However they did provide a reasonable sanity check on our methods.
