@@ -1,5 +1,4 @@
-
-\chapter{Adjustment of Light Amounts}
+\chapter{Adjusting Light Levels with Imperfect Waveplates}
 \label{twoWaveplateTrick}
 
 The light level from the master laser is constrained by our requirement that the Master laser operate single mode. However, we require control of the light levels further downstream in order to have the right light levels to avoid damage to the Acousto-Optic Modulator (AOM) and to have the right amount of light to injection lock the other lasers. 
@@ -10,7 +9,7 @@ We had initially intended to use this scheme. However, there was a mistake in pl
 
 We could have easily ordered a 0 order waveplate to replace them. However, we found a way to use the exising waveplates.
 
-\section{A review of the principles of operation of a waveplate: }
+\section{A review of the principles of operation of a waveplate}
 
 A waveplate rotates polarization by changing the relative phase of the oscillating components of the incoming polarized light. A waveplate has a fast axis and a slow axis. A half-wave plate is designed so that, at the specified wavelength, the component of polarization along the slow axis acquires a phase shift of $(2m+1)*\pi$ relative to the fast axis.Here $m$ is an integer. 
 
@@ -61,7 +60,7 @@ However, we found that we can compensate for this by simply using two waveplates
 
 Now, the polarization of the light when it is neither completely vertically nor completely horizontally polarized will not necessarily be linearly polarized. There will, in general, be some arbitrary phase shift between the components of polarization. However, this does not matter for our purpose since the goal was simply to control the amount of power exiting from each of two sides of a polarizing beam cube. 
 
-\section{Jones Matrices}
+\section{Jones matrices}
 This can be demonstrated using the Jones matrix formalism. The polarization of the incoming light can be represented by the following Jones vector: 
 \begin{equation}
 \begin{pmatrix}
@@ -104,7 +103,7 @@ By numerical experimentation, we found that there was a set of angles where we c
 \end{figure}
 
 
-\section{Alignment Procedure}
+\section{Alignment procedure}
 By physical and numerical experimentation, we found that you can achieve these angles by subsequently adjusting each of the two waveplates in turn. Keeping 100\% of the light vertically polarized is easy and can be achieved for any fixed value of $\theta_2$ since $\theta_1$ can simply be adjusted so that the fast axis of the first waveplate aligns with the slow axis of the second. In this way, the total phase shift experienced by all the components is equal.
 
 Thus, to correctly place the second waveplate at the angle  $\theta_2$, we adjust both angles until the outgoing light is entirely horizontally polarized (as measured by the output of the polarizing beam cube). I found that mounting the waveplates at the approximate angles I calculated followed by alternately adjusting each waveplate to minimize the amount of light transmitted achieved the desired result. 

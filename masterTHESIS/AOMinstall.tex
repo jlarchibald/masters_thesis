@@ -14,7 +14,7 @@ We generate shifted beams by sending the seed light through an Acousto-optic Mod
 \end{figure}
 
 The AOM we use is model number TEF-2500-200-405 made by Brimrose Corporation of America. The crystal material is Tellurium Flouride; the center carrier frequency is 2500 MHz; the bandwidth (3dB) is 200 MHz. The AOM's anti-reflective coatings are specified to work at 405 nm. 
-\section{Principle of Operation}
+\section{Principle of operation}
 
 The AOM is a crystal with a piezoelectric transducer attached to one side and an acoustic absorber attached to the other side. Acoustic waves are produced by the tranducer. These waves travel across the active area of the AOM crystal and are absorbed by the absorber on the other side. The compression and decompression caused by the travelling acoustic waves changes the index of refraction within the crystal as a function of both space and time. This creates what are effectively a series of travelling Bragg planes that correspond to the acoustic wavefrounts travelling across the crystal. Light crossing through the crystal can experience Bragg reflection off these planes and, because the effective reflective surface is moving, the light scattered off these features is Doppler-shifted and emerges at a distinct angle compared to the incoming light. This allows the AOM to produce frequency-shifted beams. 
 
@@ -33,7 +33,7 @@ Ultimately, getting the AOM to work properly involves optimizing just a few para
 %shape instead of waist?
 Thus, we will first discuss some work we did to characterize the incoming beam.
 
-\section{Optimization of Beam Waist}
+\section{Optimization of beam waist}
 First, we would like to control the beam so that at its focus nearly all of the beam ($\sim99.96$\%) fits within the active area of the AOM.
 %\footnote{I did explore the possibility of just sending in a huge beam with lots of extra power in hopes that the part scattering off the active part of the AOM would work. Preliminary tests showed little promise for the technique. Furthermore, we would expect the possibility of severe distortion of the transverse mode of our laser.}
 This area is specified as being .05 mm wide. Our goal is to have a beam waist radius that will be $\approx$4 times smaller than this 0.05 mm value.\footnote{Note that I am comparing the beam waist \emph{radius} to the full \emph{width} of the active area.} %diameter? 
@@ -91,7 +91,7 @@ However, I did consider the implications on the beam if $M^2\neq 1$. I can look 
 %does z0 matter as a fit parameter? I don't think so. 
 Note that the smallest possible beam waist radius corresponding to any given beam divergence occurs if $M^2=1$. That is, if I measure the beam divergence and perform my curve fit assuming that $M^2=1$, the beam-waist radius that I calculate will be guaranteed to be \emph{smaller than or equal to} the actual beam waist radius of the beam no matter what the beam's actual value of $M^2$ might be. Thus, for the purposes of keeping the intensity at the beam waist below the AOM's damage threshold, the assumption that $M^2=1$ gives a sort of ``worst case scenario.'' 
 
-\subsection{Ray Transfer Matrix Analysis of System}
+\subsection{Ray transfer matrix analysis of system}
 It is crucially important that I limit the intensity of the light that passes through the AOM. As a sanity check, I now calculate what the beam waist should be for our optical setup using an ABCD matrix (ray-transfer matrix). This model can be used to estimate the sensitivity of the system to small changes in the setup. In this way, I can verify that the system is robust against small changes and realignments and thereby gain some small reassurance. For example, if the master laser ever had to be taken apart and reassembled, it would likely be the case that there will be tiny differences in the position of the laser or collimating lens. I seek to verify that such small changes will not yield catastrophic changes in the size of the beam as it passes through the AOM.  
 
 %This is in a lab notebook somewhere. You need to find it there, I think. Or it's in a Mathematica file. 

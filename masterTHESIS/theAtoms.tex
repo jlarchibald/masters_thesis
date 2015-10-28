@@ -17,7 +17,7 @@ In this way I will show that the beams from this laser system will be able to ac
 First, we must model the dynamics of the system based on Refs.\,\cite{Young1997363}, \cite{gustavsonThesis}, \cite{footAtomicPhysics}, \cite{cjeDiss} and \cite{RamanBeamSplit}. 
 We will first talk about two state systems that exhibit Rabi oscillations. We will then assume that the atom can be treated like a three state atom and show that these three states can be reduced to a two state system. 
 
-\subsection{Two State Rabi Oscillations}
+\subsection{Two state Rabi oscillations}
 \label{twoStateSection}
 The first step to understanding the physics of the Raman transitions is to understand the dynamics of a two state atom. Discussions of this can be found in many places, including Refs.\,\cite{cohenTannoudji}, \cite{demilleBudkerKimball}, and \cite{Young1997363}. The Hamiltonian for a two level atom under periodic perturbation from an electric field can be written as 
 
@@ -106,7 +106,7 @@ One way to impart a $\pi$ pulse to the atomic system, would be to turn on the la
 %
 %In the case of 
 %
-\subsection{Three State System}
+\subsection{Three state system}
 \begin{figure}
 \centerline{
 \includegraphics[totalheight=0.3\textheight]{E_level_from_proposal}
@@ -326,7 +326,7 @@ Here again we see that in order to coherently move the population, we need to en
 
 %In Ref.\ \cite{cjeDiss}, this calculation is performed, but some of the details are left mysterious. In particular, no source is cited for any of the physical parameters of the $^{87}$Sr+ atom (e.g. the dipole moment values, the transition width, the saturation parameter). We hope to reproduce this calculation with more details.  
 
-\section{States and Quantum Numbers}
+\section{States and quantum numbers}
 
 The Hamiltonian of the Strontium ions is analagous to the Hamiltonian of a single-electron atom. 
 In a single electron atom, the solution to the Schr\"odinger equation describing the electron is solved by separation of variables.
@@ -360,7 +360,7 @@ $m_f$ & Eigenvalue of $\mathbf{F}_z$.\\ \hline
 
 Our experiment is designed to use the $^2$S$_{1/2}$ and $^2$P$_{3/2}$ states. Each of these spectroscopic terms refers to many states: First, we must account for the states that correspond to different values of $F$. Since $\mathbf{F}=\mathbf{I}+\mathbf{J}$, $F$ can take on any values between $|I-J|,|I-J+1|,...,|I+J|$. So, for example, since $I=9/2$, the valid values of $F$ for the $^2$S$_{1/2}$ state are $F=4$ and $F=5$. For the upper states, where $J=3/2$, $F$ can take on the values $3,4,5,6$ 
 
-\section{Review of Hyperfine Splitting}
+\section{Review of hyperfine splitting}
 
 We now discuss the Hyperfine contribution to our overall Hamiltonian. We will need to understand the hyperfine splitting to allow us to model the 5GHz energy difference between the $F=4$ and $F=5$ $^2$S$_{1/2}$ states. Our discussion will allow us to calculate hyperfine shifts for all the energy levels in our atom based on the hyperfine $A$ and $B$ coefficients, for which we have found experimental and numerical estimates in the literature.
 
@@ -402,7 +402,7 @@ The direct product of these two gives us a value that can be validly rotated usi
 
 The most important contributions to the Hyperfine splitting come from magnetic dipole interactions and electric quadrupole interactions \cite{sobelman_spectra}\cite{schwartz_hyperfine_expansion}\cite{cuaMITnotes}. These correspond to the $k=1$ and $k=2$ terms in Eq.\,\ref{TkMk_hyperfine} respectively\cite{experimental_hyperfine_alkali_arimondo}.
 %\footnote{It is interesting to note that the odd values of $k$ correspond to magnetic interactions while the even values correspond to electric interactions. That is to say that there is no electric dipole interaction between the electrons and the nucleus, but there is a magnetic dipole ($k=1$), while there is an electric quadrupole coupling, but no magnetic quadrupole, etc}
-\subsection{Magnetic Dipole Interaction}
+\subsection{Magnetic dipole interaction}
 
 First, we discuss the $k=1$ term, or magnetic dipole interaction term from the expansion in Eq.\,\ref{TkMk_hyperfine}. Classically, we know that the potential energy of a dipole in a magnetic field is proportional to the dot product of the magnetic dipole moment vector with the magnetic field vector ($U=-\mathbf{\mu}\cdot\mathbf{B}$). We also know that the magnetic field at the center of a classical dipole points in the direction of the dipole moment. Therefore, it seems reasonable that the energy due to the interaction of the electron and the nucleus might be somehow proportional to a dot product of two vectors representing their respective angular momenta. Indeed, this turns out to be the case: the magnetic dipole interaction can be written as follows\cite{sobelman_spectra}: 
 \begin{equation}\label{IdotJ}
@@ -419,7 +419,7 @@ W_f=\frac{1}{2}A(\mathbf{F}^2-\mathbf{J}^2-\mathbf{I}^2)
 
 We can also see how Eq.\,\ref{IdotJ} represents the $k=1$ term in Eq.\,\ref{TkMk_hyperfine}. We clearly have one tensor operator from the Nuclear angular momentum space ($\mathbf{I}$) along with one vector from the electron angular momentum space ($\mathbf{J}$). The product we get is a scalar that will be invariant under rotations in the total space\footnote{A quick note about constants. In the expansion in Eq.\,\ref{TkMk_hyperfine}, there are different conventions \cite{schwartz_hyperfine_expansion} for deciding which coefficients are pulled into which operators. However, as we will see, the coefficient $A$ as used in Eq.\,\ref{IdotJ} is defined in a standard way and can be looked up in the literature. For this reason, we are specifying $T$ and $M$ only up to a constant. This is fine since the point of showing the expansion is really just to make a comment about the geometry of hyperfine interactions, while the actual calculations only involve the first two terms}.
 
-\subsection{Electric Quadrupole Interaction}
+\subsection{Electric quadrupole interaction}
 In a similar way, the $k=2$ term in Eq.\,\label{TkMk_hyperfine} can be shown to correspond to the electric quadrupole interaction. Chapter 6.2 of Ref.\,\cite{sobelman_spectra} gives a good explanation for this. The crux of the argument is that the electric quadrupole interaction,
 \begin{equation}
 W=\int\frac{\rho(\mathbf{r})\rho'(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|}d\mathbf{r}d\mathbf{r'}\\
@@ -527,7 +527,7 @@ $F=6$ $^2$P$_{3/2} (5p)$ &   17121 MHz\\ \hline
 \label{tableOfHyperfine deetuings}
 \end{table}
 
-\section{Magnetic Field}\label{zeeman}
+\section{Magnetic field}\label{zeeman}
 
 The next feature of our system Hamiltonian that we need to model involves the constant magnetic field pointing in the $\hat{z}$ direction that exists throughout the entire area where the interferometry will take place. This field has been placed there intentionally to break the degeneracy of some of the $M_f$ sublevels that we might couple to. It also prevents the atoms from precessing around stray magnetic fields, which would take them out of the lab-centric coordinate system we would like to keep them in.
 
@@ -555,7 +555,7 @@ where $\mu_0=e\hbar/(2 m_e)$ and is the Bohr magneton\footnote{$e \hbar / (2 m_e
 
 Eq.\,\ref{zeemanSobelman} shows that the Zeeman splitting is linear as a function of $m_f$. The splitting depends on $g$, the Land\'e $g$ factor of the atom and the magnetic field. We expect the Land\'e $g$ factor to be of order $1$. We could perform a more in-depth analysis of the exact splitting. However, in the experiment, the magnetic field is adjustable and will be tuned in such a way that it just barely removes the degeneracy between the $m_f$ sublevels. In other words, we will adjust $H$ until the separation between adjacent $m_f$ sublevels is just a few times greater than the linewidth of our laser, which is on the order of a few hundred Megahertz. Therefore, for the purposes of our calculations here, we will simply assume that the $m_f$ sublevels for each of our states are not degenerate and that the energies differ by $\sim$100 MHz.
 
-\section{Electric Dipole Interaction with Laser Light}
+\section{Electric dipole interaction with laser light}
 %redundant
 \label{ElectricDipoleInteraction}
 
@@ -580,7 +580,7 @@ and $\mathbf{d}$ represents the dipole moment operator for our states.
 
 %The classical definition of the electric dipole moment is $\mathbf{p}=q \mathbf{d}$ where $\mathbf{p}$ is a vector representing the dipole moment, $q$ is the charge, and $\mathbf{d}$ is the displacement vect
 
-\subsection{Evaluation of Dipole Moment operator}
+\subsection{Evaluation of dipole moment operator}
 We must now evaluate the dipole moment operator. 
 Classically, the dipole moment is a vector quantity that encapsulates the charges and the distance between them. The dipole moment operator that we are looking should, in the classical limit, equal the charge of the electron times some vector that roughly represents the displacement between the electron and the nucleus. The dipole moment operator is defined as 
 
@@ -718,7 +718,7 @@ $F'=6$,$F=5$&$0.5 \sqrt{13}$&1.80\\
 %\label{coefficient_calculated}
 %\end{table}
 
-\section{Looking up the reduced Dipole Moment Matrix Operator} \label{lookItUp}
+\section{Looking up the reduced dipole moment matrix operator} \label{lookItUp}
 We would like to carefully determine the value of this. According to Ref.\ \cite{safronova2photon} the magnitude of the dipole moment operator is -4.35075 a. u.(atomic units, $a_0 e$, where $a_0$ is the Bohr radius and $e$ the fundamental charge) as calculated using the all-order, relativistic SD method. It is useful to compare this to the value obtained from at least one other source\footnote{It is easy to make simple mistakes regarding units and conventions.}. According to the NIST atomic spectra database, $A_{ki}=1.41e8$ s$^{-1}$ \cite{NISTasd}. This is the Einstein A coefficient associated with the decays from this state. If this is the case, then we use this equation from Ref.\ \cite{demilleBudkerKimball}:  
 \begin{equation}
 |\langle f ||d|| i \rangle|^2 = (4 \pi \epsilon_0) \frac{3 \hbar c^3}{4 \omega_0^3} (2 J'+1) A_{ki}\label{budkerAeqn}
@@ -730,7 +730,7 @@ Plugging in our values into Eq.\,\ref{budkerAeqn}, we get that the magnitude of 
 
 Thus, the agreement between the theoretical calculations of Ref.\,\cite{safronova2photon} and the experimentally-derived values of Ref.\,\cite{NISTasd} is very good. As a practical matter, this gives us enormous confidence since, not only do the experimental and theoretical approaches to finding the electric dipole reduced matrix element match one another, but we can also be sure that our sources are using the same conventions for, e.g. the Wigner Eckart theorem as we are.
 
-\section{Evaluation of Dipole Moment Matrix Operator}
+\section{Evaluation of dipole moment matrix operator}
 
 Now we will use the Wigner-Eckart theorem in order to calculate the dipole moment matrix elements using the reduced dipole moment matrix operator. The Wigner-Eckart theorem allows us to evaluate the dipole moment operators for all our quantum numbers using the reduced dipole moment matrix operator:
 
@@ -764,7 +764,7 @@ Furthermore, based on the other calculations in Ref.\,\cite{cjeDiss}, we expect 
 
 In other words, we now restrict our analysis to $m_f=0$ for the $^2$S$_{3/2}$ states and the $F=5$$^2$P$_{3/2}$ states.
 
-\section{Evaluation of Clebsch Gordan Coefficients}
+\section{Evaluation of Clebsch-Gordan coefficients}
 
 We can automatically evaluate the Clebsch Gordan coefficients for our system in order to identify which of the possible $^2$P$_{3/2}$ states we are coupling to. The condition for an intermediate state to be valid is that we must be able to drive a dipole transition to it from the $F=5$ $^2$S$_{1/2}$ state and that we must be able to use our other laser to drive the atom from that state to the $F=4$ $^2$S$_{1/2}$ state. If we let the intermediate state be represented by quantum numbers $F_i=5$,$m_{f,i}$, we can write this condition mathematically as  
 \begin{equation}

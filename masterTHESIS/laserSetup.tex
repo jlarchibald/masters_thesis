@@ -7,7 +7,7 @@ This thesis describes the construction of the laser system (408 nm 5 GHz detuned
 
 By the time I began work on this project, most of the planning for this laser system had already been done by Chris Erickson and Dallin Durfee. Chris had already ordered many of the parts, including most of the optics we would eventually need and the AOM. He also acquired most of the commercially-produced electronics that were ordered for this project. The laser current drivers and temperature controllers were built in house by other students in the lab using the design discussed in Refs.\,\cite{currentDriver1}\cite{currentDriverNote}\cite{cjeDiss}. Chris modified the laser diode housings to include an extra temperature sensor and he modified some of them so that they could be mounted on posts perpendicular to their usual orientation. Chris also built the first version of our spectrum analyzer. Chris had also already built part of the enclosure that goes around the system and he had already made an attempt to build an ECDL using one of the laser diodes and a grating. However, as I will discuss in Chapter\,\ref{generationOfSeedLight}, the final configuration of the master laser, including the selection of the diode and the final assembly and machining of the grating mount was done by me. Everything else in the system was built and characterized by me, including the installation of the optical isolators, the installation of the AOM, and the injection locking of the slave lasers.
 
-\section{Basic Design}
+\section{Basic design}
 %As we will find in Chapter\,\ref{ChapterAboutTheAtoms}, our ability to drive the transitions depends strongly on the difference between the lasing frequencies of our two lasers. In contrast, we expect our experiment to be relatively less sensitive to common mode drifts in the frequencies of our lasers.
 The laser system consists of several components arranged together on a 12''$\times$48'' breadboard that is bolted to an optical table. The breadboard is enclosed by a plastic case in order to reduce air currents, protect the optics, provide strain relief for cables, and beautify the experiment. The circuits that provide current to the lasers and the temperature controllers for the lasers are mounted on a shelf above the laser enclosure along with an RF generator and RF amplifier for driving the AOM and various pieces of test and measurement equipment.  
 \begin{figure}
@@ -64,7 +64,7 @@ The outputs of these two lasers are what we will send to the ion interferometer 
 }
 \end{figure} 
 
-\section{Verifying the Output of the 408 nm 5GHz Detuned Laser System}
+\section{Verifying the output of the 408 nm 5GHz detuned laser system}
 \label{spectAnalayzer}
 I use a Fabry-Perot spectrum analyzer to monitor whether the slaves are injection locked and to verify that the master laser and slave lasers are running single mode. The spectrum analyzer is depicted in Fig.\,\ref{fig:spectrumAnalyzer}. 
 The spectrum analyzer is a semiconfocal cavity of length 200 mm whose length can be varied electronically. The flat, partially reflective mirror through which light enters the cavity is mounted on a Thorlabs KC1-PZ Kinematic Mirror Mount that features piezo-electric actuators. This allows for fine control of the mirror's position (and therefore fine changes in the cavity length). At the other end of the cavity there is a curved mirror of focal length 200 mm. Behind this there is a photodiode \footnote{the Thorlabs DET family of reversed biased photodiode products}.

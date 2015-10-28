@@ -5,10 +5,10 @@
 
 
 
-In this chapter, we discuss the Fabry-Perot spectrum analyzer that we built to analyze this system. 
+In this Appendix, we discuss the Fabry-Perot spectrum analyzer that we built to analyze this system. 
 
 
-\section{Spectrum Analyzer Design}
+\section{Spectrum analyzer design}
 One of the mirrors is mounted on a Thorlabs kinematic piezo mount and attached to a piezo driver designed specifically for spectrum analyzers.
 
 The cavity is designed to be nearly semiconfocal.%\footnote{I used to think that this was because the transverse modes of a semiconfocal cavity overlap. However, it seems that a concentric cavity would be more likely to have this property. Oh wait. I get it. The semiconfocal cavity has all its transverse modes very small.} 
@@ -16,7 +16,7 @@ This is because a semiconfocal configuration is one of several in which many mod
 
 %\footnote{How do I know whether I'm semiconfocal for all practical purposes? I mean, somehow lower finesse should make me less sensitive to small variations in the cavity length. Furthermore, are there models where the errors never really go away? You know? I guess I mean where it doesn't just become part of the noise. I suppose chaos is one example of this--where arbitrarily high precision is needed to predict even the macroscopic behavior of the system. Is any aspect of this system chaotic?}
 
-\section{Free Spectral Range Basics}
+\section{Free spectral range basics}
 The Free Spectral Range (FSR) of the cavity is defined as the difference in frequency between adjacent resonant longitudinal modes of the cavity. It always works out to be $c/2L$. 
 It is easy to condsider the example of a one-dimensional cavity with just one transverse mode. If we suppose that we have some wavelength $\lambda$ that is resonant with our cavity, then the resonant condition would be that 
 \begin{equation}
@@ -39,13 +39,13 @@ f-f'&= \frac{(m+1)c}{2L}-\frac{m c}{2L}\\
 
 where $f'$ and $f'$ are the frequencies associated with $\lambda$ and $\lambda'$ respectively. 
 
-\section{Free Spectral Range for Real Cavities}
+\section{Free spectral range for real cavities}
 In general, there will be more than one transverse mode. The free spectral range remains $c/2L$. However, between any two peaks corresponding to one transverse mode, there will be other resonant peaks corresponding to other transverse modes. Thus, there will be resonances of our cavity spaced closer than the free spectral range. One could, in principle, couple to just a single transverse mode by carefully coupling the beam to the cavity.
 
 However, in our system this is not necessary. We use a semiconfocal (hemiconfocal), which has the convenient property that the various transverse modes line up in such a way that they fall into four distinct, evenly-spaced groups. Therefore, if we couple to many transverse modes of the cavity, we expect that our effective free spectral range will be $c/8L$.
 
 %\footnote{Look, I was very confused about the factor of 8 for a long time. I now realize that I was simply misinterpreting the normal ray transfer diagram I had in my mind of a confocal cavity. Also, I was not very clear on why semiconfocal was the one where different transverse modes overlap. Since I've found the answers, I figured I might as well put them here.} 
-\section{Derivation of $c/8L$}
+\section{Derivation of free spectral range for hemiconfocal cavities}
 \begin{figure}
 \centerline{\includegraphics[height=3cm]{spectrum_analyzer_path.png}}
 \caption{\label{completePath}Illustration of the optical path that makes a complete trip around the semiconfocal cavity. Note that the ray traverses the entire length of the path four times before doubling back on itself. It traverses the path 8 times before ending up in the same place again. This diagram similar to one found on page 277 of Ref.\ \cite{lasersMilonniEberly}. Here, we assume that the ray travels nearly parallel to the central axis of the cavity so that the length of each leg is well-approximated by the length of the cavity, $L$.}
@@ -61,11 +61,11 @@ For a semiconfocal cavity, we can convince ourselves visually (see Fig.\,\ref{co
 We therefore expect that modes in the cavity will have resonant frequencies spaced by $c/8L$. 
 
 
-\section{Using the Paraxial Wave Equation}
+\section{Using the paraxial wave equation}
 
 A more rigorous treatment of this can be done by solving the paraxial wave equation. This model will also allow us to model the exact behavior of our real life cavity (note that in the real cavity, we look at just a handful of wavelengths but we scan the cavity length).
 
-\subsection{Review of Paraxial Wave Equation}
+\subsection{Review of paraxial wave equation}
 
 We first examine the equation describing the electric field for different modes of the cavity. This can be derived directly from Maxwell's equations using the paraxial approximation (see, e.g., Refs.\ \cite{lasersMilonniEberly} and \cite{bergeson_amo_notes} for a complete discussion of this). The argument in brief is basically this: 
 
@@ -101,7 +101,7 @@ z_0&=\frac{\pi w_0^2}{\lambda }
 
 %\footnote{I'm not sure why this works when we neglect polarization. It seems like you might get accidentally a factor of 2 or something extra based on the polarization diagram that Milloni and Eberly have on page 305. Perhaps there is another factor of 2 somewhere else? }
 
-\subsection{Frequencies of Resonant Modes}
+\subsection{Frequencies of resonant modes}
 Now, the propagation of the solution to the paraxial wave equation from \ref{solutionToParaxial} can be calculated using Eq.\ \ref{ABCDlawforGaussianBeams}. The resonant condition is that after propagating across the cavity an arbitrary number of times, a beam must be the same\cite{lasersMilonniEberly}.
 Alternatively, we may demand simply that $R(z)$ (which we interpret as the radius of the wavefronts) at the location of each of the mirrors match the radius of the mirror. This condition on $R$ is sufficient to guarantee that the cavity mode the light is traversing is stable. In order to have a resonant mode (as opposed to a mode that is merely stable), the light must also accumulate a phase change that is some integer multiple of $2\pi$ after traversing the cavity a finite number of times.
 %and that the the cavity length be an integer multiple of wavelength. 
@@ -130,7 +130,7 @@ Since $m$,$n$ and $q$ are all integers, we see that the resonant modes will be i
 
 %Interestingly, the hemiconfocal configuration has an advantage over %\footnote{I am going out on a limb here...} 
 %the confocal configuration that is illustrated by this equation. In the confocal configuration, both mirrors are identical and are placed so that their focal points coincide. This means that $L=R_1/2=R_2/2$ and thus $g_1=1-L/R_1=g_2=1-L/(2L-R_2)$. Therefore, $\sqrt{g_1g_2}=0$, making the free spectral range of the cavity $c/4L$. However, note that if $L$ changes, then the sign of $g_1$ changes, leading to a kink in the frequency response. With a hemiconfocal cavity, there is no such discontinuity. This makes the expansion in the next section slightly easier. 
-\section{Modelling the Actual Spectrum Analyzer}
+\section{Modelling the actual spectrum analyzer}
 
 The spectrum analyzer works by allowing us to change the cavity length and thereby go into and out of resonance with different wavelengths of light. The above discussion is valid for calculating what frequencies will couple to a fixedcavity, but we would like to verify that coupling a fixed frequency into a cavity of variable length will give us essentially the same thing.
 

@@ -14,8 +14,8 @@ The main concern regarding the master laser is that we need to get it to the rig
 \end{itemize}
 Each of these factors is interdependent and, in general, the adjustment of one usually involves adjusting all the others. However, as we will see, many of the steps I did to build the master laser had the end goal of making sure that we could get the laser to the right wavelength with ever greater control and accuracy. 
 
-\section{Stabilization of Master Laser}
-\subsection{Master Laser Layout}
+\section{Stabilization of master laser}
+\subsection{Master laser layout}
 The master laser is a 408 nm extended cavity diode laser (ECDL). It consists of a laser diode mounted in a temperature-controlled housing from the Thorlabs LDM21 family of products. It is collimated by a small, aspherical lens (Thorlabs C570TM-A). The master laser ECDL also has a grating mounted outside of the temperature-controlled housing. The grating is mounted on a Thorlabs KC1-PZ piezoelectric kinematic mount, which is attached to the laser via a series of rods. A picture of the master laser can be seen in Fig.\,\ref{master_laser_photo}, while a picture of the inside of the housing can be seen in Fig.\,\ref{master_laser_interior_photo}.
 
 \begin{figure}
@@ -27,7 +27,7 @@ The master laser is a 408 nm extended cavity diode laser (ECDL). It consists of 
 %why did we do the rods? Do I have it in my notes?
 %do I mention how we ran them sideways? I mean, we had holes in the sides and all that? 
 
-\subsection{Master Laser Diode Selection}
+\subsection{Master laser diode selection}
 \label{masterLaserDiodes}
 The diode used in the master laser is a single-spatial mode InGaN diode. Its model number is Mitsubishi ML320G2. The master laser was wavelength-selected by the distributor (i.e. the distributor performed measurements and binned the parts based on their output wavelengths; we then ordered lasers from their 408 nm bin). The diode is very similar to the diode lasers used in Blu-ray players. 
 In fact, we also bought 30 diodes on eBay that had been removed from actual Blu-ray or HD-DVD players as backup diodes. We measured the free running wavelengths of these diodes in order to bin them ourselves using techniques that I will describe in Section\,\ref{gratingSpectrometerWavelengthMeasurements}. Some of these diodes were ultimately used in the slave lasers, whose configuration will be described in Section\,\ref{initialSlaveConfiguration}.
@@ -44,7 +44,7 @@ In fact, we also bought 30 diodes on eBay that had been removed from actual Blu-
 The selection of laser diodes required a few iterations before I found diodes that would work properly. I initially tried to build the master laser using a non-wavelength-selected Sharp GH04020A2GE low power diode, which I could not stabilize for unknown reasons. I quickly switched to a non-wavelength-selected Sharp GH04P21A2GE diode for the master laser. However, this laser's free-running wavelength at 25$^\circ$C was far too low. In order to tune this diode to the correct wavelength, I found that I had to maintain the diode at a temperature of $\sim$60$^\circ$C. Running at such a high temperature resulted in degradation of the diode and loss of power over the course of a few months. It was this experience that prompted me to use wavelength selected diodes. In this way, I was able to get a laser that could lase at the wavelength we needed without having to risk seriously diminishing the operational lifetime of the laser.
 
 
-\subsection{Grating Spectrometer Wavelength Measurements}
+\subsection{Grating spectrometer wavelength measurements}
 \label{gratingSpectrometerWavelengthMeasurements}
 In order to tune the master laser to precisely the correct wavelength and to measure the room temperature free running wavelength of the uncharacterized lasers (i.e. the lasers that were bought on eBay and later used in the slave lasers), I used a compact grating spectrometer from the Ocean Optics USB2000 series to measure the center frequency of the free-running laser diodes. This spectrometer uses a diffraction grating to separate light based on its constituent wavelenghts. Light scattered off the diffraction grating is detected by a CCD array consisting of 2048 pixels that is also enclosed in the spectrometer. The average difference in wavelength between adjacent pixels is $\sim$.061 nm. % This according to /research/octave/ooSpectrumData12Sep/MasterFile.m using the lambdas variable defined in there.
 
@@ -95,7 +95,7 @@ We have data on the wavelength dependence on temperature and current for our las
 
 
 
-\subsection{Placement of the Grating}
+\subsection{Placement of the grating}
 
 %Some theory here might be worth reviewing. In addition, I did that really great mathematica notebook where I calculated all that stuff. 
 
@@ -120,7 +120,7 @@ I had to ensure that the diffraction grating is installed such that both the ang
 After this, I used a Bristol 521 wavelength meter to measure the wavelength. The Bristol 521 is a calibrated instrument that relies on an optical Michelson-Morley interferometer to make measurements. (We used the grating spectrometer method instead of the Bristol 521 for the free-running lasers because the free-running lasers' linewidths was too large to be successfully measured on the wavelength meter.) Using the wavelength information from the wavelength meter, the laser is tuned iteratively by adjusting the grating using the threaded/manual actuators. For each adjustment, I then find new sets of currents at which the laser will operate stably. 
 
 %did I ever tune it to the right wavelength using the Bristol wave meter? 
-\subsection{Ensuring Ability to Fine Tune}
+\subsection{Ensuring ability to fine tune}
 
 The piezoelectric actuators on the grating mount can also be moved electrically. It is important that we find a way to move the piezeoelectric actuators in concert in such a way that we maximize the range over which we can scan the laser frequency without the laser mode hopping. When the $^{87}$Sr$^+$ ion interferometer is operational, we might need this for several reasons: First, it may be the case that we decide to lock the laser to an external reference like a vapor cell or a cavity. In this case, the laser frequency will need to be adjusted based on an error signal that we derive from our stable reference. In the current setup, we do not lock the laser to any external reference (we probably do not need to since we plan to operate the lasers fairly far from the resonance and the system has been show to be relatively insensitive to the overall frequency). However, we never know if we might decide we want to on some later date. Second, the ability to modulate the laser with a single knob is very handy. In fact, this is what we did to verify that the slave laser frequencies were properly tracking with the master laser frequency (see Fig.\,\ref{fig:slaveMaster}). Experimenters running the ion interferometer experiment will likely appreciate a simple way to tune the laser manually that does not involve rather having to adjust several pieces separately. 
 
@@ -166,7 +166,7 @@ This problem depends heavily on the geometry of the system. The solution involve
 
 
 
-\subsection{Calculation of Maximum Safe Intensity}
+\subsection{Calculation of maximum safe intensity}
 
 The specifications in the datasheet for the laser diode are valid only when the diode is free running. However, using the laser in an ECDL configuration requires coupling power back into the laser diode. In order to ensure that we did not damage our laser, we performed a brief calculation. We assumed that the maximum current for which the diode is rated corresponds to the maximum amount of power that can be emerging through the front facet of the laser without damage. We put the maximum recommended current of 250 mA through the laser and measured the output. Then we measured the efficiency of the grating. From this, we were able to model the external cavity and deduce how much power would be coming out of the the cavity when the power coming out the front face of the laser was near its maximum allowable value. We then measured the output of the cavity for various currents. We estimated that it is safe to run the laser at currents up to $\sim$105 mA. 
 %todo: look this up more
