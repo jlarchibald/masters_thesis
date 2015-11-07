@@ -16,52 +16,54 @@ We generate shifted beams by sending the seed light through an Acousto-optic Mod
 The AOM we use is model number TEF-2500-200-405 made by Brimrose Corporation of America. The crystal material is Tellurium Flouride; the center carrier frequency is 2500 MHz; the bandwidth (3dB) is 200 MHz. The AOM's anti-reflective coatings are specified to work at 405 nm. 
 \section{Principle of operation}
 
-The AOM is a crystal with a piezoelectric transducer attached to one side and an acoustic absorber attached to the other side. Acoustic waves are produced by the tranducer. These waves travel across the active area of the AOM crystal and are absorbed by the absorber on the other side. The compression and decompression caused by the travelling acoustic waves changes the index of refraction within the crystal as a function of both space and time. This creates what are effectively a series of travelling Bragg planes that correspond to the acoustic wavefrounts travelling across the crystal. Light crossing through the crystal can experience Bragg reflection off these planes and, because the effective reflective surface is moving, the light scattered off these features is Doppler-shifted and emerges at a distinct angle compared to the incoming light. This allows the AOM to produce frequency-shifted beams. 
+The AOM is a crystal with a piezoelectric transducer attached to one side and an acoustic absorber attached to the other side. Acoustic waves are produced by the tranducer. These waves travel across the active area of the AOM crystal and are absorbed by the absorber on the other side. The compression and decompression caused by the travelling acoustic waves changes the index of refraction within the crystal as a function of both space and time. This creates what are effectively a series of travelling Bragg planes that correspond to the acoustic wavefronts travelling across the crystal. Light crossing through the crystal can experience Bragg reflection off these planes and, because the effective reflective surface is moving, the light scattered off these features is Doppler-shifted. This light emerges at a distinct angle compared to the incoming light. This allows the AOM to produce frequency-shifted beams that are spatially separated from the unshifted components of the beam.
 
-The calculation of the frequency shift and Bragg angle of an AOM are well-known. The relationship between the driving frequency and the Bragg angle is 
+The relationship between the driving frequency and the Bragg angle for an AOM is well known and is given by 
 \begin{equation}
-\sin{\theta}=\frac{m \lambda}{\Lambda}
+m\lambda' = 2 \Lambda \sin \theta_B
+%\sin{\theta}=\frac{m \lambda}{\Lambda}
 \end{equation}
-where $\theta$ is the Bragg angle, or the angle at which the light is deflected after going through the AOM, $\lambda$ is the wavelength of the laser, $\Lambda$ is the wavelength of the acoustic wave in the crystal medium, and $m$ is an integer representing the diffraction order. Only $m=0,1$ are relevant to the experiment. The $m=1$ beams are the ones used to injection lock the slave lasers. The $m=0$ beam refers to the laser light that passes straight through the AOM with no frequency shift. Most of the power emerges in the $m=0$ diffraction order. The $m=0$ order beam from the first pass is retroreflected to produce the second pass.
+where $\theta_B$ is the Bragg angle (which is measured between the incoming beam and the Bragg planes), $\lambda'$ is the wavelength of the laser within the AOM crystal, $\Lambda$ is the wavelength of the acoustic wave in the crystal medium, and $m$ is an integer representing the diffraction order. The deflection angle (the angle between the unshifted portion of the beam and the outgoing shifted portion of the beam) is equal to twice the Bragg angle. Only $m=0,1$ are relevant to the experiment. The $m=1$ beams are the ones used to injection lock the slave lasers. The $m=0$ beam refers to the laser light that passes straight through the AOM with no frequency shift. Most of the power emerges in the $m=0$ diffraction order. The $m=0$ order beam from the first pass is retroreflected to produce the second pass.
 
 The relationship between the driving frequency and the shift in the frequency of the light simply turns out to be 
 \begin{equation}
     mf_{\textnormal{driving}}=\Delta f_{\textnormal{laser}}.
-\end{equation}.
+\end{equation}
 %put in datasheet
 Ultimately, getting the AOM to work properly involves optimizing just a few parameters. The AOM must be installed at the right angle relative to the incoming beam. I must ensure that as much of the incoming beam as possible hits the active aperture of the AOM, which is specified as having dimension 0.05 mm. This requires alignment in the X and Y directions, but it also means that I attempted to maneuver the AOM so that the focal point of the incoming beam was approximately in the center of the crystal in the Z direction as well (direction of propagation). This way, we keep the beam small on both apertures of the AOM. I also optimized the power used to drive the piezoelectric transducer. Furthermore, the intensity and shape of the incoming beam were adjusted to ensure that we do not exceed the maximum allowable intensity for the AOM, which is specified as 50 W/mm$^2$.
 %shape instead of waist?
-Thus, we will first discuss some work we did to characterize the incoming beam.
+Thus, I will first discuss some work I did to characterize the incoming beam.
 
 \section{Optimization of beam waist}
-First, we would like to control the beam so that at its focus nearly all of the beam ($\sim99.96$\%) fits within the active area of the AOM.
+First, we would like to control the beam so that at its focus nearly all of the beam ($\sim99.96$\%) is within the active area of the AOM.
 %\footnote{I did explore the possibility of just sending in a huge beam with lots of extra power in hopes that the part scattering off the active part of the AOM would work. Preliminary tests showed little promise for the technique. Furthermore, we would expect the possibility of severe distortion of the transverse mode of our laser.}
-This area is specified as being .05 mm wide. Our goal is to have a beam waist radius that will be $\approx$4 times smaller than this 0.05 mm value.\footnote{Note that I am comparing the beam waist \emph{radius} to the full \emph{width} of the active area.} %diameter? 
-If the beam waist is too small, we have to reduce the power to avoid damaging the AOM. Also, the diffraction efficiency decreases because the beam will interact with fewer Bragg planes. If the waist is too large, only a small portion of the beam would be within the active area of the AOM and would thus possibly suffer distortion of its transverse mode. A beam that is focused to too large a size would also reflect less light.
+This area is specified as being 0.05 mm wide. Our goal is to have a beam waist radius that will be $\approx$4 times smaller than this 0.05 mm value.\footnote{Note that I am comparing the beam waist \emph{radius} to the full \emph{width} of the active area.} %diameter? 
+If the beam waist is too small, we have to reduce the power to avoid damaging the AOM. Also, the diffraction efficiency decreases because the beam will interact with fewer Bragg planes. If the waist is too large, only a small portion of the beam would be within the active area of the AOM. This would reduce diffraction efficiency and cause distortion of the laser's transverse mode.
 
 We can model the laser as a Gaussian beam. Gaussian beams have the property that their intensity profile always takes a Gaussian shape, i.e. \cite{lasersMilonniEberly}
 \begin{equation}
-    I(\mathbf{r})=I_0\exp{-2(r^2/w(z)^2)}
-\end{equation},
-where $z$ and $r$ are spherical polar coordinates. $z$ represents position along the axis of propagation with the point $z=0$ defined to be the point along the beam path at which the beam is narrowest, while $r$ is the coordinate describing the distance from the $z$ axis. $I_0$ represents the intensity of the beam at $z=0, r=0$ and $w(z)$ is a function that gives the waist of a Gaussian beam, which is given by:
+\label{GaussianIntensity34}
+    I(\mathbf{r})=I_0\exp\left(-\frac{2r^2}{w(z)^2}\right),
+\end{equation}
+where $z$ and $r$ are cylindrical polar coordinates. $z$ represents position along the axis of propagation with the point $z=0$ defined to be the point along the beam path at which the beam is narrowest, while $r$ is the coordinate describing the distance from the $z$ axis. $I_0$ represents the intensity of the beam at $z=0, r=0$ and $w(z)$ is a function that gives the radius of the Gaussian beam, which is given by:
 \begin{equation}
-w(z)=\sqrt{1+\frac{z^2}{z_0^2}}\label{beamwaist1D}
-\end{equation}.
-$w(z)$ is also the distance from the center of the beam to the point where the intensity of the beam has fallen by a factor of $1/e^2$ (i.e. the spot size). $z_0$ is the Rayleigh range, which also satisfies the relation 
+w(z)=w_0\sqrt{1+\frac{z^2}{z_R^2}}\label{beamwaist1D}.
+\end{equation}
+The beam radius, $w(z)$, is also the distance from the center of the beam to the point where the intensity of the beam has fallen by a factor of $1/e^2$ (i.e. the spot size). While the Rayleigh range is denoted $z_R$, and also satisfies the relation 
 \begin{equation}
-z_0=\pi w_0^2/\lambda \label{rayleighRange1D}
-\end{equation}.
-
-A slight modification of this allows us to model elliptical beams by allowing for a different waist in each of the $x$ and $y$ directions:
+z_R=\pi w_0^2/\lambda \label{rayleighRange1D}.
+\end{equation}
+A slight modification of Eq.\,\eqref{GaussianIntensity34} allows us to model elliptical beams by allowing for a different waist in each of the $x$ and $y$ directions:
 \begin{equation}\label{eqForI}
-    I(\mathbf{x,y})=I_0\exp{-2(x^2/w_x(z)^2+(y^2/w_y(z)^2))}
-\end{equation}.
-Here, there are two relevant beam waists, $w_x$ in the $x$ direction and $w_z$ in the $y$ direction. Each of these has an associated Rayleigh range $z_{0x}$ and $z_{0y}$, and each satisifies relations analagous to Eqs.\,\ref{beamwaist1D},\ref{rayleighRange1D}.
+    I(\mathbf{x,y})=I_0\exp\left(-2\left(\frac{x^2}{w_x(z)^2}+\frac{y^2}{w_y(z)^2}\right)\right).
+\end{equation}
+Here, there are two relevant beam radii, $w_x$ in the $x$ direction and $w_y$ in the $y$ direction. Each of these has an associated Rayleigh range $z_{Rx}$ and $z_{Ry}$, and each satisifies relations analagous to Eqs.\,\eqref{beamwaist1D},\eqref{rayleighRange1D}.
 
-I can measure the beam-waist radius using a standard knife-edge technique. This involves placing a photodiode in the path of the beam. A razor blade is then moved perpendicular to the beam in a controlled way such that the beam is partially blocked. For each razor blade position, the power incident on the photodiode is measured. By integrating Eq.\,\ref{eqForI}, we get
+I can measure the Gaussian beam radius in one dimension using a standard knife-edge technique. This involves placing a photodiode in the path of the beam. A razor blade is then moved perpendicular to the beam in a controlled way such that the beam is partially blocked. The blade is then moved across the laser beam in a direction perpendicular to the blade's edge to several different locations. For each razor blade position, the power incident on the photodiode is measured. By integrating Eq.\,\ref{eqForI}, we get
+%picture?
 
 \begin{equation}
-{\rm Power\ incident\ on\ photodiode}=\frac{1}{2} P \left(\erf \left( \frac{\sqrt{2} x}{W_{0x}}\right)\right)
+{\rm Power\ incident\ on\ photodiode}=\frac{1}{2} P \left(\erf \left( \frac{\sqrt{2} x}{W_{0x}}\right)\right).
 \end{equation}
 %get data for this?
 We do this several times at various points along the path of the laser and can perform a curve fit to calculate our beam divergence and therefore infer its waist. 
@@ -70,24 +72,30 @@ I was somewhat worried that modeling the beam coming into the AOM as a Gaussian 
 %\footnote{The experiment still worked -- all that matters is that we are able to get the master laser stable and couple diffracted light from the AOM into the slave lasers. Ultimately, it was discovered by other students that this was due to a manufacturing defect in the optical isolators.}
 Because I was planning to operate the AOM relatively close to its damage threshold, I examined the possibility of using a more sophisticated theory to model our beam based on measurable parameters. 
 
-Siegman \cite{SiegmanBeamQuality} discusses the characterization of beams in terms of a quantity that is known simply as ``$M^2$.'' One way to interpret $M^2$ is that it serves as a measure of how Gaussian a beam is. If a beam is Gaussian, $M^2=1$. If a beam contains higher order Laguerre-Gaussian modes, $M^2$ will be greater than 1. Ref.\,\cite{SiegmanBeamQuality} demonstrates that any beam comprised of Laguerre-Gaussian modes can be mathematically proven to propagate according to the following equation:
-
+Siegman \cite{SiegmanBeamQuality} discusses the characterization of beams in terms of a quantity that is known simply as ``$M^1$.'' One way to interpret $M^2$ is that it serves as a measure of how Gaussian a beam is. If a beam is Gaussian, $M^2=1$. If a beam contains higher order Laguerre-Gaussian modes, $M^2$ will be greater than 1. In Ref.\,\cite{SiegmanBeamQuality}, Siegman asserts that any beam comprised of Laguerre-Gaussian modes can be mathematically proven to propagate according to the following equation:
 \begin{equation}
-\sigma_x^2=\sigma_{0x}^2+\left( \frac{M_x^2 \,\lambda}{\pi \, \sigma_{0x}}\right)^2 (z-z_{0x})^2 \label{SiegmanBeamPropagate00}
+W_x^2=W_{0x}^2+\left( \frac{M_x^2 \,\lambda}{\pi \, W_{0x}}\right)^2 (z-z_{0x})^2 \label{SiegmanBeamPropagate01}
 \end{equation}
-where $\sigma_x^2$ (or second-moment width) is given by 
+The $z$ coordinate of the $x$-direction beam waist is given by $z_{0x}$. The spot size parameter (radius) of the beam in the $x$ direction is represented by $W_x(z)$, which can be written in terms of the econd-moment width, $\sigma_x^2$, which is given by 
 \begin{equation}\label{secondMomentWidth}
-\sigma_x^2=\frac{\int_{-\infty}^{\infty} (x-x_0)^2 I(x,y)\, dx\, dy}{\int_{-\infty}^{\infty} I(x,y)\, dx \, dy}
+\sigma_x^2=\frac{\int_{-\infty}^{\infty} (x-x_0)^2 I(x,y)\, dx\, dy}{\int_{-\infty}^{\infty} I(x,y)\, dx \, dy}.
 \end{equation} 
-where $I(x,y)$ is the intensity profile of our beam, which is propagating in the $z$ direction. In the special case of the Gaussian beam, $2\sigma_x=w_x$.
+Here $I(x,y)$ is the intensity profile of our beam, which is propagating in the $z$ direction. 
+The second moment width $\sigma_x^2$ then satisfies the following equation:  
+%shoot----this factor of 4. I might be all wrong on my calculations. 
+\begin{equation}
+\sigma_x^2=\sigma_{0x}^2+\left( \frac{M_x^2 \,\lambda}{4 \pi \, \sigma_{0x}}\right)^2 (z-z_{0x})^2 \label{SiegmanBeamPropagate00}.
+\end{equation}
+In the special case of the Gaussian beam, $2\sigma_x(z)=w_x(z)$.
 
 In principle, we could take measurements of $\sigma_x^2$ our beam using the knife edge technique described above at several points along the beam's path and then fit this to Eq.\,\ref{SiegmanBeamPropagate00}.
 I tried allowing $M^2$ to be one of my fit parameters as I analyzed data from the beam, but I found it difficult to get data of sufficient quality to give a good estimate. The knife edge data is hard to get with sufficient resolution over a large enough range. One problem is that the contribution to $\sigma_x$ increases as the square of the distance from the center of the beam. This means that any measurement has to be very accurately adjusted to compensate for background offset. I also attempted to use a camera, but I was not able to trust its linearity and offsets enough to get good results. Information about my attempt to calibrate the camera can be found in Appendix\,\ref{BeamWaistAppendix}. 
 
-However, I did consider the implications on the beam if $M^2\neq 1$. I can look at the effective slope of divergence by rearranging Eq.\ \ref{SiegmanBeamPropagate00} and taking the limit as $(z-z_0) \rightarrow \infty$
+However, I did consider the implications on the beam if $M^2\neq 1$. I can look at the effective slope of divergence by rearranging Eq.\ \ref{SiegmanBeamPropagate00} and taking the limit as $(z-z_R) \rightarrow \infty$
 \begin{equation}
-\frac{\sigma_x}{z-z_0}=M_x^2 \frac{\lambda \pi}{\sigma_{0x}} \label{SiegmanBeamSlope}
+\frac{\sigma_x}{z-z_R}=M_x^2 \frac{\lambda }{4 \pi \sigma_{0x}} \label{SiegmanBeamSlope}
 \end{equation}
+%note: check this again. 
 %does z0 matter as a fit parameter? I don't think so. 
 Note that the smallest possible beam waist radius corresponding to any given beam divergence occurs if $M^2=1$. That is, if I measure the beam divergence and perform my curve fit assuming that $M^2=1$, the beam-waist radius that I calculate will be guaranteed to be \emph{smaller than or equal to} the actual beam waist radius of the beam no matter what the beam's actual value of $M^2$ might be. Thus, for the purposes of keeping the intensity at the beam waist below the AOM's damage threshold, the assumption that $M^2=1$ gives a sort of ``worst case scenario.'' 
 
@@ -97,19 +105,25 @@ It is crucially important that I limit the intensity of the light that passes th
 %This is in a lab notebook somewhere. You need to find it there, I think. Or it's in a Mathematica file. 
 %found: the Mathematica files are generalABCDfinding.nb, ABCDwillWeBreakAOM.nb . The m files, well, I think the ones I want are in checkTheWaists_realDATA. 
 
-We will model our beam using the well-known rule \cite{BYUOpticsBook}\cite{lasersMilonniEberly} for modelling a Gaussian beam as it passes through a system described by ray transfer matrix with coefficients $A$,$B$,$C$ and $D$, which is 
-\begin{equation} \label{ABCDlawforGaussianBeams}
-z'-iz_0'=\frac{A(z-iz_0)+B}{C(z-iz_0)+D}.
+There is a method of modeling Gaussian beam propagation using a matrix
+\begin{equation}
+M=\begin{bmatrix}A&B \\C&D\end{bmatrix}
 \end{equation}
+which is known as a ``ray transfer matrix'' or simply as an ``ABCD matrix.'' We will use the well-known rule \cite{BYUOpticsBook}\cite{lasersMilonniEberly} for modelling a Gaussian beam as it passes through a system described by a ray transfer matrix with elements $A$,$B$,$C$ and $D$, which is 
+\begin{equation} \label{ABCDlawforGaussianBeams}
+z_0'-iz_R'=\frac{A(z_0-iz_R)+B}{C(z_0-iz_R)+D}.
+\end{equation}
+Here, $z_0'$ represents the location of the beam waist relative to the end of the system described by the ABCD matrix and $z_R'$ represents the new Rayleigh range of the beam. The location of the beam waist relative to the start of the system described by the ABCD matrix and the Rayleigh range of the incoming beam are represented by $z_0$ and $z_R$ respectively.
 This can be solved to give 
 \begin{align}
-z_0' &= \frac{ z_0 (BC-AD)}{C^2z^2+C^2z_0^2+2 C D z + D^2} \\
-z' &=\frac{AC z^2+ACz_0^2+ADz+BCz+BD}{C^2z^2+C^2z_0^2+2 C D z + D^2}.
+z_R' &= \frac{ z_R (BC-AD)}{C^2z_0^2+C^2z_R^2+2 C D z_0 + D^2} \\
+z_0' &=\frac{AC z_0^2+ACz_R^2+ADz_0+BCz_0+BD}{C^2z_0^2+C^2z_R^2+2 C D z_0 + D^2}.
 \end{align}
+(Note that in an ABCD matrix, $A$ and $D$ are unitless, while $B$ has units of $[\textnormal{length}]$, while $C$ has units of $[\textnormal{length}]^{-1}$.)
 
 %This calculation should give us a feel for how sensitive we are to drifts in the optical setup. We will also be able to verify that the beam waist near the AOM is close to what we would expect based on the beam waist at the laser diode.
 
-The system has only a few components that we need to model. At the start, we assume that the light coming out of the face of the laser diode is essentially a Gaussian beam with different beam waist radii for the $x$ and $y$ directions. The datasheet for the master laser shows that a typical angle of divergence for light coming out of the laser is going to be 9$^\circ$ in one direction and 19$^\circ$ in the other. A Gaussian beam's angular divergence can be surmised by looking at Eq.\ \ref{SiegmanBeamSlope}. The relationship turns out to be the one given in Ref.\,\cite{MellesGriotGaussian}:
+The system has only a few components that we need to model. At the start, we assume that the light coming out of the face of the laser diode is essentially a Gaussian beam with different beam waist radii for the $x$ and $y$ directions. The waist of this beam can be estimated based on parameters given in the datasheet. The datasheet for the master laser shows that a typical angle of divergence for light coming out of the laser is going to be 9$^\circ$ in one direction and 19$^\circ$ in the other. A Gaussian beam's angular divergence can be surmised by looking at Eq.\ \ref{SiegmanBeamSlope}. The relationship turns out to be the one given in Ref.\,\cite{MellesGriotGaussian}:
 \begin{align}
 \theta_{x} &= \frac{\lambda}{\pi w_{0x}}\\
 \theta_{y} &= \frac{\lambda}{\pi w_{0y}}.
@@ -120,9 +134,9 @@ The light from the laser head is emitted and collimated by a lens\footnote{Thorl
 This can be represented by the matrix 
 \begin{equation}
 \begin{bmatrix}\label{ABCD1}
-1 & d_1 \\ 0 & 1
+1 & d_1 \\ 0 & 1,
 \end{bmatrix}
-\end{equation},
+\end{equation}
 where $d_1$ represents the distance between the face of the laser and the collimating lens. The effect of the collimating lens is represented by the following ABCD matrix:
 \begin{equation}
 \begin{bmatrix}\label{ABCD2}
@@ -136,7 +150,7 @@ In order to be complete, I will evaluate the outgoing beam properties over the e
 \begin{equation}
 \begin{bmatrix}\label{ABCD3}
 1 & d_2-d_1 \\ 0 & 1
-\end{bmatrix}
+\end{bmatrix},
 \end{equation}
 where $d_2$ represents the total distance the beam travels from the face of the laser diode up until it reaches the lens that focuses it into the AOM. Thus, $d_2-d_1$ represents the distance from the collimating lens of the master laser to the lens that focuses the beam into the AOM. 
 I estimate the the effective distance of propagation should be on the order of 1 m. To be safe, I will ultimately examine what happens for all beam paths between 0.5 m and 2 m. 
@@ -149,7 +163,7 @@ Finally, the beam is then focused by a lens with focal length 10 cm and passed t
 \end{equation} 
 where the focal length of the lens is written as $f_{f}$.
 
-We can write the ABCD matrix for the whole system as the product of the ABCD matrices that represent the individual components of the system that were found in Eqs.\,\ref{ABCD1}\ref{ABCD2}\ref{ABCD3}\ref{ABCD4}: 
+We can write the ABCD matrix for the whole system as the product of the ABCD matrices that represent the individual components of the system that were found in Eqs.\,\eqref{ABCD1},\eqref{ABCD2},\eqref{ABCD3}, and \eqref{ABCD4}: 
 \begin{equation}\label{ABCDMatrixSystem}
 \begin{bmatrix}
 1 & 0 \\ -1/f_{f} & 1
@@ -169,12 +183,12 @@ A & B \\ C & D
 \end{bmatrix}.
 \end{equation}
 
-Finding the resulting ray transfer matrix that describes the system involves simply performing the matrix multiplication prescribed in Eq.\,\ref{ABCDMatrixSystem}. However, I opt not to write out result in this thesis. Instead, I used Mathematica to find the expressions for $z_0'$ and $z'$. These expressions were then evaluated numerically for several values of likely experimental parameters. In particular, I was interested in verifying that the beam waist inside the AOM remains reasonable for realistic values of $d_1$ (the distance from the laser face to the collimating lens) and $d_2$ (the distance traveled between the collimating lens and the other lens), since these are values that may not be known to high precision and which may drift with time. %may change as the system is maintained or repaired.
+Finding the resulting ray transfer matrix that describes the system involves simply performing the matrix multiplication prescribed in Eq.\,\ref{ABCDMatrixSystem}. However, I opt not to write out result in this thesis. Instead, I used Mathematica to find the expressions for $z_R'$ and $z'$. These expressions were then evaluated numerically for several values of likely experimental parameters. In particular, I was interested in verifying that the beam waist inside the AOM remains reasonable for realistic values of $d_1$ (the distance from the laser face to the collimating lens) and $d_2$ (the distance traveled between the collimating lens and the other lens), since these are values that may not be known to high precision and which may drift with time. %may change as the system is maintained or repaired.
 
 From this analysis, I calculated the effective area of the beam for many values of $d_1$ and $d_2$. For each of these values, I calculated the corresponding ratio between the intensity at the most intense part of the beam and the total power in the beam. The way to interpret this is that if we have a constant amount of power, the ratio shows how much the maximum intensity of the beam changes for different beam parameters. The data in Fig.\,\ref{waists1} shows that the maximum intensity of the beam changes smoothly as a function of $d_2$ and that for small drifts in $d_2$, the changes in the beam's maximum intensity are reasonable. 
 %what about the position of the minimum? 
 %If the calculations are correct, %what am I? A cartoon? 
-Ref.\,\ref{waists2} shows that the maximum intensity of the laser compared to its power is sharply peaked when $d_1=f_a$. If we asume that the laser was reasonably well-collimated when we did the initial optimization, we can deduce that the intensity of the laser will mostly get smaller if the distance $d_1$ were to drift in the actual setup. We therefore need not fear that a slight change in the position of one of our optical elements will be disastrous.
+Fig.\,\ref{waists2} shows that the maximum intensity of the laser at a given power is sharply peaked when $d_1=f_a$. If we asume that the laser was reasonably well-collimated when we did the initial optimization, we can deduce that the intensity of the laser will mostly get smaller if the distance $d_1$ were to drift in the actual setup. We therefore need not fear that a slight change in the position of one of our optical elements will be disastrous.
 
 \begin{figure}
     %\centerline{\includegraphics[trim=100pt 100pt 100pt 100pt, clip=true, totalheight=0.5\textheight,angle=90]{testfigure}}

@@ -20,14 +20,14 @@ According to \cite{SiegmanBeamQuality}, the second-moment width, defined as
 
 propagates according to 
 \begin{equation}
-\sigma_x^2=\sigma_{0x}^2+\left( \frac{M_x^2 \,\lambda}{\pi \, \sigma_{0x}}\right)^2 (z-z_{0x})^2 \label{SiegmanBeamPropagate00}
+\sigma_x^2=\sigma_{0x}^2+\left( \frac{M_x^2 \,\lambda}{\pi \, \sigma_{0x}}\right)^2 (z-z_{Rx})^2 \label{SiegmanBeamPropagate00}
 \end{equation}
  
 where $I(x,y)$ is the intensity profile of our beam, which is propagating in the $z$ direction. 
 
-We can look at the effective slope of divergence by rearranging Eq.\ \ref{SiegmanBeamPropagate00} and taking the limit as $(z-z_0) \rightarrow \infty$
+We can look at the effective slope of divergence by rearranging Eq.\ \ref{SiegmanBeamPropagate00} and taking the limit as $(z-z_R) \rightarrow \infty$
 \begin{equation}
-\frac{\sigma_x}{z-z_0}=M_x^2 \frac{\lambda \pi}{\sigma_{0x}} \label{SiegmanBeamSlope}
+\frac{\sigma_x}{z-z_R}=M_x^2 \frac{\lambda \pi}{\sigma_{0x}} \label{SiegmanBeamSlope}
 \end{equation}
 %does z0 matter as a fit parameter? I don't think so. 
 
@@ -79,15 +79,15 @@ As a sanity check, we can calculate using an ABCD matrix (ray-transfer matrix) w
 According to \cite{SiegmanBeamQuality}, we can model the propagation of the ``embedded'' Gaussian beam. We could then, in principle, model our beam based on our knowledge of the $M^2$. However, recall that in our analysis, we've been assuming a sort of worst case scenario $M^2=1$. Thus, we will model our beam call the well-known rule for modelling the change of a Gaussian beam as it passes through a system described by ray transfer matrix with coefficients $A$,$B$,$C$ and $D$, which is 
 
 \begin{equation}
-z'-iz_0'=\frac{A(z-iz_0)+B}{C(z-iz_0)+D}
+z'-iz_R'=\frac{A(z-iz_R)+B}{C(z-iz_R)+D}
 \end{equation}
 \cite{BYUOpticsBook}
 
 which can be solved to give 
 
 \begin{align}
-z_0' &= \frac{ z_0 (BC-AD)}{C^2z^2+C^2z_0^2+2 C D z + D^2} \\
-z' &=\frac{AC z^2+ACz_0^2+ADz+BCz+BD}{C^2z^2+C^2z_0^2+2 C D z + D^2}
+z_R' &= \frac{ z_R (BC-AD)}{C^2z^2+C^2z_R^2+2 C D z + D^2} \\
+z' &=\frac{AC z^2+ACz_R^2+ADz+BCz+BD}{C^2z^2+C^2z_R^2+2 C D z + D^2}
 \end{align}
 
 This calculation should give us a feel for how sensitive we are to drifts in the optical setup. We will also be able to compare the results of this calculation to the measured values. 
@@ -119,7 +119,7 @@ A & B \\ C & D
 \end{bmatrix}
 \end{equation}
 
-Of course, finding the actual result is straightforward, though writing it out would be unenlightening because it is algebraically messy. Thus, we used Mathematica to find the expressions for $z_0'$ and $z'$ and then copied and pasted these expressions into an Octave function. This can then be evaluated for realistic values of $d_1$ (the distance from the laser face to the collimating lens) and $d_2$ (the distance traveled between the collimating lens and the other lens). 
+Of course, finding the actual result is straightforward, though writing it out would be unenlightening because it is algebraically messy. Thus, we used Mathematica to find the expressions for $z_R'$ and $z'$ and then copied and pasted these expressions into an Octave function. This can then be evaluated for realistic values of $d_1$ (the distance from the laser face to the collimating lens) and $d_2$ (the distance traveled between the collimating lens and the other lens). 
 
 From this we see that sensible limits are as follows: 
 
