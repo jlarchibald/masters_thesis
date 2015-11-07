@@ -41,7 +41,7 @@ In general, there will be more than one transverse mode. The free spectral range
 However, in our system this is not necessary. We use a semiconfocal (hemiconfocal), which has the convenient property that the various transverse modes line up in such a way that they fall into four distinct, evenly-spaced groups. Therefore, if we couple to many transverse modes of the cavity, we expect that our effective free spectral range will be $c/8L$.
 
 %\footnote{Look, I was very confused about the factor of 8 for a long time. I now realize that I was simply misinterpreting the normal ray transfer diagram I had in my mind of a confocal cavity. Also, I was not very clear on why semiconfocal was the one where different transverse modes overlap. Since I've found the answers, I figured I might as well put them here.} 
-\section{Derivation of free spectral range for hemiconfocal cavities}
+\section{Derivation of free spectral range for semiconfocal cavities}
 \begin{figure}
 \centerline{\includegraphics[height=3cm]{spectrum_analyzer_path.png}}
 \caption[Spectrum analyzer ray path illustration]{\label{completePath}Illustration of the optical path that makes a complete trip around the semiconfocal cavity. Note that the ray traverses the entire length of the path four times before doubling back on itself. It traverses the path 8 times before ending up in the same place again. This diagram similar to one found on page 277 of Ref.\ \cite{lasersMilonniEberly}. Here, we assume that the ray travels nearly parallel to the central axis of the cavity so that the length of each leg is well-approximated by the length of the cavity, $L$.}
@@ -111,7 +111,7 @@ Following this reasoning, Ref.\ \cite{lasersMilonniEberly} gives the following e
 %if we model the resonant modes as Laguerre-Gaussian modes. 
 Here, $L$ is the length of the cavity; $q$ is a nonnegative integer; $m$ and $n$ are integers representing the order of the Hermite polynomials in the solution in the $x$ and $y$ directions. $g_i$ is defined for each mirror and is given by $1-L/R_i$. The term involving $g_1$ and $g_2$ will depend strictly on our cavity geometry\footnote{It may seem strange that Eq.\,\ref{eqModeF} depends on the sign of $g_1$ and not $g_2$. However, this equation is valid only for stable cavities and the condition for a stable cavity is that $0\leq g_1 g_2 \leq 1$. Thus, we can assume that $g_1$ and $g_2$ have the same sign.}.
 
-From Eq.\,\ref{eqModeF}, we see that the hemiconfocal cavity has the special property that many of the resonances align. One of our mirrors is flat, so $g_1=1-L/\infty=1$, while the other's focal length, $f_2$ is equal to the length of the cavity. Recalling that the normal relationship between radius of curvature and focal length is $R_2=2 f_2$, we see that $g_2=1-L/R_2=1-L/(2 f_2)=1-L/(2 L)=1/2$. Thus, 
+From Eq.\,\ref{eqModeF}, we see that the semiconfocal cavity has the special property that many of the resonances align. One of our mirrors is flat, so $g_1=1-L/\infty=1$, while the other's focal length, $f_2$ is equal to the length of the cavity. Recalling that the normal relationship between radius of curvature and focal length is $R_2=2 f_2$, we see that $g_2=1-L/R_2=1-L/(2 f_2)=1-L/(2 L)=1/2$. Thus, 
 
 \begin{equation}
 \cos^{-1}(\operatorname{sgn}(g_1)\sqrt{g_1 g_2})=\frac{\pi}{4}.
@@ -124,13 +124,14 @@ Substituting this into Eq.\ \ref{eqModeF}, we see that
 
 Since $m$,$n$ and $q$ are all integers, we see that the resonant modes will be integer multiples of $c/(8L)$. Thus, Eq.\ \ref{freq_semiconfocal} demonstrates one of the nicest features about semi-confocal cavities, which is that different transverse modes of the electric and magnetic have the same resonant frequency. In practice, this means that rather than having to couple carefully to the TEM$_{00}$ mode, we can allow the light to couple to any transverse mode of the cavity. If we assume that we are coupled to many cavity modes (which we almost always will be, unless we were to purposefully try to avoid coupling to some subset of the resonant modes of the cavity), we can safely assume that adjacent resonant frequency peaks are separated by $c/8L$. We have thus derived Free Spectral Range of the cavity. 
 
-%Interestingly, the hemiconfocal configuration has an advantage over %\footnote{I am going out on a limb here...} 
-%the confocal configuration that is illustrated by this equation. In the confocal configuration, both mirrors are identical and are placed so that their focal points coincide. This means that $L=R_1/2=R_2/2$ and thus $g_1=1-L/R_1=g_2=1-L/(2L-R_2)$. Therefore, $\sqrt{g_1g_2}=0$, making the free spectral range of the cavity $c/4L$. However, note that if $L$ changes, then the sign of $g_1$ changes, leading to a kink in the frequency response. With a hemiconfocal cavity, there is no such discontinuity. This makes the expansion in the next section slightly easier. 
+%I used to use hemiconfocal like the Milloni and Eberly book, but I like semiconfocal as an homage to Dallin and the way that he talks. 
+%Interestingly, the semiconfocal configuration has an advantage over %\footnote{I am going out on a limb here...} 
+%the confocal configuration that is illustrated by this equation. In the confocal configuration, both mirrors are identical and are placed so that their focal points coincide. This means that $L=R_1/2=R_2/2$ and thus $g_1=1-L/R_1=g_2=1-L/(2L-R_2)$. Therefore, $\sqrt{g_1g_2}=0$, making the free spectral range of the cavity $c/4L$. However, note that if $L$ changes, then the sign of $g_1$ changes, leading to a kink in the frequency response. With a semiconfocal cavity, there is no such discontinuity. This makes the expansion in the next section slightly easier. 
 \section{Modelling the actual spectrum analyzer}
 
 The spectrum analyzer works by allowing us to change the cavity length and thereby go into and out of resonance with different wavelengths of light. The above discussion is valid for calculating what frequencies will couple to a fixedcavity, but we would like to verify that coupling a fixed frequency into a cavity of variable length will give us essentially the same thing.
 
-%FNote, however, that both confocal and hemiconfocal cavities remain good, stable cavities as their lengths are scanned since the condition for cavity stability is that $0\leq g_1 g_2 \leq 1$. 
+%FNote, however, that both confocal and semiconfocal cavities remain good, stable cavities as their lengths are scanned since the condition for cavity stability is that $0\leq g_1 g_2 \leq 1$. 
 
 The piezoelectric mount (Thorlabs KC1-PZ) is rated to accept a maximum voltage of 150 V and provide a maximum of $\pm4\mu$m of linear travel. Thus, since our sweep voltage is only about 75 V, we expect that our cavity should be sweeping ~2$\mu$m. If the wavelength of the light is 408 nm, we expect that for each 2$\mu$m of displacement, we should see about $8*2\mu$m$/408nm \approx 40$ resonant peaks. This is a good order of magnitude estimate for the most peaks we can see. Therefore, we can say that the change in cavity length, $\Delta L< 2\mu$m.
 
