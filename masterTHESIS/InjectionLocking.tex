@@ -1,9 +1,8 @@
  \chapter{Injection Locking}\label{InjectionLockingChapter}
  %(mode matching, measuring photocurrent from lasers, details of optimizing the isolators, some important caveats about not letting the wrong light couple back into the other laser. 
 
-
-In order to achieve injection locking, we must couple the first order diffracted light that came out of the AOM into the laser cavities of each of the slave lasers. In this way, we seed the slave lasers, thereby ensuring that they will be coupled to the master laser. Additionally, the current and temperature of the slave lasers must be adjusted so that they are ``happy'' operating at that wavelength. ``Happy'' is the colloquial way to refer to the fact that for any given wavelength, the laser will give prolonged, single-mode operation only for certain combinations of temperature and current. 
 Injection locking two slave lasers was necessary to get more power than would have been available from just the shifted beams from the master laser alone. 
+In order to achieve injection locking, we must couple the first order diffracted light that came out of the AOM into the laser cavities of each of the slave lasers. This is the first step in seeding the slave lasers with light from the master laser. The second step is to adjust the current and temperature of the slave lasers so that they achieve prolonged, single-mode operation in a mode that is in tune with the seed light. 
 
 \section{Theory of operation}
 
@@ -19,7 +18,7 @@ Therefore, intuitively, the goal of injection locking is to merely couple enough
 \label{initialSlaveConfiguration}
 
 
-I selected the slave lasers in a similar way to how I selected the master laser. I used the wavelength-selected diodes with the data I took on the Ocean Optics spectrometer. The setup and configuration of the slaves was very similar to what I did with the master laser, including all the part numbers and control electronics as described in Chapter\,\ref{masterLaserDiodes}. The slave lasers, however, have no diffraction grating. Rather than using grating feedback, the slave lasers achieve improved stability and wavelength control because they are injected with shifted light from the AOM, whose stability is determined by the stability of the master laser and the rf oscillator that drives the AOM. 
+I selected the diodes for the slave lasers in the same manner in which I selected the master laser diode. I used the wavelength-selected diodes with the data I took on the Ocean Optics spectrometer. The setup and configuration of the slaves was very similar to what I did with the master laser, including all the part numbers and control electronics as described in Chapter\,\ref{masterLaserDiodes}. The slave lasers, however, have no diffraction grating. Rather than using grating feedback, the slave lasers achieve improved stability and wavelength control because they are injected with shifted light from the AOM, whose stability is determined by the stability of the master laser and the rf oscillator that drives the AOM. 
 
 %can I use the diffraction grating with seed light? 
 
@@ -36,7 +35,4 @@ When slave 2 was injection locked, the current produced when coupling the light 
 and the temperature was found to be 311.309K. %(59112 counts on the digital controller)\footnote{Lab Notebook section V page 66}.
 Slave 1 worked properly at XXXXXXX TODO: FIND THIS.
 
-The amount of power being sent towards each slave (though, not necessarily being coupled in) is $\sim$90$\mu W$. The slaves typically produce 48 mW - 63 mW.
-
-
-
+The amount of power being sent towards each slave (though, not necessarily being coupled in) is $\sim$90$\mu W$. The slaves typically produce 48 mW to 63 mW.

@@ -1,10 +1,10 @@
 \chapter{Results and Conclusions}\label{triumphantDataChapter}
 
-The injection locking was successful and I successfully produced two working beams with an adjustable detuning. I have proven that both beams' frequencies are coupled to and offset from the master laser. Furthermore, the output from the slaves is sufficient to drive the transition. 
+The injection locking was successful and I successfully produced two working beams with an adjustable detuning. I have verified that both beams' frequencies are coupled to and offset from the master laser. Furthermore, the output from the slaves is sufficient to drive the transition. 
 
 \section{Brief note on data from the spectrum analyzer}
 
-The main way that we can see if the lasers are working properly is to couple them to the spectrum analyzer, which was discussed in Section\,\ref{spectAnalayzer} and Appendix\,\ref{Spectrum Analyzer}. The spectrum analyzer is a cavity whose length is being changed as a function of time. A photodiode on the end of the spectrum analyzer captures a signal that is proportional to the transmission through the spectrum analyzer cavity. This signal is read on an oscilloscope.
+The main way that we can see if the lasers are working properly is to couple them to the spectrum analyzer, which was discussed in Section\,\ref{spectAnalayzer} and Appendix\,\ref{Spectrum Analyzer}. The spectrum analyzer is an optical cavity whose length is being changed as a function of time. A photodiode on the end of the spectrum analyzer captures a signal that is proportional to the transmission through the spectrum analyzer cavity. This signal is read on an oscilloscope.
 
 For all of the data in this thesis, the length of the spectrum analyzer was modulated in a sawtooth pattern. Thus, the length of the cavity changed at a constant speed over some interval before being quickly brought back to its original length. A typical scan typically involves changing the length of the cavity by $\sim$3$\mu$m. 
 
@@ -12,9 +12,9 @@ For all of the data in this thesis, the length of the spectrum analyzer was modu
 
 The output of the photodiode is sent to an oscilloscope that is triggered by the frequency generator that also modulates the piezoelectric actuators on the spectrum analyzer. Therefore, typical data from the spectrum analyzer is a trace from an oscilloscope. The $y$ axis represents signal from the photodiode, while the $x$ dimension represents time elapsed since the last triggering event. The $x$ axis values in the regimes shown in Figures\,\ref{fig:slaveMaster} and \ref{fig:typicaldata} are also proportional to the change in length of the cavity becuase the cavity length is changing linearly as a function of time during the parts of the scan that I am showing. Because each sweep of the sawtooth function generator and piezo driver is identical, we can safely compare subsequent traces to track the relative frequency changes of any given peak. 
 
-If we scan about $\sim$2$\mu$m, we expect that the peaks corresponding to our 408 nm lasers will go in in and out of resonance $\sim$5 times. Therefore, we would expect that in the oscilloscope trace, the same peak should be repeated approximatly five times. For this cavity, the free spectral range is 187 MHz. This means that the distance between two images of the same peak in our scan will correspond to the distance that any given peak would move by if it were detuned by 187 MHz. This gives us a natural scale by which to judge the movement of peaks. 
+If we scan about $\sim$2$\mu$m, we expect that the peaks corresponding to our 408 nm lasers will go in in and out of resonance $\sim$5 times. Therefore, we would expect that in the oscilloscope trace, the same peak should be repeated approximatly five times. For this cavity, the free spectral range is 187 MHz. This means that the distance between two peaks from the the same spectral component of the light in our scan will correspond to the distance that any given peak would move by if it were detuned by 187 MHz. This gives us a natural scale by which to judge the movement of peaks. 
 
-However, note that the detunings relevant to this experiment are on the order of GHz, which is much less than the free spectral range of the cavity. This simply means that two nearby peaks coming from different lasers are from vastly different orders of longitudinal mode. 
+However, note that the detunings relevant to this experiment are on the order of GHz, which is much less than the free spectral range of the cavity. This simply means that two nearby peaks coming from different lasers are from different orders of longitudinal mode. 
 
 %fsr corresponds to different lengths for different lasers 
 
@@ -48,8 +48,8 @@ I performed an experiment where I adjusted the driving frequency of the rf frequ
     %\centerline{\includegraphics[totalheight=0.3\textheight]{testfigure}}
     \centerline{\includegraphics{sampleOffsetData}}
     %\includegraphics[totalheight=0.3\textheight]{testfigure}
-    \caption[Relative detuning of slave lasers for different rf oscillator frequencies]{\label{fig:typicaldata}
-    I changed the detuning on the frequency generator in 10 MHz increments between capturing each of these traces. The $y$ axis represents transmission through the spectrum analyzer cavity as measured by the photodiode and is presented in arbitrary units with the traces offset to enhance visibility. The $x$ axis represents time during the cavity scan. As the detuning changes, the distance between the two peaks shifts, thereby proving that the detuning between the slave laser and the master laser is controlled by the AOM and rf frequency generator.}
+    \caption[Scans of slave lasers for several rf oscillator frequencies]{\label{fig:typicaldata}
+Scans of slave lasers for several rf oscillator frequencies. I changed the detuning on the frequency generator in 10 MHz increments between capturing each of these traces. The $y$ axis represents transmission through the spectrum analyzer cavity as measured by the photodiode and is presented in arbitrary units with the traces offset to enhance visibility. The $x$ axis represents time during the cavity scan. As the detuning changes, the distance between the two peaks shifts, thereby proving that the detuning between the slave laser and the master laser is controlled by the AOM and rf frequency generator.}
 \end{figure}
 
 %\begin{figure}
@@ -68,6 +68,6 @@ To summarize: I have built a laser system capable of driving stimulated Raman tr
 
 In order to ensure that the 408 nm 5 GHz detuned laser system works, we will need to actually drive stimulated Raman transitions in $^{87}$Sr$^+$. Completion of this requires the completion of the LVIS and other parts of the experiment. Getting the transition rate right will also likely require tweaks to many of the parameters of the current system. There are also additional optics that need to be installed to get the beams produced by this laser system to the atomic chamber. We will need to split the beams and then install optics to control their phase. 
 
-The 408 nm 5GHz detuned laser system could be improved in many ways. One thing that would be a great benefit is to increase the amount of time that the laser can operate without mode hopping. There was a technique described in Ref.\,\cite{chiowChuLock} for improving the stability of an ECDL by creating a closed feedback loop to monitor and minimize the laser's amplitude noise. I developed some circuitry and took some data to investigate a variation on this, but this is not included in this thesis. 
+The 408 nm 5GHz detuned laser system could be improved in many ways. One thing that would be a great benefit is to increase the amount of time that the laser can operate without mode hopping. There was a technique described in Ref.\,\cite{chiowChuLock} for improving the stability of an ECDL by creating a closed feedback loop to monitor and minimize the laser's amplitude noise. I developed some circuitry and took some data to investigate a variation on this which could potentially be applied to injection locked lasers, but this is not included in this thesis. 
 
 
