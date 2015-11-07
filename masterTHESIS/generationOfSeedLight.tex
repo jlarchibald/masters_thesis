@@ -1,8 +1,8 @@
 \chapter{Generation of Seed Light}\label{generationOfSeedLight}
 
-In this chapter, I will discuss the design and construction of the master laser. I built the master laser system beginning in 2010. Initial work on the master laser was completed by Chris Erickson before I joined the project. He ordered many of the components and did some of the early work to begin to assemble the laser.
+In this chapter, I will discuss the design and construction of the master laser. I built the master laser system beginning in 2010. Initial work on the master laser was completed by Chris Erickson before I joined the project. He ordered many of the components and did some of the early work to begin to assemble the system.
 
-The main goal of the master laser system is to produce a stable oscillator from which the signals used to injection lock the slave lasers can be derived. It must have a reasonably narrow linewidth compared to the linewidths of the transitions in the atom that we want to distinguish between. It must also operate with a single spatial mode. The master laser must also be tunable over a large enough range that it can be   
+The main goal of the master laser system is to produce a stable oscillator from which the signals used to injection lock the slave lasers can be derived. It must have a reasonably narrow linewidth in order to allow us to discriminate between the transitions in the ion that we want to stimulate. It must also operate with a single spatial mode. The master laser must also be sufficiently tunable so that its frequency can be set to the appropriate detuning from the $^2$S$_{1/2}\leftrightarrow^2$P$_{3/2}$ resonance as calculated in Chapter\,\ref{ChapterAboutTheAtoms}.
 
 The main concern regarding the master laser is that we need to get it to the right wavelength. Most of the processes in this chapter involve some means of maximizing the likelihood that we can get the master laser to oscillate at a frequency at which we can run the experiment. The basic means of controlling the master laser are
 \begin{itemize}
@@ -12,7 +12,7 @@ The main concern regarding the master laser is that we need to get it to the rig
 \item Coarse adjustment of grating using threaded actuators
 \item Electronic adjustment of grating using piezoelectric actuators
 \end{itemize}
-Each of these factors is interdependent and, in general, the adjustment of one usually involves adjusting all the others. However, as we will see, many of the steps I did to build the master laser had the end goal of making sure that we could get the laser to the right wavelength with ever greater control and accuracy. 
+Each of these factors is interdependent and, in general, the adjustment of one usually involves adjusting all the others. However, the above list of technieques is approximately in order from coarsest to finest adjustment of the master laser frequency. Many of the steps I took in building the master laser were done with the end goal of getting the laser closer to the right wavelength with each step providing finer control and greater accuracy.
 
 \section{Stabilization of master laser}
 \subsection{Master laser layout}
@@ -21,7 +21,7 @@ The master laser is a 408 nm extended cavity diode laser (ECDL). It consists of 
 \begin{figure}
 \centerline{
 \includegraphics[width=0.95\textwidth]{master_laser.JPG}}
-\caption[Photograph of master laser]{\label{master_laser_photo} The master laser system. The diffraction grating that provides feedback to the laser is mounted on a custom machined grating holder that is attached to the Thorlabs KC1-PZ piezoelectric kinematic mount. . I initially tried several other configurations. However, after several iterations, I found that the use of the metal rods to provide direct  mechanical coupling between the laser and grating mount were necessary for stable, single-mode operation. I also found through trial and error that placing the grating a distance of $\sim$4 cm from the aperture seemed to work for this particular laser.}
+\caption[Photograph of master laser]{\label{master_laser_photo} The master laser system. The diffraction grating that provides feedback to the laser is mounted on a custom machined grating holder that is attached to the Thorlabs KC1-PZ piezoelectric kinematic mount. I initially tried several other configurations. However, after multiple iterations, I found that the use of the metal rods to provide direct  mechanical coupling between the laser and grating mount were necessary for stable, single-mode operation. I also found through trial and error that placing the grating a distance of $\sim$4 cm from the aperture seemed to allow this particular laser to operate single mode for relatively long periods of time (about a day or so in open loop conditions).}
 \end{figure}
 
 %why did we do the rods? Do I have it in my notes?
@@ -29,49 +29,60 @@ The master laser is a 408 nm extended cavity diode laser (ECDL). It consists of 
 
 \subsection{Master laser diode selection}
 \label{masterLaserDiodes}
-The diode used in the master laser is a single-spatial mode InGaN diode. Its model number is Mitsubishi ML320G2. The master laser was wavelength-selected by the distributor (i.e. the distributor performed measurements and binned the parts based on their output wavelengths; we then ordered lasers from their 408 nm bin). The diode is very similar to the diode lasers used in Blu-ray players. 
+The diode used in the master laser is a single-spatial mode InGaN diode. Its model number is Mitsubishi ML320G2. The master laser diode was wavelength-selected by the distributor (i.e. the distributor performed measurements and binned the parts based on their output wavelengths; we then ordered lasers from their 408 nm bin). The diode is very similar to the diode lasers used in Blu-ray players. 
 In fact, we also bought 30 diodes on eBay that had been removed from actual Blu-ray or HD-DVD players as backup diodes. We measured the free running wavelengths of these diodes in order to bin them ourselves using techniques that I will describe in Section\,\ref{gratingSpectrometerWavelengthMeasurements}. Some of these diodes were ultimately used in the slave lasers, whose configuration will be described in Section\,\ref{initialSlaveConfiguration}.
 
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth]{laser_on_in_housing.JPG}
-\caption[Photographs of master laser components]{The master laser in its housing and the diffraction grating before it was installed (inset). We modified the housing to include an additional temperature sensor (the AD592), which can be seen glued to the top of the copper plate.\label{master_laser_interior_photo}
+\caption[Photographs of master laser components]{The master laser in its housing and the diffraction grating before it was installed (inset). We modified the housing to include an additional temperature sensor (the AD592), which can be seen glued to the top of the copper plate. In this particular photo, the anodized aluminum plate that holds the laser diode in place has been moved aside to allow an unobstructed view of the laser diode.\label{master_laser_interior_photo}
 }
 \end{figure}
 
 %Mark? Did he do this? 
 
-The selection of laser diodes required a few iterations before I found diodes that would work properly. I initially tried to build the master laser using a non-wavelength-selected Sharp GH04020A2GE low power diode, which I could not stabilize for unknown reasons. I quickly switched to a non-wavelength-selected Sharp GH04P21A2GE diode for the master laser. However, this laser's free-running wavelength at 25$^\circ$C was far too low. In order to tune this diode to the correct wavelength, I found that I had to maintain the diode at a temperature of $\sim$60$^\circ$C. Running at such a high temperature resulted in degradation of the diode and loss of power over the course of a few months. It was this experience that prompted me to use wavelength selected diodes. In this way, I was able to get a laser that could lase at the wavelength we needed without having to risk seriously diminishing the operational lifetime of the laser.
+The selection of laser diodes required a few iterations before I found diodes that would work properly. I initially tried to build the master laser using a non-wavelength-selected Sharp GH04020A2GE low power diode, which I could not stabilize for unknown reasons. I quickly switched to a non-wavelength-selected Sharp GH04P21A2GE diode for the master laser. However, this laser's free-running wavelength at 25$^\circ$C was far too low. In order to tune this diode to the correct wavelength, I found that I had to maintain the diode at a temperature of $\sim$60$^\circ$C. This required me to modify our temperature controller to increase its output current. Running at such a high temperature resulted in degradation of the diode and loss of power over the course of a few months. It was this experience that prompted me to use wavelength selected diodes. In this way, I was able to get a laser that could lase at the wavelength we needed without having to risk seriously diminishing the operational lifetime of the laser.
 
 
 \subsection{Grating spectrometer wavelength measurements}
 \label{gratingSpectrometerWavelengthMeasurements}
 In order to tune the master laser to precisely the correct wavelength and to measure the room temperature free running wavelength of the uncharacterized lasers (i.e. the lasers that were bought on eBay and later used in the slave lasers), I used a compact grating spectrometer from the Ocean Optics USB2000 series to measure the center frequency of the free-running laser diodes. This spectrometer uses a diffraction grating to separate light based on its constituent wavelenghts. Light scattered off the diffraction grating is detected by a CCD array consisting of 2048 pixels that is also enclosed in the spectrometer. The average difference in wavelength between adjacent pixels is $\sim$.061 nm. % This according to /research/octave/ooSpectrumData12Sep/MasterFile.m using the lambdas variable defined in there.
 
-I tried several techniques to maximize the resolution and accuracy of these measurements. The center wavelength of the bare diodes changed only a few nanometers over the entire range of possible temperatures and currents. In order to ensure accurate absolute wavelength measurements, we calibrated to a mercury source both before and after looking at the spectra of the various lasers. We feel confident in our calibrations since mercury conveniently has spectral lines at 405 and 436 nm, which are close to our target wavelength of 407.771 nm. A typical before and after calibration spectrum taken using the mercury lamp can be seen in Figure\,\ref{calibrationData}. When analyzing the peaks produced by the laser on the grating spectrometer, we fit the measured data to a Gaussian distribution in hopes of squeezing out some sub-pixel level resolution of the peak location. Examples of this type of analysis are shown in Figures\,\ref{Temperaturespectra} and \ref{wavelengthselected}.
-
 \begin{figure}
 \centering
-\includegraphics[width=0.95\textwidth]{calibrationData} 
+\includegraphics[width=0.95\textwidth]{calibrationData.eps} 
 \caption[Calibration spectrum from Hg lamp]{\label{calibrationData} Data from the calibration using the mercury lamp. I deliberately allowed some of the farther away peaks to saturate in order to improve our signal for the peaks near 408 nm. The black lines represent spectral lines taken from the NIST Atomic Spectra Database\cite{NISTasd}. The average of the premeasured and postmeasured Hg spectra was sent through an Octave script I wrote that automatically identified peaks in the spectrum, displayed the peaks, and then allowed the user to select which peak in the NIST Hg spectrum these peaks corresponded to. The peaks found by this script are displayed with the label, ``detected peaks in measured spectrum.''}
 \end{figure}
-\begin{figure}
-\centering
-\includegraphics[width=0.95\textwidth]{temperatureFit} 
-\caption[Wavelength of master laser at different temperatures]{\label{Temperaturespectra} Representative data of the free-running wavelength of our master laser as a function of temperature.}
-\end{figure}
+%this one was from octave/freeRunning408nmLaserSpectrum/wvlngthSelected/MasterFile_2015_08_15_showspectra.m
 
 \begin{figure}
 \centering
-\includegraphics[width=0.95\textwidth]{wavelength_selected} 
-\caption[Wavelength of different laser diodes]{\label{wavelengthselected} Representative data of the free-running (i.e. no grating feedback or extended cavity) wavelength of several wavelength selected lasers taken at 120 mA.} %temperature? %the ones we picked or someone else did? 
+\includegraphics[width=0.75\textwidth]{temperatureFit.eps} 
+\caption[Wavelength of master laser at different temperatures]{\label{Temperaturespectra} Spectrum of one of the free-running diodes I tested for use in the master laser at four different diode temperatures.}
 \end{figure}
+%Was this the master laser diode we had at the end or just representative data from a previous master laser diode? 
+%From 
+%./Dropbox/research_main/octave/freeRunning408nmLaserSpectrum/Data16JuneHighPower/MasterFile_2015_08_15.m
+%
+
+
+I tried several techniques to maximize the resolution and accuracy of these measurements. The center wavelength of the bare diodes changed only a few nanometers over the entire range of possible temperatures and currents. In order to ensure accurate absolute wavelength measurements, we calibrated to a mercury source both before and after looking at the spectra of the various lasers. We feel confident in our calibrations since mercury conveniently has spectral lines at 405 and 436 nm, which are close to our target wavelength of 407.771 nm. A typical before and after calibration spectrum taken using the mercury lamp can be seen in Figure\,\ref{calibrationData}. When analyzing the peaks produced by the laser on the grating spectrometer, we fit the measured data to a Gaussian distribution in hopes of squeezing out some sub-pixel level resolution of the peak location. Examples of this type of analysis are shown in Figures\,\ref{Temperaturespectra} and \ref{wavelengthselected}.
+
+
+\begin{figure}
+\fontsize{20}{40}\selectfont
+\centering
+\includegraphics[width=0.55\textwidth]{wavelength_selected.eps} 
+\caption[Wavelength of different laser diodes]{\label{wavelengthselected} Representative data of the free-running (i.e. no grating feedback or extended cavity) wavelength of several wavelength selected lasers taken at 120 mA and 22.5$^\circ$C.} %temperature? %the ones we picked or someone else did? 
+\end{figure}
+%This was created useing octave/freRunning408nmLaserSpectrum/wvlngthSelected/MasterFile_2015_08_15.m
+%Also, this was on page 51 (the graph) and I think page 47 of the first notebook. I still don't know. 
 %diagram of which method to use where? 
 %The basic 
 
 %\subsection{Master Laser Temperature and Current Selection}
 
-The temperature and the current of the laser are two of the main means we have for affecting the wavelength of the master laser. Using a grating spectrometer, we measured the center wavelength of the bare laser (i.e. no grating feedback or extended cavity).
+The temperature and the current of the laser diode are two of the main means we have for affecting the wavelength of the free-running master laser diode. Using a grating spectrometer, we measured the center wavelength of the bare laser (i.e. no grating feedback or extended cavity).
 
 
 We have data on the wavelength dependence on temperature and current for our laser. This data is plotted in Fig.\,\ref{3dCurrentandTgraph}. We see that the variation of the center wavelength of the laser is roughly linear over reasonable values of temperature and current.
@@ -83,16 +94,17 @@ We have data on the wavelength dependence on temperature and current for our las
 \begin{figure}
 \centering
 \begin{subfigure}[b]{0.55\textwidth}
-\includegraphics[width=1\textwidth]{TVlambda3} 
+\includegraphics[width=1\textwidth]{TVlambda3.eps} 
 \label{currentandT:sfiga}
 \end{subfigure}
 \begin{subfigure}[b]{0.40\textwidth}
-\includegraphics[width=1\textwidth]{TVlambda2}
+\includegraphics[width=1\textwidth]{TVlambda2.eps}
 \label{currentandT:sfigb}
 \end{subfigure}
 \caption[Wavelength vs temperature and current]{\label{3dCurrentandTgraph} Representative data of the free-running wavelength of our master laser as a function of nominal current and nominal temperature. Both plots show the same data.}
 \end{figure}
 
+%from octave/ooSpectrumData12Sep/MasterFile_2015_08_15_realValues.m
 
 
 \subsection{Placement of the grating}
@@ -103,9 +115,9 @@ We have data on the wavelength dependence on temperature and current for our las
 
 Lasers work by amplifying light resonant with a particular mode of the laser cavity via stimulated emission. Ideally, we would like to favor a mode within the diode laser corresponding to our desired wavelength. In order to accomplish this, we add yet another resonant cavity outside our laser that can couple light back into the laser. 
 
-This cavity is formed by a diffraction grating on one side and the entrance of the laser on the other side. This configuration is called an Extended Cavity Diode Laser (ECDL). The grating we selected was a Thorlabs model number GH13-36U, which has 3600 lines/mm. A picture of the grating can be seen in Figure\,\ref{diffractionGratingPhoto}. 
+This cavity is formed by a diffraction grating on one side and the entrance of the laser on the other side. This configuration is called an Extended Cavity Diode Laser (ECDL). The grating we selected was a Thorlabs model number GH13-36U, which has 3600 lines/mm. A picture of the grating can be seen in Figure\,\ref{master_laser_interior_photo}. 
 
-The diffraction grating is angled so that the first order diffraction peak at 407.771 nm light is directed back into the laser. The condition for this to be the case is 
+The diffraction grating is angled so that the first order diffraction peak at 407.771 nm is directed back into the laser. The condition for this to be the case is 
 
 \begin{equation} \label{gratingEQn}
 n \lambda = 2 d \sin (\theta),
@@ -123,18 +135,21 @@ After this, I used a Bristol 521 wavelength meter to measure the wavelength. The
 \subsection{Ensuring ability to fine tune}
 \label{ensuringAbilityToFineTune}
 
-The piezoelectric actuators on the grating mount can also be moved electrically. It is important that we find a way to move the piezeoelectric actuators in concert in such a way that we maximize the range over which we can scan the laser frequency without the laser mode hopping. When the $^{87}$Sr$^+$ ion interferometer is operational, we might need this for several reasons: First, it may be the case that we decide to lock the laser to an external reference like a vapor cell or a cavity. In this case, the laser frequency will need to be adjusted based on an error signal that we derive from our stable reference. In the current setup, we do not lock the laser to any external reference (we probably do not need to since we plan to operate the lasers fairly far from the resonance and the system has been show to be relatively insensitive to the overall frequency). However, we never know if we might decide we want to on some later date. Second, the ability to modulate the laser with a single knob is very handy. In fact, this is what we did to verify that the slave laser frequencies were properly tracking with the master laser frequency (see Fig.\,\ref{fig:slaveMaster}). Experimenters running the ion interferometer experiment will likely appreciate a simple way to tune the laser manually that does not involve rather having to adjust several pieces separately. 
+The piezoelectric actuators on the grating mount can also be moved electrically. It is important that we find a way to move the piezeoelectric actuators in concert in such a way that we maximize the range over which we can scan the laser frequency without the laser mode hopping. When the $^{87}$Sr$^+$ ion interferometer is operational, we might need this for several reasons: First, it may be the case that we decide to lock the laser to an external reference like a vapor cell or a cavity. In this case, the laser frequency will need to be adjusted based on an error signal that we derive from our stable reference. In the current setup, we do not lock the laser to any external reference (we probably do not need to since we plan to operate the lasers fairly far from the resonance and the system has been shown to be relatively insensitive to the overall frequency). However, we never know if we might decide we want to on some later date. Second, the ability to modulate the laser with a single knob is very handy. In fact, this is what we did to verify that the slave laser frequencies were properly tracking with the master laser frequency (see Fig.\,\ref{fig:slaveMaster}). Experimenters running the ion interferometer experiment will likely appreciate a simple way to tune the laser manually that does not involve rather having to adjust several pieces separately. 
 
 %The grating setup is also crucial in order to allow the master laser to be tuned. Therefore, the piezoelectric actuators can be connected to control circuitry that can be used to tune the laser based on a signal derived from transmission through a Strontium vapor cell. 
 
-The control circuitry will be similar to the PID controllers desribed in Ref.\,\cite{cjeDiss} that are used elsewhere in the lab (see Fig.\,\ref{circuit}). These PID controllers consist of a simple PID controller combined with a ``scan balancer.'' The PID controller segment of the circuit could be used to generate a feedback signal based on an error signal. We could generate suitable error signals by measuring absorption through a vapor cell or by looking at transmission through a cavity. The scan balancer takes the feedback signal and allows us to use it to generate three signals with independently-controllable gains: one signal can be used to modulate the current coming from the laser current driver. The other two signals can be amplified and sent to the piezoelectric actuators.  The circuit also features a DC offset that can be digitally controlled and added directly to the feedback signal. Thus, if the scan balancer is configured with suitable gains, the experimenter can make fine adjustments to the tuning of the master laser using a digital control knob.
+The control circuitry is similar to the PID controllers desribed in Ref.\,\cite{cjeDiss} that are used elsewhere in the lab (see Fig.\,\ref{circuit}). These PID controllers consist of a simple PID controller combined with a ``scan balancer.'' The PID controller segment of the circuit could be used to generate a feedback signal based on an error signal. We could generate suitable error signals by measuring absorption through a vapor cell or by looking at transmission through a cavity. 
+
+The scan balancer portion of the circuit takes the feedback signal and allows us to use it to generate three signals with independently-controllable gains: one signal can be used to modulate the current coming from the laser current driver, while the other two signals can be amplified and sent to the piezoelectric actuators. The circuit also features a DC offset that can be digitally controlled and added directly to the feedback signal. Thus, if the scan balancer is configured with suitable gains, the experimenter can make fine adjustments to the tuning of the master laser using a digital control knob.
 
 \begin{figure}
 \centerline{
 \includegraphics[width=0.95\textwidth]{PIDfromCJEdiss}}
-\caption[Schematic of PID circuit]{\label{circuit} Schematic of the PID circuit that we use on the master laser. The PID stages are depicted at the bottom left of the diagram and these will be used only if we lock the laser system to an external reference. At the top left of the diagram is a DAC that allows us to set a digital offset. The signal from this DAC is added directly to the feedback signal that comes out of the PID stages. Even if we do not lock the laser to a vapor cell, we can a do use the DC offset signal. }
+\caption[Schematic of PID circuit]{\label{circuit} Schematic of the PID circuit that we use on the master laser. The PID stages are depicted at the bottom left of the diagram and these will be used only if we lock the laser system to an external reference. At the top left of the diagram is a DAC that allows us to set a digital offset. The signal from this DAC is added directly to the feedback signal that comes out of the PID stages. Even if we do not lock the laser to a vapor cell, we can use the DC offset signal to manually adjust the position of the grating in a controlled way and therefore to tune the laser.}
 \end{figure}
 %is that the right one? 
+%did I have this installed? I don't remember. Maybe not. I don't think so? 
 
 %However, even if we do not lock the laser to some external reference, the PID controller described in Ref.\,\cite{cjeDiss} also contains a series of amplifiers that take the feedback signal us to easily modulate the current of the laser along with the This feedback signal can then be used to control the voltage on the piezoelectric actuators along with the current to the laser. The PID controller's output stage allows the user to select various gains that control the movement of each of the piezoelectric actuators. However, even if we do not use the PID control features, 
 %did I ever tune this up? 
@@ -147,29 +162,41 @@ However, in order for this to work, we must properly set the gains in the scan b
 
 The change in the wavelength reflected from the grating as a function of $\theta$ can be found by taking the derivative of Eq.\,\ref{gratingEQn} with $n=1$:
 \begin{equation}
-    \frac{d\lambda}{d \theta}= \frac{2d}{\lambda} \cos(\theta)
-\end{equation}.
-However, as we move the grating, we also want to make sure that the cavity length ($L$) changes in such a way that $L/\lambda$ remains constant. 
+    \frac{d\lambda}{d \theta}= \frac{2d}{\lambda} \cos(\theta).
+\end{equation}
+However, as the grating rotates, we also want to make sure that the cavity length ($L$) changes in such a way that the change in the resonant wavelength of the external cavity varies at the same rate as the change in the wavelength favored by the rotation of the grating. The relationship between the cavity length and the resonant wavelength is 
 \begin{equation}
-    \frac{d \lambda}{d L}= \textnormal{constant} 
-\end{equation}.
+L=m\lambda
+\end{equation}
+where $m$ is an integer, $L$ is the length of the external cavity and $\lambda$ is the wavelength in air.
+
+%$L/\lambda$ remains constant. 
+%\begin{equation}
+%    \frac{d \lambda}{d L}= \textnormal{constant} 
+%\end{equation}.
 %some better piezoratio
 
 We note that $L$ and $\theta$ are both functions of the displacement of the piezo actuators. For small changes in $L$ and $\theta$, we can assume that the piezoelectric actuators need to provide displacements in a constant ratio. That is, if we let $x_1$ be the displacement of the linear actuator on one side from its initial position and allow $x_2$ to be the displacement of the linear actuator on the other side, we define the Piezo ratio $R$ as 
 \begin{equation}
-\textnormal{Piezo ratio}=x_2/x_1
-\end{equation}.
+\label{Rdefinded}
+\textnormal{piezo ratio}=x_2/x_1.
+\end{equation}
 We would like to find some value of $R$ such that
 \begin{equation}
-    \frac{d\lambda}{d \theta(x_1,R x_1)}= \frac{d \lambda}{d L(x_1,R x_1}
-\end{equation}.
+    \frac{d\lambda}{d \theta(x_1,x_2)}= \frac{d \lambda}{d L(x_1,x_2)}.
+\end{equation}
+or, taking $x_1\rightarrow R x_1$ as in Eq.\,\eqref{Rdefinded},
+\begin{equation}
+    \frac{d\lambda}{d \theta(x_1,R x_1)}= \frac{d \lambda}{d L(x_1,R x_1)}.
+\end{equation}
+where $\theta(x_1,x_2)=\theta(x_1,R x_1)$ is the angle at which the grating is rotated relative to its initial position as a function of the piezo displacements, or as a function of the piezo ratio and the displacement of one of the piezoelectric actuators. $L(x_1,R x_2)=L(x_1,R x_1)$ is the length of the cavity as a function of the same two variables.
 This problem depends heavily on the geometry of the system. The solution involves a lot of terms and geometric bookkeeping. Our model is detailed in a well-commented Mathematica Notebook included in Appendix\,\ref{GratingRatioAppendix}. The result is that we calculate that $R=0.478755$ is the ratio between the displacement of our piezoelectric actuators that will rotate and move the grating properly given the geometry of our grating mount. In practice, we would fine tune this ratio by scanning the piezos and iteratively making adjustments to maximize the size of the range over which the laser operates single mode. However, the calculation is nice to have since it gives a good starting point. The calculation is also useful since some diffraction grating mount geometries result in surprising ratios (for example, one of the lasers discussed in Ref.\,\cite{cjeDiss} required that the piezos scan in opposite directions (i.e. have a negative ratio), which required a change to the scan balancer circuitry).
 
 
 
 \subsection{Calculation of maximum safe intensity}
 
-The specifications in the datasheet for the laser diode are valid only when the diode is free running. However, using the laser in an ECDL configuration requires coupling power back into the laser diode. In order to ensure that we did not damage our laser, we performed a brief calculation. We assumed that the maximum current for which the diode is rated corresponds to the maximum amount of power that can be emerging through the front facet of the laser without damage. We put the maximum recommended current of 250 mA through the laser and measured the output. Then we measured the efficiency of the grating. From this, we were able to model the external cavity and deduce how much power would be coming out of the the cavity when the power coming out the front face of the laser was near its maximum allowable value. We then measured the output of the cavity for various currents. We estimated that it is safe to run the laser at currents up to $\sim$105 mA. 
+The specifications in the datasheet for the laser diode are valid only when the diode is free running. However, using the laser in an ECDL configuration requires coupling power back into the laser diode. In order to ensure that we did not damage our laser, we performed a brief calculation. We assumed that the maximum current for which the diode is rated corresponds to the maximum amount of power that can be emerging through the front facet of the laser without damage. We put the maximum recommended current of 250 mA through the laser and measured the output. Then we measured the efficiency of the grating. From this, we were able to model the external cavity and deduce how much power would be coming out of the external cavity when the power coming out the front face of the laser was near its maximum allowable value. We then measured the output of the cavity for various currents. We estimated that it is safe to run the laser at currents up to $\sim$105 mA. 
 %todo: look this up more
 %calculation is in part II page 20 
 
