@@ -124,9 +124,9 @@ As Eq.\,\eqref{blochSpherepi2} illustrates, called a $\pi/2$ pulse because it ch
 \caption[Energy level diagram for $^{87}$Sr+]{Energy Level Diagram for $^{87}$Sr+. The hyperfine ground states are separated by a small energy. Diagram is not to scale: a scaled diagram would show the splitting between the $F=4$ and $F=5$ states to be about 147,000 times smaller than the splitting between the $^2$S$_{1/2}$ states and the $^2$P$_{3/2}$ states.}
 \label{energyLevelDiagramFigure}
 \end{figure}
-We now move to a discussion of the dynamics of a three state system, as shown in Figure\,\ref{energyLevelDiagramFigure}. Following the notation of Ref.\,\cite{Young1997363}, we rewrite our Hamiltonian as
+We now move to a discussion of the dynamics of a three state system, as shown in Figure\,\ref{energyLevelDiagramFigure}. Following Ref.\,\cite{Young1997363}, we write our Hamiltonian as
 \begin{equation}
-H_{tot}=H+V.
+H_{\mathrm{tot}}=H+V.
 \end{equation}
 Here, $H$ is the Hamiltonian of the atom without the influence of the radiation from the laser. The symbol $V$ represents the interaction between the atom and the laser. 
 
@@ -145,9 +145,12 @@ V=-\mathbf{d}\cdot\mathbf{E}.
 \end{equation}
 We model the laser as a classical, oscillating electric field, $\mathbf{E}$, while $\mathbf{d}$ represents the dipole moment matrix operator of our atomic system. The electric field at the location of our atom takes the form 
 \begin{equation}
-\mathbf{E}=\mathbf{E_1} \cos(\omega_1 t + \phi_1) + \mathbf{E_2} \cos(\omega_2t + \phi_2). \label{eqn:Efield}
+\mathbf{E}=\frac{1}{2}\left(\mathbf{E_1} e^{i\omega_1 t} + \mathbf{E_2} e^{i\omega_2 t} + c.c. \right). \label{eqn:Efield}
 \end{equation}
-Here, $E_1$ and $E_2$ contain the electric field magnitude and polarization for two different lasers that oscillate with angular frequencies $\omega_1$ and $\omega_2$ respectively\footnote{PROBLEM: This does not allow for circularly polarized light :(}. $\phi_1$ and $\phi_2$ represent arbitrary phases. We choose to let $\omega_1>\omega_2$. Thus, the $\mathbf{E_1}, \omega_1$ laser is closer tuned for the transitions between $|g\rangle$ and $|i\rangle$, while the $\mathbf{E_2}, \omega_2$ laser is the one that has more to do with the transitions involving $|e\rangle$ and $|i\rangle$. Conveniently, this numbering both matches the conventions in Ref.\,\cite{Young1997363} and it matches the numbering scheme of our slave lasers (i.e. slave 1 outputs a higher frequency than slave 2). 
+%\mathbf{E_2} \cos(\omega_2t + \phi_2). \label{eqn:Efield}
+Here, $E_1$ and $E_2$ are complex vectors containing the electric field magnitude, polarization and relative phase information for two different lasers that oscillate with angular frequencies $\omega_1$ and $\omega_2$ respectively. The symbol $c.c.$ should be taken to mean the complex conjugate of all the factors that came before. We choose to let $\omega_1>\omega_2$. 
+Thus, the laser with electric field $\mathbf{E_1}$ that oscillates at frequency $\omega_1$ is tuned closer to the transition between $|g\rangle$ and $|i\rangle$, while the $\mathbf{E_2}, \omega_2$ laser is tuned closer to the transitions involving $|e\rangle$ and $|i\rangle$. Conveniently, this numbering matches both the conventions in Ref.\,\cite{Young1997363} and it matches the numbering scheme of our slave lasers (i.e. slave 1 outputs a higher frequency than slave 2). 
+
 
 The dipole moment matrix operator will be evaluated and discussed in Section\,\ref{ElectricDipoleInteraction}. However, for now, notice that by writing the interaction between the lasers and the atoms in the form $\mathbf{d}\cdot\mathbf{E}$, we have already assumed that the electric field produced by both lasers is uniform in the regime of the atoms. This is known as the ``electric dipole approximation.'' We also know that all of the on diagonal dipole moment matrix elements are zero \cite{cohenTannoudji}. We also assume that there is no coupling betweeen $|e\rangle$ and $|g\rangle$, or in other words, that $\langle e|\mathbf{d}\cdot\mathbf{E}|g\rangle=0$ Therefore, we expect to be able to write the dipole matrix element operator as 
 \begin{equation}
