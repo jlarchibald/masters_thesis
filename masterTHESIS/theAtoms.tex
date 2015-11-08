@@ -44,13 +44,13 @@ c_g(\tau)&=e^{i(\delta \tau/2)} \left(
 \end{align}
 where $\Omega_{eg}$ represents the on resonance Rabi frequency, which is defined as 
 \begin{equation}
-\Omega_{eg}=-\frac{\langle e |\mathbf{d}\cdot\mathbf{E}|g \rangle }{\hbar}.
+\Omega_{eg}=-\frac{\langle e |\mathbf{d}\cdot\mathbf{E}|g \rangle }{\hbar}
 \end{equation}
-The off-resonance Rabi frequency $\Omega_r$ is defined as 
+and the off-resonance Rabi frequency, $\Omega_r$, is defined as 
 \begin{equation}
-\Omega_r=\sqrt{\Omega_{eg}^2+\delta^2},
+\Omega_r=\sqrt{\Omega_{eg}^2+\delta^2}.
 \end{equation}
-and $\delta$ is the detuning, which is defined as 
+The detuning, $\delta$, is defined as 
 \begin{equation}
 \delta=\omega-(\omega_e-\omega_g).
 \end{equation}
@@ -67,14 +67,26 @@ These results are also quoted from Ref.\,\cite{Young1997363}, whose conventions 
 
 The two state Rabi system has some important properties. First, we see that the only way to move 100\% of the population from the ground state to the excited state is to drive the system on resonance (i.e. with $\delta=0$). Second, we see that the system oscillates between populating the excited and ground states with frequency $\Omega_{r}$. The stronger the coupling between the laser and the system (which is encapsulated in $\langle e|\mathbf{d}\cdot\mathbf{E}|g\rangle$), the more rapidly these oscillations occur. 
 
+We are particularly interested in coherently swapping the entire populations of the two states and placing the ions into an equal, coherent superposition of the two states.
 A $\pi$ pulse is a laser pulse that swaps the populations of the excited and ground states. In other words, if we were to use an operator $\Pi$ to represent a $\pi$ pulse, it would take the form
 \begin{equation}
 \Pi=e^{i\phi_{eg}}|e\rangle\langle g|+e^{i\phi_{ge}}|g\rangle\langle e|,
 \end{equation}
 where $\phi_{eg}$ and $\phi_{ge}$ are arbitrary phases. 
 %with some phase? shoot. 
-One way to impart a $\pi$ pulse to the atomic system, would be to turn on the laser field for some finite amount of time such that the system undergoes half of one complete Rabi oscillation during the course of our pulse. We can estimate the necessary length of such a pulse to be simply the period associated with the effective Rabi rate, or in other words $T = 2\pi/\omega$.
-%
+One way to impart a $\pi$ pulse to the atomic system, would be to turn on the laser field for some finite amount of time such that the system undergoes half of one complete Rabi oscillation over the duration of the pulse. We can estimate the necessary length of such a pulse to be simply the period associated with the effective Rabi rate, or in other words $T = 2\pi/\omega$.
+Similarly, we are interested in $\pi/2$ pulses, which are laser pulses that cause the following type of transition:
+\begin{multline}
+%|e\rangle\rightarrow \frac{1}{\sqrt{2}}\left(|e\rangle+e^{i\phi_{}}|g\rangle\right)
+\cos\left(\frac{\theta}{2}\right)|g\rangle+
+e^{i\phi}\sin\left(\frac{\theta}{2}\right)|e\rangle\rightarrow
+\cos\left(\frac{\theta+\pi/2}{2}\right)|g\rangle+
+e^{i\phi'}\sin\left(\frac{theta+\pi/2}{2}\right)|e\rangle.\label{blochSpherepi2}
+\end{multline}
+In this equation, $\theta$ is a coordinate representing the inclination angle on the Bloch sphere. The symbols $\phi$ and $\phi'$ represent arbitrary phases. The entire equation is specified only to within an overall phase. This shows that systems that are in a state $|e\rangle$ or $|g\rangle$ will be placed in an equal superposition of other states, while if the system is already in an equal superposition, the entire population will be moved to either the $e\rangle$ or $|g\rangle$ states.
+As Eq.\,\eqref{blochSpherepi2} illustrates, called a $\pi/2$ pulse because it changes the state of the system into an equal superposition, which is represented by the angle of $\pi/2$ radians in the Bloch sphere description of a two state system. Also, similarly to the case of the $\pi$ pulse, a $\pi/2$ pulse can be achieved simply by turning on a Rabi-flop-inducing stimulus for an appropriate time interval. 
+
+%could I have just said ae+bg->a(e+g)+b(e-g)? Probably something like that. Oh, also, don't forget that the phase doesn't matter. 
 %The system is most naturally talked about in the interaction picture. In order to do this, I divide the Hamiltonian into two pieces: 
 %\begin{equation}
 %H=H_0+V
@@ -103,7 +115,7 @@ One way to impart a $\pi$ pulse to the atomic system, would be to turn on the la
 %%momentum entangled?
 %
 %In the case of 
-%
+
 \subsection{Three state system}
 \begin{figure}
 \centerline{
@@ -114,17 +126,24 @@ One way to impart a $\pi$ pulse to the atomic system, would be to turn on the la
 \end{figure}
 We now move to a discussion of the dynamics of a three state system, as shown in Figure\,\ref{energyLevelDiagramFigure}. Following the notation of Ref.\,\cite{Young1997363}, we rewrite our Hamiltonian as
 \begin{equation}
-H=H_0+V.
+H_{tot}=H+V.
 \end{equation}
-Here, $H_0$ is the Hamiltonian of the atom without the influence of the radiation from the laser. It is written in terms of three states ($|e\rangle$,$|g\rangle$,and $|i\rangle$). The symbol $V$ represents the interaction between the atom and the laser: 
-\begin{align}
-H_0&=
+Here, $H$ is the Hamiltonian of the atom without the influence of the radiation from the laser. The symbol $V$ represents the interaction between the atom and the laser. 
+
+For present purposes, we neglect all but three states of $H$ ($|e\rangle$,$|g_0\rangle$,and $|i\rangle$). We write $H$ as 
+\begin{equation}
+H=
 \hbar\omega_e |e\rangle\langle e | +
 \hbar\omega_g |g\rangle\langle g | +
-\hbar\omega_i |i\rangle\langle i | \\ 
-V&=-\mathbf{d}\cdot\mathbf{E}.
-\end{align}
-Here, $|e\rangle$,$|g\rangle$, and $|i\rangle$ represent particular internal states of the atom. They are all eigenstates of $H_0$. In Section\,\ref{figureOutStatesSection} we will show that $|e\rangle$ can represent the $F=4$,$m_f=0$,$^2$S$_{1/2}$ state, $|g\rangle$ can represent the $F=5$,$m_f=0$,$^2$S$_{1/2}$ state, and $|i\rangle$ can represent the $F=5$,$m_f=1$,$^2$P$_{3/2}$ state\footnote{Our analysis applies equally well to other sets of three states within the ions. We can select which states are involved by selecting our laser polarization and making sure that the laser is tuned to these states.}. The energies of these states are represented by $\hbar\omega_e,\hbar\omega_g,$ and $\hbar\omega_i$ respectively. We model the laser as a classical, oscillating electric field, $\mathbf{E}$, while $\mathbf{d}$ represents the dipole moment matrix operator of our atomic system. The electric field at the location of our atom takes the form 
+\hbar\omega_i |i\rangle\langle i | 
+\end{equation}
+Here, $|e\rangle$,$|g\rangle$, and $|i\rangle$ represent particular internal states of the atom. They are all eigenstates of $H$. In Section\,\ref{figureOutStatesSection} we will show that $|e\rangle$ can represent the $F=4$,$m_f=0$,$^2$S$_{1/2}$ state, $|g\rangle$ can represent the $F=5$,$m_f=0$,$^2$S$_{1/2}$ state, and $|i\rangle$ can represent the $F=5$,$m_f=1$,$^2$P$_{3/2}$ state\footnote{Our analysis applies equally well to other sets of three states within the ions. We can select which states are involved by adjusting the tuning and polarization of the lasers.}. The energies of these states are represented by $\hbar\omega_e,\hbar\omega_g,$ and $\hbar\omega_i$ respectively. 
+
+The term representing the interaction between the laser and the ions is given by
+\begin{equation}
+V=-\mathbf{d}\cdot\mathbf{E}.
+\end{equation}
+We model the laser as a classical, oscillating electric field, $\mathbf{E}$, while $\mathbf{d}$ represents the dipole moment matrix operator of our atomic system. The electric field at the location of our atom takes the form 
 \begin{equation}
 \mathbf{E}=\mathbf{E_1} \cos(\omega_1 t + \phi_1) + \mathbf{E_2} \cos(\omega_2t + \phi_2). \label{eqn:Efield}
 \end{equation}
