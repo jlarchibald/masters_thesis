@@ -1,5 +1,5 @@
 \chapter{The Atoms} \label{ChapterAboutTheAtoms}
-\section{Overview of relevant atomic transitions}
+%\section{Overview of relevant atomic transitions}
 
 The objective of this chapter is to find the intensity and beam waist that will allow our lasers to impart the $\pi$ and $\pi/2$ pulses to the atoms as they make their way through the chamber. In order to show that the 408 nm 5 GHz detuned laser can provide the $\pi$ and $\pi/2$ pulses, one must first take a detailed look at the Raman transitions that the laser system is intended to stimulate.
 The basic steps that will be explained in this chapter are as follows:
@@ -13,7 +13,7 @@ In this way I will show that the beams from this laser system will be able to ac
 
 \section{Dynamics of two- and three-state systems}\label{dynamicsSection}
 
-First, we will model the dynamics of the system based on Refs.\,\cite{Young1997363}, \cite{gustavsonThesis}, \cite{footAtomicPhysics}, \cite{cjeDiss} and \cite{RamanBeamSplit}. 
+First, we will model the dynamics of the system based on information found in Refs.\,\cite{Young1997363}, \cite{gustavsonThesis}, \cite{footAtomicPhysics}, \cite{cjeDiss} and \cite{RamanBeamSplit}. 
 We will eventually model the atom as a three-state system that undergoes stimulated Raman transitions. During these transitions, the atom moves coherently between the ground and excited states. In appropriate limits, however, the three-state system undergoing Raman transitions can be shown to be equivalent to a two-state system undergoing Rabi oscillations between the ground and excited states. Therefore, we will first review Rabi flopping in a two state system, after which we will discuss the dynamics of a three-state system. 
 
 \subsection{Two state Rabi oscillations}
@@ -148,27 +148,52 @@ We model the laser as a classical, oscillating electric field, $\mathbf{E}$, whi
 \mathbf{E}=\frac{1}{2}\left(\mathbf{E_1} e^{i\omega_1 t} + \mathbf{E_2} e^{i\omega_2 t} + c.c. \right). \label{eqn:Efield}
 \end{equation}
 %\mathbf{E_2} \cos(\omega_2t + \phi_2). \label{eqn:Efield}
-Here, $E_1$ and $E_2$ are complex vectors containing the electric field magnitude, polarization and relative phase information for two different lasers that oscillate with angular frequencies $\omega_1$ and $\omega_2$ respectively. The symbol $c.c.$ should be taken to mean the complex conjugate of all the factors that came before. We choose to let $\omega_1>\omega_2$. 
-Thus, the laser with electric field $\mathbf{E_1}$ that oscillates at frequency $\omega_1$ is tuned closer to the transition between $|g\rangle$ and $|i\rangle$, while the $\mathbf{E_2}, \omega_2$ laser is tuned closer to the transitions involving $|e\rangle$ and $|i\rangle$. Conveniently, this numbering matches both the conventions in Ref.\,\cite{Young1997363} and it matches the numbering scheme of our slave lasers (i.e. slave 1 outputs a higher frequency than slave 2). 
+%oh, it's different phases for the different components of $\mathbf{E_1}.
+Here, $\mathbf{E_1}$ and $\mathbf{E_2}$ are complex vectors containing the electric field magnitude, polarization, and relative phase information for two different lasers that oscillate with angular frequencies $\omega_1$ and $\omega_2$ respectively. The symbol $c.c.$ should be taken to mean the complex conjugate of all the terms that came before. We choose to let $\omega_1>\omega_2$. 
+Thus, in our convention, the laser with electric field $\mathbf{E_1}$ that oscillates at frequency $\omega_1$ is tuned closer to the transition between $|g\rangle$ and $|i\rangle$, while the $\mathbf{E_2}, \omega_2$ laser is tuned closer to the transitions involving $|e\rangle$ and $|i\rangle$. Conveniently, this numbering matches both the conventions in Ref.\,\cite{Young1997363} and it matches the numbering scheme of the slave lasers that is used in Chapter\,\ref{LaserSystemOverview}(i.e. slave 1 outputs a higher frequency than slave 2). 
 
-
-The dipole moment matrix operator will be evaluated and discussed in Section\,\ref{ElectricDipoleInteraction}. However, for now, notice that by writing the interaction between the lasers and the atoms in the form $\mathbf{d}\cdot\mathbf{E}$, we have already assumed that the electric field produced by both lasers is uniform in the regime of the atoms. This is known as the ``electric dipole approximation.'' We also know that all of the on diagonal dipole moment matrix elements are zero \cite{cohenTannoudji}. We also assume that there is no coupling betweeen $|e\rangle$ and $|g\rangle$, or in other words, that $\langle e|\mathbf{d}\cdot\mathbf{E}|g\rangle=0$ Therefore, we expect to be able to write the dipole matrix element operator as 
+The dipole moment matrix operator represents the coupling between the laser and the atomic system. The physical details of the dipole moment matrix operator as it relates to the $^{87}Sr^+$ ions will be addressed in Section\,\ref{ElectricDipoleInteraction}. 
+However, for now, we make a few physically valid assumptions to simplify our analysis. First, we note that by writing the interaction between the lasers and the atoms in the form $\mathbf{d}\cdot\mathbf{E}$, we have already assumed that the electric field produced by both lasers is uniform in the regime of the atoms. This is known as the ``electric dipole approximation.'' Second, we now assume that all of the on diagonal dipole moment matrix elements are zero \cite{cohenTannoudji}. Finally, we neglect any possible coupling betweeen $|e\rangle$ and $|g\rangle$. That is to say that $\langle e|\mathbf{d}\cdot\mathbf{E}|g\rangle=0$, or that $V$ only couples $|e\rangle$ and $|g\rangle$ to the excited state $|i\rangle$ Therefore, we expect to be able to write the dipole matrix element operator as 
 \begin{equation}
 \label{VSchrod}
+V=
 \begin{blockarray}{cccc}
 %&|e\rangle & |g\rangle & |i\rangle\\
 &\langle e| & \langle g| & \langle i|\\
 \begin{block}{c[ccc]}
-|e\rangle & 0 & 0 & \langle e |\mathbf{d}\cdot\mathbf{E}|i\rangle \\
+|e\rangle & 0 & 0 & \langle e |\mathbf{d}\cdot\mathbf{E}|i\rangle\\
 |g\rangle & 0 & 0 & \langle g |\mathbf{d}\cdot\mathbf{E}|i\rangle\\
 |i\rangle & \langle i |\mathbf{d}\cdot\mathbf{E}|e\rangle & \langle i |\mathbf{d}\cdot\mathbf{E}|g\rangle& 0 \\
 \end{block} 
 \end{blockarray}.
 \end{equation}
+Here, we have used the basis $|e\rangle,|g\rangle,|i\rangle$. The columns and rows are labeled accordingly.
+It is convenient to define the one photon, on-resonance Rabi frequencies:
+\begin{align}
+\label{RabiFrequencies}
+\Omega_e&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_2 | e\rangle }{\hbar}\\
+\Omega_g&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_1 | g\rangle}{\hbar}.
+\end{align}
+%These are called the one photon on-resonance Rabi frequencies.
+Now $V$ can be written slighly more concisely as 
+\begin{equation}
+\label{VSchrod2}
+V=-\hbar
+\begin{blockarray}{cccc}
+%&|e\rangle & |g\rangle & |i\rangle\\
+&\langle e| & \langle g| & \langle i|\\
+\begin{block}{c[ccc]}
+|e\rangle & 0 & 0 & \Omega_e^*\\
+|g\rangle & 0 & 0 & \Omega_g^*\\
+|i\rangle & \Omega_e & \Omega_g & 0 \\
+\end{block} 
+\end{blockarray}.
+\end{equation}
+
 %I should have been using \eqref all along 
-
-
-First, we move to the interaction picture. The interaction picture is related to the Schr\"odinger picture by the following transformations: 
+\subsubsection{Transformation to interaction picture}
+First, we move to the interaction picture.
+Information on the interaction picture and the basics of quantum dynamics can be found in Refs.\,\cite{sakurai} and \cite{merzbacher}. Moving to the interaction picture is analagous to moving to a so-called ``rotating frame'' as is done in Ref.\,\cite{Young1997363}.The interaction picture is related to the Schr\"odinger picture by the following transformations: 
 \begin{align}
 \label{intTransforms}
 |e\rangle_I&=e^{iH_0t/\hbar}|e\rangle\\
@@ -180,12 +205,12 @@ In general, we may let $|\psi\rangle$ represent any generic state in the Schr\"o
 \begin{equation}
 i\hbar \frac{\partial}{\partial t}|\psi\rangle_I= V_I|\psi\rangle_I.
 \end{equation}
-(Information on the interaction picture and the basics of quantum dynamics can be found in Refs.\,\cite{sakurai} and \cite{merzbacher}.) Note that in the basis $|e\rangle$,$|g\rangle$,$|i\rangle$, we can write $\exp(iH_0t/\hbar)$ as 
+ Note that in the basis $|e\rangle$,$|g\rangle$,$|i\rangle$, we can write $\exp(iH_0t/\hbar)$ as 
 \begin{equation}
 \label{expH0}
 \exp(iH_0t/\hbar)=e^{i\omega_e t}|e\rangle\langle e|+e^{i\omega_g t}|g\rangle \langle g|+e^{i\omega_i t}|i\rangle\langle i|.
 \end{equation}
-This has the effect of moving the trivial evolution of the ion into the operators. Now, the state of the system may be written as  
+This has the effect of moving the trivial evolution of the ion into the operators and allowing the stationary states of $H$ to have no time-dependent phase. Now, the state of the system may be written as  
 \begin{equation}
 |\psi(t)\rangle_I = c_e(t)|e\rangle_I+c_g(t)|g\rangle_I+c_i(t)|i\rangle_I,
 \end{equation}
@@ -208,6 +233,8 @@ $\Omega_{\mathit{eff}}$ & Effective Rabi frequency for two photon transition.\\ 
 \label{frequencyTable}
 \end{table}
 
+\subsubsection{Rotating wave approximation}
+
 In order to solve for the dynamics, we must apply the rotating wave approximation. 
 %todo: cite Rabi? Sure. 
 In order to do this, we first rewrite $\mathbf{E}$ from Eq.\,\ref{eqn:Efield} as 
@@ -226,7 +253,8 @@ V_I=\frac{1}{2}e^{i(\omega_e-\omega_i+\omega_1)t+\phi_1}|e\rangle\langle e|\math
 \frac{1}{2}e^{i(\omega_e-\omega_i+\omega_2)t+\phi_2}|e\rangle\langle e|\mathbf{d}\cdot\mathbf{E}_2| i\rangle\langle i| + \frac{1}{2}e^{i(\omega_e-\omega_i-\omega_2)t-\phi_2}|e\rangle\langle e|\mathbf{d}\cdot\mathbf{E}_2| i\rangle\langle i| +
 \ldots
 \end{multline}
-The rotating wave approximation is to assume that only the slowly-oscillating terms will make non-zero contributions to the dynamics of the system\cite{Young1997363}. The only terms where this criterion is satisfied are the ones near our resonances. 
+The rotating wave approximation is to assume that only the slowly-oscillating terms will make non-zero contributions to the dynamics of the system.%\cite{Young1997363}. %maybe Griffiths?
+The only terms where this criterion is satisfied are the ones near our resonances. 
 We have assumed that $\omega_i-\omega_g\approx\omega_1$ and that $\omega_i-\omega_e\approx\omega_2$, which means that our new $V_I$ with the rotating wave approximation applied is
 \begin{multline}
 V_I=\frac{1}{2}e^{i(\omega_i-\omega_g-\omega_1)t+\phi_1}|i\rangle\langle i|\mathbf{d}\cdot\mathbf{E}_1| g\rangle\langle g | + \frac{1}{2}e^{i(\omega_g-\omega_i+\omega_1)t-\phi_1}|g\rangle\langle g|\mathbf{d}\cdot\mathbf{E}_1| i\rangle\langle i| \\
@@ -242,15 +270,8 @@ For convenience, we define the following frequencies:
 \delta&=(\omega_e-\omega_g)-(\omega_1-\omega_2).
 \end{align}
 We assume that $\delta\ll\Delta_{1g}$ and that $\delta\ll\Delta_{2e}$, or in other words that $\Delta_{1g}\approx\Delta_{2e}$.
-We also define these:
-\begin{align}
-\label{RabiFrequencies}
-\Omega_e&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_2 | e\rangle }{\hbar}\\
-\Omega_g&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_1 | g\rangle}{\hbar}.
-\end{align}
-These are called the one photon on-resonance Rabi frequencies.
 
-We can write $V_I$ explicitly using Eqs.\,\eqref{Vbreakdown}, \eqref{frequencyDiffs}, and \eqref{RabiFrequencies}:
+We can write $V_I$ explicitly using Eqs.\,\eqref{Vbreakdown}, \eqref{frequencyDiffs}, \eqref{VSchrod2} and \eqref{RabiFrequencies}:
 \begin{equation}
 \label{VI_matrix_simplified}
 V_I=
@@ -262,12 +283,7 @@ V_I=
 \end{bmatrix}.
 \end{equation}
 
-Ref.\,\cite{Young1997363} then shows that the effective Rabi frequency, $\Omega_{\mathit{eff}}$ is given by 
-\begin{equation}
-\Omega_{\rm eff}=\frac{\Omega_{e} \Omega_{g}}{2 \Delta},
-\end{equation}
-where $\Delta$ is the one photon detuning. 
-
+\subsubsection{Adiabatic elimination of $|i\rangle$ state}
 In order to solve the system, we use adiabatic elimination to make this look like the two state system. There are several ways to do this. One method is to write the solution as 
 \begin{equation} 
 |\psi\rangle = 
@@ -275,40 +291,70 @@ In order to solve the system, we use adiabatic elimination to make this look lik
 \end{bmatrix},
 \end{equation}
 then find the three coupled differential equations that describe the evolution of the sytem and solve them assuming that $\frac{\partial c_i(t)}{\partial t}=0$. There are some subtleties to this method (for one thing, $\dot{c_i}=0$ in the Schr\"odinger picture, not for time-dependent coefficients defined in other pictures) that are well-explained in Ref.\,\cite{brionLambdaAdiabatic}. In fact, Ref.\,\cite{brionLambdaAdiabatic} gives an excellent discussion of adiabatic elimination for a three state system like ours. 
-Ref.\,\cite{brionLambdaAdiabatic} also describes a method using Green's functions as explained in \cite{cohenTannoudji}. This method involves using the resolvent and projection operators to describe the system. The Green's function of the system is defined as 
-\begin{equation}
-G(z)=\frac{1}{z-\mathbf{H}},
-\end{equation}
-where $z$ is a parameter over which we will eventually integrate and $H$ represents the Hamiltonian of the system. This is to be interpreted essentially as 
-\begin{equation}
-\frac{1}{z-H}=\left(z\mathds{1}-\mathbf{H}\right)^{-1}.
-\end{equation}
-The time evolution of the system can be written as a contour integral in the complex plane:
-\begin{equation}
-U(t)=\frac{1}{2\pi i}\int_{C_+\cup C_-}dz e^{-izt/\hbar}G(z),
-\end{equation}
-where $U(t)$ is the time evolution operator and $C_+\cup C_-$ is a contour integral taken from $-\infty$ to $\infty$ where $C_-$ is just below the real axis that points in the positive real direction and $C_+$ is a contour just above the real axis that points towards the negative real numbers. 
-If we define two projections operators, $P=|e\rangle\langle e| + |g\rangle\langle g|$ and $Q=|i\rangle\langle i|$, it is shown in Ref.\,\cite{cohenTannoudji} that $G(z)$ can be written as 
-\begin{equation}
-PG(z)P=\frac{P}{z-PH_0P-P\left(V+V\frac{Q}{z-QH_0Q-QVQ}V\right)P}.
-\end{equation}
-Ref.\,\cite{brionLambdaAdiabatic} then shows that poles of a certain order can be omitted in the ``pole approximation.'' 
+%Ref.\,\cite{brionLambdaAdiabatic} also describes a method using Green's functions as explained in \cite{cohenTannoudji}. This method involves using the resolvent and projection operators to describe the system. The Green's function of the system is defined as 
+%\begin{equation}
+%G(z)=\frac{1}{z-\mathbf{H}},
+%\end{equation}
+%where $z$ is a parameter over which we will eventually integrate and $H$ represents the Hamiltonian of the system. This is to be interpreted essentially as 
+%\begin{equation}
+%\frac{1}{z-H}=\left(z\mathds{1}-\mathbf{H}\right)^{-1}.
+%\end{equation}
+%The time evolution of the system can be written as a contour integral in the complex plane:
+%\begin{equation}
+%U(t)=\frac{1}{2\pi i}\int_{C_+\cup C_-}dz e^{-izt/\hbar}G(z),
+%\end{equation}
+%where $U(t)$ is the time evolution operator and $C_+\cup C_-$ is a contour integral taken from $-\infty$ to $\infty$ where $C_-$ is just below the real axis that points in the positive real direction and $C_+$ is a contour just above the real axis that points towards the negative real numbers. 
+%If we define two projections operators, $P=|e\rangle\langle e| + |g\rangle\langle g|$ and $Q=|i\rangle\langle i|$, it is shown in Ref.\,\cite{cohenTannoudji} that $G(z)$ can be written as 
+%\begin{equation}
+%PG(z)P=\frac{P}{z-PH_0P-P\left(V+V\frac{Q}{z-QH_0Q-QVQ}V\right)P}.
+%\end{equation}
+%Ref.\,\cite{brionLambdaAdiabatic} then shows that poles of a certain order can be omitted in the ``pole approximation.'' 
 
-We can also get to the two state equations of motion using classic perturbation theory. If we take the standard time-dependent perturbation to second order, we get:
-
+We can also motivate our use of the two state equations of motion using classic perturbation theory. If we take the standard time-dependent perturbation to second order, we get
 \begin{equation}
 U_I(t)=\mathds{1}-\frac{i}{\hbar}\int_{t_0}^t dt' V_I(t') + \left(-\frac{i}{\hbar}\right)^2 \int_{t_0}^t dt' V_I(t')\int_{t_0}^{t'}dt'' V_I(t'').
+\label{2ndOrderPerturbation}
 \end{equation}
-If we use Eq.\,\eqref{VI_matrix_simplified}, we get 
-\begin{equation}
-U_I(t)=\mathds{1}-\frac{i}{\hbar}\int_{t_0}^t dt'  \hbar
+If we use Eq.\,\eqref{VI_matrix_simplified} to write $V_I$ in its matrix form, Eq.\,\eqref{2ndOrderPerturbation} becomes
+\begin{multline}
+U_I(t)=\mathds{1}+i\int_{t_0}^t dt'
 \begin{bmatrix}
-0 & 0 & -\frac{\Omega_e^*}{2}e^{-i\Delta_{2e}t} \\
-0 & 0 & -\frac{\Omega_g^*}{2}e^{-i\Delta_{1g}t}\\
--\frac{\Omega_e}{2}e^{i\Delta_{2e}t} & -\frac{\Omega_{g}}{2}e^{i\Delta_{1g}t} & 0 \\
-+ \left(-\frac{i}{\hbar}\right)^2 \int_{t_0}^t dt' V_I(t')\int_{t_0}^{t'}dt'' V_I(t'')
-\end{bmatrix}.
-\end{equation}
+0 & 0 & \frac{\Omega_e^*}{2}e^{-i\Delta_{2e}t} \\
+0 & 0 & \frac{\Omega_g^*}{2}e^{-i\Delta_{1g}t}\\
+\frac{\Omega_e}{2}e^{i\Delta_{2e}t} & \frac{\Omega_{g}}{2}e^{i\Delta_{1g}t} & 0 \\
+\end{bmatrix}
++ \\
+\int_{t_0}^t dt' 
+\int_{t_0}^{t'}dt'' 
+\begin{bmatrix}
+0 & 0 & \frac{\Omega_e^*}{2}e^{-i\Delta_{2e}t'} \\
+0 & 0 & \frac{\Omega_g^*}{2}e^{-i\Delta_{1g}t'}\\
+\frac{\Omega_e}{2}e^{i\Delta_{2e}t'} & \frac{\Omega_{g}}{2}e^{i\Delta_{1g}t'} & 0 \\
+\end{bmatrix}
+\begin{bmatrix}
+0 & 0 & \frac{\Omega_e^*}{2}e^{-i\Delta_{2e}t''} \\
+0 & 0 & \frac{\Omega_g^*}{2}e^{-i\Delta_{1g}t''}\\
+\frac{\Omega_e}{2}e^{i\Delta_{2e}t''} & \frac{\Omega_{g}}{2}e^{i\Delta_{1g}t''} & 0 \\
+\end{bmatrix},
+\end{multline}
+which reduces to 
+
+\begin{multline}
+U_I(t)=\mathds{1}+i\int_{t_0}^t dt'
+\begin{bmatrix}
+0 & 0 & \frac{\Omega_e^*}{2}e^{-i\Delta_{2e}t} \\
+0 & 0 & \frac{\Omega_g^*}{2}e^{-i\Delta_{1g}t}\\
+\frac{\Omega_e}{2}e^{i\Delta_{2e}t} & \frac{\Omega_{g}}{2}e^{i\Delta_{1g}t} & 0 \\
+\end{bmatrix}
++ \\
+\int_{t_0}^t dt' 
+\int_{t_0}^{t'}dt'' 
+\begin{bmatrix}
+\frac{|\Omega_e|^2}{4}e^{i\Delta_{2e}(t''-t')} & \frac{\Omega_g\Omega_e^*}{4}e^{i(\Delta_{1g}t''-\Delta_{2e}t')} & 0 \\
+\frac{\Omega_g^*\Omega_e}{4}e^{i(\Delta_{2e}t''-\Delta_{1g}t')} & \frac{|\Omega_g|^2}{4} e^{i\Delta_{1g}(t''-t')}& 0\\
+0 & 0 & \frac{|\Omega_e|^2}{4}e^{i\Delta_{2e}(t'-t'')}+\frac{|\Omega_g|^2}{4}e^{i\Delta_{1g}(t'-t'')}\\
+\end{bmatrix}
+\end{multline}
 
 Now, the solution to this equation is very similar to the solution to the two state system discussed in \ref{twoStateSection}. Here, the quantity analagous to the off-resonance Rabi frequency is given by \cite{Young1997363}: 
 \begin{equation}
@@ -326,6 +372,11 @@ Then, we see that the population in our two states for the case where $|c_g(\tau
 \end{align}
 Here again we see that in order to coherently move the population, we need to ensure that $\Omega_{\mathit{eff}}=\Omega_r$.
 
+%Ref.\,\cite{Young1997363} then shows that the effective Rabi frequency, $\Omega_{\mathit{eff}}$ is given by 
+%\begin{equation}
+%\Omega_{\rm eff}=\frac{\Omega_{e} \Omega_{g}}{2 \Delta},
+%\end{equation}
+%where $\Delta$ is the one photon detuning. 
 %\begin{equation}
 %\Omega_\mathit{eff}=\sqrt{\left(\frac{\Gamma^2S_0}{2}\right)^2 + \delta^2}
 %\end{equation}
