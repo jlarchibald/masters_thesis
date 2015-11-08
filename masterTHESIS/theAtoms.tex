@@ -2,40 +2,39 @@
 \section{Overview of relevant atomic transitions}
 
 The objective of this chapter is to find the intensity and beam waist that will allow our lasers to impart the $\pi$ and $\pi/2$ pulses to the atoms as they make their way through the chamber. In order to show that the 408 nm 5 GHz detuned laser can provide the $\pi$ and $\pi/2$ pulses, one must first take a detailed look at the Raman transitions that the laser system is intended to stimulate.
-
 The basic steps that will be explained in this chapter are as follows:
 \begin{itemize}
-\item Model the dynamics of a generic three state atom
-\item Identify the relevant states of the $^{87}$Sr$^+$ ions.
+\item Model the dynamics of a generic three state atom undergoing a Raman transition
+\item Identify the relevant contributions to the $^{87}$Sr$^+$ ions' Hamiltonian and show that it can be modeled as a three state system.
 \item Find and interpret appropriate numerical values for relevant physical parameters in the Hamiltonian.
-\item Calculate the appropriate intensity, width and polarization of our laser beams that will allow the laser to impart the $\pi$ and $\pi/2$ pulses to the atom. 
+\item Calculate the intensity, width and polarization of our laser beams that will allow the laser to impart the $\pi$ and $\pi/2$ pulses to the atom. 
 \end{itemize}
 In this way I will show that the beams from this laser system will be able to accomplish their intended purpose.
 
-\section{Dynamics}\label{dynamicsSection}
+\section{Dynamics of two- and three-state systems}\label{dynamicsSection}
 
-First, we must model the dynamics of the system based on Refs.\,\cite{Young1997363}, \cite{gustavsonThesis}, \cite{footAtomicPhysics}, \cite{cjeDiss} and \cite{RamanBeamSplit}. 
-We will first talk about two state systems that exhibit Rabi oscillations. We will then assume that the atom can be treated like a three state atom and show that these three states can be reduced to a two state system. 
+First, we will model the dynamics of the system based on Refs.\,\cite{Young1997363}, \cite{gustavsonThesis}, \cite{footAtomicPhysics}, \cite{cjeDiss} and \cite{RamanBeamSplit}. 
+We will eventually model the atom as a three-state system that undergoes stimulated Raman transitions. During these transitions, the atom moves coherently between the ground and excited states. In appropriate limits, however, the three-state system undergoing Raman transitions can be shown to be equivalent to a two-state system undergoing Rabi oscillations between the ground and excited states. Therefore, we will first review Rabi flopping in a two state system, after which we will discuss the dynamics of a three-state system. 
 
 \subsection{Two state Rabi oscillations}
 \label{twoStateSection}
-The first step to understanding the physics of the Raman transitions is to understand the dynamics of a two state atom. Discussions of this can be found in many places, including Refs.\,\cite{cohenTannoudji}, \cite{demilleBudkerKimball}, and \cite{Young1997363}. The Hamiltonian for a two level atom under periodic perturbation from an electric field can be written as 
+The first step to understanding the physics of the Raman transitions is to understand the dynamics of a two state atom. The dynamics of this system are well-known. Discussions of it can be found in many places, including Refs.\,\cite{cohenTannoudji}, \cite{demilleBudkerKimball}, and \cite{Young1997363}. The Hamiltonian for a two level atom under periodic perturbation from an electric field can be written as 
 \begin{equation}
 H = \hbar \omega_e |e\rangle\langle e| + \hbar \omega_g |g\rangle\langle g| - \mathbf{d}\cdot\mathbf{E},
 \end{equation}  
-where $\omega_e$ and $\omega_g$ are the frequencies of the excited and ground states respectively and $\mathbf{d}$ is the dipole moment operator. The electric field $\mathbf{E}$ is given by 
+where $\omega_e$ and $\omega_g$ are the frequencies of the excited and ground states respectively and $\mathbf{d}$ is the dipole moment operator. The excited state is shown as $|e\rangle$, while $|g\rangle$ represents the ground state. The electric field $\mathbf{E}$ is given by 
 \begin{equation}
 \mathbf{E} = \mathbf{E_0} \cos (\omega t + \phi).
 \end{equation}
-These equations follow the conventions selected in Ref.\,\cite{Young1997363}. 
-
-The dynamics of this system are well-known. These equations can be solved by moving into the interaction picture, applying the rotating wave approximation, and diagonalizing the resulting matrix to find its eigenvalues and eigenstates. The reader is again referred to Refs.\,\cite{cohenTannoudji}, \cite{demilleBudkerKimball}, and \cite{Young1997363} for more complete explanations of this system. 
+Here, $\mathbf{E_0}$ represents the electric field amplitude and direction, while $\omega$ is the angular frequency of the laser, $t$ is time and $\phi$ encapsulates the phase of the radiation.
+We have follow the conventions selected in Ref.\,\cite{Young1997363}. 
+These equations can be solved by moving into the interaction picture, applying the rotating wave approximation, and diagonalizing the resulting matrix to find its eigenvalues and eigenstates.
 
 If we let 
 \begin{equation}
 |\Psi(t)\rangle = c_e(t)e^{-i\omega_e t}|e\rangle + c_g e^{-i\omega_g t}|g\rangle
 \end{equation}
-represent the Schr\"odinger picture solution to the equation, then the solution in the case where $c_g(0)=1,c_e(0)=0$ is 
+represent the Schr\"odinger picture solution to the equation, then the solution in the case where $c_g(0)=1,c_e(0)=0$ turns out to be 
 \begin{align}
 c_e(\tau)&=-i e^{-i(\delta \tau/2+\phi)} \frac{\Omega_{eg}}{\Omega_{r}} \sin\left(\frac{\Omega_r \tau}{2}\right)\label{eqn:ce2stateRabi}\\
 c_g(\tau)&=e^{i(\delta \tau/2)} \left(
@@ -47,11 +46,11 @@ where $\Omega_{eg}$ represents the on resonance Rabi frequency, which is defined
 \begin{equation}
 \Omega_{eg}=-\frac{\langle e |\mathbf{d}\cdot\mathbf{E}|g \rangle }{\hbar}.
 \end{equation}
-The effective Rabi frequency $\Omega_r$ is defined as 
+The off-resonance Rabi frequency $\Omega_r$ is defined as 
 \begin{equation}
 \Omega_r=\sqrt{\Omega_{eg}^2+\delta^2},
 \end{equation}
-and $\delta$ is the detuning, or 
+and $\delta$ is the detuning, which is defined as 
 \begin{equation}
 \delta=\omega-(\omega_e-\omega_g).
 \end{equation}
@@ -64,7 +63,7 @@ Equations\,\ref{eqn:ce2stateRabi} and \ref{eqn:cg2stateRabi} can be squared to f
 =1-\frac{\Omega_{eg}^2}{2\Omega_r^2} + \left(\frac{\Omega_{eg}^2}{2\Omega_r^2}\right)\cos(\Omega_r \tau).
 \end{align}
 %should I put \Omega_r^2 just to see? No. 
-These results are also quoted from Ref.\,\cite{Young1997363}, which gives a reasonably good explanation of the methods used.
+These results are also quoted from Ref.\,\cite{Young1997363}, whose conventions I have also adopted.
 
 The two state Rabi system has some important properties. First, we see that the only way to move 100\% of the population from the ground state to the excited state is to drive the system on resonance (i.e. with $\delta=0$). Second, we see that the system oscillates between populating the excited and ground states with frequency $\Omega_{r}$. The stronger the coupling between the laser and the system (which is encapsulated in $\langle e|\mathbf{d}\cdot\mathbf{E}|g\rangle$), the more rapidly these oscillations occur. 
 
@@ -336,7 +335,7 @@ In the case of $^{87}$Sr+, there is only one electron in the valence band. The i
 %We will first approximate the Hamiltonian by assuming that there is no coupling that is dependent on the spin. 
 %The hyperfine interaction will be modeled as a perturbation on top of this.
 
-The ``good'' quantum numbers for describing the internal states of a $^{87}$Sr+ ion are $F$,$J$,$L$,$S$,$m_f$ and $n$\cite{experimental_hyperfine_alkali_arimondo}\cite{cuaMITnotes} where $F$,$J$,$L$,$S$,$m_f$ take on their usual meanings (see Table\,\ref{quantumNumberQuickref}). This is because the Hamiltonian for the unperturbed atom is diagonal in this basis. However, a few of the external stimuli to the ions (like the constant magnetic field or the interaction of the lasers) can be most naturally modelled in terms of the eigenstates of the $L,m_l,S,m_s,I,m_I$ quantum numbers.   
+The ``good'' quantum numbers for describing the internal states of a $^{87}$Sr+ ion are $F$,$J$,$L$,$S$,$m_f$ and $n$\cite{experimental_hyperfine_alkali_arimondo}\cite{cuaMITnotes} where $F$,$J$,$L$,$S$,$m_f$ take on their usual meanings (see Table\,\ref{quantumNumberQuickref}). This is because the Hamiltonian for the unperturbed atom is diagonal in this basis. Equivalently, it is because these operators all commute with one another and with the other pieces of the Hamiltonian. However, a few of the external stimuli to the ions (like the constant magnetic field or the interaction of the lasers) can be most naturally modelled in terms of the eigenstates of the $L,m_l,S,m_s,I,m_I$ quantum numbers.   
 
 \begin{table}[h!]
 \centering
@@ -489,7 +488,7 @@ $5p ^2$P$_{3/2}$&88.94MHz&$88.68$MHz\footnotemark&88.5(54) \\ \hline
 \footnotetext{Ref.\ref{safronova2photon} reports $B/Q$ as 271MHz$/$b and also says that $Q=0.327(24)$b. We multiplied 271MHz$/$b$\times 0.327(24)$b$=88.68$ MHz, to get the value that appears here.}%NOTICE: IDK how to get this footnote to be guaranteed to appear on the right page.}
 
 \subsection{Calculate hyperfine energy shifts}
-Therefore, we may calculate the splitting between the $F=4$ and $F=5$ $^2$S$_{1/2}$ states using $I=9/2$, $F=4,5$, $L=0$ using Eq.\,\ref{Standard_hyperfine_AB}. In this case, we can see that with $A=1000$MHz, we can calculate the splitting between the $F=4$ and $F=5$ levels: 
+We may calculate the splitting between the $F=4$ and $F=5$ $^2$S$_{1/2}$ states using $I=9/2$, $F=4,5$, $L=0$ using Eq.\,\ref{Standard_hyperfine_AB}. In this case, we can see that with $A=1000$MHz, we can calculate the splitting between the $F=4$ and $F=5$ levels: 
 \begin{align}
 C_{F=4} &= -5.5\\
 C_{F=5} &= 4.5\\
