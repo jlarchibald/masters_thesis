@@ -359,35 +359,75 @@ U_I(t)=\mathds{1}+i\int_{t_0}^t dt'
 After carrying out the integration in the variable $t''$, we end up with the following:
 \begin{multline}
 U_I(t)=\mathds{1}+i\int_{t_0}^t dt'
-\begin{bmatrix}
+\left[\begin{smallmatrix}
 0 & 0 & \frac{\Omega_e^*}{2}e^{-i\Delta_{2e}t} \\
 0 & 0 & \frac{\Omega_g^*}{2}e^{-i\Delta_{1g}t}\\
 \frac{\Omega_e}{2}e^{i\Delta_{2e}t} & \frac{\Omega_{g}}{2}e^{i\Delta_{1g}t} & 0 \\
-\end{bmatrix}
+\end{smallmatrix}\right]
 + \\
 \int_{t_0}^t dt' 
-\begin{bmatrix}
+\left[
+\begin{smallmatrix}
 \frac{|\Omega_e|^2}{4i\Delta_{2e}}\left(\cancelto{1}{e^{i\Delta_{2e}(t'-t')}}-e^{i\Delta_{2e}(t_0-t')}\right)
- & \frac{\Omega_g\Omega_e^*}{4i\Delta_{1g}}e^{i} & 0 \\
-\frac{\Omega_g^*\Omega_e}{4}e^{i(\Delta_{2e}t''-\Delta_{1g}t')} & \frac{|\Omega_g|^2}{4} e^{i\Delta_{1g}(t''-t')}& 0\\
-0 & 0 & \frac{|\Omega_e|^2}{4}e^{i\Delta_{2e}(t'-t'')}+\frac{|\Omega_g|^2}{4}e^{i\Delta_{1g}(t'-t'')}\\
-\end{bmatrix}
+ & \frac{\Omega_g\Omega_e^*}{4i\Delta_{1g}}\left(e^{i(\Delta_{1g}-\Delta_{2e})t'}-e^{i(\Delta_{1g}t_0-\Delta_{2e}t')}\right) & 0 \\
+\frac{\Omega_g^*\Omega_e}{4i\Delta_{2e}}\left(e^{i(\Delta_{2e}-\Delta_{1g})t'}-e^{i(\Delta_{2e}t_0-\Delta_{1g}t')}\right) 
+& \frac{|\Omega_g|^2}{4i\Delta_{1g}}\left(\cancelto{1}{e^{i\Delta_{1g}(t'-t')}}-e^{i\Delta_{1g}(t_0-t')}\right)
+& 0\\
+0 & 0 & \begin{smallmatrix}
+\frac{|\Omega_e|^2}{4i\Delta_{2e}}\left(\cancelto{1}{e^{i\Delta_{2e}(t'-t')}}-e^{i\Delta_{2e}(t'-t_0)}\right) + 
+\\ \frac{|\Omega_g|^2}{4i\Delta_{1g}}\left(\cancelto{1}{e^{i\Delta_{1g}(t'-t')}}-e^{i\Delta_{1g}(t'-t_0)}\right)\end{smallmatrix}\\
+\end{smallmatrix}
+\right].\label{blastedIntegral}
 \end{multline}
+We now argue that the many terms in this integral that oscillate with frequencies near $\Delta_{2e}\approx\Delta_{1g}$ can be neglected. Instead, we assume that the main contributions will be from the terms that oscillate with frequencies of $0$ or $\Delta_{1g}-\Delta_{2e}$ (which is much smaller than $\Delta_{2e}$ and $\Delta_{1g}$). The reasoning is that the terms that oscillate near $\Delta$ will oscillate through many periods over timescales over which the other terms will be more or less constant. Therefore, we can expect that for the purposes of integrating, the high frequency contributions will be approximately 0.
+
+After removing the terms we are neglecting from Eq.\,\eqref{blastedIntegral} and making the substitutions $\Delta_{2e}-\Delta_{1g}\rightarrow\delta$, $\Delta_{2e}\rightarrow\Delta$, $\Delta_{1g}\rightarrow\Delta$ (we note that $\delta$ is small), we end up with 
+\begin{equation}
+U_I(t)=\mathds{1} -i \int_{t_0}^{t} dt'
+\begin{bmatrix}
+\frac{|\Omega_e|^2}{4\Delta} & \frac{\Omega_g\Omega_e^*}{4\Delta}e^{-i\delta t'} & 0 \\
+\frac{\Omega_g^*\Omega_e}{4\Delta}e^{i\delta t'} & \frac{|\Omega_g|^2}{4\Delta} & 0 \\
+0 & 0 & \frac{|\Omega_e|^2}{4\Delta} + \frac{|\Omega_g|^2}{4\Delta} \\
+\end{bmatrix}
+\end{equation}
+Now, we notice that this very closely resembles the \emph{first}-order Dyson series we would have gotten if we had had a different $V_I$, namely 
+\begin{equation}
+V_I=
+\hbar\begin{bmatrix}\frac{|\Omega_e|^2}{4\Delta} & \frac{\Omega_g\Omega_e^*}{4\Delta}e^{-i\delta t'} & 0 \\
+\frac{\Omega_g^*\Omega_e}{4\Delta}e^{i\delta t'} & \frac{|\Omega_g|^2}{4\Delta} & 0 \\
+0 & 0 & \frac{|\Omega_e|^2}{4\Delta} + \frac{|\Omega_g|^2}{4\Delta} \\
+\end{bmatrix}.\label{newVI0}
+\end{equation}
+We notice that in the limit we have selected, our new $V_I$ no longer has any terms that might couple a long-term population to the intermediate state $|i\rangle$. Therefore, we will adopt a truncated version of Eq.\,\eqref{newVI0} as our interaction Hamiltonian. What I have presented is not an airtight argument, but the result is correct. Alternative justifications for this can be found in several places, most helpfully in Ref.\,\cite{brionLambdaAdiabatic}.
+
+We will now treat this like a two-state system, so from now on we let 
+\begin{equation}
+V_I=
+\hbar
+\begin{blockarray}{ccc}
+%&|e\rangle & |g\rangle & |i\rangle\\
+&\langle e| & \langle g|\\
+\begin{block}{c[cc]}
+|e\rangle & \frac{|\Omega_e|^2}{4\Delta} & \frac{\Omega_g\Omega_e^*}{4\Delta}e^{-i\delta t'}\\
+|g\rangle & \frac{\Omega_g^*\Omega_e}{4\Delta}e^{i\delta t'} & \frac{|\Omega_g|^2}{4\Delta}\\
+\end{block}
+\end{blockarray}.\label{newVI}
+\end{equation}
 Now, the solution to this equation is very similar to the solution to the two state system discussed in \ref{twoStateSection}. Here, the quantity analagous to the off-resonance Rabi frequency is given by \cite{Young1997363}: 
 \begin{equation}
 \Omega_\mathit{r}=\sqrt{\Omega_\mathit{eff}^2+(\delta-\delta^{AC})^2},
 \end{equation}
-where $\delta^{AC}= \frac{|\Omega_e|^2}{4\Delta}-\frac{|\Omega_g|^2}{4\Delta}$, which accounts for certain AC Stark shifts of the levels. 
+where $\delta^{AC}= \frac{|\Omega_e|^2}{4\Delta}-\frac{|\Omega_g|^2}{4\Delta}$. This frequency accounts for the AC Stark shifts that appeared in Eq.\eqref{newVI}.
 %(\Omega_e^{AC}-\Omega_g^{AC})$. The symbols $\Omega_e^{AC}$ and $\Omega_g^{AC}$ represent the AC Stark shifts 
 
-Then, we see that the population in our two states for the case where $|c_g(\tau=0)|^2=1$ and $|c_e(\tau=0)|^2=0$ is given by 
+Following the analysis of a two-state system, it can be shown that the population in our two states for the case where $|c_g(\tau=0)|^2=1$ and $|c_e(\tau=0)|^2=0$ is given by 
 \begin{align}
 |c_e(\tau)|^2&
 =\frac{\Omega_{\mathit{eff}}^2}{2\Omega_r^2}(1-\cos(\Omega_r\tau))\\
 |c_g(\tau)|^2&=
 1-\frac{\Omega_{\mathit{eff}}^2}{2\Omega_r^2} + \left(\frac{\Omega_{\mathit{eff}}^2}{2\Omega_r^2}\right)\cos(\Omega_r \tau).
 \end{align}
-Here again we see that in order to coherently move the population, we need to ensure that $\Omega_{\mathit{eff}}=\Omega_r$.
+Here again we see that in order to coherently move the entire population, we need to ensure that $\Omega_{\mathit{eff}}=\Omega_r$. This can be accomplished only when $\delta-\delta_{AC}=0$. Notice that the detuning from the upper state $\Delta$ only affects the Rabi rate. As long as it is small enough that our approximations hold, it does not affect the total population transfer that can be achieved. However, if the off-resonance Rabi frequency gets small enough, it is possible that we will run into the epractial difficulty of not having enough laser power over a large enough interaction area to effectively transfer the ion population to the desired states.
 
 %Ref.\,\cite{Young1997363} then shows that the effective Rabi frequency, $\Omega_{\mathit{eff}}$ is given by 
 %\begin{equation}
@@ -411,17 +451,22 @@ Here again we see that in order to coherently move the population, we need to en
 
 %In Ref.\ \cite{cjeDiss}, this calculation is performed, but some of the details are left mysterious. In particular, no source is cited for any of the physical parameters of the $^{87}$Sr+ atom (e.g. the dipole moment values, the transition width, the saturation parameter). We hope to reproduce this calculation with more details.  
 
-\section{States and quantum numbers}
+%\section{States and quantum numbers}
+\section{Real world $^{87}$Sr$^+$ Hamiltonian contributions and relevant states}
+
+In this section, we will discuss the states of the real-world Strontium ions that will be used in the experiment. We will discuss the contributions to the Hamiltonian and figure out which states are relevant to the experiment. 
 
 The Hamiltonian of the Strontium ions is analagous to the Hamiltonian of a single-electron atom. 
 In a single electron atom, the solution to the Schr\"odinger equation describing the electron is solved by separation of variables.
  Each solution is a product of a spherically symmetric function that depends only on the distance $r$ from the nucleus and the spherical harmonics.
 This is because the orbital angular momentum operator $\mathbf{L}$ commutes with such a Hamiltonian. In fact, the orbital angular momentum operator commutes with any Hamiltonian with a spherically symmetric potential.
 Thus, we can use the familiar angular momentum quantum numbers for the eigenstates of any spherically symmetrical Hamiltonian.
+%keep this?
 
 In the case of $^{87}$Sr+, there is only one electron in the valence band. The inner shells are full and we assume that the symmetry is such that the eigenstates of the atom will also be eigenstates of the orbital angular momentum operator, $\mathbf{L}$.
- The system also involves two other angular momentum operators: the spin operator for the valence electron, $\mathbf{S}$%\footnote{The spin of the electrons on the inner shells cancels and adds to 0} 
- and the spin of the nucleus $\mathbf{I}$ \footnote{Here and throughout, we will use the boldface $\mathbf{I}$ to mean the operator while the unbolded letter ($I$) will mean the associated eigenvalue.}.
+ The system also involves two other angular momentum operators: the spin operator for the valence electron, $\mathbf{S}$, %\footnote{The spin of the electrons on the inner shells cancels and adds to 0} 
+ and the spin of the nucleus, $\mathbf{I}$. 
+(Here and throughout, we will use the boldface $\mathbf{I}$ to mean the operator while the unbolded letter ($I$) will mean the associated eigenvalue.)
 %We will first approximate the Hamiltonian by assuming that there is no coupling that is dependent on the spin. 
 %The hyperfine interaction will be modeled as a perturbation on top of this.
 
@@ -443,6 +488,13 @@ $m_f$ & Eigenvalue of $\mathbf{F}_z$.\\ \hline
 \label{quantumNumberQuickref}
 \end{table}
 
+There are two basic things we have to do in this section. First, we must account for each of the contributions to the Hamiltonian of the ions. We will write the Hamiltonian as 
+\begin{equation}
+H=H_0+H_{\mathrm{hfs}}+H_{\mathrm{Z}},
+\end{equation}
+where $H$ represents the Hamiltonian of the ion while it is \emph{unperturbed} by the laser. The contribution to the Hamiltonian due to the hyperfine splitting is encapsulated in $H_{hfs}$, while $H_{\mathrm{Z}}$ represents the contribution that Zeeman shifts make to the Hamiltonian (We create a constant, but adjustable magnetic field through which the atoms travel during the experiment. We do this specifically to break degeneracies between certain of the levels in the atom as discussed in Section\,\ref{zeeman}.) The rest of the Hamiltonian is represented by $H_0$. We do not explicitly consider other contributions to the Hamiltonian (for example, the fine structure) because these are built into the values we look up in the NIST atomic spectra database \cite{NISTasd}\footnote{So, for example, the NIST database gives transition lifetimes for $^2$S$_{1/2}\rightarrow^2$P$_{3/2}$ transitions. Thus, the fine structure should already be built in since there is a separate entry for $^2$S$_{1/2}\rightarrow^2$P$_{1/2}$ transitions.}.
+
+Second, we must find which states exactly the experiment will use.
 Our experiment is designed to use the $^2$S$_{1/2}$ and $^2$P$_{3/2}$ states. Each of these spectroscopic terms refers to many states: First, we must account for the states that correspond to different values of $F$. Since $\mathbf{F}=\mathbf{I}+\mathbf{J}$, $F$ can take on any values between $|I-J|,|I-J+1|,...,|I+J|$. So, for example, since $I=9/2$, the valid values of $F$ for the $^2$S$_{1/2}$ state are $F=4$ and $F=5$. For the upper states, where $J=3/2$, $F$ can take on the values $3,4,5,6$ 
 
 \section{Review of hyperfine splitting}
@@ -602,7 +654,7 @@ $F=6$ $^2$P$_{3/2} (5p)$ &   17121 MHz\\ \hline
 \label{tableOfHyperfinedeetuings}
 \end{table}
 
-\section{Magnetic field}\label{zeeman}
+\subsubsection{Magnetic field}\label{zeeman}
 
 The next feature of our system Hamiltonian that we need to model involves the constant magnetic field pointing in the $\hat{z}$ direction that exists throughout the entire area where the interferometry will take place. This field has been placed there intentionally to break the degeneracy of some of the $M_f$ sublevels that we might couple to. It also prevents the atoms from precessing around stray magnetic fields, which would take them out of the lab-centric coordinate system we would like to keep them in.
 
