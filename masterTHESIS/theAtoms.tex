@@ -21,7 +21,7 @@ We will eventually model the atom as a three-state system that undergoes stimula
 The first step to understanding the physics of the Raman transitions is to understand the dynamics of a two state atom. The dynamics of this system are well-known. Discussions of it can be found in many places, including Refs.\,\cite{cohenTannoudji}, \cite{demilleBudkerKimball}, and \cite{Young1997363}. The Hamiltonian for a two level atom under periodic perturbation from an electric field can be written as 
 \begin{equation}
 H = \hbar \omega_e |e\rangle\langle e| + \hbar \omega_g |g\rangle\langle g| - \mathbf{d}\cdot\mathbf{E},
-\end{equation}  
+\end{equation} 
 where $\omega_e$ and $\omega_g$ are the frequencies of the excited and ground states respectively and $\mathbf{d}$ is the dipole moment operator. The excited state is shown as $|e\rangle$, while $|g\rangle$ represents the ground state. The electric field $\mathbf{E}$ is given by 
 \begin{equation}
 \mathbf{E} = \mathbf{E_0} \cos (\omega t + \phi).
@@ -310,11 +310,12 @@ then find the three coupled differential equations that describe the evolution o
 %\end{equation}
 %Ref.\,\cite{brionLambdaAdiabatic} then shows that poles of a certain order can be omitted in the ``pole approximation.'' 
 
-We can also motivate our use of the two state equations of motion using classic perturbation theory. If we take the standard time-dependent perturbation to second order, we get
+We can also motivate our use of the two state equations of motion using time-dependent perturbation theory. If we take the standard, time-dependent perturbation to second order, we get
 \begin{equation}
 U_I(t)=\mathds{1}-\frac{i}{\hbar}\int_{t_0}^t dt' V_I(t') + \left(-\frac{i}{\hbar}\right)^2 \int_{t_0}^t dt' V_I(t')\int_{t_0}^{t'}dt'' V_I(t'').
 \label{2ndOrderPerturbation}
 \end{equation}
+The symbol $U_I(t)$ represents the time evolution operator.
 If we use Eq.\,\eqref{VI_matrix_simplified} to write $V_I$ in its matrix form, Eq.\,\eqref{2ndOrderPerturbation} becomes
 \begin{multline}
 U_I(t)=\mathds{1}+i\int_{t_0}^t dt'
@@ -342,9 +343,9 @@ which reduces to
 \begin{multline}
 U_I(t)=\mathds{1}+i\int_{t_0}^t dt'
 \begin{bmatrix}
-0 & 0 & \frac{\Omega_e^*}{2}e^{-i\Delta_{2e}t} \\
-0 & 0 & \frac{\Omega_g^*}{2}e^{-i\Delta_{1g}t}\\
-\frac{\Omega_e}{2}e^{i\Delta_{2e}t} & \frac{\Omega_{g}}{2}e^{i\Delta_{1g}t} & 0 \\
+0 & 0 & \frac{\Omega_e^*}{2}e^{-i\Delta_{2e}t'} \\
+0 & 0 & \frac{\Omega_g^*}{2}e^{-i\Delta_{1g}t'}\\
+\frac{\Omega_e}{2}e^{i\Delta_{2e}t'} & \frac{\Omega_{g}}{2}e^{i\Delta_{1g}t'} & 0 \\
 \end{bmatrix}
 + \\
 \int_{t_0}^t dt' 
@@ -353,9 +354,25 @@ U_I(t)=\mathds{1}+i\int_{t_0}^t dt'
 \frac{|\Omega_e|^2}{4}e^{i\Delta_{2e}(t''-t')} & \frac{\Omega_g\Omega_e^*}{4}e^{i(\Delta_{1g}t''-\Delta_{2e}t')} & 0 \\
 \frac{\Omega_g^*\Omega_e}{4}e^{i(\Delta_{2e}t''-\Delta_{1g}t')} & \frac{|\Omega_g|^2}{4} e^{i\Delta_{1g}(t''-t')}& 0\\
 0 & 0 & \frac{|\Omega_e|^2}{4}e^{i\Delta_{2e}(t'-t'')}+\frac{|\Omega_g|^2}{4}e^{i\Delta_{1g}(t'-t'')}\\
+\end{bmatrix}.
+\end{multline}
+After carrying out the integration in the variable $t''$, we end up with the following:
+\begin{multline}
+U_I(t)=\mathds{1}+i\int_{t_0}^t dt'
+\begin{bmatrix}
+0 & 0 & \frac{\Omega_e^*}{2}e^{-i\Delta_{2e}t} \\
+0 & 0 & \frac{\Omega_g^*}{2}e^{-i\Delta_{1g}t}\\
+\frac{\Omega_e}{2}e^{i\Delta_{2e}t} & \frac{\Omega_{g}}{2}e^{i\Delta_{1g}t} & 0 \\
+\end{bmatrix}
++ \\
+\int_{t_0}^t dt' 
+\begin{bmatrix}
+\frac{|\Omega_e|^2}{4i\Delta_{2e}}\left(\cancelto{1}{e^{i\Delta_{2e}(t'-t')}}-e^{i\Delta_{2e}(t_0-t')}\right)
+ & \frac{\Omega_g\Omega_e^*}{4i\Delta_{1g}}e^{i} & 0 \\
+\frac{\Omega_g^*\Omega_e}{4}e^{i(\Delta_{2e}t''-\Delta_{1g}t')} & \frac{|\Omega_g|^2}{4} e^{i\Delta_{1g}(t''-t')}& 0\\
+0 & 0 & \frac{|\Omega_e|^2}{4}e^{i\Delta_{2e}(t'-t'')}+\frac{|\Omega_g|^2}{4}e^{i\Delta_{1g}(t'-t'')}\\
 \end{bmatrix}
 \end{multline}
-
 Now, the solution to this equation is very similar to the solution to the two state system discussed in \ref{twoStateSection}. Here, the quantity analagous to the off-resonance Rabi frequency is given by \cite{Young1997363}: 
 \begin{equation}
 \Omega_\mathit{r}=\sqrt{\Omega_\mathit{eff}^2+(\delta-\delta^{AC})^2},
