@@ -117,6 +117,7 @@ As Eq.\,\eqref{blochSpherepi2} illustrates, called a $\pi/2$ pulse because it ch
 %In the case of 
 
 \subsection{Three state system}
+\label{threeStateSystemExplanation}
 \begin{figure}
 \centerline{
 \includegraphics[totalheight=0.3\textheight]{E_level_from_proposal}
@@ -490,22 +491,22 @@ $m_f$ & Eigenvalue of $\mathbf{F}_z$.\\ \hline
 
 There are two basic things we have to do in this section. First, we must account for each of the contributions to the Hamiltonian of the ions. We will write the Hamiltonian as 
 \begin{equation}
-H=H_0+H_{\mathrm{hfs}}+H_{\mathrm{Z}},
+H=H_0+H_{\mathrm{hfs}}+H_{\mathrm{Z}},\label{Hoverall}
 \end{equation}
-where $H$ represents the Hamiltonian of the ion while it is \emph{unperturbed} by the laser. The contribution to the Hamiltonian due to the hyperfine splitting is encapsulated in $H_{hfs}$, while $H_{\mathrm{Z}}$ represents the contribution that Zeeman shifts make to the Hamiltonian (We create a constant, but adjustable magnetic field through which the atoms travel during the experiment. We do this specifically to break degeneracies between certain of the levels in the atom as discussed in Section\,\ref{zeeman}.) The rest of the Hamiltonian is represented by $H_0$. We do not explicitly consider other contributions to the Hamiltonian (for example, the fine structure) because these are built into the values we look up in the NIST atomic spectra database \cite{NISTasd}\footnote{So, for example, the NIST database gives transition lifetimes for $^2$S$_{1/2}\rightarrow^2$P$_{3/2}$ transitions. Thus, the fine structure should already be built in since there is a separate entry for $^2$S$_{1/2}\rightarrow^2$P$_{1/2}$ transitions.}.
+where $H$ represents the Hamiltonian of the ion while it is \emph{unperturbed} by the laser. The contribution to the Hamiltonian due to the hyperfine splitting is encapsulated in $H_{\mathrm{hfs}}$, while $H_{\mathrm{Z}}$ represents the contribution that Zeeman shifts make to the Hamiltonian. (We create a constant, but adjustable magnetic field through which the atoms travel during the experiment. We do this specifically to break degeneracies between certain of the levels in the atom as discussed in Section\,\ref{zeeman}.) The rest of the Hamiltonian is represented by $H_0$. We do not explicitly consider other contributions to the Hamiltonian (for example, the fine structure) because these are built into the values we look up in the NIST atomic spectra database \cite{NISTasd}\footnote{So, for example, the NIST database gives transition lifetimes for $^2$S$_{1/2}\rightarrow^2$P$_{3/2}$ transitions. Thus, the fine structure should already be built in since there is a separate entry for $^2$S$_{1/2}\rightarrow^2$P$_{1/2}$ transitions.}.
 
 Second, we must find which states exactly the experiment will use.
-Our experiment is designed to use the $^2$S$_{1/2}$ and $^2$P$_{3/2}$ states. Each of these spectroscopic terms refers to many states: First, we must account for the states that correspond to different values of $F$. Since $\mathbf{F}=\mathbf{I}+\mathbf{J}$, $F$ can take on any values between $|I-J|,|I-J+1|,...,|I+J|$. So, for example, since $I=9/2$, the valid values of $F$ for the $^2$S$_{1/2}$ state are $F=4$ and $F=5$. For the upper states, where $J=3/2$, $F$ can take on the values $3,4,5,6$ 
+Our experiment is designed to use the $^2$S$_{1/2}$ and $^2$P$_{3/2}$ states. However, each of these spectroscopic terms refers to many states: For example, we must account for the states that correspond to different values of $F$. Since $\mathbf{F}=\mathbf{I}+\mathbf{J}$, $F$ can take on any values between $|I-J|,|I-J+1|,...,|I+J|$. So, for example, since $I=9/2$, the valid values of $F$ for the $^2$S$_{1/2}$ state are $F=4$ and $F=5$. For the upper states, where $J=3/2$, $F$ can take on the values $3,4,5,$ or $6$. We must also take into account the many possible values of $m_J$ and $m_F$ for these states.
 
-\section{Review of hyperfine splitting}
+\subsection{Review of hyperfine splitting}
 
 We now discuss the Hyperfine contribution to our overall Hamiltonian. We will need to understand the hyperfine splitting to allow us to model the 5GHz energy difference between the $F=4$ and $F=5$ $^2$S$_{1/2}$ states. Our discussion will allow us to calculate hyperfine shifts for all the energy levels in our atom based on the hyperfine $A$ and $B$ coefficients, for which we have found experimental and numerical estimates in the literature.
 
-\subsection{Hyperfine basics}
+\subsubsection{Hyperfine basics}
 
-The hyperfine splitting arises from interactions between the nucleus and the electrons. In general, we can split out the Hamiltonian of the Hyperfine interaction as follows: 
+The hyperfine splitting arises from interactions between the nucleus and the electrons. In general, we can split out the Hamiltonian of the Hyperfine interaction as done in Eq.\,\eqref{Hoeverall}: 
 \begin{equation}
-H=H_0+H_{\mathrm{hfs}},
+H=H_0+H_{\mathrm{hfs}}+H_{\mathrm{Z}},
 \end{equation}
 where $H$ represents the total Hamiltonian of the system, $H_0$ represents the Hamiltonian neglecting the hyperfine interaction and $H_{\mathrm{hfs}}$ represents the piece of the Hamiltonian that models the hyperfine interaction. 
 
@@ -513,19 +514,18 @@ The standard expansion of $H_{\mathrm{hfs}}$ in the literature is:
 \begin{equation}
 H_{\mathrm{hfs}}=\sum_k \mathbf{T}^{(k)} \cdot \mathbf{M}^{(k)} \label{hfs_hamiltonian_eqn},
 \end{equation}
-where $\mathbf{T}^{(k)}$ and $\mathbf{M}^{(k)}$ are irreducible spherical tensor operators of rank $k$.
+where $\mathbf{T}^{(k)}$ and $\mathbf{M}^{(k)}$ are irreducible spherical tensor operators of rank $k$
 \cite{schwartz_hyperfine_expansion}
 \cite{experimental_hyperfine_alkali_arimondo}
 \cite{chinesePhysics}.
 The dot product for spherical tensors of arbitrary rank is defined in the normal way as
 \begin{equation}\label{TkMk_hyperfine}
-\mathbf{T}^{(k)}\cdot\mathbf{M}^{(k)}=\sum_q (-1)^qT_q^{(k)}M_{-q}^{(k)}
-\end{equation}.
+\mathbf{T}^{(k)}\cdot\mathbf{M}^{(k)}=\sum_q (-1)^qT_q^{(k)}M_{-q}^{(k)}.
+\end{equation}
 %\footnote{todo: cite that review article and the lecture notes you found}
-
 The tensor operator $\mathbf{T}^{(k)}$ represents information about the electron.
-$\mathbf{M}^{(k)}$ represents the nucleus.\cite{experimental_hyperfine_alkali_arimondo}\cite{schwartz_hyperfine_expansion}
-\cite{sobelman_spectra}
+$\mathbf{M}^{(k)}$ represents the nucleus\cite{experimental_hyperfine_alkali_arimondo}\cite{schwartz_hyperfine_expansion}
+\cite{sobelman_spectra}.
 Writing the expansion in this form shows explicitly the geometry of the operator. 
 
 Before discussing what information $\mathbf{T}^{(k)}$ and $\mathbf{M}^{(k)}$ represent exactly,
@@ -533,11 +533,10 @@ we pause to point out a few geometrical facts. Even if we had no knowledge of th
 Notice that the generator of rotations under which $\mathbf{T}^{(k)}$ is valid is the electron total angular momentum, $\mathbf{J}$, while $\mathbf{M}^{(k)}$ is subject to rotations defined in terms of the nuclear angular momentum operator $\mathbf{I}$. 
 The direct product of these two gives us a value that can be validly rotated using the group generated by the combined angular momentum operator $\mathbf{F}$.\cite{Racah2}\cite{sobelman_spectra}. Thus, each term of our expansion has two parts: one that is a valid tensor operator associated with the geometry of the nucleus and one that is a valid tensor operator associated with the geometry of the electron. By combining these two parts using a dot product, we see that each term turns out to be a valid tensor operator for the entire atomic system. This is exactly what we would expect.
 
-The most important contributions to the Hyperfine splitting come from magnetic dipole interactions and electric quadrupole interactions \cite{sobelman_spectra}\cite{schwartz_hyperfine_expansion}\cite{cuaMITnotes}. These correspond to the $k=1$ and $k=2$ terms in Eq.\,\ref{TkMk_hyperfine} respectively\cite{experimental_hyperfine_alkali_arimondo}.
+The most important contributions to the Hyperfine splitting come from magnetic dipole interactions and electric quadrupole interactions \cite{sobelman_spectra}\cite{schwartz_hyperfine_expansion}\cite{cuaMITnotes}. These correspond to the $k=1$ and $k=2$ terms in Eq.\,\eqref{TkMk_hyperfine} respectively\cite{experimental_hyperfine_alkali_arimondo}.
 %\footnote{It is interesting to note that the odd values of $k$ correspond to magnetic interactions while the even values correspond to electric interactions. That is to say that there is no electric dipole interaction between the electrons and the nucleus, but there is a magnetic dipole ($k=1$), while there is an electric quadrupole coupling, but no magnetic quadrupole, etc}
-\subsection{Magnetic dipole interaction}
-
-First, we discuss the $k=1$ term, or magnetic dipole interaction term from the expansion in Eq.\,\ref{TkMk_hyperfine}. Classically, we know that the potential energy of a dipole in a magnetic field is proportional to the dot product of the magnetic dipole moment vector with the magnetic field vector ($U=-\mathbf{\mu}\cdot\mathbf{B}$). We also know that the magnetic field at the center of a classical dipole points in the direction of the dipole moment. Therefore, it seems reasonable that the energy due to the interaction of the electron and the nucleus might be somehow proportional to a dot product of two vectors representing their respective angular momenta. Indeed, this turns out to be the case: the magnetic dipole interaction can be written as follows\cite{sobelman_spectra}: 
+\subsubsection{Magnetic dipole interaction}
+First, we discuss the $k=1$ term, or magnetic dipole interaction term from the expansion in Eq.\,\eqref{TkMk_hyperfine}. Classically, we know that the potential energy of a dipole in a magnetic field is proportional to the dot product of the magnetic dipole moment vector with the magnetic field vector ($U=-\mathbf{\mu}\cdot\mathbf{B}$). We also know that the magnetic field at the center of a classical dipole points in the direction of the dipole moment. Therefore, it seems reasonable that the energy due to the interaction of the electron and the nucleus might be somehow proportional to a dot product of two vectors representing their respective angular momenta. Indeed, this turns out to be the case: the magnetic dipole interaction can be written as follows\cite{sobelman_spectra}: 
 \begin{equation}\label{IdotJ}
 W_f=A\mathbf{I}\cdot\mathbf{J},
 \end{equation}
@@ -545,15 +544,13 @@ where $W_f$ represents the energy associated with this coupling and $A$ encapsul
 %Note that here we are using the normal, three dimensional dot product (i.e. $\mathbf{I}\cdot\mathbf{J}=I_xJ_x+I_yJ_y+I_zJ_z$). 
 
 The product $\mathbf{I}\cdot\mathbf{J}$ can be expanded by noticing that $\mathbf{F}^2=(\mathbf{I}+\mathbf{J})^2=\mathbf{I}^2+2 \mathbf{I}\cdot\mathbf{J}+\mathbf{J}^2$. This gives \cite{cuaMITnotes}\cite{sobelman_spectra}: 
-
 \begin{equation}\label{Wf_dot_product}
 W_f=\frac{1}{2}A(\mathbf{F}^2-\mathbf{J}^2-\mathbf{I}^2).
 \end{equation}
+We can also see how Eq.\,\ref{IdotJ} represents the $k=1$ term in Eq.\,\eqref{TkMk_hyperfine}. We clearly have one tensor operator from the Nuclear angular momentum space ($\mathbf{I}$) along with one vector from the electron angular momentum space ($\mathbf{J}$). The product we get is a scalar that will be invariant under rotations in the total space\footnote{A quick note about constants. In the expansion in Eq.\,\eqref{TkMk_hyperfine}, there are different conventions \cite{schwartz_hyperfine_expansion} for deciding which coefficients are pulled into which operators. However, as we will see, the coefficient $A$ as used in Eq.\,\ref{IdotJ} is defined in a standard way and can be looked up in the literature. For this reason, we are specifying $T$ and $M$ only up to a constant. This is fine since the point of showing the expansion is really just to make a comment about the geometry of hyperfine interactions, while the actual calculations only involve the first two terms}.
 
-We can also see how Eq.\,\ref{IdotJ} represents the $k=1$ term in Eq.\,\ref{TkMk_hyperfine}. We clearly have one tensor operator from the Nuclear angular momentum space ($\mathbf{I}$) along with one vector from the electron angular momentum space ($\mathbf{J}$). The product we get is a scalar that will be invariant under rotations in the total space\footnote{A quick note about constants. In the expansion in Eq.\,\ref{TkMk_hyperfine}, there are different conventions \cite{schwartz_hyperfine_expansion} for deciding which coefficients are pulled into which operators. However, as we will see, the coefficient $A$ as used in Eq.\,\ref{IdotJ} is defined in a standard way and can be looked up in the literature. For this reason, we are specifying $T$ and $M$ only up to a constant. This is fine since the point of showing the expansion is really just to make a comment about the geometry of hyperfine interactions, while the actual calculations only involve the first two terms}.
-
-\subsection{Electric quadrupole interaction}
-In a similar way, the $k=2$ term in Eq.\,\label{TkMk_hyperfine} can be shown to correspond to the electric quadrupole interaction. Chapter 6.2 of Ref.\,\cite{sobelman_spectra} gives a good explanation for this. The crux of the argument is that the electric quadrupole interaction,
+\subsubsection{Electric quadrupole interaction}
+In a similar way, the $k=2$ term in Eq.\,\eqref{TkMk_hyperfine} can be shown to correspond to the electric quadrupole interaction. Chapter 6.2 of Ref.\,\cite{sobelman_spectra} gives a good explanation for this. The crux of the argument is that the electric quadrupole interaction,
 \begin{equation}
 W=\int\frac{\rho(\mathbf{r})\rho'(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|}d\mathbf{r}d\mathbf{r'}.
 \end{equation}
@@ -563,7 +560,7 @@ W=\int d\mathbf{r}d\mathbf{r'}
 \rho(\mathbf{r})\rho'(\mathbf{r}')\sum_k \frac{r'^k}{r^{k+1}}[C^k(\theta,\phi)\cdot C^k(\theta',\phi')] \label{quadrupole_expanded}.
 \end{equation}
 
-The $k=2$ term in the integral contained in Eq.\,\ref{quadrupole_expanded} takes the form of an inner product between two rank 2 spherical tensors. Thus, we are satisfied that we have found the $k=2$ terms in Eq.\,\cite{TkMk_hyperfine}.
+The $k=2$ term in the integral contained in Eq.\,\ref{quadrupole_expanded} takes the form of an inner product between two rank 2 spherical tensors. Thus, we are satisfied that we have found the $k=2$ terms in Eq.\,\eqref{TkMk_hyperfine}.
 
 The inner product between two rank 2 spherical tensors can be evaluated using Eq. 4.169 from Sobelman \cite{sobelman_spectra} (the formula can also be found in Ref.\,\cite{Racah2} and is also referred to in Ref.\,\cite{schwartz_hyperfine_expansion}):
 \begin{multline}\label{4169_combine_diff_tensors}
@@ -582,11 +579,9 @@ J & I & F \\
 I & J & k
 \end{Bmatrix}$ represents the Wigner $6j$ symbol. 
 
-Using the properties of the Wigner $6j$ symbols, it can be shown that \cite{cuaMITnotes}\cite{sobelman_spectra}, 
-%\footnote{I will get this from Sobelman. He gives the Racah coefficients in 4.97 - 4.99} 
-the equation for the electric quadrupole term in the hyperfine interaction takes the form:
+Using the properties of the Wigner $6j$ symbols, it can be shown that %\footnote{I will get this from Sobelman. He gives the Racah coefficients in 4.97 - 4.99} 
+the equation for the electric quadrupole term in the hyperfine interaction takes the form \cite{cuaMITnotes}\cite{sobelman_spectra} 
 %\footnote{OK Dallin--I'm not sure if I should even include this.} 
-
 \begin{equation}\label{justQuadrupole}
 W=BC(C+1),
 \end{equation}
@@ -596,14 +591,13 @@ C=[F(F+1)-J(J+1)-I(I+1)].
 \end{equation}
 (Interestingly, Eq.\,\ref{Wf_dot_product} can also be evaluated using Eq.\,\ref{4169_combine_diff_tensors} using $k=1$.)
 
-\subsection{Write both hyperfine terms in terms of standard constants}
-We can rewrite Eq.\,\ref{dot_product} in terms of $C$ 
-and then combine it with Eq.\,\ref{justQuadrupole} to get the full hyperfine splitting\cite{cuaMITnotes}: 
+\subsubsection{Write both hyperfine terms in terms of standard constants}
+We can rewrite Eq.\,\eqref{Wf_dot_product} in terms of $C$ 
+and then combine it with Eq.\,\eqref{justQuadrupole} to get the full hyperfine splitting\cite{cuaMITnotes}: 
 \begin{equation}\label{Standard_hyperfine_AB}
 E_{\mathrm{hfs}}=\frac{1}{2}AC+BC(C+1).
 \end{equation}
-
-The coefficients $A$ and $B$ as used in Eqs.\,\ref{Standard_hyperfine_AB} and \ref{Wf_dot_product} are the hyperfine A and B coefficients. $A$ and $B$ are a standard name and notation used in calculating hyperfine energy shifts. Their values can be looked up in the literature\cite{cuaMITnotes}.  We found values for the $A$ and $B$ coefficients for $^{87}$Sr+ in Ref.\,\cite{safronova2photon}. These are summarized in Table\,\ref{AB_table}\footnote{These are \emph{not} the Einstein $A$ and $B$ coefficients relating to radiative transition rate. Though, unfortunately, we will have to mention the Einstein $A$ and $B$ coefficients later.}.  
+The coefficients $A$ and $B$ as used in Eqs.\,\ref{Standard_hyperfine_AB} and \ref{Wf_dot_product} are the hyperfine A and B coefficients\footnote{These are \emph{not} the Einstein $A$ and $B$ coefficients relating to radiative transition rate. Though, unfortunately, we will have to mention the Einstein $A$ and $B$ coefficients later.}. The symbols $A$ and $B$ are a standard name and notation used in calculating hyperfine energy shifts. Their values can be looked up in the literature\cite{cuaMITnotes}.  We found values for the $A$ and $B$ coefficients for $^{87}$Sr+ in Ref.\,\cite{safronova2photon}. These are summarized in Table\,\ref{AB_table}.  
 
 \begin{table}[h]
 \centering
@@ -627,9 +621,9 @@ $5p ^2$P$_{3/2}$&88.94MHz&$88.68$MHz\footnotemark&88.5(54) \\ \hline
 \caption{Values of A and B coefficients in MHz for relevant states taken from Ref.\,\cite{safronova2photon}. The label ``SDpT'' refers to the value calculated using one particular numerical approach as detailed in Ref.\,\cite{safronova2photon}. The label ``theor'' represents theoretically calculated values. The label ``expt'' refers to measured values from experiments.\label{AB_table}
 }
 \end{table}
-\footnotetext{Ref.\ref{safronova2photon} reports $B/Q$ as 271MHz$/$b and also says that $Q=0.327(24)$b. We multiplied 271MHz$/$b$\times 0.327(24)$b$=88.68$ MHz, to get the value that appears here.}%NOTICE: IDK how to get this footnote to be guaranteed to appear on the right page.}
+\footnotetext{Ref.\cite{safronova2photon} reports $B/Q$ as 271MHz$/$b and also says that $Q=0.327(24)$b. We multiplied 271MHz$/$b$\times 0.327(24)$b$=88.68$ MHz, to get the value that appears here.}%NOTICE: IDK how to get this footnote to be guaranteed to appear on the right page.}
 
-\subsection{Calculate hyperfine energy shifts}
+\subsubsection{Calculate hyperfine energy shifts}
 We may calculate the splitting between the $F=4$ and $F=5$ $^2$S$_{1/2}$ states using $I=9/2$, $F=4,5$, $L=0$ using Eq.\,\ref{Standard_hyperfine_AB}. In this case, we can see that with $A=1000$MHz, we can calculate the splitting between the $F=4$ and $F=5$ levels: 
 \begin{align}
 C_{F=4} &= -5.5\\
@@ -641,8 +635,9 @@ Furthermore, we can calculate the hyperfine splitting for all the $^2$P$_{3/2}$ 
 
 \begin{table}[h]
 \centering
-\begin{tabular}{|l|l|||r|}
+\begin{tabular}{|l|l|}
 \hline
+State & Hyperfine shift  \\ \hline \hline
 %$F=4$ $^2$S$_{1/2} (5s)$ & Ground state  \\ \hline
 %$F=5$ $^2$S$_{1/2} (5s)$ & Ground state  \\ \hline
 $F=3$ $^2$P$_{3/2} (5p)$ & 22971  MHz\\ \hline
@@ -650,11 +645,13 @@ $F=4$ $^2$P$_{3/2} (5p)$ &  5803 MHz\\ \hline
 $F=5$ $^2$P$_{3/2} (5p)$ &  306 MHz\\ \hline
 $F=6$ $^2$P$_{3/2} (5p)$ &   17121 MHz\\ \hline
 \end{tabular}
-\caption{Hyperfine splitting on $^2$P$_{3/2}$ states}
+\caption{Hyperfine splitting on $^2$P$_{3/2}$ states. The Hyperfine shift represents the energy shift between the Hamiltonian neglecting hyperfine splitting and the Hamiltonian that includes it
+%\footnote{Actually, there may be either some other offset or some theorem that says these are centered around the original level? That can't be right}
+. The values are given in MHz and the associated energy is $hf$. }
 \label{tableOfHyperfinedeetuings}
 \end{table}
 
-\subsubsection{Magnetic field}\label{zeeman}
+\subsection{Magnetic field}\label{zeeman}
 
 The next feature of our system Hamiltonian that we need to model involves the constant magnetic field pointing in the $\hat{z}$ direction that exists throughout the entire area where the interferometry will take place. This field has been placed there intentionally to break the degeneracy of some of the $M_f$ sublevels that we might couple to. It also prevents the atoms from precessing around stray magnetic fields, which would take them out of the lab-centric coordinate system we would like to keep them in.
 
@@ -679,32 +676,28 @@ where $\mu_0=e\hbar/(2 m_e)$ and is the Bohr magneton\footnote{$e \hbar / (2 m_e
 
 Eq.\,\ref{zeemanSobelman} shows that the Zeeman splitting is linear as a function of $m_f$. The splitting depends on $g$, the Land\'e $g$ factor of the atom and the magnetic field. We expect the Land\'e $g$ factor to be of order $1$. We could perform a more in-depth analysis of the exact splitting. However, in the experiment, the magnetic field is adjustable and will be tuned in such a way that it just barely removes the degeneracy between the $m_f$ sublevels. In other words, we will adjust $H$ until the separation between adjacent $m_f$ sublevels is just a few times greater than the linewidth of our laser, which is on the order of a few hundred Megahertz. Therefore, for the purposes of our calculations here, we will simply assume that the $m_f$ sublevels for each of our states are not degenerate and that the energies differ by $\sim$100 MHz.
 
-\section{Electric dipole interaction with laser light}
+\subsection{Electric dipole interaction with laser light}
+%\section{Finding appropriate values in the literatu}
 %redundant
 \label{ElectricDipoleInteraction}
-
-The next piece of the Hamiltonian that we need to model involves the interaction with the laser. For our purposes, we will model the laser as an entirely classical light field.  
-
-We start by assuming that our Hamiltonian has the form 
+The next piece of the Hamiltonian that we need to model involves the interaction with the laser. Following the work of Section\,\ref{threeStateSystemExplanation}, we still model the laser radiation as a classical field that makes a time-dependent contribution to the Hamiltonian. We also make the electric dipole approximation and we assume that $V$ can be written in terms of a dipole interaction:  \cite{demilleBudkerKimball}\cite{cuaMITnotes}\cite{gustavsonThesis}\cite{Young1997363}
 \begin{equation}
-H=H+H_{\textnormal{int}},
-\end{equation}
-where $H$ is the unperturbed Hamiltonian of the system. $H_{\textnormal{int}}$ will represen the effect of the lasers on the states. $H_\textnormal{int}$ is time-dependent and it will introduce off-diagonal elements into our matrix that will couple together the different states. 
-
-We make the electric dipole approximation and we assume that $H_\textnormal{int}$ can be written in terms of a dipole interaction:  \cite{demilleBudkerKimball}\cite{cuaMITnotes}\cite{gustavsonThesis}\cite{Young1997363}
-
-\begin{equation}
-H_\textnormal{int}=-\mathbf{d}\cdot\mathbf{E}.
+H_{\textnormal{int}}=-\mathbf{d}\cdot\mathbf{E},
 \end{equation}
 %the equation actually comes from Gustavson thesis.
-
-Where $\mathbf{E}$ represents the electric field at the atom %\footnote{which we also assume is constant over the entire length of the atom--this is actually part of the electric dipole approximation} 
+where $\mathbf{E}$ represents the electric field at the atom, %\footnote{which we also assume is constant over the entire length of the atom--this is actually part of the electric dipole approximation} 
 and $\mathbf{d}$ represents the dipole moment operator for our states. 
 
 %The classical definition of the electric dipole moment is $\mathbf{p}=q \mathbf{d}$ where $\mathbf{p}$ is a vector representing the dipole moment, $q$ is the charge, and $\mathbf{d}$ is the displacement vect
 
-\subsection{Evaluation of dipole moment operator}
-We must now evaluate the dipole moment operator. 
+%\subsubsection{Evaluation of dipole moment operator}
+We must now evaluate the dipole moment operator. Specifically, we need to find
+\begin{align}
+\langle i|\mathbf{d}&\cdot\mathbf{E}|g\rangle \\
+\langle i|\mathbf{d}&\cdot\mathbf{E}|e\rangle
+\end{align}
+in order to calculate $\Omega_e$, $\Omega_g$ and, ultimately, $\Omega_r$.
+
 Classically, the dipole moment is a vector quantity that encapsulates the charges and the distance between them. The dipole moment operator that we are looking should, in the classical limit, equal the charge of the electron times some vector that roughly represents the displacement between the electron and the nucleus. The dipole moment operator is defined as 
 \begin{equation}
 \mathbf{d}=-e\mathbf{r},
@@ -713,7 +706,8 @@ where $\mathbf{d}$ is the dipole moment operator, $e$ is the fundamental charge\
 
 The electric dipole moment operator commutes with the $\mathbf{S}$ and $\mathbf{I}$ operators. The rotation operators that may be used to generate rotations of the electric dipole moment operator are $\mathbf{L}$, $\mathbf{J}$ and $\mathbf{F}$\cite{DeMille_presentation}. In other words, the electric dipole moment operator is most naturally discussed using the $L$ and $m_l$ basis. 
 
-However, our Hamiltonian is still specified using the $F,J,I,L,M_f$ basis. Thus, we must perform a change of basis operation on the electron dipole moment operator. In order to do this, we make use of an equation similar to Eq.\,\ref{4169_combine_diff_tensors} that is known in some places as the ``spectator theorem''\cite{DeMille_presentation}. % Here, we are interested in finding the matrix elements of the dipole operator in terms of the  basis that we have selected.
+However, our Hamiltonian is still specified using the $F,J,I,L,M_f$ basis. Thus, we must perform a change of basis operation on the electron dipole moment operator. In order to do this, we could use repeated applications of the Wigner-Eckart theorem.  
+However, for now it is more convenient if we make use of an equation similar to Eq.\,\ref{4169_combine_diff_tensors} that is known in some places as the ``spectator theorem''\cite{DeMille_presentation}. % Here, we are interested in finding the matrix elements of the dipole operator in terms of the  basis that we have selected.
 
 The theorem says that, given a system with two angular momenta, $\mathbf{J}_1$ and $\mathbf{J}_2$ and total angular momentum $\mathbf{J}_{12}=\mathbf{J}_1+\mathbf{J}_2$,
 \begin{multline}\label{spectatorTheorem}
@@ -805,6 +799,8 @@ This allows us to calculate transition rates to specific hyperfine states in ter
 \centering
 \begin{tabular}{|c|l|l|}
 \hline
+States & Exact Values & Approximate numerical values\\
+\hline
 $F'=3$,$F=4$&$0.5 \sqrt{7}$&1.32\\ 
 $F'=4$,$F=4$&$- 0.1 \sqrt{165}$&-1.28\\ 
 $F'=4$,$F=5$&$0.2 \sqrt{15}$&0.775\\ 
@@ -813,9 +809,11 @@ $F'=5$,$F=5$&$- 0.1 \sqrt{165}$&-1.28\\
 $F'=6$,$F=5$&$0.5 \sqrt{13}$&1.80\\ 
 \hline
 \end{tabular}
-\caption{Values of $\langle n' L' S J' I F' ||\mathbf{r}||n L S J I F\rangle / \langle n'L' S J'||T^{(k)}|| n L S J\rangle$ as given in Eq.\,\ref{afterSpectators}.
+\caption{Values of $\langle n' L' S J' I F' ||\mathbf{r}||n L S J I F\rangle / \langle n'L' S J'||T^{(k)}|| n L S J\rangle$ as given in Eq.\,\ref{afterSpectators}. These coefficients essentially take into account the geometrical considerations that come into play when we discuss an operator that has been described to us in terms of eigenstates of $\mathbf{J}$ if we want to discuss it in terms of the eigenstates of $\mathbf{F}$. In this table, we have placed only values that gave nonzero results. The symbol $F'$ denotes the total angular momentum number of the intermediate ($^2$P$_{3/2}$) states, while $F$ is for the $^2$S$_{1/2}$ state.
 \label{coefficient_calculated}}
 \end{table}
+%todo: clean up the presentation. Maybe do all this stuff together. 
+%does it not couple or something? I Mean, does the electric dipole operator commute with F? Yes, it does. That's the thing. Commuting means that they are not the eigenstates. Right?
 
 %\begin{table}[h!]
 %\centering
@@ -844,8 +842,8 @@ $F'=6$,$F=5$&$0.5 \sqrt{13}$&1.80\\
 %\label{coefficient_calculated}
 %\end{table}
 
-\section{Looking up the reduced dipole moment matrix operator} \label{lookItUp}
-We would like to carefully determine the value of this. According to Ref.\ \cite{safronova2photon} the magnitude of the dipole moment operator is -4.35075 a. u.(atomic units, $a_0 e$, where $a_0$ is the Bohr radius and $e$ the fundamental charge) as calculated using the all-order, relativistic SD method. It is useful to compare this to the value obtained from at least one other source\footnote{It is easy to make simple mistakes regarding units and conventions.}. According to the NIST atomic spectra database, $A_{ki}=1.41e8$ s$^{-1}$ \cite{NISTasd}. This is the Einstein A coefficient associated with the decays from this state. If this is the case, then we use this equation from Ref.\ \cite{demilleBudkerKimball}:  
+\subsection{Looking up relevant parameters} \label{lookItUp}
+We would like to carefully determine the value of the dipole moment matrix operator. According to Ref.\ \cite{safronova2photon} the magnitude of the dipole moment operator is -4.35075 a. u.(atomic units, $a_0 e$, where $a_0$ is the Bohr radius and $e$ the fundamental charge) as calculated using the all-order, relativistic SD method. It is useful to compare this to the value obtained from at least one other source\footnote{It is easy to make simple mistakes regarding units and conventions.}. According to the NIST atomic spectra database, $A_{ki}=1.41e8$ s$^{-1}$ \cite{NISTasd}. This is the Einstein A coefficient associated with the decays from this state. If this is the case, then we use this equation from Ref.\ \cite{demilleBudkerKimball}:  
 \begin{equation}
 |\langle f ||d|| i \rangle|^2 = (4 \pi \epsilon_0) \frac{3 \hbar c^3}{4 \omega_0^3} (2 J'+1) A_{ki}\label{budkerAeqn}.
 \end{equation}
@@ -855,7 +853,7 @@ Plugging in our values into Eq.\,\ref{budkerAeqn}, we get that the magnitude of 
 
 Thus, the agreement between the theoretical calculations of Ref.\,\cite{safronova2photon} and the experimentally-derived values of Ref.\,\cite{NISTasd} is very good. As a practical matter, this gives us enormous confidence since, not only do the experimental and theoretical approaches to finding the electric dipole reduced matrix element match one another, but we can also be sure that our sources are using the same conventions for, e.g. the Wigner Eckart theorem as we are.
 
-\section{Evaluation of dipole moment matrix operator}
+\subsection{Evaluation of dipole moment matrix operator}
 
 Now we will use the Wigner-Eckart theorem in order to calculate the dipole moment matrix elements using the reduced dipole moment matrix operator. The Wigner-Eckart theorem allows us to evaluate the dipole moment operators for all our quantum numbers using the reduced dipole moment matrix operator:
 
@@ -863,9 +861,10 @@ Now we will use the Wigner-Eckart theorem in order to calculate the dipole momen
 \langle \xi',j',m'|T^k_q|\xi,j,m\rangle = \frac{\langle \xi',j'||T^k||\xi,j\rangle}{\sqrt{2j'+1}}\langle j,m,k,q|j',m'\rangle,
 \end{equation}
 where $T^k$ is a rank $k$ spherical tensor, $j'$ and $j$ represent the angular momentum of the final and initial states respectively, $\xi'$ and $\xi$ represent the final and initial values of all other quantum numbers respectively and $\langle j,m,k,q|j',m'\rangle$ is a Clebsch Gordan coefficient. In our case, we are looking to calculate matrix elements  $\langle F',J',L',I',S',m_f'|\mathbf{d}|F,J,L,I,S,m_f\rangle$, so we have:
-\begin{equation}\label{wignerEckartForUs}
-\langle F',I',J',L',S',m_f'|d^{(1)}_q|F,I,J,L,S,m_f\rangle = \frac{\langle F',I',J',L',S'||T^k||F,I,J,L,S\rangle}{\sqrt{2F'+1}}\langle F,m_f,k=1,q|F',m_f'\rangle.
-\end{equation}
+\begin{multline}\label{wignerEckartForUs}
+\langle F',I',J',L',S',m_f'|d^{(1)}_q|F,I,J,L,S,m_f\rangle =
+\\ \frac{\langle F',I',J',L',S'||T^k||F,I,J,L,S\rangle}{\sqrt{2F'+1}}\langle F,m_f,k=1,q|F',m_f'\rangle.
+\end{multline}
 
 The reduced dipole moment matrix elements that appear here can be evaluated using Eq.\,\ref{spectatorTheorem1} and the values we found in Section\,\ref{lookItUp}. 
 
@@ -888,7 +887,7 @@ Furthermore, based on the other calculations in Ref.\,\cite{cjeDiss}, we expect 
 
 In other words, we now restrict our analysis to $m_f=0$ for the $^2$S$_{3/2}$ states and the $F=5$$^2$P$_{3/2}$ states.
 
-\section{Evaluation of Clebsch-Gordan coefficients}
+\subsection{Evaluation of Clebsch-Gordan coefficients}
 
 We can automatically evaluate the Clebsch Gordan coefficients for our system in order to identify which of the possible $^2$P$_{3/2}$ states we are coupling to. The condition for an intermediate state to be valid is that we must be able to drive a dipole transition to it from the $F=5$ $^2$S$_{1/2}$ state and that we must be able to use our other laser to drive the atom from that state to the $F=4$ $^2$S$_{1/2}$ state. If we let the intermediate state be represented by quantum numbers $F_i=5$,$m_{f,i}$, we can write this condition mathematically as  
 \begin{equation}
@@ -905,14 +904,16 @@ Evaluating the coefficients by brute force, we see that this condition is met on
 \begin{table}[h!]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|}
+\hline
 $F_i$ & $q_1$ & $q_2$ & $m_{f,i}$ &$\langle  F_i,m_{f,i}|\mathbf{d}_{q_1}|F=5,m_f=0\rangle$&$\langle F=4,m_f=0|\mathbf{d}_{q_2}|F_i,m_{f,i}\rangle$ \\ 
 \hline
 4 & -1 & 1 & -1 &$ \frac{\sqrt{22}}{11} $&$ - \frac{\sqrt{2}}{2} $ \\ 
 4 & 1 & -1 & 1 &$ \frac{\sqrt{22}}{11} $&$ \frac{\sqrt{2}}{2} $ \\ 
 5 & -1 & 1 & -1 &$ \frac{\sqrt{2}}{2} $&$ \frac{\sqrt{33}}{11} $ \\ 
 5 & 1 & -1 & 1 &$ - \frac{\sqrt{2}}{2} $&$ \frac{\sqrt{33}}{11} $ \\
+\hline
 \end{tabular}
-\caption{The couplings that turn out to give nonzero values for both Eq.\,\ref{thing1} and Eq.\,\ref{thing2}}
+\caption{The couplings that turn out to give nonzero values for both Eq.\,\eqref{thing1} and Eq.\,\eqref{thing2}. The total angular momentum quantum number for the intermediate state is given by $F_i$, while $q_1$ and $q_2$ represent polarizations of our laser.}
 \label{nonzeroCG}
 \end{table}
 
