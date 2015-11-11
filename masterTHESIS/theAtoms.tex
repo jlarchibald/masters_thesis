@@ -896,11 +896,11 @@ We can automatically evaluate the Clebsch Gordan coefficients for our system in 
 \Rightarrow \langle F=5,m_f=0,1,q_1|F_i,m_{f,i}\rangle \neq 0  \label{thing1}.
 \end{multline}
 In order for the other laser to couple our upper state to the $F=4$ ground state, 
-\begin{align}
-\langle (^2\mathrm{S}_{1/2})F=4,m_f=0|\mathbf{d}_{q_2}|(^2\mathrm{P}_{3/2}) F_i,m_{f,i}\rangle&\neq 0 \\
-\Downarrow \\
-\langle F_i,m_{f,i},1,q_2|F=4,m_f=0 \rangle &\neq 0 \label{thing2},
-\end{align}
+\begin{multline}
+\langle (^2\mathrm{S}_{1/2})F=4,m_f=0|\mathbf{d}_{q_2}|(^2\mathrm{P}_{3/2}) F_i,m_{f,i}\rangle\neq 0 \\
+\Rightarrow
+\langle F_i,m_{f,i},1,q_2|F=4,m_f=0 \rangle \neq 0 \label{thing2},
+\end{multline}
 where $q_1$ and $q_2$ represent the components of polarization of the light from Slave 1 and Slave 2 respectively. $q=0$ corresponds to linearly polarized light in the $z$ direction, while $q=\pm 1$ corresponds to cicularly polarized light of different handedness.
 
 Evaluating the coefficients by brute force, we see that this condition is met only for a handful of coefficients. These are tabulated in Table \ref{nonzeroCG}. Based on the values in the table, we see that we must ensure that our lasers are circularly polarized such that one provides $\sigma+$ light and the other provides $\sigma-$ light. Furthermore, we see that the only state with $F=5$ that we couple to will be the $m_f=1$ or $m_f=-1$ state. For concreteness, we opt for the $q_1=1$, $q_2=-1$,$m_{f,i}=1$ state. 
