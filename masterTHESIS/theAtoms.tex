@@ -4,7 +4,7 @@
 The objective of this chapter is to find the intensity and beam waist that will allow our lasers to impart the $\pi$ and $\pi/2$ pulses to the atoms as they make their way through the chamber. In order to show that the 408 nm 5 GHz detuned laser can provide the $\pi$ and $\pi/2$ pulses, one must first take a detailed look at the Raman transitions that the laser system is intended to stimulate.
 The basic steps that will be explained in this chapter are as follows:
 \begin{itemize}
-\item Model the dynamics of a generic three state atom undergoing a Raman transition
+\item Model the dynamics of a generic three state atom undergoing a Raman transition.
 \item Identify the relevant contributions to the $^{87}$Sr$^+$ ions' Hamiltonian and show that it can be modeled as a three state system.
 \item Find and interpret appropriate numerical values for relevant physical parameters in the Hamiltonian.
 \item Calculate the intensity, width and polarization of our laser beams that will allow the laser to impart the $\pi$ and $\pi/2$ pulses to the atom. 
@@ -27,7 +27,7 @@ where $\omega_e$ and $\omega_g$ are the frequencies of the excited and ground st
 \mathbf{E} = \mathbf{E_0} \cos (\omega t + \phi).
 \end{equation}
 Here, $\mathbf{E_0}$ represents the electric field amplitude and direction, while $\omega$ is the angular frequency of the laser, $t$ is time and $\phi$ encapsulates the phase of the radiation.
-We have follow the conventions selected in Ref.\,\cite{Young1997363}. 
+We have followed the conventions selected in Ref.\,\cite{Young1997363}. 
 These equations can be solved by moving into the interaction picture, applying the rotating wave approximation, and diagonalizing the resulting matrix to find its eigenvalues and eigenstates.
 
 If we let 
@@ -42,7 +42,7 @@ c_g(\tau)&=e^{i(\delta \tau/2)} \left(
 - i\frac{\delta}{\Omega_r} \sin\left(\frac{\Omega_r \tau}{2}\right)\right)
 \label{eqn:cg2stateRabi},
 \end{align}
-where $\Omega_{eg}$ represents the on resonance Rabi frequency, which is defined as 
+where $\Omega_{eg}$ represents the on-resonance Rabi frequency, which is defined as 
 \begin{equation}
 \Omega_{eg}=-\frac{\langle e |\mathbf{d}\cdot\mathbf{E}|g \rangle }{\hbar}
 \end{equation}
@@ -65,7 +65,7 @@ Equations\,\ref{eqn:ce2stateRabi} and \ref{eqn:cg2stateRabi} can be squared to f
 %should I put \Omega_r^2 just to see? No. 
 These results are also quoted from Ref.\,\cite{Young1997363}, whose conventions I have also adopted.
 
-The two state Rabi system has some important properties. First, we see that the only way to move 100\% of the population from the ground state to the excited state is to drive the system on resonance (i.e. with $\delta=0$). Second, we see that the system oscillates between populating the excited and ground states with frequency $\Omega_{r}$. The stronger the coupling between the laser and the system (which is encapsulated in $\langle e|\mathbf{d}\cdot\mathbf{E}|g\rangle$), the more rapidly these oscillations occur. 
+The two state Rabi system has some important properties. First, we see that the only way to move 100\% of the population from the ground state to the excited state is to drive the system on-resonance (i.e. with $\delta=0$). Second, we see that the system oscillates between populating the excited and ground states with frequency $\Omega_{r}$. The stronger the coupling between the laser and the system (which is encapsulated in $\langle e|\mathbf{d}\cdot\mathbf{E}|g\rangle$), the more rapidly these oscillations occur. 
 
 We are particularly interested in coherently swapping the entire populations of the two states and placing the ions into an equal, coherent superposition of the two states.
 A $\pi$ pulse is a laser pulse that swaps the populations of the excited and ground states. In other words, if we were to use an operator $\Pi$ to represent a $\pi$ pulse, it would take the form
@@ -79,12 +79,12 @@ Similarly, we are interested in $\pi/2$ pulses, which are laser pulses that caus
 \begin{multline}
 %|e\rangle\rightarrow \frac{1}{\sqrt{2}}\left(|e\rangle+e^{i\phi_{}}|g\rangle\right)
 \cos\left(\frac{\theta}{2}\right)|g\rangle+
-e^{i\phi}\sin\left(\frac{\theta}{2}\right)|e\rangle\rightarrow
+e^{i\phi}\sin\left(\frac{\theta}{2}\right)|e\rangle\rightarrow 
 \cos\left(\frac{\theta+\pi/2}{2}\right)|g\rangle+
-e^{i\phi'}\sin\left(\frac{theta+\pi/2}{2}\right)|e\rangle.\label{blochSpherepi2}
+e^{i\phi'}\sin\left(\frac{\theta+\pi/2}{2}\right)|e\rangle.\label{blochSpherepi2}
 \end{multline}
 In this equation, $\theta$ is a coordinate representing the inclination angle on the Bloch sphere. The symbols $\phi$ and $\phi'$ represent arbitrary phases. The entire equation is specified only to within an overall phase. This shows that systems that are in a state $|e\rangle$ or $|g\rangle$ will be placed in an equal superposition of other states, while if the system is already in an equal superposition, the entire population will be moved to either the $e\rangle$ or $|g\rangle$ states.
-As Eq.\,\eqref{blochSpherepi2} illustrates, called a $\pi/2$ pulse because it changes the state of the system into an equal superposition, which is represented by the angle of $\pi/2$ radians in the Bloch sphere description of a two state system. Also, similarly to the case of the $\pi$ pulse, a $\pi/2$ pulse can be achieved simply by turning on a Rabi-flop-inducing stimulus for an appropriate time interval. 
+As Eq.\,\eqref{blochSpherepi2} illustrates, this is called a $\pi/2$ pulse because it changes the state of the system into an equal superposition, which is represented by the angle of $\pi/2$ radians in the Bloch sphere description of a two state system. Also, similar to the case of the $\pi$ pulse, a $\pi/2$ pulse can be achieved simply by turning on a Rabi-flop-inducing stimulus for an appropriate time interval. 
 
 %could I have just said ae+bg->a(e+g)+b(e-g)? Probably something like that. Oh, also, don't forget that the phase doesn't matter. 
 %The system is most naturally talked about in the interaction picture. In order to do this, I divide the Hamiltonian into two pieces: 
@@ -151,10 +151,10 @@ We model the laser as a classical, oscillating electric field, $\mathbf{E}$, whi
 %\mathbf{E_2} \cos(\omega_2t + \phi_2). \label{eqn:Efield}
 %oh, it's different phases for the different components of $\mathbf{E_1}.
 Here, $\mathbf{E_1}$ and $\mathbf{E_2}$ are complex vectors containing the electric field magnitude, polarization, and relative phase information for two different lasers that oscillate with angular frequencies $\omega_1$ and $\omega_2$ respectively. The symbol $c.c.$ should be taken to mean the complex conjugate of all the terms that came before. We choose to let $\omega_1>\omega_2$. 
-Thus, in our convention, the laser with electric field $\mathbf{E_1}$ that oscillates at frequency $\omega_1$ is tuned closer to the transition between $|g\rangle$ and $|i\rangle$, while the $\mathbf{E_2}, \omega_2$ laser is tuned closer to the transitions involving $|e\rangle$ and $|i\rangle$. Conveniently, this numbering matches both the conventions in Ref.\,\cite{Young1997363} and it matches the numbering scheme of the slave lasers that is used in Chapter\,\ref{LaserSystemOverview}(i.e. slave 1 outputs a higher frequency than slave 2). 
+Thus, in our convention, the laser with electric field $\mathbf{E_1}$ that oscillates at frequency $\omega_1$ is tuned closer to the transition between $|g\rangle$ and $|i\rangle$, while the $\mathbf{E_2}, \omega_2$ laser is tuned closer to the transitions involving $|e\rangle$ and $|i\rangle$. Conveniently, this numbering matches both the conventions in Ref.\,\cite{Young1997363} and it matches the numbering scheme of the slave lasers that is used in Chapter\,\ref{LaserSystemOverview} (i.e. slave 1 outputs a higher frequency than slave 2). 
 
 The dipole moment matrix operator represents the coupling between the laser and the atomic system. The physical details of the dipole moment matrix operator as it relates to the $^{87}Sr^+$ ions will be addressed in Section\,\ref{ElectricDipoleInteraction}. 
-However, for now, we make a few physically valid assumptions to simplify our analysis. First, we note that by writing the interaction between the lasers and the atoms in the form $\mathbf{d}\cdot\mathbf{E}$, we have already assumed that the electric field produced by both lasers is uniform in the regime of the atoms. This is known as the ``electric dipole approximation.'' Second, we now assume that all of the on diagonal dipole moment matrix elements are zero \cite{cohenTannoudji}. Finally, we neglect any possible coupling betweeen $|e\rangle$ and $|g\rangle$. That is to say that $\langle e|\mathbf{d}\cdot\mathbf{E}|g\rangle=0$, or that $V$ only couples $|e\rangle$ and $|g\rangle$ to the excited state $|i\rangle$ Therefore, we expect to be able to write the dipole matrix element operator as 
+However, for now, we make a few physically valid assumptions to simplify our analysis. First, we note that by writing the interaction between the lasers and the atoms in the form $\mathbf{d}\cdot\mathbf{E}$, we have already assumed that the electric field produced by both lasers is uniform in the regime of the atoms. This is known as the ``electric dipole approximation.'' Second, we now assume that all of the on-diagonal dipole moment matrix elements are zero \cite{cohenTannoudji}. Finally, we neglect any possible coupling betweeen $|e\rangle$ and $|g\rangle$. That is to say that $\langle e|\mathbf{d}\cdot\mathbf{E}|g\rangle=0$, or that $V$ only couples $|e\rangle$ and $|g\rangle$ to the excited state $|i\rangle$ Therefore, we expect to be able to write the dipole matrix element operator as 
 \begin{equation}
 \label{VSchrod}
 V=
@@ -223,10 +223,10 @@ where $c_e,c_g,c_i$ are coefficients that change relatively slowly compared to t
 \hline
 Frequencies & Definition and comment \\ \hline \hline
 $\omega_1,\omega_2$& Laser frequencies\\ \hline
-$\Delta$ & two photon detuning, $\Delta=(\omega_1-\omega_2)-(\omega_e-\omega_g)$\\ \hline
-$\delta,\delta_1,\delta_2$& one photon detunings, $\delta\approx\delta_1=\omega_1-\omega_e\approx
-\delta_2=\omega_2-\omega_g$\\ \hline
-$\Omega_{e},\Omega_{g}$ & On resonance Rabi frequencies. \\ \hline
+$\delta$ & two photon detuning, $\Delta=(\omega_1-\omega_2)-(\omega_e-\omega_g)$\\ \hline
+$\Delta,\Delta_{1g},\Delta_{2e}$& one photon detunings, $\Delta\approx\Delta_{1g}=\omega_1-\omega_e\approx
+\Delta_{2e}=\omega_2-\omega_g$\\ \hline
+$\Omega_{e},\Omega_{g}$ & On-resonance Rabi frequencies. \\ \hline
 $\Omega_{r}$ & Off-resonance Rabi frequency for two photon transition.\\ \hline
 $\Omega_{\mathit{eff}}$ & Effective Rabi frequency for two photon transition.\\ \hline
 \end{tabular}
@@ -254,7 +254,7 @@ V_I=\frac{1}{2}e^{i(\omega_e-\omega_i+\omega_1)t+\phi_1}|e\rangle\langle e|\math
 \frac{1}{2}e^{i(\omega_e-\omega_i+\omega_2)t+\phi_2}|e\rangle\langle e|\mathbf{d}\cdot\mathbf{E}_2| i\rangle\langle i| + \frac{1}{2}e^{i(\omega_e-\omega_i-\omega_2)t-\phi_2}|e\rangle\langle e|\mathbf{d}\cdot\mathbf{E}_2| i\rangle\langle i| +
 \ldots
 \end{multline}
-The rotating wave approximation is to assume that only the slowly-oscillating terms will make non-zero contributions to the dynamics of the system.%\cite{Young1997363}. %maybe Griffiths?
+The rotating wave approximation is to assume that only the slowly-oscillating terms will make non-zero contributions to the dynamics of the system. %\cite{Young1997363}. %maybe Griffiths?
 The only terms where this criterion is satisfied are the ones near our resonances. 
 We have assumed that $\omega_i-\omega_g\approx\omega_1$ and that $\omega_i-\omega_e\approx\omega_2$, which means that our new $V_I$ with the rotating wave approximation applied is
 \begin{multline}
@@ -270,7 +270,7 @@ For convenience, we define the following frequencies:
 \Delta_{2e}&=\omega_i-\omega_e-\omega_2\\
 \delta&=(\omega_e-\omega_g)-(\omega_1-\omega_2).
 \end{align}
-We assume that $\delta\ll\Delta_{1g}$ and that $\delta\ll\Delta_{2e}$, or in other words that $\Delta_{1g}\approx\Delta_{2e}$.
+(Table\,\ref{frequencyTable} summarizes most of the relevant frequencies we have defined.) We assume that $\delta\ll\Delta_{1g}$ and that $\delta\ll\Delta_{2e}$, or in other words that $\Delta_{1g}\approx\Delta_{2e}$.
 
 We can write $V_I$ explicitly using Eqs.\,\eqref{Vbreakdown}, \eqref{frequencyDiffs}, \eqref{VSchrod2} and \eqref{RabiFrequencies}:
 \begin{equation}
@@ -291,7 +291,9 @@ In order to solve the system, we use adiabatic elimination to make this look lik
 \begin{bmatrix}c_e(t)\\c_g(t)\\c_i(t)
 \end{bmatrix},
 \end{equation}
-then find the three coupled differential equations that describe the evolution of the sytem and solve them assuming that $\frac{\partial c_i(t)}{\partial t}=0$. There are some subtleties to this method (for one thing, $\dot{c_i}=0$ in the Schr\"odinger picture, not for time-dependent coefficients defined in other pictures) that are well-explained in Ref.\,\cite{brionLambdaAdiabatic}. In fact, Ref.\,\cite{brionLambdaAdiabatic} gives an excellent discussion of adiabatic elimination for a three state system like ours. 
+then find the three coupled differential equations that describe the evolution of the sytem and solve them assuming that $\frac{\partial c_i(t)}{\partial t}=0$. There are some subtleties to this method
+\footnote{For example, if we had defined our coefficients in terms of the basis vectors of the interaction picture (i.e. so that 
+$|\psi\rangle_I=c_{e,I}(t)e^{-iHt/\hbar}|e\rangle+c_{g,I}(t)e^{-iHt/\hbar}|g\rangle+c_{i,I}(t)e^{-iHt/\hbar}|i\rangle$), assuming that $\dot{c}_{i,I}=0$ would not give the right answer.} that are well-explained in Ref.\,\cite{brionLambdaAdiabatic}. In fact, Ref.\,\cite{brionLambdaAdiabatic} gives an excellent discussion of adiabatic elimination for a three state system like ours. 
 %Ref.\,\cite{brionLambdaAdiabatic} also describes a method using Green's functions as explained in \cite{cohenTannoudji}. This method involves using the resolvent and projection operators to describe the system. The Green's function of the system is defined as 
 %\begin{equation}
 %G(z)=\frac{1}{z-\mathbf{H}},
@@ -500,16 +502,11 @@ Our experiment is designed to use the $^2$S$_{1/2}$ and $^2$P$_{3/2}$ states. Ho
 
 \subsection{Review of hyperfine splitting}
 
-We now discuss the Hyperfine contribution to our overall Hamiltonian. We will need to understand the hyperfine splitting to allow us to model the 5GHz energy difference between the $F=4$ and $F=5$ $^2$S$_{1/2}$ states. Our discussion will allow us to calculate hyperfine shifts for all the energy levels in our atom based on the hyperfine $A$ and $B$ coefficients, for which we have found experimental and numerical estimates in the literature.
+We now discuss the Hyperfine contribution to our overall Hamiltonian. We will need to understand the hyperfine splitting to allow us to model the 5 GHz energy difference between the $F=4$ and $F=5$ $^2$S$_{1/2}$ states. Our discussion will allow us to calculate hyperfine shifts for all the energy levels in our atom based on the hyperfine $A$ and $B$ coefficients, for which we have found experimental and numerical estimates in the literature.
 
 \subsubsection{Hyperfine basics}
 
-The hyperfine splitting arises from interactions between the nucleus and the electrons. In general, we can split out the Hamiltonian of the Hyperfine interaction as done in Eq.\,\eqref{Hoeverall}: 
-\begin{equation}
-H=H_0+H_{\mathrm{hfs}}+H_{\mathrm{Z}},
-\end{equation}
-where $H$ represents the total Hamiltonian of the system, $H_0$ represents the Hamiltonian neglecting the hyperfine interaction and $H_{\mathrm{hfs}}$ represents the piece of the Hamiltonian that models the hyperfine interaction. 
-
+The hyperfine splitting arises from interactions between the nucleus and the electrons. The piece of the Hamiltonian representing the Hyperfine interaction is represented by the symbol $H_{\mathrm{hfs}}$ in Eq.\,\eqref{Hoverall}.
 The standard expansion of $H_{\mathrm{hfs}}$ in the literature is:  
 \begin{equation}
 H_{\mathrm{hfs}}=\sum_k \mathbf{T}^{(k)} \cdot \mathbf{M}^{(k)} \label{hfs_hamiltonian_eqn},
@@ -660,8 +657,12 @@ The energy shift due to the Zeeman interaction is simply \cite{sobelman_spectra}
 W=-\mathbf{\mu}\cdot\mathbf{H},
 \end{equation}
 where $\mathbf{\mu}$ is the magnetic dipole moment of the atom and $\mathbf{H}$ is the magnetic field strength. The magnetic moment $\mathbf{\mu}$ for an atom without hyperfine structure can be written as \cite{sobelman_spectra}
+\begin{equation}
+\mu=-\mu_0 g \mathbf{J}.
+\end{equation}
+Here $\mu_0$ is the Bohr Magneton and $g$ is the gyromagnetic ratio or $g$ factor which is usually of order unity. 
 
-We note that, in contrast to $H_{hfs}$, which turned out to be diagonal in the $F,I,J,S,M_f$ basis, the interaction energy due to a magnetic field pointing in the $\hat{z}$ direction is more naturally written in the $I,m_I, L,m_L,S,m_S$ basis. This is because the field breaks the degeneracy of the $m_x$ levels and it would be nice to be able to model the effect using the magnetic moment of the electron spin, electron orbit and nuclear spin separately. 
+We note that, in contrast to $H_{\mathrm{hfs}}$, which turned out to be diagonal in the $F,I,J,S,M_f$ basis, the interaction energy due to a magnetic field pointing in the $\hat{z}$ direction is more naturally written in the $I,m_I, L,m_L,S,m_S$ basis. This is because the field breaks the degeneracy of the $m_x$ levels and it would be nice to be able to model the effect using the magnetic moment of the electron spin, electron orbit and nuclear spin separately. 
 
 However, we can make an approximation for the case where the Zeeman splitting is small compared to the hyperfine splitting. 
 %The overall 
@@ -720,7 +721,7 @@ J_{12} & J_1 & k
 \end{Bmatrix},
 \end{multline}
 %where we have used $J_{1(2)}$ is the initial quantum number for $\mathbf{J}_{1(2)}$ and $J_{1(2)}'$
-where we have used $J_{1}$,$J_{2}$ and $J_{12}$ to refer to the initial values for their respective operators and $J_{1}'$,$J_{2}'$ and $J_{12}'$ correspond to the final values. $\gamma$ and $\gamma'$ represent the initial and final values of all other quantum numbers that describe the system.
+where we have used $J_{1}$,$J_{2}$ and $J_{12}$ to refer to the initial values for their respective operators and $J_{1}'$,$J_{2}'$ and $J_{12}'$ correspond to the final values. The parameters $\gamma$ and $\gamma'$ respectively represent the initial and final values of all other quantum numbers that describe the system.
 
 %We will use this formula twice: once to separate out $I$ and $J$ from $F$ and then once to remove $J$ by splitting out the pieces related to $L$ and $S$.
 We will use this formula to separate out $I$ and $J$ from $F$.
@@ -793,6 +794,7 @@ We could use Eq.\,\ref{spectatorTheorem} again, making additional substitutions 
 Now, we can calculate the Wigner 6j symbols using the SymPy module in Python\cite{sympy}\cite{rasch6j}.
  %\footnote{not sure how to cite: \url{http://docs.sympy.org/dev/modules/physics/wigner.html\#rasch03}}.
 We make our calculation in Table\,\ref{coefficient_calculated}. %Evaluating the Wigner 6j coefficients confirms the selection rules in Eq.\,\ref{FselectionRules}. 
+The code behind this calculation is included in Appendix\,\ref{sympy6jAppendix}.
 This allows us to calculate transition rates to specific hyperfine states in terms of the reduced dipole matrix elements that would be used for $J$ states.
 
 \begin{table}[h!]
@@ -809,7 +811,7 @@ $F'=5$,$F=5$&$- 0.1 \sqrt{165}$&-1.28\\
 $F'=6$,$F=5$&$0.5 \sqrt{13}$&1.80\\ 
 \hline
 \end{tabular}
-\caption{Values of $\langle n' L' S J' I F' ||\mathbf{r}||n L S J I F\rangle / \langle n'L' S J'||T^{(k)}|| n L S J\rangle$ as given in Eq.\,\ref{afterSpectators}. These coefficients essentially take into account the geometrical considerations that come into play when we discuss an operator that has been described to us in terms of eigenstates of $\mathbf{J}$ if we want to discuss it in terms of the eigenstates of $\mathbf{F}$. In this table, we have placed only values that gave nonzero results. The symbol $F'$ denotes the total angular momentum number of the intermediate ($^2$P$_{3/2}$) states, while $F$ is for the $^2$S$_{1/2}$ state.
+\caption{Values of $\langle n' L' S J' I F' ||\mathbf{r}||n L S J I F\rangle / \langle n'L' S J'||T^{(k)}|| n L S J\rangle$ as given in Eq.\,\ref{afterSpectators}. These coefficients essentially take into account the geometrical considerations that come into play when we discuss an operator that has been described to us in terms of eigenstates of $\mathbf{J}$ if we want to discuss it in terms of the eigenstates of $\mathbf{F}$. In this table, we have placed only values that gave nonzero results. The symbol $F'$ denotes the total angular momentum number of the intermediate ($^2$P$_{3/2}$) states, while $F$ is for the $^2$S$_{1/2}$ state. These results were obtained using the SymPy Python module \cite{sympy}\cite{rasch6j}.
 \label{coefficient_calculated}}
 \end{table}
 %todo: clean up the presentation. Maybe do all this stuff together. 
@@ -843,14 +845,13 @@ $F'=6$,$F=5$&$0.5 \sqrt{13}$&1.80\\
 %\end{table}
 
 \subsection{Looking up relevant parameters} \label{lookItUp}
-We would like to carefully determine the value of the dipole moment matrix operator. According to Ref.\ \cite{safronova2photon} the magnitude of the dipole moment operator is -4.35075 a. u.(atomic units, $a_0 e$, where $a_0$ is the Bohr radius and $e$ the fundamental charge) as calculated using the all-order, relativistic SD method. It is useful to compare this to the value obtained from at least one other source\footnote{It is easy to make simple mistakes regarding units and conventions.}. According to the NIST atomic spectra database, $A_{ki}=1.41e8$ s$^{-1}$ \cite{NISTasd}. This is the Einstein A coefficient associated with the decays from this state. If this is the case, then we use this equation from Ref.\ \cite{demilleBudkerKimball}:  
+We would like to carefully determine the value of the dipole moment matrix operator. According to Ref.\ \cite{safronova2photon} the magnitude of the dipole moment operator is -4.35075 a.u.(atomic units, $a_0 e$, where $a_0$ is the Bohr radius and $e$ the fundamental charge) as calculated using the all-order, relativistic SD method. It is useful to compare this to the value obtained from at least one other source\footnote{It is easy to make simple mistakes regarding units and conventions.}. According to the NIST atomic spectra database, $A_{ki}=1.41e8$ s$^{-1}$ \cite{NISTasd}. This is the Einstein A coefficient associated with the decays from this state. If this is the case, then we use this equation from Ref.\ \cite{demilleBudkerKimball}:  
 \begin{equation}
 |\langle f ||d|| i \rangle|^2 = (4 \pi \epsilon_0) \frac{3 \hbar c^3}{4 \omega_0^3} (2 J'+1) A_{ki}\label{budkerAeqn}.
 \end{equation}
 (This comes from slightly modifying Equation 3.117 in Ref\,\cite{demilleBudkerKimball}. It was necessary to convert it from Gaussian units by taking $d\rightarrow d \sqrt{4 \pi \epsilon_0}$. Furthermore, what Ref.\ \cite{demilleBudkerKimball} calls $\gamma$ must be renamed $A_{ki}$. Here $J'$ refers to the total angular momentum of the electron in the upper state, which in our case is $3/2$.) 
 
 Plugging in our values into Eq.\,\ref{budkerAeqn}, we get that the magnitude of $|\langle f ||d|| i \rangle|$ is \href{http://www.wolframalpha.com/input/?i=sqrt%283*hbar*c%5E3%2F%284*%282*pi*c%2F407.771+nm%29%5E3%29*4*pi*epsilon_0*4*1.41e8*1%2Fs%29}{4.344 electron Bohr Dipole Moments}.
-
 Thus, the agreement between the theoretical calculations of Ref.\,\cite{safronova2photon} and the experimentally-derived values of Ref.\,\cite{NISTasd} is very good. As a practical matter, this gives us enormous confidence since, not only do the experimental and theoretical approaches to finding the electric dipole reduced matrix element match one another, but we can also be sure that our sources are using the same conventions for, e.g. the Wigner Eckart theorem as we are.
 
 \subsection{Evaluation of dipole moment matrix operator}
@@ -883,20 +884,23 @@ However, even though we expect the Zeeman splitting to plays a large role in det
 
 %We can model the upper states as one effective state if they have sufficiently close energies by simply defining some effective state and setting the dipole coupling equal to the sum of the couplings between the other states.
 
-Furthermore, based on the other calculations in Ref.\,\cite{cjeDiss}, we expect that the detuning $\Delta$ will be about the same order of magnitude as the Hyperfine splitting. Therefore, we plan to tune our lasers so that $\Delta$ is below the lowest of the hyperfine levels of the $^2$P$_{3/2}$. According to Table\,\cite{tableOfHyperfinedeetuings}, this means that we expect to be able to focus exclusively on the $F=5$ states of the $^2$P$_{3/2}$ level.
+Furthermore, based on the other calculations in Ref.\,\cite{cjeDiss}, we expect that the detuning $\Delta$ will be about the same order of magnitude as the Hyperfine splitting. Therefore, we plan to tune our lasers so that $\Delta$ is below the lowest of the hyperfine levels of the $^2$P$_{3/2}$. According to Table\,\ref{tableOfHyperfinedeetuings}, this means that we expect to be able to focus exclusively on the $F=5$ states of the $^2$P$_{3/2}$ level.
 
-In other words, we now restrict our analysis to $m_f=0$ for the $^2$S$_{3/2}$ states and the $F=5$$^2$P$_{3/2}$ states.
+In other words, we now restrict our analysis to $m_f=0$ for the $^2$S$_{3/2}$ states. For the intermediate states, we will focus on the $F=5$ $^2$P$_{3/2}$ states. 
 
 \subsection{Evaluation of Clebsch-Gordan coefficients}
 
 We can automatically evaluate the Clebsch Gordan coefficients for our system in order to identify which of the possible $^2$P$_{3/2}$ states we are coupling to. The condition for an intermediate state to be valid is that we must be able to drive a dipole transition to it from the $F=5$ $^2$S$_{1/2}$ state and that we must be able to use our other laser to drive the atom from that state to the $F=4$ $^2$S$_{1/2}$ state. If we let the intermediate state be represented by quantum numbers $F_i=5$,$m_{f,i}$, we can write this condition mathematically as  
-\begin{equation}
-\langle (^2P_{3/2}) F_i,m_{f,i}|\mathbf{d}_{q_1}|(^2S_{1/2})F=5,m_f=0\rangle\neq 0 \Rightarrow \langle F=5,m_f=0,1,q_1|F_i,m_{f,i}\rangle \neq 0  \label{thing1}.
-\end{equation}
+\begin{multline}
+\langle (^2\mathrm{P}_{3/2}) F_i,m_{f,i}|\mathbf{d}_{q_1}|(^2\mathrm{S}_{1/2})F=5,m_f=0\rangle\neq 0 \\
+\Rightarrow \langle F=5,m_f=0,1,q_1|F_i,m_{f,i}\rangle \neq 0  \label{thing1}.
+\end{multline}
 In order for the other laser to couple our upper state to the $F=4$ ground state, 
-\begin{equation}
-\langle ((^2S_{1/2})F=4,m_f=0|\mathbf{d}_{q_2}|(^2P_{3/2}) F_i,m_{f,i}\rangle\neq 0 \Rightarrow \langle F_i,m_{f,i},1,q_2|F=4,m_f=0 \rangle \neq 0 \label{thing2},
-\end{equation}
+\begin{align}
+\langle (^2\mathrm{S}_{1/2})F=4,m_f=0|\mathbf{d}_{q_2}|(^2\mathrm{P}_{3/2}) F_i,m_{f,i}\rangle&\neq 0 \\
+\Downarrow \\
+\langle F_i,m_{f,i},1,q_2|F=4,m_f=0 \rangle &\neq 0 \label{thing2},
+\end{align}
 where $q_1$ and $q_2$ represent the components of polarization of the light from Slave 1 and Slave 2 respectively. $q=0$ corresponds to linearly polarized light in the $z$ direction, while $q=\pm 1$ corresponds to cicularly polarized light of different handedness.
 
 Evaluating the coefficients by brute force, we see that this condition is met only for a handful of coefficients. These are tabulated in Table \ref{nonzeroCG}. Based on the values in the table, we see that we must ensure that our lasers are circularly polarized such that one provides $\sigma+$ light and the other provides $\sigma-$ light. Furthermore, we see that the only state with $F=5$ that we couple to will be the $m_f=1$ or $m_f=-1$ state. For concreteness, we opt for the $q_1=1$, $q_2=-1$,$m_{f,i}=1$ state. 
@@ -913,7 +917,7 @@ $F_i$ & $q_1$ & $q_2$ & $m_{f,i}$ &$\langle  F_i,m_{f,i}|\mathbf{d}_{q_1}|F=5,m_
 5 & 1 & -1 & 1 &$ - \frac{\sqrt{2}}{2} $&$ \frac{\sqrt{33}}{11} $ \\
 \hline
 \end{tabular}
-\caption{The couplings that turn out to give nonzero values for both Eq.\,\eqref{thing1} and Eq.\,\eqref{thing2}. The total angular momentum quantum number for the intermediate state is given by $F_i$, while $q_1$ and $q_2$ represent polarizations of our laser.}
+\caption{The couplings that turn out to give nonzero values for both Eq.\,\eqref{thing1} and Eq.\,\eqref{thing2} for both $F=4$ and $F=5$ $^2P_{3/2}$ states. The total angular momentum quantum number for the intermediate state is given by $F_i$, while $q_1$ and $q_2$ represent polarizations of our laser.}
 \label{nonzeroCG}
 \end{table}
 
