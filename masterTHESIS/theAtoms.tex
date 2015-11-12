@@ -171,9 +171,10 @@ V=
 Here, we have used the basis $|e\rangle,|g\rangle,|i\rangle$. The columns and rows are labeled accordingly.
 It is convenient to define the one photon, on-resonance Rabi frequencies:
 \begin{align}
-\label{RabiFrequencies}
+\label{RabiFrequencies1}
 \Omega_e&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_2 | e\rangle }{\hbar}\\
 \Omega_g&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_1 | g\rangle}{\hbar}.
+\label{RabiFrequencies2}
 \end{align}
 %These are called the one photon on-resonance Rabi frequencies.
 Now $V$ can be written slighly more concisely as 
@@ -272,7 +273,7 @@ For convenience, we define the following frequencies:
 \end{align}
 (Table\,\ref{frequencyTable} summarizes most of the relevant frequencies we have defined.) We assume that $\delta\ll\Delta_{1g}$ and that $\delta\ll\Delta_{2e}$, or in other words that $\Delta_{1g}\approx\Delta_{2e}$.
 
-We can write $V_I$ explicitly using Eqs.\,\eqref{Vbreakdown}, \eqref{frequencyDiffs}, \eqref{VSchrod2} and \eqref{RabiFrequencies}:
+We can write $V_I$ explicitly using Eqs.\,\eqref{Vbreakdown}, \eqref{frequencyDiffs}, \eqref{VSchrod2}, \eqref{RabiFrequencies1}, and \eqref{RabiFrequencies2}:
 \begin{equation}
 \label{VI_matrix_simplified}
 V_I=
@@ -498,7 +499,7 @@ H=H_0+H_{\mathrm{hfs}}+H_{\mathrm{Z}},\label{Hoverall}
 where $H$ represents the Hamiltonian of the ion while it is \emph{unperturbed} by the laser. The contribution to the Hamiltonian due to the hyperfine splitting is encapsulated in $H_{\mathrm{hfs}}$, while $H_{\mathrm{Z}}$ represents the contribution that Zeeman shifts make to the Hamiltonian. (We create a constant, but adjustable magnetic field through which the atoms travel during the experiment. We do this specifically to break degeneracies between certain of the levels in the atom as discussed in Section\,\ref{zeeman}.) The rest of the Hamiltonian is represented by $H_0$. We do not explicitly consider other contributions to the Hamiltonian (for example, the fine structure) because these are built into the values we look up in the NIST atomic spectra database \cite{NISTasd}\footnote{So, for example, the NIST database gives transition lifetimes for $^2$S$_{1/2}\rightarrow^2$P$_{3/2}$ transitions. Thus, the fine structure should already be built in since there is a separate entry for $^2$S$_{1/2}\rightarrow^2$P$_{1/2}$ transitions.}.
 
 Second, we must find which states exactly the experiment will use.
-Our experiment is designed to use the $^2$S$_{1/2}$ and $^2$P$_{3/2}$ states. However, each of these spectroscopic terms refers to many states: For example, we must account for the states that correspond to different values of $F$. Since $\mathbf{F}=\mathbf{I}+\mathbf{J}$, $F$ can take on any values between $|I-J|,|I-J+1|,...,|I+J|$. So, for example, since $I=9/2$, the valid values of $F$ for the $^2$S$_{1/2}$ state are $F=4$ and $F=5$. For the upper states, where $J=3/2$, $F$ can take on the values $3,4,5,$ or $6$. We must also take into account the many possible values of $m_J$ and $m_F$ for these states.
+Our experiment is designed to use the $^2$S$_{1/2}$ and $^2$P$_{3/2}$ states. However, each of these spectroscopic terms refers to many states: For example, we must account for the states that correspond to different values of $F$. Since $\mathbf{F}=\mathbf{I}+\mathbf{J}$, $F$ can take on any values between $|I-J|,|I-J|+1,...,|I+J|$. So, for example, since $I=9/2$, the valid values of $F$ for the $^2$S$_{1/2}$ state are $F=4$ and $F=5$. For the upper states, where $J=3/2$, $F$ can take on the values $3,4,5,$ or $6$. We must also take into account the many possible values of $m_J$ and $m_F$ for these states.
 
 \subsection{Review of hyperfine splitting}
 
@@ -909,7 +910,8 @@ Evaluating the coefficients by brute force, we see that this condition is met on
 \centering
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
-$F_i$ & $q_1$ & $q_2$ & $m_{f,i}$ &$\langle  F_i,m_{f,i}|\mathbf{d}_{q_1}|F=5,m_f=0\rangle$&$\langle F=4,m_f=0|\mathbf{d}_{q_2}|F_i,m_{f,i}\rangle$ \\ 
+$F_i$ & $q_1$ & $q_2$ & $m_{f,i}$&$\langle F=5,m_f=0,1,q_1|F_i,m_{f,i}\rangle$&$\langle F_i,m_{f,i},1,q_2|F=4,m_f=0 \rangle$\\
+%$\langle  F_i,m_{f,i}|\mathbf{d}_{q_1}|F=5,m_f=0\rangle$&$\langle F=4,m_f=0|\mathbf{d}_{q_2}|F_i,m_{f,i}\rangle$ \\ 
 \hline
 4 & -1 & 1 & -1 &$ \frac{\sqrt{22}}{11} $&$ - \frac{\sqrt{2}}{2} $ \\ 
 4 & 1 & -1 & 1 &$ \frac{\sqrt{22}}{11} $&$ \frac{\sqrt{2}}{2} $ \\ 
@@ -921,44 +923,127 @@ $F_i$ & $q_1$ & $q_2$ & $m_{f,i}$ &$\langle  F_i,m_{f,i}|\mathbf{d}_{q_1}|F=5,m_
 \label{nonzeroCG}
 \end{table}
 
+\section{Calculation of beam geometries}
+We can use the derived formulae above to calculate the necessary beam geometries. %We can compare this to Chris' thesis.
 
-%Then, according to \cite{RamanBeamSplit} and \cite{footAtomicPhysics}, we can say that 
-%\begin{equation} \label{KorsunskysJewel}
-%\Omega_\mathit{Raman}=\frac{2\Omega_1\Omega_2}{\Delta}
-%\end{equation}
-%Recall the Hamiltonian was given by 
-%
-%\begin{equation}
-%H=H_0+V
-%\end{equation}
-%
-%where 
+First of all, we calculate our on-resonance Rabi frequencies. We will calculate the following values:
 
+By combining Eqs.\,\eqref{wignerEckartForUs}, \eqref{afterSpectators}, we get that  
+\begin{multline}
+\langle F',I',J',L',S',m_f'|d^{(1)}_q|F,I,J,L,S,m_f\rangle =\langle n'L' S J'||T^{(k)}|| n L S J\rangle\\
+\times (-1)^{J'+I+J+k}\sqrt{2F+1}\sqrt{2F'+1}
+\begin{Bmatrix}
+J' & F' & I \\
+F & J & k
+\end{Bmatrix}\\
+\times\frac{1}{\sqrt{2F'+1}}\langle F,m_f,k=1,q|F',m_f'\rangle.
+\end{multline}
+We will now evaluate $\langle F',I',J',L',S',m_f'|d^{(1)}_q|F,I,J,L,S,m_f\rangle$ for the states we have chosen. First, we will calculate $\Omega_g$, which means that the relevant dipole matrix operator is $\langle ^2\mathrm{P}_{3/2}, F=5, m_f=1|\mathbf{d}|^2\mathrm{S}_{1/2},F=5,m_f=0\rangle$ 
+\begin{align}        
+F'&\rightarrow5&      F&\rightarrow5\\
+m_f'&\rightarrow1&    m_f&\rightarrow0\\
+I'&\rightarrow9/2&    I&\rightarrow9/2\\
+J'&\rightarrow3/2&    J&\rightarrow1/2\\
+L'&\rightarrow1&      L&\rightarrow0\\
+S'&\rightarrow1/2&    S&\rightarrow1/2.
+\end{align}
+Using the values found in Section\,\ref{lookItUp}, we use 
+\begin{equation}
+\langle n'L' S J'||T^{(k)}|| n L S J\rangle \rightarrow 4.344 a_oe.
+\end{equation}
+Using Table\,\ref{frequencyTable}, we get that 
+\begin{equation}
+(-1)^{J'+I+J+k}\sqrt{2F+1}\sqrt{2F'+1}
+\begin{Bmatrix}
+J' & F' & I \\
+F & J & k
+\end{Bmatrix}\rightarrow
+-\frac{\sqrt{165}}{10}.
+\end{equation}
+From Table\,\ref{nonzeroCG}, we look up the value of 
+\begin{equation}
+\langle F,m_f,k=1,q|F',m_f'\rangle\rightarrow-\frac{\sqrt{2}}{2}.
+\end{equation}
+After inserting $F'=5$, we have 
+\begin{align}
+\hspace{6em}&\hspace{-6em}\langle ^2\mathrm{P}_{3/2}, F=5, m_f=1|\mathbf{d}|^2\mathrm{S}_{1/2},F=5,m_f=0\rangle\\
+&=4.344a_0e\left(-\frac{\sqrt{165}}{10}\right)\times\left(\frac{1}{\sqrt{2\times5+1}}\right)\times\left(-\frac{\sqrt{2}}{2}\right) \\
+&=4.344a_0e\left(\sqrt{\frac{3}{20}}\right)\\
+&\approx 8.903\times10^{-11} \mathrm{e} \mathrm{m}\\
+&\approx 1.426\times10^{-17} \textnormal{ pC} \textnormal{ m}.
+\end{align}
 
-%rotating wave approximation (RWA). Let $H_0$ be the Hamiltonian of our unperturbed system (the atom) and let $V$ be the perturbation (which we will use to model the electric field). 
-%
-%Now, we can move to the interaction picture in the standard way. Let $|\alpha\rangle$ be the eigenstate of $H_0$, the unperturbed Hamiltonian: 
-%
-%\begin{equation}
-%|\alpha\rangle_I=e^{-iE_\alpha t/h}|\alpha\rangle
-%\end{equation}
-%
-%Then, 
-%\begin{align}
-%-i\hbar \frac{d}{dt}|n\rangle = 
-%\end{align}
+For $\Omega_e$, we look at $\langle^2\mathrm{S}_{1/2},F=4,m_f=0|\mathbf{d}|\langle ^2\mathrm{P}_{3/2}, F=5, m_f=1\rangle$ and make similar substitutions. 
+\begin{align}        
+F'&\rightarrow4&      F&\rightarrow5\\
+m_f'&\rightarrow0&    m_f&\rightarrow1\\
+I'&\rightarrow9/2&    I&\rightarrow9/2\\
+J'&\rightarrow1/2&    J&\rightarrow3/2\\
+L'&\rightarrow0&      L&\rightarrow1\\
+S'&\rightarrow1/2&    S&\rightarrow1/2.
+\end{align}
+Similar to the other transition, this gives 
+\begin{align} 
+\hspace{6em}&\hspace{-6em}\langle^2\mathrm{S}_{1/2},F=4,m_f=0|\mathbf{d}|^2\mathrm{P}_{3/2}, F=5, m_f=1\rangle\\
+&=4.344a_0e\left(\frac{\sqrt{110}}{10}\right)\times\left(\frac{1}{\sqrt{2\times4+1}}\right)\times\left(\frac{\sqrt{33}}{11}\right) \\
+&\approx4.344a_0e\frac{1}{\sqrt{30}}\\
+&\approx6.724\times10^{-18} \textnormal{ pC m}.
+\end{align}
 
+Using these values, we find that the single-photon on-resonance Rabi frequencies defined in Eqs.\,\eqref{RabiFrequencies1} and \eqref{RabiFrequencies2} are 
+\begin{align}
+\label{RabiFrequenciesnumbers}
+\Omega_e&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_2 | e\rangle}{\hbar}\approx63760 \textnormal{m/s/V}\cdot \mathbf{E}_2\\
+\Omega_g&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_1 | g\rangle}{\hbar}\approx135221 \textnormal{m/s/V}\cdot \mathbf{E}_1.
+\end{align}
 
-%The Rabi frequencies are given by 
-%
-%\begin{equation}
-%\Omega=\frac{\mu E}{h}
-%\end{equation} \cite{hilbornNoGetConfused}
-%where $\mu$ is the dipole moment matrix element describing the coupling between the electric field and the atom. 
+Now, for our laser, we can find the electric field by looking at the intensity of the laser. We recall that 
+\begin{equation}
+I=\frac{c\epsilon_0}{2}|E|^2.
+\end{equation}
+Thus, if we assume that we are coupling perfectly to our atomic system with light at the correct polarization, we can rewrite $\mathbf{E}$ as 
+\begin{equation}
+|E|=\sqrt{\frac{2I}{c\epsilon_0}}.
+\end{equation}
+Noting that the intensity equals the power over the area of the beam, we let the beam have waist radius $w_0$. Now, if we let $I_0$ represent the intensity of the beam at its peak, then the relationship between the power and the intensity is 
+\begin{equation}
+P_0=\frac{1}{2}\pi I_0 w_0^2. 
+\end{equation}
+We will pretend that the region where the laser light is shining is a circle of radius $w_0$ and that within the circle, we have a uniform intensity of 
+\begin{equation}
+I=\frac{P}{\pi w_0^2}.
+\end{equation}
+We will assume that outside the circle there is no power. 
 
-%Hilborn gives an expression for $\mu^2$ in terms of the oscillator strength, which I've found in two places \cite{safronovaTheory} \cite{NISTasd} to be about .7. However, I think I need to apply the Wigner-Eckhart theorem as explained in \cite{demilleBudkerKimball}. This also matches Gallagher's answer. 
+Then, if the ions are travelling through the laser beam, the time they spend is equal to 
 
-%\section{Calculation of ideal intensities}
-We can use this derived formula above to calculate the necessary beam geometries. %We can compare this to Chris' thesis.
+\begin{equation}
+t=\frac{2*w_0}/v
+\end{equation}
+where $t$ is the time spent in the beam and $v$ is the velocity of the atoms. 
 
+The off-resonance Rabi frequency is simply \cite{Young1997363}
+\begin{equation}
+\Omega_r=\sqrt{\Omega_{\mathrm{eff}}^2+(\delta-\delta^{AC})^2}
+\end{equation}
+where 
+\begin{equation}
+\Omega_{\mathrm{eff}}=\frac{\Omega_e^*\Omega_g}{2\Delta}.
+\end{equation}
+We assume that we can get $\delta-\delta^{AC}=0$. So, we need to check on $\Omega_{\mathrm{eff}}$. We would like to have it so that 
+\begin{equation}
+\Omega_{\mathrm{eff}}t=\pi
+\end{equation}
+Plugging in our approximations for the laser parameters, we can solve for the necessary power. 
 
+If we suppose (like Ref.\,\cite{cjeDiss}) that we might get 5 mW from each laser for any given interaction zone and that the waist is $\sim$0.4 mm and that we want $\Delta= 2.5 GHz$, then we get 12.92 MHz for the Rabi frequency. This is only 10 times smaller than what Ref.\,\cite{cjeDiss} found. 
+
+Counterintuitively, the single photon Rabi rates do not have to match. We can avoid population buildup in the upper states even if they do not match. 
+
+%http://www.wolframalpha.com/input/?i=1%2F%282*2.5+GHz%29*63760+m%2Fs%2FV+*135221+m%2Fs%2FV+*+2+*+5+mW%2F%28pi*c*epsilon_0*0.4+mm*0.4+mm%29
+
+%do I need to talk about this stuff? 
+%phase matters?
+
+%check signs.
+%just analyze it in terms of noting that you don't care which laser doubles its power, you get double stuff. 
