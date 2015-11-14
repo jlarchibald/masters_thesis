@@ -68,12 +68,58 @@ These results are also quoted from Ref.\,\cite{Young1997363}, whose conventions 
 The two state Rabi system has some important properties. First, we see that the only way to move 100\% of the population from the ground state to the excited state is to drive the system on-resonance (i.e. with $\delta=0$). Second, we see that the system oscillates between populating the excited and ground states with frequency $\Omega_{r}$. The stronger the coupling between the laser and the system (which is encapsulated in $\langle e|\mathbf{d}\cdot\mathbf{E}|g\rangle$), the more rapidly these oscillations occur. 
 
 We are particularly interested in coherently swapping the entire populations of the two states and placing the ions into an equal, coherent superposition of the two states.
-A $\pi$ pulse is a laser pulse that swaps the populations of the excited and ground states. In other words, if we were to use an operator $\Pi$ to represent a $\pi$ pulse, it would take the form
-\begin{equation}
-\Pi=e^{i\phi_{eg}}|e\rangle\langle g|+e^{i\phi_{ge}}|g\rangle\langle e|,
+An interaction that coherently moves the system from one state to the other is called a $\pi$ pulse. An interaction that takes the system in one state into an equal superposition of the two states is caled a $\pi/2$ pulse 
+%A $\pi$ pulse is a laser pulse that swaps the populations of the excited and ground states. In other words, if we were to use an operator $\Pi$ to represent a $\pi$ pulse, it would take the form
+We can express this a little more carefully. If we let $A$ be an operator representing a $\pi/2$ pulse, then the action of $A$ on a state $|g\rangle$ is given by 
+\begin{equation} \label{ppu1}
+A|g\rangle = \frac{e^{i\phi_o}}{\sqrt{2}} \left(|g\rangle + e^{i\phi_e}|e\rangle\right),
 \end{equation}
-where $\phi_{eg}$ and $\phi_{ge}$ are arbitrary phases. 
+where $\phi_o$ and $\phi_e$ in this equation represent arbitrary constants.
+%\begin{equation}
+%\Pi=e^{i\phi_{eg}}|e\rangle\langle g|+e^{i\phi_{ge}}|g\rangle\langle e|,
+%\end{equation}
+%where $\phi_{eg}$ and $\phi_{ge}$ are arbitrary phases. 
 %with some phase? shoot. 
+Now, if we apply $A$ again, we should get the equivalent of a $\pi$ pulse and 100\% of the population should be moved to the excited state: 
+\begin{equation}
+A^2|g\rangle = e^{i\phi_e'}|e\rangle\\
+\end{equation}
+Now, substituting the result of Eq.\,\eqref{ppu1}, we get
+\begin{equation}
+A\frac{e^{i\phi_o}}{\sqrt{2}} \left(|g\rangle + e^{i\phi_e}|e\rangle\right)=e^{i\phi_e'}|e\rangle.
+\end{equation}
+We can use the result of Eq.\,\eqref{ppu1} again to get 
+\begin{equation}
+\frac{e^{2i\phi_o}}{2}
+|g\rangle
++
+\frac{e^{i(2\phi_o+\phi_e)}}{2} |e\rangle
++
+\frac{e^{i(\phi_o+\phi_e)}}{\sqrt{2}}
+A|e\rangle
+=e^{i\phi_e'}|e\rangle.
+\end{equation}
+We can solve this equation to find $A|e\rangle$: 
+\begin{align}
+A|e\rangle&= 
+\frac{\sqrt{2}}{e^{i(\phi_o+\phi_e)}}
+\left(
+-\frac{e^{2i\phi_o}}{2}|g\rangle
++\left(e^{i\phi_e'}-\frac{e^{i(2\phi_o+\phi_e)}}{2}\right) |e\rangle
+\right)\\
+A|e\rangle&= 
+-\frac{e^{i(\phi_o-\phi_e)}}{\sqrt{2}}|g\rangle
++\left(\sqrt{2}e^{i(\phi_e'-\phi_e-\phi_o)}-\frac{e^{i\phi_o}}{\sqrt{2}}\right) |e\rangle.
+\end{align}
+Since $A$ preserves normalization, we know that the sum of the norms of the coefficients of $|e\rangle$ and $|g\rangle$ must be one. Therefore, 
+\begin{equation}
+\left|-\frac{e^{i(\phi_o-\phi_e)}}{\sqrt{2}}\right|^2 + \left|\sqrt{2}e^{i(\phi_e'-\phi_e-\phi_o)}-\frac{e^{i\phi_o}}{\sqrt{2}}\right|^2 = 1.
+\end{equation}
+From this, we can solve to find that  
+\begin{equation}
+\cos\left(\phi_e'-\phi_e-2\phi_o\right) = 1.
+\end{equation}
+
 One way to impart a $\pi$ pulse to the atomic system, would be to turn on the laser field for some finite amount of time such that the system undergoes half of one complete Rabi oscillation over the duration of the pulse. We can calculate the necessary length of such a pulse to be simply half of the period associated with the effective Rabi rate, or in other words $T = 2\pi/\omega$.
 Similarly, we are interested in $\pi/2$ pulses, which are laser pulses that cause the following type of transition:
 \begin{multline}
