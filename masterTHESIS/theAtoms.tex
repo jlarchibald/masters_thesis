@@ -69,16 +69,16 @@ The two state Rabi system has some important properties. First, we see that the 
 \subsubsection{$\pi$ and $\pi/2$ pulses}
 We are particularly interested in coherently swapping the entire populations of the two states and placing the ions into an equal, coherent superposition of the two states.
 An interaction that coherently moves the system from one state to the other is called a $\pi$ pulse. An interaction that takes the system in one state into an equal superposition of the two states is caled a $\pi/2$ pulse. This terminology comes from the Bloch sphere. In the Bloch sphere, a superposition of $|e\rangle$ and $|g\rangle$ can be represented to within an overall phase as 
-\begin{multline}
+\begin{equation}
 %|e\rangle\rightarrow \frac{1}{\sqrt{2}}\left(|e\rangle+e^{i\phi_{}}|g\rangle\right)
 \cos\left(\frac{\theta}{2}\right)|g\rangle+
 e^{i\phi}\sin\left(\frac{\theta}{2}\right)|e\rangle,
-\end{multline}
+\end{equation}
 where $\phi$ and $\theta$ are arbitrary angles that can be changed to represent any state. A $\pi/2$ pulse changes $\theta$ by $\pi/2$ radians, while a $\pi$ pulse changes it by $\pi$ radians.
 
-There is a little more to be gained. In the experiment, we would like a $\pi/2$ interaction with the laser to be able to take an ion in the $|g\rangle$ or $|e\rangle$ states and put it into an equal superposition of the $|g\rangle$ and $|e\rangle$ states. However, we would also like to be able to use the same pulse to make ions that are in equal superpositions of the two states and put them into either the ground or excited states.
+There is a little more that we can say about these pulses. In the experiment, we would like a $\pi/2$ interaction with the laser to be able to take an ion in the $|g\rangle$ or $|e\rangle$ states and put it into an equal superposition of the $|g\rangle$ and $|e\rangle$ states. However, we would also like to be able to use the same pulse to take ions that are in equal superpositions of the $|e\rangle$ and $|g\rangle$ states and put them into either the ground or excited states.
 
-We let $A$ be an operator representing a $\pi/2$ pulse that satisfies the above properties. Then the action of $A$ on a state $|g\rangle$ is given by 
+We let $A$ be an operator representing a $\pi/2$ pulse that satisfies the above properties. Then the effect of $A$ on a state $|g\rangle$ is given by 
 \begin{equation} \label{ppu1}
 A|g\rangle = \frac{e^{i\phi_o}}{\sqrt{2}} \left(|g\rangle + e^{i\phi_e}|e\rangle\right),
 \end{equation}
@@ -668,6 +668,7 @@ In a similar way, the $k=2$ term in Eq.\,\eqref{TkMk_hyperfine} can be shown to 
 \begin{equation}
 W=\int\frac{\rho(\mathbf{r})\rho'(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|}d\mathbf{r}d\mathbf{r'}.
 \end{equation}
+%Should I change this symbol?
 can  be expanded in terms of spherical harmonics: 
 \begin{equation}
 W=\int d\mathbf{r}d\mathbf{r'}
@@ -701,7 +702,7 @@ W=BC(C+1),
 \end{equation}
 where 
 \begin{equation}
-C=[F(F+1)-J(J+1)-I(I+1)].
+C=F(F+1)-J(J+1)-I(I+1).
 \end{equation}
 (Interestingly, Eq.\,\ref{Wf_dot_product} can also be evaluated using Eq.\,\ref{4169_combine_diff_tensors} using $k=1$.)
 
