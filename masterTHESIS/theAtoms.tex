@@ -176,16 +176,16 @@ Similarly, to get $A\left(a_g|g\rangle+a_e|e\rangle\right)=e^{i\gamma}|g\rangle$
 \quad\implies\quad
 \begin{aligned}
 a_g&=\frac{e^{i(\gamma-\phi_o)}}{\sqrt{2}}\\
-a_g&=-\frac{e^{i(\gamma-\phi_o+\phi_e)}}{\sqrt{2}}.
+a_e&=-\frac{e^{i(\gamma-\phi_o+\phi_e)}}{\sqrt{2}}.
 \end{aligned}
 \end{equation}
-
 Thus, in order for a $\pi/2$ pulse to put ions that are already in a superposition into one state or the other, it must be the case that 
 \begin{equation}
 |a_e|^2=|a_g|^2=\frac{1}{2}.
 \end{equation}
-In addition, the phase difference between the two states determines whether we can put that superposition state into a single state.
-TODO: make sure it's ok if the two paths change relative phase of the two coefficients.
+In addition, the phase difference between the two states determines whether we can put that superposition state into a single state.  
+
+This is handy because at the end of the interferometer, we hope to be able to detect the accumulated phase difference between the two beams. The phase is related to everything. TODO: write down phase relationship. 
 %One way to impart a $\pi$ pulse to the atomic system, would be to turn on the laser field for some finite amount of time such that the system undergoes half of one complete Rabi oscillation over the duration of the pulse. We can calculate the necessary length of such a pulse to be simply half of the period associated with the effective Rabi rate, or in other words $T = 2\pi/\omega$.
 %Similarly, we are interested in $\pi/2$ pulses, which are laser pulses that cause the following type of transition:
 %\begin{multline}
@@ -250,7 +250,7 @@ H=
 \hbar\omega_g |g\rangle\langle g | +
 \hbar\omega_i |i\rangle\langle i | 
 \end{equation}
-Here, $|e\rangle$,$|g\rangle$, and $|i\rangle$ represent particular internal states of the atom. The state $|i\rangle$ is higher in energy than $|e\rangle$ or $|g\rangle$, which are the two states where we hope and expect to have population buildup. They are all eigenstates of $H$. In Section\,\ref{figureOutStatesSection} we will show that $|e\rangle$ can represent the $F=4$,$m_f=0$,$^2$S$_{1/2}$ state, $|g\rangle$ can represent the $F=5$,$m_f=0$,$^2$S$_{1/2}$ state, and $|i\rangle$ can represent the $F=5$,$m_f=1$,$^2$P$_{3/2}$ state\footnote{Our analysis applies equally well to other sets of three states within the ions. We can select which states are involved by adjusting the tuning and polarization of the lasers.}. See Figure\,\ref{energyLevelDiagramFigure}. The energies of these states are represented by $\hbar\omega_e,\hbar\omega_g,$ and $\hbar\omega_i$ respectively. 
+Here, $|e\rangle$,$|g\rangle$, and $|i\rangle$ represent particular internal states of the atom. The state $|i\rangle$ is the ``intermediate state'' and is higher in energy than $|e\rangle$ or $|g\rangle$, which are the two states where we hope and expect to have population buildup. They are all eigenstates of $H$. In Section\,\ref{figureOutStatesSection} we will show that $|e\rangle$ can represent the $F=4$,$m_f=0$,$^2$S$_{1/2}$ state, $|g\rangle$ can represent the $F=5$,$m_f=0$,$^2$S$_{1/2}$ state, and $|i\rangle$ can represent the $F=5$,$m_f=1$,$^2$P$_{3/2}$ state\footnote{Our analysis applies equally well to other sets of three states within the ions. We can select which states are involved by adjusting the tuning and polarization of the lasers.}. See Figure\,\ref{energyLevelDiagramFigure}. The energies of these states are represented by $\hbar\omega_e,\hbar\omega_g,$ and $\hbar\omega_i$ respectively. 
 
 The term representing the interaction between the laser and the ions is given by
 \begin{equation}
@@ -731,7 +731,7 @@ $5p ^2$P$_{3/2}$&-35.26 MHz&-35.3 MHz&-36.0(04) MHz\\ \hline
 \hline
 Level &  $B^{\mathrm{(SDpT)}}$ &$B^{\mathrm{(theor)}}$ & $B^{\mathrm{(expt)}}$ \\ \hline \hline
 $5s ^2$S$_{1/2}$&&0  MHz&  \\ \hline
-$5p ^2$P$_{3/2}$&88.94MHz&$88.68$MHz\footnotemark&88.5(54) \\ \hline
+$5p ^2$P$_{3/2}$&88.94MHz&$88.68$MHz\footnotemark&88.5(54)MHz \\ \hline
 \end{tabular}
 \caption{Values of A and B coefficients in MHz for relevant states taken from Ref.\,\cite{safronova2photon}. The label ``SDpT'' refers to the value calculated using one particular numerical approach as detailed in Ref.\,\cite{safronova2photon}. The label ``theor'' represents theoretically calculated values. The label ``expt'' refers to measured values from experiments.\label{AB_table}
 }
@@ -762,7 +762,7 @@ $F=6$ $^2$P$_{3/2} (5p)$ &   17121 MHz\\ \hline
 \end{tabular}
 \caption{Hyperfine splitting on $^2$P$_{3/2}$ states. The Hyperfine shift represents the energy shift between the Hamiltonian neglecting hyperfine splitting and the Hamiltonian that includes it
 %\footnote{Actually, there may be either some other offset or some theorem that says these are centered around the original level? That can't be right}
-. The values are given in MHz and the associated energy is $hf$. }
+. The values are given in MHz and the associated energy is $hf$. Code for calculating these values can be found in Appendix\,\ref{sympy6jAppendix}.}
 \label{tableOfHyperfinedeetuings}
 \end{table}
 
@@ -929,7 +929,7 @@ $F'=5$, $F=5$&$- 0.1 \sqrt{165}$&-1.28\\
 $F'=6$, $F=5$&$0.5 \sqrt{13}$&1.80\\ 
 \hline
 \end{tabular}
-\caption{Values of $\langle n' L' S J' I F' ||\mathbf{r}||n L S J I F\rangle / \langle n'L' S J'||T^{(k)}|| n L S J\rangle$ as given in Eq.\,\ref{afterSpectators}. These coefficients essentially take into account the geometrical considerations that come into play when we discuss an operator that has been described to us in terms of eigenstates of $\mathbf{J}$ if we want to discuss it in terms of the eigenstates of $\mathbf{F}$. In this table, we have placed only values that gave nonzero results. The symbol $F'$ denotes the total angular momentum number of the intermediate ($^2$P$_{3/2}$) states, while $F$ is for the $^2$S$_{1/2}$ state. These results were obtained using the SymPy Python module \cite{sympy}\cite{rasch6j}.
+\caption{Values of $\langle n' L' S J' I F' ||\mathbf{r}||n L S J I F\rangle / \langle n'L' S J'||T^{(k)}|| n L S J\rangle$ as given in Eq.\,\ref{afterSpectators}. These coefficients essentially take into account the geometrical considerations that come into play when we discuss an operator that has been described to us in terms of eigenstates of $\mathbf{J}$ if we want to discuss it in terms of the eigenstates of $\mathbf{F}$. In this table, we have placed only values that gave nonzero results. The symbol $F'$ denotes the total angular momentum number of the intermediate ($^2$P$_{3/2}$) states, while $F$ is for the $^2$S$_{1/2}$ state. These results were obtained using the SymPy Python module \cite{sympy}\cite{rasch6j}. Code for calculating these values can be found in Appendix\,\ref{sympy6jAppendix}.
 \label{coefficient_calculated}}
 \end{table}
 %todo: clean up the presentation. Maybe do all this stuff together. 
@@ -969,7 +969,7 @@ We would like to carefully determine the value of the dipole moment matrix opera
 \end{equation}
 (This comes from slightly modifying Equation 3.117 in Ref\,\cite{demilleBudkerKimball}. It was necessary to convert it from Gaussian units by taking $d\rightarrow d \sqrt{4 \pi \epsilon_0}$. Furthermore, what Ref.\ \cite{demilleBudkerKimball} calls $\gamma$ must be renamed $A_{ki}$. Here $J'$ refers to the total angular momentum of the electron in the upper state, which in our case is $3/2$.) 
 
-Plugging in our values into Eq.\,\ref{budkerAeqn}, we get that the magnitude of $|\langle f ||d|| i \rangle|$ is 4.344 electron Bohr Dipole Moments.
+Plugging in our values into Eq.\,\ref{budkerAeqn}, we get that the magnitude of $|\langle f ||d|| i \rangle|$ is 4.344 electron Bohr Dipole Moments. Details of this calculation are contained in Appendix\,\ref{sympy6jAppendix}.
 %todo:think about whether to include this somehow.
 %\href{http://www.wolframalpha.com/input/?i=sqrt%283*hbar*c%5E3%2F%284*%282*pi*c%2F407.771+nm%29%5E3%29*4*pi*epsilon_0*4*1.41e8*1%2Fs%29}{4.344 electron Bohr Dipole Moments}.
  Thus, the agreement between the theoretical calculations of Ref.\,\cite{safronova2photon} and the experimentally-derived values of Ref.\,\cite{NISTasd} is very good. As a practical matter, this gives us enormous confidence since, not only do the experimental and theoretical approaches to finding the electric dipole reduced matrix element match one another, but we can also be sure that our sources are using the same conventions for, e.g. the Wigner Eckart theorem as we are.
@@ -1038,7 +1038,7 @@ $F_i$ & $q_1$ & $q_2$ & $m_{f,i}$&$\langle F=5,m_f=0,1,q_1|F_i,m_{f,i}\rangle$&$
 5 & 1 & -1 & 1 &$ - \frac{\sqrt{2}}{2} $&$ \frac{\sqrt{33}}{11} $ \\
 \hline
 \end{tabular}
-\caption{The couplings that turn out to give nonzero values for both Eq.\,\eqref{thing1} and Eq.\,\eqref{thing2} for both $F=4$ and $F=5$ $^2P_{3/2}$ states. The total angular momentum quantum number for the intermediate state is given by $F_i$, while $q_1$ and $q_2$ represent polarizations of our laser.}
+\caption{The couplings that turn out to give nonzero values for both Eq.\,\eqref{thing1} and Eq.\,\eqref{thing2} for both $F=4$ and $F=5$ $^2P_{3/2}$ states. The total angular momentum quantum number for the intermediate state is given by $F_i$, while $q_1$ and $q_2$ represent polarizations of our laser. Code for calculating these values can be found in Appendix\,\ref{sympy6jAppendix}.}
 \label{nonzeroCG}
 \end{table}
 
