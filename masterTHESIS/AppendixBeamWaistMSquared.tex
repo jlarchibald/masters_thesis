@@ -126,7 +126,7 @@ We used this function to calculate what correction function to use. We did a cou
 \centerline{
 \includegraphics[width=0.95\textwidth]{cameraPixelFit}
 }
-\caption[Camera linearity and offset]{On the x axis is the inferred pixel reading based on our assumptions about the ratios of pixel readings. On the y axis, we can see the actual readings of the pixels. This illustrates clearly the threshold issue of the camera.}
+\caption[Camera linearity and offset]{On the x axis is the inferred pixel reading based on our assumptions about the ratios of pixel readings. On the y axis, we can see the actual readings of the pixels. This illustrates clearly the threshold issue of the camera. In the top, left side of the plot, there is clearly a region where our inferred readings should be nonzero, but the actual readings on the camera remain at zero.\label{cameraPixelFit}}
 \end{figure}
 
 In the end, the camera offset and nonlinearity made it unsuitable for sensitive measurements of the second moment width of the beam. However they did provide a reasonable sanity check on our methods.

@@ -142,7 +142,7 @@ A\left(a_g|g\rangle+a_e|e\rangle\right)=
 \left(
 (a_g-a_e e^{-i\phi_e})|g\rangle +
 (a_e+a_g e^{i\phi_e})|e\rangle 
-\right).
+\right).\label{howAActs}
 \end{equation}
 Thus, in order to get $A\left(a_g|g\rangle+a_e|e\rangle\right)=e^{i\gamma}|e\rangle$ (with $\gamma$ an arbitrary phase), 
 %\begin{equation}
@@ -183,9 +183,32 @@ Thus, in order for a $\pi/2$ pulse to put ions that are already in a superpositi
 \begin{equation}
 |a_e|^2=|a_g|^2=\frac{1}{2}.
 \end{equation}
-In addition, the phase difference between the two states determines whether we can put that superposition state into a single state.  
-
-This is handy because at the end of the interferometer, we hope to be able to detect the accumulated phase difference between the two beams. The phase is related to everything. TODO: write down phase relationship. 
+In addition, the phase difference between the two states determines whether we can put that superposition state into a single state and which state the $\pi/2$ pulse will put the ions in. We now consider an equal superposition of the $|e\rangle$ and $|g\rangle$ states. We arbitrarily and without loss of generality select the overall phase by allowing $a_g$ to be real and we allow the relative phase between the $a_e$ and $a_g$ coefficients to be $\Delta\phi$. Under these conditions, $a_e$ and $a_g$ take the form
+\begin{align}
+a_e&=\frac{e^{i\Delta \phi}}{\sqrt{2}} \\
+a_g&=\frac{1}{\sqrt{2}}.
+\end{align}
+Plugging this into Eq.\,\eqref{howAActs}, we see that
+\begin{equation}
+A\left(
+\frac{e^{i\Delta \phi}}{\sqrt{2}}|e\rangle 
++
+\frac{1}{\sqrt{2}}|g\rangle
+\right)
+=
+\left(
+\frac{1}{\sqrt{2}} - \frac{e^{i(\Delta\phi-\phi_e)}}{\sqrt{2}}
+\right) |g\rangle
++\left(
+\frac{e^{i\Delta\phi}}{\sqrt{2}} + \frac{e^{i\phi_e}}{\sqrt{2}}
+\right) |e\rangle. \label{equationaboutphaseag}
+\end{equation}
+We can take the norm of the coefficients on the right hand side of Eq.\,\ref{equationaboutphaseag} to see that the populations in each state are 
+\begin{align}
+\textnormal{population in $|g\rangle$ state} &= 1 - \cos(\Delta\phi-\phi_e) \label{gpop}\\ 
+\textnormal{population in $|e\rangle$ state} &= 1 + \cos(\Delta\phi-\phi_e).\label{epop}
+\end{align}
+This is handy because at the end of the interferometer, we hope to be able to detect the accumulated phase difference between the two beams. Equations\,\ref{gpop} and \ref{epop} show that the relative phase between the two states when they are in an equal superposition will correspond to the populations in each state after the ions undergo a $\pi/2$ pulse.
 %One way to impart a $\pi$ pulse to the atomic system, would be to turn on the laser field for some finite amount of time such that the system undergoes half of one complete Rabi oscillation over the duration of the pulse. We can calculate the necessary length of such a pulse to be simply half of the period associated with the effective Rabi rate, or in other words $T = 2\pi/\omega$.
 %Similarly, we are interested in $\pi/2$ pulses, which are laser pulses that cause the following type of transition:
 %\begin{multline}
