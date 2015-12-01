@@ -769,12 +769,11 @@ $5p ^2$P$_{3/2}$&-35.26 MHz&-35.3 MHz&-36.0(04) MHz\\ \hline
 \hline
 Level &  $B^{\mathrm{(SDpT)}}$ &$B^{\mathrm{(theor)}}$ & $B^{\mathrm{(expt)}}$ \\ \hline \hline
 $5s ^2$S$_{1/2}$&&0  MHz&  \\ \hline
-$5p ^2$P$_{3/2}$&88.94MHz&$88.68$MHz\footnotemark&88.5(54)MHz \\ \hline
+$5p ^2$P$_{3/2}$&88.94 MHz&$88.68$ MHz\footnotemark&88.5(54) MHz \\ \hline
 \end{tabular}
-\caption{Values of A and B coefficients in MHz for relevant states taken from Ref.\,\cite{safronova2photon}. The label ``SDpT'' refers to the value calculated using one particular numerical approach as detailed in Ref.\,\cite{safronova2photon}. The label ``theor'' represents theoretically calculated values. The label ``expt'' refers to measured values from experiments.\label{AB_table}
+\caption{Values of $A$ and $B$ coefficients in MHz for relevant states taken from Ref.\,\cite{safronova2photon}. The label ``SDpT'' refers to the value calculated using one particular numerical approach as detailed in Ref.\,\cite{safronova2photon}. The label ``theor'' represents theoretically calculated values. The label ``expt'' refers to measured values from experiments.\label{AB_table}
 }
 \end{table}
-\footnotetext{Ref.\cite{safronova2photon} reports $B/Q$ as 271MHz$/$b and also says that $Q=0.327(24)$b. We multiplied 271MHz$/$b$\times 0.327(24)$b$=88.68$ MHz, to get the value that appears here.}%NOTICE: IDK how to get this footnote to be guaranteed to appear on the right page.}
 
 \subsubsection{Calculate hyperfine energy shifts}
 We may calculate the splitting between the $F=4$ and $F=5$ $^2$S$_{1/2}$ states using $I=9/2$, $F=4,5$, $L=0$ using Eq.\,\ref{Standard_hyperfine_AB}. In this case, we can see that with $A=1000$MHz, we can calculate the splitting between the $F=4$ and $F=5$ levels: 
@@ -785,6 +784,8 @@ W_{F=4}-W_{F=5}&=5000 \quad \mathrm{MHz}.
 \end{align}
 
 Furthermore, we can calculate the hyperfine splitting for all the $^2$P$_{3/2}$ states, which is contained in Table \ref{tableOfHyperfinedeetuings}.
+
+\footnotetext{Ref.\cite{safronova2photon} reports $B/Q$ as 271MHz$/$b and also says that $Q=0.327(24)$b. We multiplied 271MHz$/$b$\times 0.327(24)$b$=88.68$ MHz, to get the value that appears here.}%NOTICE: IDK how to get this footnote to be guaranteed to appear on the right page.}
 
 \begin{table}[h]
 \centering
@@ -877,7 +878,7 @@ J_{12} & J_1 & k
 \end{Bmatrix},
 \end{multline}
 %where we have used $J_{1(2)}$ is the initial quantum number for $\mathbf{J}_{1(2)}$ and $J_{1(2)}'$
-where we have used $J_{1}$,$J_{2}$ and $J_{12}$ to refer to the initial values for their respective operators and $J_{1}'$,$J_{2}'$ and $J_{12}'$ correspond to the final values. The parameters $\gamma$ and $\gamma'$ respectively represent the initial and final values of all other quantum numbers that describe the system.
+where we have used $J_{1}$, $J_{2}$, and $J_{12}$ to refer to the initial values for their respective operators and $J_{1}'$, $J_{2}'$, and $J_{12}'$ correspond to the final values. The parameters $\gamma$ and $\gamma'$ respectively represent the initial and final values of all other quantum numbers that describe the system.
 
 %We will use this formula twice: once to separate out $I$ and $J$ from $F$ and then once to remove $J$ by splitting out the pieces related to $L$ and $S$.
 We will use this formula to separate out $I$ and $J$ from $F$.
@@ -947,9 +948,9 @@ We could use Eq.\,\ref{spectatorTheorem} again, making additional substitutions 
 %\end{Bmatrix}
 %\langle \gamma' L' ||\mathbf{r}^{(k)}|| \gamma L\rangle 
 %\end{multline}
-Now, we can calculate the Wigner 6j symbols using the SymPy module in Python\cite{sympy}\cite{rasch6j}.
+Now, we can calculate the Wigner 6j symbols using the SymPy module in Python\cite{sympy,rasch6j}.
  %\footnote{not sure how to cite: \url{http://docs.sympy.org/dev/modules/physics/wigner.html\#rasch03}}.
-We make our calculation in Table\,\ref{coefficient_calculated}. %Evaluating the Wigner 6j coefficients confirms the selection rules in Eq.\,\ref{FselectionRules}. 
+The results of this calculation are used in Table\,\ref{coefficient_calculated}. %Evaluating the Wigner 6j coefficients confirms the selection rules in Eq.\,\ref{FselectionRules}. 
 The code behind this calculation is included in Appendix\,\ref{sympy6jAppendix}.
 This allows us to calculate transition rates to specific hyperfine states in terms of the reduced dipole matrix elements that would be used for $J$ states.
 
@@ -1001,7 +1002,8 @@ $F'=6$, $F=5$&$0.5 \sqrt{13}$&1.80\\
 %\end{table}
 
 \subsection{Looking up relevant parameters} \label{lookItUp}
-We would like to carefully determine the value of the dipole moment matrix operator. According to Ref.\ \cite{safronova2photon} the magnitude of the dipole moment operator is -4.35075 a.u.(atomic units, $a_0 e$, where $a_0$ is the Bohr radius and $e$ the fundamental charge) as calculated using the all-order, relativistic SD method. It is useful to compare this to the value obtained from at least one other source.\footnote{It is easy to make simple mistakes regarding units and conventions.} According to the NIST atomic spectra database, $A_{ki}=1.41e8$ s$^{-1}$ \cite{NISTasd}. This is the Einstein A coefficient associated with the decays from this state. If this is the case, then we use this equation from Ref.\ \cite{demilleBudkerKimball}:  
+We would like to carefully determine the value of the dipole moment matrix operator. According to Ref.\ \cite{safronova2photon} the magnitude of the dipole moment operator is -4.35075 a.u.(atomic units, $a_0 e$, where $a_0$ is the Bohr radius and $e$ the fundamental charge) as calculated using the all-order, relativistic SD method. It is useful to compare this to the value obtained from at least one other source.%\footnote{It is easy to make simple mistakes regarding units and conventions.} 
+According to the NIST atomic spectra database, $A_{ki}=1.41e8$ s$^{-1}$ \cite{NISTasd}. This is the Einstein A coefficient associated with the decays from this state. If this is the case, then we use this equation from Ref.\ \cite{demilleBudkerKimball}:  
 \begin{equation}
 |\langle f ||d|| i \rangle|^2 = (4 \pi \epsilon_0) \frac{3 \hbar c^3}{4 \omega_0^3} (2 J'+1) A_{ki}\label{budkerAeqn}.
 \end{equation}
@@ -1059,9 +1061,9 @@ In order for the other laser to couple our upper state to the $F=4$ ground state
 \Rightarrow
 \langle F_i,m_{f,i},1,q_2|F=4,m_f=0 \rangle \neq 0 \label{thing2},
 \end{multline}
-where $q_1$ and $q_2$ represent the components of polarization of the light from Slave 1 and Slave 2 respectively. $q=0$ corresponds to linearly polarized light in the $z$ direction, while $q=\pm 1$ corresponds to circularly polarized light of different handedness.
+where $q_1$ and $q_2$ represent the components of polarization of the light from Slave 1 and Slave 2 respectively. Linearly polarized light in the $z$ direction is written as $q=0$, while $q=\pm 1$ corresponds to circularly polarized light of different handedness.
 
-Evaluating the coefficients by brute force, we see that this condition is met only for a handful of coefficients. These are tabulated in Table \ref{nonzeroCG}. Based on the values in the table, we see that we must ensure that our lasers are circularly polarized such that one provides $\sigma+$ light and the other provides $\sigma-$ light. Furthermore, we see that the only state with $F=5$ that we couple to will be the $m_f=1$ or $m_f=-1$ state. For concreteness, we opt for the $q_1=1$, $q_2=-1$,$m_{f,i}=1$ state. 
+Evaluating the coefficients by brute force, we see that this condition is met only for a handful of coefficients. These are tabulated in Table \ref{nonzeroCG}. Based on the values in the table, we see that we must ensure that our lasers are circularly polarized such that one provides $\sigma+$ light and the other provides $\sigma-$ light. Furthermore, we see that the only state with $F=5$ that we couple to will be the $m_f=1$ or $m_f=-1$ state. For concreteness, we opt for $q_1=1$, $q_2=-1$ light driving transitions via the $m_{f,i}=1$ state. 
 
 \begin{table}[h!]
 \centering
@@ -1084,8 +1086,7 @@ $F_i$ & $q_1$ & $q_2$ & $m_{f,i}$&$\langle F=5,m_f=0,1,q_1|F_i,m_{f,i}\rangle$&$
 We can use the derived formulae above to calculate the necessary beam geometries. %We can compare this to Chris' thesis.
 
 First of all, we calculate our on-resonance Rabi frequencies. We will calculate the following values:
-
-By combining Eqs.\,\eqref{wignerEckartForUs}, \eqref{afterSpectators}, we get that  
+By combining Eqs.\,\eqref{wignerEckartForUs} and \eqref{afterSpectators}, we get that  
 \begin{multline}
 \langle F',I',J',L',S',m_f'|d^{(1)}_q|F,I,J,L,S,m_f\rangle =\langle n'L' S J'||T^{(k)}|| n L S J\rangle\\
 \times (-1)^{J'+I+J+k}\sqrt{2F+1}\sqrt{2F'+1}
