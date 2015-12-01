@@ -46,7 +46,7 @@ The selection of laser diodes required a few iterations before I found diodes th
 
 \subsection{Grating spectrometer wavelength measurements}
 \label{gratingSpectrometerWavelengthMeasurements}
-In order to tune the master laser to precisely the correct wavelength and to measure the room-temperature, free-running wavelength of the uncharacterized lasers (i.e. the lasers that were bought on eBay and later used in the slave lasers), I used a compact grating spectrometer from the Ocean Optics USB2000 series to measure the center frequency of the free-running laser diodes. This spectrometer uses a diffraction grating to separate light based on its constituent wavelengths. Light scattered off the diffraction grating is detected by a CCD array consisting of 2048 pixels that is also enclosed in the spectrometer. The average difference in wavelength between adjacent pixels is $\sim$.061 nm. % This according to /research/octave/ooSpectrumData12Sep/MasterFile.m using the lambdas variable defined in there.
+In order to tune the master laser to precisely the correct wavelength and to measure the room-temperature, free-running wavelength of the uncharacterized lasers (i.e. the lasers that were bought on eBay and later used in the slave lasers), I used a compact grating spectrometer from the Ocean Optics USB2000 series to measure the center frequency of the free-running laser diodes. This spectrometer uses a diffraction grating to separate light into its constituent wavelengths. Light scattered off the diffraction grating is detected by a CCD array consisting of 2048 pixels that is also enclosed in the spectrometer. The average difference in wavelength between adjacent pixels is $\sim$.061 nm. % This according to /research/octave/ooSpectrumData12Sep/MasterFile.m using the lambdas variable defined in there.
 
 \begin{figure}
 \centering
@@ -177,10 +177,11 @@ where $m$ is an integer, $L$ is the length of the external cavity and $\lambda$ 
 %\end{equation}.
 %some better piezoratio
 
-We note that $L$ and $\theta$ are both functions of the displacement of the piezo actuators. For small changes in $L$ and $\theta$, we can assume that the piezoelectric actuators need to provide displacements in a constant ratio. That is, if we let $x_1$ be the displacement of the linear actuator on one side from its initial position and allow $x_2$ to be the displacement of the linear actuator on the other side, we define the Piezo ratio $R$ as 
+We note that $L$ and $\theta$ are both functions of the displacement of the piezo actuators. For small changes in $L$ and $\theta$, we can assume that the piezoelectric actuators need to provide displacements in a constant ratio. That is, if we let $x_1$ be the displacement of the linear actuator on one side from its initial position and allow $x_2$ to be the displacement of the linear actuator on the other side, we define the piezo ratio $R$ as 
 \begin{equation}
 \label{Rdefinded}
-\textnormal{piezo ratio}=x_2/x_1.
+%\textnormal{piezo ratio}
+R=x_2/x_1.
 \end{equation}
 We would like to find some value of $R$ such that
 \begin{equation}
@@ -190,7 +191,7 @@ or, taking $x_1\rightarrow R x_1$ as in Eq.\,\eqref{Rdefinded},
 \begin{equation}
     \frac{d\lambda}{d \theta(x_1,R x_1)}= \frac{d \lambda}{d L(x_1,R x_1)}.
 \end{equation}
-where $\theta(x_1,x_2)=\theta(x_1,R x_1)$ is the angle at which the grating is rotated relative to its initial position as a function of the piezo displacements, or as a function of the piezo ratio and the displacement of one of the piezoelectric actuators. $L(x_1,R x_2)=L(x_1,R x_1)$ is the length of the cavity as a function of the same two variables.
+where $\theta(x_1,x_2)=\theta(x_1,R x_1)$ is the angle at which the grating is rotated relative to its initial position as a function of the piezo displacements, or as a function of the piezo ratio and the displacement of one of the piezoelectric actuators. $L(x_1, x_2)=L(x_1,R x_1)$ is the length of the cavity as a function of the same two variables.
 This problem depends heavily on the geometry of the system. The solution involves a lot of terms and geometric bookkeeping. Our model is detailed in a well-commented Mathematica Notebook included in Appendix\,\ref{GratingRatioAppendix}. The result is that we calculate that $R=0.478755$ is the ratio between the displacement of our piezoelectric actuators that will rotate and move the grating properly given the geometry of our grating mount. In practice, we would fine tune this ratio by scanning the piezos and iteratively making adjustments to maximize the size of the range over which the laser operates single mode. However, the calculation is nice to have since it gives a good starting point. The calculation is also useful because some diffraction grating mount geometries result in surprising ratios (for example, one of the lasers discussed in Ref.\,\cite{cjeDiss} required that the piezos scan in opposite directions (i.e. have a negative ratio), which required a change to the scan balancer circuitry).
 
 

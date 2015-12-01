@@ -14,7 +14,7 @@ The output of the photo diode is sent to an oscilloscope that is triggered by th
 
 If we scan about $\sim$2$\mu$m, we expect that the peaks corresponding to our 408 nm lasers will go in in and out of resonance $\sim$5 times. Therefore, we would expect that in the oscilloscope trace, the same peak should be repeated approximately five times. For this cavity, the free spectral range is 187 MHz. This means that the distance between two peaks from the the same spectral component of the light in our scan will correspond to the distance that any given peak would move by if it were detuned by 187 MHz. This gives us a natural scale by which to judge the movement of peaks. 
 
-However, note that the detunings relevant to this experiment are on the order of GHz, which is much less than the free spectral range of the cavity. This simply means that two nearby peaks coming from different lasers are from different orders of longitudinal mode. 
+However, note that the detunings relevant to this experiment are on the order of GHz, which is much larger than the free spectral range of the cavity. This simply means that two nearby peaks coming from different lasers are from different modes of the spectrum analyzer. 
 
 %fsr corresponds to different lengths for different lasers 
 
@@ -28,7 +28,7 @@ First, when we look at one slave and the master laser on the spectrum analyzer a
     \centerline{\includegraphics{Slave2AndMasterScanningMaster}}
     %\includegraphics[totalheight=0.3\textheight]{testfigure}
     \caption[Slave laser and master laser frequencies tracking together]{\label{fig:slaveMaster}
-    The slave and master laser on the spectrum analyzer. The y axis is the signal on the spectrum analyzer. There are three traces here, each showing the master laser at a different frequency. The slave laser is the taller peak, while the other peak belongs to the master laser. The peaks corresponding to the master laser and the slave laser move together. Each trace is offset in order to make it visible}
+    The slave and master laser on the spectrum analyzer. The y axis is the signal on the spectrum analyzer. There are three traces here, each showing the master laser at a different frequency. The slave laser is the taller peak, while the other peak belongs to the master laser. The peaks corresponding to the master laser and the slave laser move together. Each trace is offset in the $y$ direction in order to make it visible.}
 \end{figure}
 
 \section{Verifying that the slave frequencies can be adjusted with the RF oscillator}
@@ -68,6 +68,6 @@ To summarize: I have built a laser system capable of driving stimulated Raman tr
 
 In order to ensure that the 408 nm 5 GHz detuned laser system works, we will need to actually drive stimulated Raman transitions in $^{87}$Sr$^+$. Completion of this requires the completion of the LVIS and other parts of the experiment. Getting the transition rate right will also likely require tweaks to many of the parameters of the current system. There are also additional optics that need to be installed to get the beams produced by this laser system to the atomic chamber. We will need to split the beams and then install optics to control their phase. 
 
-The 408 nm 5GHz detuned laser system could be improved in many ways. One thing that would be a great benefit is to increase the amount of time that the laser can operate without mode hopping. There was a technique described in Ref.\,\cite{chiowChuLock} for improving the stability of an ECDL by creating a closed feedback loop to monitor and minimize the laser's amplitude noise. I developed some circuitry and took some data to investigate a variation on this which could potentially be applied to injection locked lasers, but this is not included in this thesis. 
+The 408 nm 5 GHz detuned laser system could be improved in many ways. One thing that would be a great benefit is to increase the amount of time that the laser can operate without mode hopping. There was a technique described in Ref.\,\cite{chiowChuLock} for improving the stability of an ECDL by creating a closed feedback loop to monitor and minimize the laser's amplitude noise. I developed some circuitry and took some data to investigate a variation on this which could potentially be applied to injection locked lasers, but this is not included in this thesis. 
 
 

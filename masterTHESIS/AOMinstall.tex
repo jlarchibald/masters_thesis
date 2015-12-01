@@ -45,11 +45,11 @@ We can model the laser as a Gaussian beam. Gaussian beams have the property that
 \label{GaussianIntensity34}
     I(\mathbf{r})=I_0\exp\left(-\frac{2r^2}{w(z)^2}\right),
 \end{equation}
-where $z$ and $r$ are cylindrical polar coordinates. $z$ represents position along the axis of propagation with the point $z=0$ defined to be the point along the beam path at which the beam is narrowest, while $r$ is the coordinate describing the distance from the $z$ axis. $I_0$ represents the intensity of the beam at $z=0, r=0$ and $w(z)$ is a function that gives the radius of the Gaussian beam, which is given by:
+where $z$ and $r$ are cylindrical polar coordinates. The variable $z$ represents position along the axis of propagation with the point $z=0$ defined to be the point along the beam path at which the beam is narrowest, while $r$ is the coordinate describing the distance from the $z$ axis. $I_0$ represents the intensity of the beam at $z=0, r=0$ and $w(z)$ is a function that gives the radius of the Gaussian beam, which is given by:
 \begin{equation}
 w(z)=w_0\sqrt{1+\frac{z^2}{z_R^2}}\label{beamwaist1D}.
 \end{equation}
-The beam radius, $w(z)$, is also the distance from the center of the beam to the point where the intensity of the beam has fallen by a factor of $1/e^2$ (i.e. the spot size). While the Rayleigh range is denoted $z_R$, and also satisfies the relation 
+The beam radius, $w(z)$, is also the distance from the center of the beam to the point where the intensity of the beam has fallen by a factor of $1/e^2$ (i.e. the spot size). The Rayleigh range is denoted $z_R$, and also satisfies the relation 
 \begin{equation}
 z_R=\pi w_0^2/\lambda \label{rayleighRange1D}.
 \end{equation}
@@ -59,7 +59,7 @@ A slight modification of Eq.\,\eqref{GaussianIntensity34} allows us to model ell
 \end{equation}
 Here, there are two relevant beam radii, $w_x$ in the $x$ direction and $w_y$ in the $y$ direction. Each of these has an associated Rayleigh range $z_{Rx}$ and $z_{Ry}$, and each satisfies relations analogous to Eqs.\,\eqref{beamwaist1D},\eqref{rayleighRange1D}.
 
-I can measure the Gaussian beam radius in one dimension using a standard knife-edge technique. This involves placing a photo diode in the path of the beam. A razor blade is then moved perpendicular to the beam in a controlled way such that the beam is partially blocked. The blade is then moved across the laser beam in a direction perpendicular to the blade's edge to several different locations. For each razor blade position, the power incident on the photo diode is measured. By integrating Eq.\,\ref{eqForI}, we get
+I can measure the Gaussian beam radius in one dimension using a standard knife-edge technique. This involves placing a photo diode in the path of the beam. A razor blade is then moved perpendicular to the beam in a controlled way such that the beam is partially blocked. The blade is then moved across the laser beam in a direction perpendicular to the blade's edge to several different locations. For each razor blade position $x$ the power incident on the photo diode is measured. By integrating Eq.\,\ref{eqForI}, we get
 %picture?
 
 \begin{equation}
@@ -74,7 +74,7 @@ Because I was planning to operate the AOM relatively close to its damage thresho
 
 Siegman \cite{SiegmanBeamQuality} discusses the characterization of beams in terms of a quantity that is known simply as ``$M^2$.'' One way to interpret $M^2$ is that it serves as a measure of how Gaussian a beam is. If a beam is Gaussian, $M^2=1$. If a beam contains higher order Laguerre-Gaussian modes, $M^2$ will be greater than 1. In Ref.\,\cite{SiegmanBeamQuality}, Siegman asserts that any beam comprised of Laguerre-Gaussian modes can be mathematically proven to propagate according to the following equation:
 \begin{equation}
-W_x^2=W_{0x}^2+\left( \frac{M_x^2 \,\lambda}{\pi \, W_{0x}}\right)^2 (z-z_{0x})^2 \label{SiegmanBeamPropagate01}
+W_x^2=W_{0x}^2+\left( \frac{M_x^2 \,\lambda}{\pi \, W_{0x}}\right)^2 (z-z_{0x})^2 \label{SiegmanBeamPropagate01}.
 \end{equation}
 The $z$ coordinate of the $x$-direction beam waist is given by $z_{0x}$. The spot size parameter (radius) of the beam in the $x$ direction is represented by $W_x(z)$, which can be written as  
 \begin{equation}
@@ -97,7 +97,7 @@ I tried allowing $M^2$ to be one of my fit parameters as I analyzed data from th
 
 However, I did consider the implications on the beam if $M^2\neq 1$. I can look at the effective slope of divergence by rearranging Eq.\ \ref{SiegmanBeamPropagate00} and taking the limit as $(z-z_R) \rightarrow \infty$
 \begin{equation}
-\frac{\sigma_x}{z-z_R}=M_x^2 \frac{\lambda }{4 \pi \sigma_{0x}} \label{SiegmanBeamSlope}
+\frac{\sigma_x}{z-z_R}=M_x^2 \frac{\lambda }{4 \pi \sigma_{0x}} \label{SiegmanBeamSlope}.
 \end{equation}
 %note: check this again. 
 %does z0 matter as a fit parameter? I don't think so. 
@@ -138,8 +138,8 @@ The light from the laser head is emitted and collimated by a lens\footnote{Thorl
 The propagation of the light from the laser diode to the collimating lens can be represented by the matrix
 \begin{equation}
 \begin{bmatrix}\label{ABCD1}
-1 & d_1 \\ 0 & 1,
-\end{bmatrix}
+1 & d_1 \\ 0 & 1
+\end{bmatrix},
 \end{equation}
 where $d_1$ represents the distance between the face of the laser and the collimating lens. The effect of the collimating lens is represented by the following ABCD matrix:
 \begin{equation}
@@ -157,9 +157,9 @@ In order to be complete, I will evaluate the outgoing beam properties over the e
 \end{bmatrix},
 \end{equation}
 where $d_2$ represents the total distance the beam travels from the face of the laser diode up until it reaches the lens that focuses it into the AOM. Thus, $d_2-d_1$ represents the distance from the collimating lens of the master laser to the lens that focuses the beam into the AOM. 
-I estimate the the effective distance of propagation should be on the order of 1 m. To be safe, I will ultimately examine what happens for all beam paths between 0.5 m and 2 m. 
+I estimate that the effective distance of propagation should be on the order of 1 m. To be safe, I will ultimately examine what happens for all beam paths between 0.5 m and 2 m. 
 
-Finally, the beam is then focused by a lens with focal length 10 cm and passed through the AOM. The focusing of the 10cm focal length lens is represented by
+Finally, the beam is focused by a lens with focal length 10 cm and passed through the AOM. The focusing of the 10cm focal length lens is represented by
 \begin{equation}
 \begin{bmatrix}\label{ABCD4}
 1 & 0 \\ -1/f_{f} & 1
@@ -192,7 +192,7 @@ Finding the resulting ray transfer matrix that describes the system involves sim
 From this analysis, I calculated the effective area of the beam for many values of $d_1$ and $d_2$. For each of these values, I calculated the corresponding ratio between the intensity at the most intense part of the beam and the total power in the beam. The way to interpret this is that if we have a constant amount of power, the ratio shows how much the maximum intensity of the beam changes for different beam parameters. The data in Fig.\,\ref{waists111} shows that the maximum intensity of the beam changes smoothly as a function of $d_2$ and that for small drifts in $d_2$, the changes in the beam's maximum intensity are reasonable. 
 %what about the position of the minimum? 
 %If the calculations are correct, %what am I? A cartoon? 
-Figure\,\ref{waists2} shows a plot of the effective area of the beam as a function of $d_1$ (the distance from laser face to collimating lens). The effective area is given by the expression $\pi W_{0x}W_{0y}/2$. The intensity at the center of the beam waist, $I_{max}$ is given by $I_{max}=\textnormal{power}/\textnormal{effective area}$. Figure\,\ref{waists2} shows that the effective area of the beam is sharply peaked when $d_1=f_a$, which means that the intensity is at a local minimum. If we assume that the laser was reasonably well-collimated when we did the initial optimization, we can deduce that the intensity of the laser at its focus will increase if the distance $d_1$ were to drift in the actual setup. Thus, any adjustment to $d_1$ should be accompanied by a reassessment of the power and waist of the beam hitting the AOM. The extent to which the beam is collimated can be evaluated visually by shining the beam on a wall that is about $\sim$1m away. The collimating lens on the laser is mounted on a mount that fits into a 40 turns/inch threaded hole. Adjustments to the collimation are made by turning the lens holder.  Based on my experience collimating the laser, I am relatively confident that I can get the lens holder to within 1/10 of a turn of where it needs to be to collimate the laser perfectly.  An accuracy of 1/10 turn corresponds to getting the distance $d_1$ to within 0.010 mm of the focal length of the collimating lens. Clearly, this places $d_1$ somewhere within the main spike on the plot in Figure\,\ref{waists2}, but it does not lend enough confidence in the repeatability of this adjustment to allow an experimenter to forego reassessing the beam parameters at the AOM. 
+Figure\,\ref{waists2} shows a plot of the effective area of the beam as a function of $d_1$ (the distance from laser face to collimating lens). The effective area is given by the expression $\pi W_{0x}W_{0y}/2$. The intensity at the center of the beam waist, $I_{max}$ is given by $I_{max}=\textnormal{power}/\textnormal{effective area}$. Figure\,\ref{waists2} shows that the effective area of the beam is sharply peaked when $d_1=f_a$, which means that the intensity is at a local minimum. If we assume that the laser was reasonably well-collimated when we did the initial optimization, we can deduce that the intensity of the laser at its focus will increase if the distance $d_1$ were to drift in the actual setup. Thus, any adjustment to $d_1$ should be accompanied by a reassessment of the power and waist of the beam hitting the AOM. The extent to which the beam is collimated can be evaluated visually by shining the beam on a wall that is about $\sim$1 m away. The collimating lens on the laser is mounted on a mount that fits into a 40 turns/inch threaded hole. Adjustments to the collimation are made by turning the lens holder.  Based on my experience collimating the laser, I am relatively confident that I can get the lens holder to within 1/10 of a turn of where it needs to be to collimate the laser perfectly.  An accuracy of 1/10 turn corresponds to getting the distance $d_1$ to within 0.010 mm of the focal length of the collimating lens. Clearly, this places $d_1$ somewhere within the main spike on the plot in Figure\,\ref{waists2}, but it does not lend enough confidence in the repeatability of this adjustment to allow an experimenter to forego reassessing the beam parameters at the AOM. 
 
 \begin{figure}
     %\centerline{\includegraphics[trim=100pt 100pt 100pt 100pt, clip=true, totalheight=0.5\textheight,angle=90]{testfigure}}
