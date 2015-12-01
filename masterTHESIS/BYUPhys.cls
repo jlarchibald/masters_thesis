@@ -377,8 +377,8 @@
     }
 
 % These packages typeset the thesis with Times Roman font
-%\usepackage[T1]{fontenc}
-%\usepackage{mathptmx}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
 
 % Allow the inclusion of graphics
 \usepackage{graphicx}
