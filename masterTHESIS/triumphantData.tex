@@ -4,15 +4,15 @@ The injection locking was successful and I successfully produced two working bea
 
 \section{Brief note on data from the spectrum analyzer}
 
-The main way that we can see if the lasers are working properly is to couple them to the spectrum analyzer, which was discussed in Section\,\ref{spectAnalayzer} and Appendix\,\ref{SpectrumAnalyzerAppendix}. The spectrum analyzer is an optical cavity whose length is being changed as a function of time. A photodiode on the end of the spectrum analyzer captures a signal that is proportional to the transmission through the spectrum analyzer cavity. This signal is read on an oscilloscope.
+The main way that we can see if the lasers are working properly is to couple them to the spectrum analyzer, which was discussed in Section\,\ref{spectAnalayzer} and Appendix\,\ref{SpectrumAnalyzerAppendix}. The spectrum analyzer is an optical cavity whose length is being changed as a function of time. A photo diode on the end of the spectrum analyzer captures a signal that is proportional to the transmission through the spectrum analyzer cavity. This signal is read on an oscilloscope.
 
 For all of the data in this thesis, the length of the spectrum analyzer was modulated in a sawtooth pattern. Thus, the length of the cavity changed at a constant speed over some interval before being quickly brought back to its original length. A typical scan typically involves changing the length of the cavity by $\sim$3$\mu$m. 
 
 %todo: put in a picture of the cavity
 
-The output of the photodiode is sent to an oscilloscope that is triggered by the frequency generator that also modulates the piezoelectric actuators on the spectrum analyzer. Therefore, typical data from the spectrum analyzer is a trace from an oscilloscope. The $y$ axis represents signal from the photodiode, while the $x$ dimension represents time elapsed since the last triggering event. The $x$ axis values in the regimes shown in Figures\,\ref{fig:slaveMaster} and \ref{fig:typicaldata} are also proportional to the change in length of the cavity becuase the cavity length is changing linearly as a function of time during the parts of the scan that I am showing. Because each sweep of the sawtooth function generator and piezo driver is identical, we can safely compare subsequent traces to track the relative frequency changes of any given peak. 
+The output of the photo diode is sent to an oscilloscope that is triggered by the frequency generator that also modulates the piezoelectric actuators on the spectrum analyzer. Therefore, typical data from the spectrum analyzer is a trace from an oscilloscope. The $y$ axis represents signal from the photo diode, while the $x$ dimension represents time elapsed since the last triggering event. The $x$ axis values in the regimes shown in Figures\,\ref{fig:slaveMaster} and \ref{fig:typicaldata} are also proportional to the change in length of the cavity because the cavity length is changing linearly as a function of time during the parts of the scan that I am showing. Because each sweep of the sawtooth function generator and piezo driver is identical, we can safely compare subsequent traces to track the relative frequency changes of any given peak. 
 
-If we scan about $\sim$2$\mu$m, we expect that the peaks corresponding to our 408 nm lasers will go in in and out of resonance $\sim$5 times. Therefore, we would expect that in the oscilloscope trace, the same peak should be repeated approximatly five times. For this cavity, the free spectral range is 187 MHz. This means that the distance between two peaks from the the same spectral component of the light in our scan will correspond to the distance that any given peak would move by if it were detuned by 187 MHz. This gives us a natural scale by which to judge the movement of peaks. 
+If we scan about $\sim$2$\mu$m, we expect that the peaks corresponding to our 408 nm lasers will go in in and out of resonance $\sim$5 times. Therefore, we would expect that in the oscilloscope trace, the same peak should be repeated approximately five times. For this cavity, the free spectral range is 187 MHz. This means that the distance between two peaks from the the same spectral component of the light in our scan will correspond to the distance that any given peak would move by if it were detuned by 187 MHz. This gives us a natural scale by which to judge the movement of peaks. 
 
 However, note that the detunings relevant to this experiment are on the order of GHz, which is much less than the free spectral range of the cavity. This simply means that two nearby peaks coming from different lasers are from different orders of longitudinal mode. 
 
@@ -41,7 +41,7 @@ I performed an experiment where I adjusted the driving frequency of the rf frequ
 
 
 %where is the energy going? I think it goes from reflecting to transmitting
-%I'm curious about finding the contribution to the linewidth of the cavity from the peaks.
+%I'm curious about finding the contribution to the line width of the cavity from the peaks.
  
 \begin{figure}
     %\centerline{\includegraphics[trim=100pt 100pt 100pt 100pt, clip=true, totalheight=0.5\textheight,angle=90]{testfigure}}
@@ -49,7 +49,7 @@ I performed an experiment where I adjusted the driving frequency of the rf frequ
     \centerline{\includegraphics{sampleOffsetData}}
     %\includegraphics[totalheight=0.3\textheight]{testfigure}
     \caption[Scans of slave lasers for several rf oscillator frequencies]{\label{fig:typicaldata}
-Scans of slave lasers for several rf oscillator frequencies. I changed the detuning on the frequency generator in 10 MHz increments between capturing each of these traces. The $y$ axis represents transmission through the spectrum analyzer cavity as measured by the photodiode and is presented in arbitrary units with the traces offset to enhance visibility. The $x$ axis represents time during the cavity scan. As the detuning changes, the distance between the two peaks shifts, thereby proving that the detuning between the slave laser and the master laser is controlled by the AOM and rf frequency generator.}
+Scans of slave lasers for several rf oscillator frequencies. I changed the detuning on the frequency generator in 10 MHz increments between capturing each of these traces. The $y$ axis represents transmission through the spectrum analyzer cavity as measured by the photo diode and is presented in arbitrary units with the traces offset to enhance visibility. The $x$ axis represents time during the cavity scan. As the detuning changes, the distance between the two peaks shifts, thereby proving that the detuning between the slave laser and the master laser is controlled by the AOM and rf frequency generator.}
 \end{figure}
 
 %\begin{figure}
@@ -60,7 +60,7 @@ Scans of slave lasers for several rf oscillator frequencies. I changed the detun
 
 %Also, I have data that I can analyze to examine the feasibility of a Chu lock. I recorded 999 traces that showed the output of the spectrum analyzer, the current and the voltage. I recorded these over several hours, during which the laser drifted into and out of good, single mode operation. In principle, this data could be analyzed. 
 
-We have shown that we can change the rf oscillator frequency and thereby change the detuning. There are two limiting factors on the extent that we can do this. (Notice in Fig.\ \ref{fig:typicaldata} that the peaks get small as we continue to detune.) Both factors are geometrical in nature: First, the AOM diffraction efficiency decreases because the Bragg angle changes. Second, the diffraction angle changes, leading to a misalignment of the injected beams and a weakening of injection. However, even for large detunings, the injection lock can be achieved simply by realigning the output beams. We demonstrated this by successfully tuning the AOM driving frequency to the point where injection was lost, realigning (using the lasers as photodiodes) and then reachieving successful injection lock.
+We have shown that we can change the rf oscillator frequency and thereby change the detuning. There are two limiting factors on the extent that we can do this. (Notice in Fig.\ \ref{fig:typicaldata} that the peaks get small as we continue to detune.) Both factors are geometrical in nature: First, the AOM diffraction efficiency decreases because the Bragg angle changes. Second, the diffraction angle changes, leading to a misalignment of the injected beams and a weakening of injection. However, even for large detunings, the injection lock can be achieved simply by realigning the output beams. We demonstrated this by successfully tuning the AOM driving frequency to the point where injection was lost, realigning (using the lasers as photo diodes) and then re-achieving successful injection lock.
 
 \section{Summary and future work}
 To summarize: I have built a laser system capable of driving stimulated Raman transitions between the $F=4$ and $F=5$ hyperfine levels of $^{87}$Sr$^+$. I successfully tuned and stabilized the master laser. Using an AOM, I generated two shifted beams that I used to injection lock two other lasers (slave 1 and slave 2).

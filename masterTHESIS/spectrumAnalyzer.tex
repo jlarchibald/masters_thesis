@@ -7,19 +7,19 @@ In this Appendix, we discuss the Fabry-Perot spectrum analyzer that we built to 
 One of the mirrors is mounted on a Thorlabs kinematic piezo mount and attached to a piezo driver designed specifically for spectrum analyzers.
 
 The cavity is designed to be nearly semiconfocal.%\footnote{I used to think that this was because the transverse modes of a semiconfocal cavity overlap. However, it seems that a concentric cavity would be more likely to have this property. Oh wait. I get it. The semiconfocal cavity has all its transverse modes very small.} 
-This is because a semiconfocal configuration is one of several in which many modes are degenerate, such that liht coupling to different transverse modes come into resonnance at the same frequency. This makes it possible to get very sharp, clear features without having to carefully couple to one specific transverse mode of the cavity. 
+This is because a semiconfocal configuration is one of several in which many modes are degenerate, such that light coupling to different transverse modes come into resonance at the same frequency. This makes it possible to get very sharp, clear features without having to carefully couple to one specific transverse mode of the cavity. 
 
 %\footnote{How do I know whether I'm semiconfocal for all practical purposes? I mean, somehow lower finesse should make me less sensitive to small variations in the cavity length. Furthermore, are there models where the errors never really go away? You know? I guess I mean where it doesn't just become part of the noise. I suppose chaos is one example of this--where arbitrarily high precision is needed to predict even the macroscopic behavior of the system. Is any aspect of this system chaotic?}
 
 \section{Free spectral range basics}
 The Free Spectral Range (FSR) of the cavity is defined as the difference in frequency between adjacent resonant longitudinal modes of the cavity. It always works out to be $c/2L$. 
-It is easy to condsider the example of a one-dimensional cavity with just one transverse mode. If we suppose that we have some wavelength $\lambda$ that is resonant with our cavity, then the resonant condition would be that 
+It is easy to consider the example of a one-dimensional cavity with just one transverse mode. If we suppose that we have some wavelength $\lambda$ that is resonant with our cavity, then the resonant condition would be that 
 \begin{equation}
 m\lambda=2L,
 \end{equation}
 where $m$ is an integer and $L$ is the cavity length (center to center distance between the surfaces of the cavity mirrors). In other words, we require that for a mode to be resonant with our cavity, the total optical path length of a trip around the cavity (in this case, twice the cavity length) must be divisible by the wavelength of the light. 
 
-We can find other wavelengths of light that satisfy the resonance condition. So, for example, we might be able to find some wavelength $\lambda'$ that satisifes
+We can find other wavelengths of light that satisfy the resonance condition. So, for example, we might be able to find some wavelength $\lambda'$ that satisfies
 \begin{equation}
 (m+1)\lambda'=2L.
 \end{equation}
@@ -117,7 +117,7 @@ Since $m$,$n$ and $q$ are all integers, we see that the resonant modes will be i
 %the confocal configuration that is illustrated by this equation. In the confocal configuration, both mirrors are identical and are placed so that their focal points coincide. This means that $L=R_1/2=R_2/2$ and thus $g_1=1-L/R_1=g_2=1-L/(2L-R_2)$. Therefore, $\sqrt{g_1g_2}=0$, making the free spectral range of the cavity $c/4L$. However, note that if $L$ changes, then the sign of $g_1$ changes, leading to a kink in the frequency response. With a semiconfocal cavity, there is no such discontinuity. This makes the expansion in the next section slightly easier. 
 \section{Modelling the actual spectrum analyzer}
 
-The spectrum analyzer works by allowing us to change the cavity length and thereby go into and out of resonance with different wavelengths of light. The above discussion is valid for calculating what frequencies will couple to a fixedcavity, but we would like to verify that coupling a fixed frequency into a cavity of variable length will give us essentially the same thing.
+The spectrum analyzer works by allowing us to change the cavity length and thereby go into and out of resonance with different wavelengths of light. The above discussion is valid for calculating what frequencies will couple to a fixed cavity, but we would like to verify that coupling a fixed frequency into a cavity of variable length will give us essentially the same thing.
 
 %FNote, however, that both confocal and semiconfocal cavities remain good, stable cavities as their lengths are scanned since the condition for cavity stability is that $0\leq g_1 g_2 \leq 1$. 
 
@@ -145,7 +145,7 @@ We now make a Taylor expansion of Eq.\ \ref{eqModeF_ready_for_expansion} using M
 \biggr).
 \end{align*}
 The coefficient for the first order expansion in terms of $\epsilon$ contains integers $m$,$n$ and $q$ as we expect. 
-However, it might seem unnerving at first that it also contains coefficents like $2/\pi$ that are of order unity! The reason this is ok is that $q\gg m,n$. We know this is the case for two reasons: First, the Laguerre Gaussian modes are derived using the paraxial wave approximation. The paraxial wave equation assumes solutions of the form
+However, it might seem unnerving at first that it also contains coefficients like $2/\pi$ that are of order unity! The reason this is ok is that $q\gg m,n$. We know this is the case for two reasons: First, the Laguerre Gaussian modes are derived using the paraxial wave approximation. The paraxial wave equation assumes solutions of the form
 \begin{equation}
 \vec{E}(\vec{r},t)\approx \mathcal{E}(\vec{r})\exp[i(kz-\omega t)],
 \end{equation}
