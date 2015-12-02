@@ -259,11 +259,16 @@
   Url                      = {http://link.aps.org/doi/10.1103/PhysRev.30.705}
 }
 
-@Unpublished{DeMille_presentation,
+@Misc{DeMille_presentation,
   Title                    = {Selection rules, Wigner-Eckhart, and all that},
-  Author                   = {DeMille, David},
-  Note                     = {Not sure who authored this.},
 
+  Author                   = {DeMille, David},
+  HowPublished             = {\url{http://www.yale.edu/demillegroup/sharedfiles/Phys687/Selection-rules-and-Wigner-Eckhart-and-Tensor-Operators.pdf}},
+  Month                    = {March},
+  Note                     = {retrieved 2015-12-01},
+  Year                     = {2013},
+
+  Comment                  = {From the metadata we know it was by DeMille.},
   Owner                    = {jlarchibald},
   Timestamp                = {2015.08.05},
   Url                      = {http://www.yale.edu/demillegroup/sharedfiles/Phys687/Selection-rules-and-Wigner-Eckhart-and-Tensor-Operators.pdf}
@@ -682,6 +687,8 @@
   Title                    = {Physics of Light and Optics},
   Author                   = {Justin Peatross and Michael Ware},
   Year                     = {2009},
+  Edition                  = {2009},
+  Note                     = {available at \url{http://optics.byu.edu/textbook.aspx}},
 
   Bdsk-file-1              = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDRBWJGNsYXNzV05TLmtleXNaTlMub2JqZWN0c4AHog4PgAKAA6IREoAEgAVccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QMy4uLy4uLy4uL3JlZmVyZW5jZS9xdWlja1JlZmVyZW5jZS9CWVVPcHRpY3NCb29rLnBkZtIJFxgZV05TLmRhdGGABk8RAZ4AAAAAAZ4AAgAACWFyY2hpYmFsZAAAAAAAAAAAAAAAAAAAAAAAAMdyndNIKwAAAAuGNxFCWVVPcHRpY3NCb29rLnBkZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIO/Kx5nSHAAAAAAAAAAAAAMAAwAACSAAAAAAAAAAAAAAAAAAAAAOcXVpY2tSZWZlcmVuY2UAEAAIAADHcvIzAAAAEQAIAADHmiZ8AAAAAQAQAAuGNwAJleAABavLAACRnwACAD1hcmNoaWJhbGQ6VXNlcnM6amw6cmVmZXJlbmNlOnF1aWNrUmVmZXJlbmNlOkJZVU9wdGljc0Jvb2sucGRmAAAOACQAEQBCAFkAVQBPAHAAdABpAGMAcwBCAG8AbwBrAC4AcABkAGYADwAUAAkAYQByAGMAaABpAGIAYQBsAGQAEgAzVXNlcnMvamwvcmVmZXJlbmNlL3F1aWNrUmVmZXJlbmNlL0JZVU9wdGljc0Jvb2sucGRmAAATAAEvAAAVAAIACf//AADSGxwdHlokY2xhc3NuYW1lWCRjbGFzc2VzXU5TTXV0YWJsZURhdGGjHR8gVk5TRGF0YVhOU09iamVjdNIbHCIjXE5TRGljdGlvbmFyeaIiIF8QD05TS2V5ZWRBcmNoaXZlctEmJ1Ryb290gAEACAARABoAIwAtADIANwBAAEYATQBUAFwAZwBpAGwAbgBwAHMAdQB3AIQAjgDEAMkA0QDTAnUCegKFAo4CnAKgAqcCsAK1AsICxQLXAtoC3wAAAAAAAAIBAAAAAAAAACgAAAAAAAAAAAAAAAAAAALh},
   Date-added               = {2013-03-04 10:08:05 -0600},
@@ -1034,7 +1041,7 @@
   Title                    = {Gaussian Beam Optics},
   HowPublished             = {\url{http://physics111.lib.berkeley.edu/Physics111/Reprints/Optics_Training/Gaussian-Beam-Optics.pdf}},
   Month                    = {December},
-  Note                     = {Published by Melles Griot},
+  Note                     = {Provided by Melles Griot},
   Year                     = {2015},
 
   Date-added               = {2013-03-05 10:13:01 -0600},

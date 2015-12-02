@@ -11,7 +11,7 @@ We could have easily ordered a 0 order wave plate to replace them. However, we f
 
 \section{A review of the principles of operation of a wave plate}
 
-A wave plate rotates polarization by changing the relative phase of the oscillating components of the incoming polarized light. A wave plate has a fast axis and a slow axis. A half-wave plate is designed so that, at the specified wavelength, the component of polarization along the slow axis acquires a phase shift of $(2m+1)*\pi$ relative to the fast axis.Here $m$ is an integer. 
+A wave plate rotates polarization by changing the relative phase of the oscillating components of the incoming polarized light. A wave plate has a fast axis and a slow axis. A half-wave plate is designed so that, at the specified wavelength, the component of polarization along the slow axis acquires a phase shift of $(2m+1)\times\pi$ relative to the fast axis. Here $m$ is an integer. 
 
 Recall that the phase acquired by light as it passes through a medium of index of refraction $n$ is given by 
 
@@ -39,7 +39,7 @@ x=\frac{(2m+1) \lambda}{2 (n_1-n_2)}. \label{deltaPhi3}
 \end{equation}
 
 
-We now examine what will happen if we put a different wavelength than specified into the wave plate. Thus, we assume that $x$,$n_1$,$n_2$ and $m$ give the appropriate $\pi$ phase shift for the wavelength at which the wave plate is designed to work ($\lambda_s$). Now, we try light of a different wavelength, $\lambda'$. Assuming that the indices of refraction stay roughly the same for both $\lambda_s$ and $\lambda'$, we see that 
+We now examine what will happen if we put a different wavelength than specified into the wave plate. Thus, we assume that $x$, $n_1$, $n_2$, and $m$ give the appropriate $\pi$ phase shift for the wavelength at which the wave plate is designed to work ($\lambda_s$). Now, we try light of a different wavelength, $\lambda'$. Assuming that the indices of refraction stay roughly the same for both $\lambda_s$ and $\lambda'$, we see that 
 
 \begin{align}
 \Delta \phi=\frac{2 \pi (n_1-n_2) x}{\lambda'} 
@@ -67,9 +67,7 @@ This can be demonstrated using the Jones matrix formalism. The polarization of t
 0\\1
 \end{pmatrix}
 \end{equation}
-
 The Jones matrix corresponding to our wave plate is easily derived. Given that: 
-
 \begin{multline}
 \begin{pmatrix}
 \cos\theta & - \sin \theta \\
@@ -89,17 +87,16 @@ The Jones matrix corresponding to our wave plate is easily derived. Given that:
 \cos\theta \sin \theta-\xi \cos \theta \sin\theta & \xi \cos^2 \theta + \sin^2 \theta \\ \label{JonesMatrix001}
 \end{pmatrix}
 \end{multline}
-
 where $\theta$ is the angle between the fast axis and the x axis. 
 
 We let $\xi\approx e^{.366 (2 \pi)}$ as specified by the wave plate. Then, to represent two of them mounted at angles $\theta_1$ and $\theta_2$ respectively, we need merely multiply two matrices like the one in Eq.\ \ref{JonesMatrix001}. Writing out the result is straightforward, but we left it to a computer algebra system.
 
-By numerical experimentation, we found that there was a set of angles where we could mount our two wave plates that would result in a polarization for the outgoing light that is orthogonal to the polarization of the incoming light. 
+By numerical experimentation, we found that there was a set of angles where we could mount our two wave plates that would result in a polarization for the outgoing light that is orthogonal to the polarization of the incoming light. The fraction of power in the original polarization is illustrated in Figure\,\ref{fig:numericalLightControlMethod}. The outgoing light is polarized perpendicular to the incoming light for angles where the fraction of power in the original polarization is zero.
 
 \begin{figure}
     \centerline{\includegraphics[width=.9\textwidth]{NewNotesSymmetricFig}}
     \caption[Transmitted power vs angle]{\label{fig:numericalLightControlMethod}
-    A plot the magnitude of the fraction of the power at the original polarization as a function of the angle of the second wave plate for various retardances.}
+    A plot of the magnitude of the fraction of the power at the original polarization as a function of the angle of the second wave plate for various retardances.}
 \end{figure}
 
 
