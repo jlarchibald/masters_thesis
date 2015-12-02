@@ -606,7 +606,8 @@
  \DeclareCaptionFormat{suggested}{\singlespace#1#2 #3\par\doublespace}
  \captionsetup{format=suggested}
 
-
+%passes the options to break urls at hyphens when hyperref opens the url package
+\PassOptionsToPackage{hyphens}{url}
 % The hyperref package provides automatic linking and bookmarking for the table
 % of contents, index, equation references, and figure references.  It must be
 % included for the BYU Physics class to make a properly functioning electronic
