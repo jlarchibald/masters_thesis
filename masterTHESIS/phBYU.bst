@@ -331,6 +331,11 @@ FUNCTION {if.comma}
     'skip$
   if$
 }
+FUNCTION {if.nocomma}
+{   { " " * }
+    'skip$
+  if$
+}
 
 % pushes "" if value passed is empty$
 FUNCTION {push.string}
@@ -358,6 +363,15 @@ FUNCTION {add.string}
   duplicate$ empty$
     { pop$ }
     { * i.temp if.comma }
+  if$
+}
+
+% adds nothing if value passed is empty$
+FUNCTION {add.stringnocomma}
+{ 'i.temp :=
+  duplicate$ empty$
+    { pop$ }
+    { * i.temp if.nocomma }
   if$
 }
 
@@ -807,7 +821,7 @@ FUNCTION {misc}
       year empty$ note empty$ and and and not push.string
   format.title
     howpublished empty$ year empty$ note empty$
-      and and not add.string
+      and and not add.stringnocomma
   howpublished
     year empty$ note empty$ and not add.string
   format.date note empty$ not add.string
