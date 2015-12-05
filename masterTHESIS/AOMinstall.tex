@@ -53,11 +53,11 @@ The beam radius, $w(z)$, is also the distance from the center of the beam to the
 \begin{equation}
 z_R=\pi w_0^2/\lambda \label{rayleighRange1D}.
 \end{equation}
-A slight modification of Eq.\,\eqref{GaussianIntensity34} allows us to model elliptical beams by allowing for a different waist in each of the $x$ and $y$ directions:
+A slight modification of Eq.\,\ref{GaussianIntensity34} allows us to model elliptical beams by allowing for a different waist in each of the $x$ and $y$ directions:
 \begin{equation}\label{eqForI}
     I(\mathbf{x,y})=I_0\exp\left(-2\left(\frac{x^2}{w_x(z)^2}+\frac{y^2}{w_y(z)^2}\right)\right).
 \end{equation}
-Here, there are two relevant beam radii, $w_x$ in the $x$ direction and $w_y$ in the $y$ direction. Each of these has an associated Rayleigh range $z_{Rx}$ and $z_{Ry}$, and each satisfies relations analogous to Eqs.\,\eqref{beamwaist1D},\eqref{rayleighRange1D}.
+Here, there are two relevant beam radii, $w_x$ in the $x$ direction and $w_y$ in the $y$ direction. Each of these has an associated Rayleigh range $z_{Rx}$ and $z_{Ry}$, and each satisfies relations analogous to Eqs.\,\ref{beamwaist1D},\ref{rayleighRange1D}.
 
 I can measure the Gaussian beam radius in one dimension using a standard knife-edge technique. This involves placing a photo diode in the path of the beam. A razor blade is then moved perpendicular to the beam in a controlled way such that the beam is partially blocked. The blade is then moved across the laser beam in a direction perpendicular to the blade's edge to several different locations. For each razor blade position $x$ the power incident on the photo diode is measured. By integrating Eq.\,\ref{eqForI}, we get
 %picture?
@@ -167,7 +167,7 @@ Finally, the beam is focused by a lens with focal length 10 cm and passed throug
 \end{equation} 
 where the focal length of the lens is written as $f_{f}$.
 
-We can write the ABCD matrix for the whole system as the product of the ABCD matrices that represent the individual components of the system that were found in Eqs.\,\eqref{ABCD1},\eqref{ABCD2},\eqref{ABCD3}, and \eqref{ABCD4}: 
+We can write the ABCD matrix for the whole system as the product of the ABCD matrices that represent the individual components of the system that were found in Eqs.\,\ref{ABCD1},\ref{ABCD2},\ref{ABCD3}, and \ref{ABCD4}: 
 \begin{equation}\label{ABCDMatrixSystem}
 \begin{bmatrix}
 1 & 0 \\ -1/f_{f} & 1

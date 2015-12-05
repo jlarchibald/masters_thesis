@@ -92,11 +92,11 @@ Now, if we apply $A$ again, we would like to have 100\% of the population moved 
 \begin{equation}
 A^2|g\rangle = e^{i\phi_e'}|e\rangle\\
 \end{equation}
-Now, substituting the result of Eq.\,\eqref{ppu1}, we get
+Now, substituting the result of Eq.\,\ref{ppu1}, we get
 \begin{equation}
 A\frac{e^{i\phi_o}}{\sqrt{2}} \left(|g\rangle + e^{i\phi_e}|e\rangle\right)=e^{i\phi_e'}|e\rangle.
 \end{equation}
-We can use the result of Eq.\,\eqref{ppu1} again to get 
+We can use the result of Eq.\,\ref{ppu1} again to get 
 \begin{equation}
 \frac{e^{2i\phi_o}}{2}
 |g\rangle
@@ -131,7 +131,7 @@ Therefore,
 \begin{equation}
 \phi_e'-\phi_e = 2\phi_o.\label{phiophie}
 \end{equation}
-By substituting Eq.\,\eqref{phiophie} into Eq.\,\eqref{Aemidddle}, we get
+By substituting Eq.\,\ref{phiophie} into Eq.\,\ref{Aemidddle}, we get
 \begin{equation}
 A|e\rangle = \frac{e^{i\phi_o}}{\sqrt{2}}\left(-e^{-i\phi_e}|g\rangle + |e\rangle \right).
 \end{equation}
@@ -188,7 +188,7 @@ In addition, the phase difference between the two states determines whether we c
 a_e&=\frac{e^{i\Delta \phi}}{\sqrt{2}} \\
 a_g&=\frac{1}{\sqrt{2}}.
 \end{align}
-Plugging this into Eq.\,\eqref{howAActs}, we see that
+Plugging this into Eq.\,\ref{howAActs}, we see that
 \begin{equation}
 A\left(
 \frac{e^{i\Delta \phi}}{\sqrt{2}}|e\rangle 
@@ -219,7 +219,7 @@ This is handy because at the end of the interferometer, we hope to be able to de
 %e^{i\phi'}\sin\left(\frac{\theta+\pi/2}{2}\right)|e\rangle.\label{blochSpherepi2}
 %\end{multline}
 %In this equation, $\theta$ is a coordinate representing the inclination angle on the Bloch sphere. The symbols $\phi$ and $\phi'$ represent arbitrary phases. The entire equation is specified only to within an overall phase. This shows that systems that are in a state $|e\rangle$ or $|g\rangle$ will be placed in an equal superposition of other states, while if the system is already in an equal superposition, the entire population will be moved to either the $e\rangle$ or $|g\rangle$ states.
-%As Eq.\,\eqref{blochSpherepi2} illustrates, this is called a $\pi/2$ pulse because it changes the state of the system into an equal superposition, which is represented by the angle of $\pi/2$ radians in the Bloch sphere description of a two state system. Also, similar to the case of the $\pi$ pulse, a $\pi/2$ pulse can be achieved simply by turning on a Rabi-flop-inducing stimulus for the appropriate time interval, which is $T/4$. 
+%As Eq.\,\ref{blochSpherepi2} illustrates, this is called a $\pi/2$ pulse because it changes the state of the system into an equal superposition, which is represented by the angle of $\pi/2$ radians in the Bloch sphere description of a two state system. Also, similar to the case of the $\pi$ pulse, a $\pi/2$ pulse can be achieved simply by turning on a Rabi-flop-inducing stimulus for the appropriate time interval, which is $T/4$. 
 %
 %could I have just said ae+bg->a(e+g)+b(e-g)? Probably something like that. Oh, also, don't forget that the phase doesn't matter. 
 %The system is most naturally talked about in the interaction picture. In order to do this, I divide the Hamiltonian into two pieces: 
@@ -338,7 +338,7 @@ V=-\hbar
 %\end{blockarray}.
 \end{equation}
 
-%I should have been using \eqref all along 
+%I should have been using \ref all along 
 \subsubsection{Transformation to interaction picture}
 First, we move to the interaction picture.
 Information on the interaction picture and the basics of quantum dynamics can be found in Refs.\,\cite{sakurai,merzbacher}. Moving to the interaction picture is analogous to moving to a so-called ``rotating frame'' as is done in Ref.\,\cite{Young1997363}.The interaction picture is related to the Schr\"odinger picture by the following transformations: 
@@ -419,7 +419,7 @@ For convenience, we define the following frequencies:
 \end{align}
 (Table\,\ref{frequencyTable} summarizes most of the relevant frequencies we have defined.) We assume that $\delta\ll\Delta_{1g}$ and that $\delta\ll\Delta_{2e}$, and that $\Delta_{1g}\approx\Delta_{2e}$.
 
-We can write $V_I$ explicitly using Eqs.\,\eqref{Vbreakdown}, \eqref{frequencyDiffs}, \eqref{VSchrod2}, \eqref{RabiFrequencies1}, and \eqref{RabiFrequencies2}:
+We can write $V_I$ explicitly using Eqs.\,\ref{Vbreakdown}, \ref{frequencyDiffs}, \ref{VSchrod2}, \ref{RabiFrequencies1}, and \ref{RabiFrequencies2}:
 \begin{equation}
 \label{VI_matrix_simplified}
 V_I=
@@ -465,7 +465,7 @@ U_I(t)=\mathds{1}-\frac{i}{\hbar}\int_{t_0}^t dt' V_I(t') + \left(-\frac{i}{\hba
 \label{2ndOrderPerturbation}
 \end{equation}
 The symbol $U_I(t)$ represents the time evolution operator.
-If we use Eq.\,\eqref{VI_matrix_simplified} to write $V_I$ in its matrix form, Eq.\,\eqref{2ndOrderPerturbation} becomes
+If we use Eq.\,\ref{VI_matrix_simplified} to write $V_I$ in its matrix form, Eq.\,\ref{2ndOrderPerturbation} becomes
 \begin{multline}
 U_I(t)=\mathds{1}+i\int_{t_0}^t dt'
 \begin{bmatrix}
@@ -530,7 +530,7 @@ U_I(t)=\mathds{1}+i\int_{t_0}^t dt'
 \end{multline}
 We now argue that the many terms in this integral that oscillate with frequencies near $\Delta_{2e}\approx\Delta_{1g}$ can be neglected. Instead, we assume that the main contributions will be from the terms that oscillate with frequencies of $0$ or $\Delta_{1g}-\Delta_{2e}$ (which is much smaller than $\Delta_{2e}$ and $\Delta_{1g}$). The reasoning is that the terms that oscillate near $\Delta$ will oscillate through many periods over timescales over which the other terms will be more or less constant. Therefore, we can expect that for the purposes of integrating, the high frequency contributions will be approximately 0.
 
-After removing the terms we are neglecting from Eq.\,\eqref{blastedIntegral} and making the substitutions $\Delta_{2e}-\Delta_{1g}\rightarrow\delta$, $\Delta_{2e}\rightarrow\Delta$, $\Delta_{1g}\rightarrow\Delta$ (we note that $\delta$ is small), we end up with 
+After removing the terms we are neglecting from Eq.\,\ref{blastedIntegral} and making the substitutions $\Delta_{2e}-\Delta_{1g}\rightarrow\delta$, $\Delta_{2e}\rightarrow\Delta$, $\Delta_{1g}\rightarrow\Delta$ (we note that $\delta$ is small), we end up with 
 \begin{equation}
 U_I(t)=\mathds{1} -i \int_{t_0}^{t} dt'
 \begin{bmatrix}
@@ -547,7 +547,7 @@ V_I=
 0 & 0 & \frac{|\Omega_e|^2}{4\Delta} + \frac{|\Omega_g|^2}{4\Delta} \\
 \end{bmatrix}.\label{newVI0}
 \end{equation}
-We notice that in the limit we have selected, our new $V_I$ no longer has any terms that might couple a long-term population to the intermediate state $|i\rangle$. Therefore, we will adopt a truncated version of Eq.\,\eqref{newVI0} as our interaction Hamiltonian. What I have presented is not an airtight argument, but the result is correct. Alternative justifications for this can be found in several places, most helpfully in Ref.\,\cite{brionLambdaAdiabatic}.
+We notice that in the limit we have selected, our new $V_I$ no longer has any terms that might couple a long-term population to the intermediate state $|i\rangle$. Therefore, we will adopt a truncated version of Eq.\,\ref{newVI0} as our interaction Hamiltonian. What I have presented is not an airtight argument, but the result is correct. Alternative justifications for this can be found in several places, most helpfully in Ref.\,\cite{brionLambdaAdiabatic}.
 
 We will now treat this like a two-state system, so from now on we let 
 \begin{equation}
@@ -571,7 +571,7 @@ Now, the solution to this equation is very similar to the solution to the two st
 \begin{equation}
 \Omega_\mathit{r}=\sqrt{\Omega_\mathit{eff}^2+(\delta-\delta^{AC})^2},
 \end{equation}
-where $\delta^{AC}= \frac{|\Omega_e|^2}{4\Delta}-\frac{|\Omega_g|^2}{4\Delta}$. This frequency accounts for the AC Stark shifts that appeared in Eq.\eqref{newVI}. Also, $\Omega_{\mathit{eff}}$ is the effective on-resonance Rabi frequency given by 
+where $\delta^{AC}= \frac{|\Omega_e|^2}{4\Delta}-\frac{|\Omega_g|^2}{4\Delta}$. This frequency accounts for the AC Stark shifts that appeared in Eq.\ref{newVI}. Also, $\Omega_{\mathit{eff}}$ is the effective on-resonance Rabi frequency given by 
 \begin{equation}
 \Omega_{\mathit{eff}}=\frac{\Omega_e^*\Omega_g}{2\Delta}.
 \end{equation}
@@ -661,7 +661,7 @@ We now discuss the Hyperfine contribution to our overall Hamiltonian. We will ne
 
 \subsubsection{Hyperfine basics}
 
-The hyperfine splitting arises from interactions between the nucleus and the electrons. The piece of the Hamiltonian representing the Hyperfine interaction is represented by the symbol $H_{\mathrm{hfs}}$ in Eq.\,\eqref{Hoverall}.
+The hyperfine splitting arises from interactions between the nucleus and the electrons. The piece of the Hamiltonian representing the Hyperfine interaction is represented by the symbol $H_{\mathrm{hfs}}$ in Eq.\,\ref{Hoverall}.
 The standard expansion of $H_{\mathrm{hfs}}$ in the literature is:  
 \begin{equation}
 H_{\mathrm{hfs}}=\sum_k \mathbf{T}^{(k)} \cdot \mathbf{M}^{(k)} \label{hfs_hamiltonian_eqn},
@@ -676,19 +676,18 @@ The dot product for spherical tensors of arbitrary rank is defined in the normal
 \end{equation}
 %\footnote{todo: cite that review article and the lecture notes you found}
 The tensor operator $\mathbf{T}^{(k)}$ represents information about the electron.
-$\mathbf{M}^{(k)}$ represents the nucleus\cite{experimental_hyperfine_alkali_arimondo}\cite{schwartz_hyperfine_expansion}
-\cite{sobelman_spectra}.
+$\mathbf{M}^{(k)}$ represents the nucleus\cite{experimental_hyperfine_alkali_arimondo,schwartz_hyperfine_expansion,sobelman_spectra}.
 Writing the expansion in this form shows explicitly the geometry of the operator. 
 
 Before discussing what information $\mathbf{T}^{(k)}$ and $\mathbf{M}^{(k)}$ represent exactly,
 we pause to point out a few geometrical facts. Even if we had no knowledge of the mechanism by which hyperfine interactions occur, we might still arrive at Eq.\,\ref{hfs_hamiltonian_eqn} simply by geometrical considerations.
 Notice that the generator of rotations under which $\mathbf{T}^{(k)}$ is valid is the electron total angular momentum, $\mathbf{J}$, while $\mathbf{M}^{(k)}$ is subject to rotations defined in terms of the nuclear angular momentum operator $\mathbf{I}$. 
-The direct product of these two gives us a value that can be validly rotated using the group generated by the combined angular momentum operator $\mathbf{F}$.\cite{Racah2}\cite{sobelman_spectra}. Thus, each term of our expansion has two parts: one that is a valid tensor operator associated with the geometry of the nucleus and one that is a valid tensor operator associated with the geometry of the electron. By combining these two parts using a dot product, we see that each term turns out to be a valid tensor operator for the entire atomic system. This is exactly what we would expect.
+The direct product of these two gives us a value that can be validly rotated using the group generated by the combined angular momentum operator $\mathbf{F}$\cite{Racah2,sobelman_spectra}. Thus, each term of our expansion has two parts: one that is a valid tensor operator associated with the geometry of the nucleus and one that is a valid tensor operator associated with the geometry of the electron. By combining these two parts using a dot product, we see that each term turns out to be a valid tensor operator for the entire atomic system. This is exactly what we would expect.
 
-The most important contributions to the Hyperfine splitting come from magnetic dipole interactions and electric quadrapole interactions \cite{sobelman_spectra,schwartz_hyperfine_expansion,cuaMITnotes}. These correspond to the $k=1$ and $k=2$ terms in Eq.\,\eqref{TkMk_hyperfine} respectively\cite{experimental_hyperfine_alkali_arimondo}.
+The most important contributions to the Hyperfine splitting come from magnetic dipole interactions and electric quadrapole interactions \cite{sobelman_spectra,schwartz_hyperfine_expansion,cuaMITnotes}. These correspond to the $k=1$ and $k=2$ terms in Eq.\,\ref{TkMk_hyperfine} respectively\cite{experimental_hyperfine_alkali_arimondo}.
 %\footnote{It is interesting to note that the odd values of $k$ correspond to magnetic interactions while the even values correspond to electric interactions. That is to say that there is no electric dipole interaction between the electrons and the nucleus, but there is a magnetic dipole ($k=1$), while there is an electric quadrapole coupling, but no magnetic quadrapole, etc}
 \subsubsection{Magnetic dipole interaction}
-First, we discuss the $k=1$ term, or magnetic dipole interaction term from the expansion in Eq.\,\eqref{TkMk_hyperfine}. Classically, we know that the potential energy of a dipole in a magnetic field is proportional to the dot product of the magnetic dipole moment vector with the magnetic field vector ($U=-\mathbf{\mu}\cdot\mathbf{B}$). We also know that the magnetic field at the center of a classical dipole points in the direction of the dipole moment. Therefore, it seems reasonable that the energy due to the interaction of the electron and the nucleus might be somehow proportional to a dot product of two vectors representing their respective angular momenta. Indeed, this turns out to be the case: the magnetic dipole interaction can be written as follows\cite{sobelman_spectra}: 
+First, we discuss the $k=1$ term, or magnetic dipole interaction term from the expansion in Eq.\,\ref{TkMk_hyperfine}. Classically, we know that the potential energy of a dipole in a magnetic field is proportional to the dot product of the magnetic dipole moment vector with the magnetic field vector ($U=-\mathbf{\mu}\cdot\mathbf{B}$). We also know that the magnetic field at the center of a classical dipole points in the direction of the dipole moment. Therefore, it seems reasonable that the energy due to the interaction of the electron and the nucleus might be somehow proportional to a dot product of two vectors representing their respective angular momenta. Indeed, this turns out to be the case: the magnetic dipole interaction can be written as follows\cite{sobelman_spectra}: 
 \begin{equation}\label{IdotJ}
 W_f=A\mathbf{I}\cdot\mathbf{J},
 \end{equation}
@@ -699,10 +698,10 @@ The product $\mathbf{I}\cdot\mathbf{J}$ can be expanded by noticing that $\mathb
 \begin{equation}\label{Wf_dot_product}
 W_f=\frac{1}{2}A(\mathbf{F}^2-\mathbf{J}^2-\mathbf{I}^2).
 \end{equation}
-We can also see how Eq.\,\ref{IdotJ} represents the $k=1$ term in Eq.\,\eqref{TkMk_hyperfine}. We clearly have one tensor operator from the Nuclear angular momentum space ($\mathbf{I}$) along with one vector from the electron angular momentum space ($\mathbf{J}$). The product we get is a scalar that will be invariant under rotations in the total space.\footnote{A quick note about constants. In the expansion in Eq.\,\eqref{TkMk_hyperfine}, there are different conventions \cite{schwartz_hyperfine_expansion} for deciding which coefficients are pulled into which operators. However, as we will see, the coefficient $A$ as used in Eq.\,\ref{IdotJ} is defined in a standard way and can be looked up in the literature. For this reason, we are specifying $T$ and $M$ only up to a constant. This is fine since the point of showing the expansion is really just to make a comment about the geometry of hyperfine interactions, while the actual calculations only involve the first two terms}
+We can also see how Eq.\,\ref{IdotJ} represents the $k=1$ term in Eq.\,\ref{TkMk_hyperfine}. We clearly have one tensor operator from the Nuclear angular momentum space ($\mathbf{I}$) along with one vector from the electron angular momentum space ($\mathbf{J}$). The product we get is a scalar that will be invariant under rotations in the total space.\footnote{A quick note about constants. In the expansion in Eq.\,\ref{TkMk_hyperfine}, there are different conventions \cite{schwartz_hyperfine_expansion} for deciding which coefficients are pulled into which operators. However, as we will see, the coefficient $A$ as used in Eq.\,\ref{IdotJ} is defined in a standard way and can be looked up in the literature. For this reason, we are specifying $T$ and $M$ only up to a constant. This is fine since the point of showing the expansion is really just to make a comment about the geometry of hyperfine interactions, while the actual calculations only involve the first two terms}
 
 \subsubsection{Electric quadrapole interaction}
-In a similar way, the $k=2$ term in Eq.\,\eqref{TkMk_hyperfine} can be shown to correspond to the electric quadrapole interaction. Chapter 6.2 of Ref.\,\cite{sobelman_spectra} gives a good explanation for this. The crux of the argument is that the electric quadrapole interaction,
+In a similar way, the $k=2$ term in Eq.\,\ref{TkMk_hyperfine} can be shown to correspond to the electric quadrapole interaction. Chapter 6.2 of Ref.\,\cite{sobelman_spectra} gives a good explanation for this. The crux of the argument is that the electric quadrapole interaction,
 \begin{equation}
 W=\int\frac{\rho(\mathbf{r})\rho'(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|}d\mathbf{r}d\mathbf{r'}.
 \end{equation}
@@ -713,7 +712,7 @@ W=\int d\mathbf{r}d\mathbf{r'}
 \rho(\mathbf{r})\rho'(\mathbf{r}')\sum_k \frac{r'^k}{r^{k+1}}[C^k(\theta,\phi)\cdot C^k(\theta',\phi')] \label{quadrupole_expanded}.
 \end{equation}
 
-The $k=2$ term in the integral contained in Eq.\,\ref{quadrupole_expanded} takes the form of an inner product between two rank 2 spherical tensors. Thus, we are satisfied that we have found the $k=2$ terms in Eq.\,\eqref{TkMk_hyperfine}.
+The $k=2$ term in the integral contained in Eq.\,\ref{quadrupole_expanded} takes the form of an inner product between two rank 2 spherical tensors. Thus, we are satisfied that we have found the $k=2$ terms in Eq.\,\ref{TkMk_hyperfine}.
 
 The inner product between two rank 2 spherical tensors can be evaluated using Eq. 4.169 from Sobelman \cite{sobelman_spectra} (the formula can also be found in Ref.\,\cite{Racah2} and is also referred to in Ref.\,\cite{schwartz_hyperfine_expansion}):
 \begin{multline}\label{4169_combine_diff_tensors}
@@ -745,8 +744,8 @@ C=F(F+1)-J(J+1)-I(I+1).
 (Interestingly, Eq.\,\ref{Wf_dot_product} can also be evaluated using Eq.\,\ref{4169_combine_diff_tensors} using $k=1$.)
 
 \subsubsection{Write both hyperfine terms in terms of standard constants}
-We can rewrite Eq.\,\eqref{Wf_dot_product} in terms of $C$ 
-and then combine it with Eq.\,\eqref{justQuadrupole} to get the full hyperfine splitting\cite{cuaMITnotes}: 
+We can rewrite Eq.\,\ref{Wf_dot_product} in terms of $C$ 
+and then combine it with Eq.\,\ref{justQuadrupole} to get the full hyperfine splitting\cite{cuaMITnotes}: 
 \begin{equation}\label{Standard_hyperfine_AB}
 E_{\mathrm{hfs}}=\frac{1}{2}AC+BC(C+1).
 \end{equation}
@@ -1078,7 +1077,7 @@ $F_i$ & $q_1$ & $q_2$ & $m_{f,i}$&$\langle F=5,m_f=0,1,q_1|F_i,m_{f,i}\rangle$&$
 5 & 1 & -1 & 1 &$ - \frac{\sqrt{2}}{2} $&$ \frac{\sqrt{33}}{11} $ \\
 \hline
 \end{tabular}
-\caption{The couplings that turn out to give nonzero values for both Eq.\,\eqref{thing1} and Eq.\,\eqref{thing2} for both $F=4$ and $F=5$ $^2P_{3/2}$ states. The total angular momentum quantum number for the intermediate state is given by $F_i$, while $q_1$ and $q_2$ represent polarizations of our laser. Code for calculating these values can be found in Appendix\,\ref{sympy6jAppendix}.}
+\caption{The couplings that turn out to give nonzero values for both Eq.\,\ref{thing1} and Eq.\,\ref{thing2} for both $F=4$ and $F=5$ $^2P_{3/2}$ states. The total angular momentum quantum number for the intermediate state is given by $F_i$, while $q_1$ and $q_2$ represent polarizations of our laser. Code for calculating these values can be found in Appendix\,\ref{sympy6jAppendix}.}
 \label{nonzeroCG}
 \end{table}
 
@@ -1086,7 +1085,7 @@ $F_i$ & $q_1$ & $q_2$ & $m_{f,i}$&$\langle F=5,m_f=0,1,q_1|F_i,m_{f,i}\rangle$&$
 We can use the derived formulae above to calculate the necessary beam geometries. %We can compare this to Chris' thesis.
 
 First of all, we calculate our on-resonance Rabi frequencies. We will calculate the following values:
-By combining Eqs.\,\eqref{wignerEckartForUs} and \eqref{afterSpectators}, we get that  
+By combining Eqs.\,\ref{wignerEckartForUs} and \ref{afterSpectators}, we get that  
 \begin{multline}
 \langle F',I',J',L',S',m_f'|d^{(1)}_q|F,I,J,L,S,m_f\rangle =\langle n'L' S J'||T^{(k)}|| n L S J\rangle\\
 \times (-1)^{J'+I+J+k}\sqrt{2F+1}\sqrt{2F'+1}
@@ -1152,7 +1151,7 @@ Similar to the other transition, this gives
 &\approx6.724\times10^{-18} \textnormal{ pC m}.
 \end{align}
 
-Using these values, we find that the single-photon on-resonance Rabi frequencies defined in Eqs.\,\eqref{RabiFrequencies1} and \eqref{RabiFrequencies2} are 
+Using these values, we find that the single-photon on-resonance Rabi frequencies defined in Eqs.\,\ref{RabiFrequencies1} and \ref{RabiFrequencies2} are 
 \begin{align}
 \label{RabiFrequenciesnumbers}
 \Omega_e&=-\frac{\langle i | \mathbf{d}\cdot \mathbf{E}_2 | e\rangle}{\hbar}\approx63760 \textnormal{m/s/V}\cdot \mathbf{E}_2\\
