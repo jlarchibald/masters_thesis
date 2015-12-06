@@ -43,7 +43,7 @@ The function d4sigma attempts to calculate the second moment width using just th
 
 Ultimately, the program does a best fit approximation to a Gaussian for each beam profile. The function we fit to is contained in the file beamWaistCalculator, which takes as its arguments the raw position data and the raw intensity data. This function is 
 
-\begin{equation}
+\begin{equation}\label{fiterfeqn}
 f(x)=a_1 \erf \left(\frac{x-a_3}{a_2}\right)+a_4.
 \end{equation}
 
@@ -58,18 +58,30 @@ Of course, for a Gaussian beam, we recognize that allowing $M_x^2\rightarrow 1$ 
 
 This program then tries to fit to this:
 \begin{equation}
-W_x=a_1 \sqrt{1+\left(\frac{(x-a_2) \lambda}{\pi a_1^2}\right)^2}
+W_x=a_1 \sqrt{1+\left(\frac{(x-a_2) \lambda}{\pi a_1^2}\right)^2}\label{eq:Aafinder}
 \end{equation}
 and this:
 \begin{equation}
-W_x=a_1 \sqrt{1+(1+a_3^2) \left(\frac{(x-a_2) \lambda}{\pi a_1^2}\right)^2}. 
+W_x=a_1 \sqrt{1+(1+a_3^2) \left(\frac{(x-a_2) \lambda}{\pi a_1^2}\right)^2}.\label{eq:AAAfinder} 
 \end{equation}
 The first case we are forcing $M^2$ to be one. This gives us a worst-case scenario. A few test cases convinced us that if $M^2$ is higher than we think it is, we have a less-tightly focused center. Thus, for the purposes of not putting too much power into the AOM, we go with the fit to the first equation. 
 
-In principle, we should be able to fit the calculated second moment widths to the equations above, but they don't work overly well. Thus, we usually use the second moment width of the Gaussian we fit it to. 
+In principle, we should be able to fit the calculated second moment widths to the equations above, but they don't work overly well. Thus, we usually use the second moment width of the Gaussian we fit it to. This is all illustrated for one laser width in Fig.\,\ref{waistGraphs}.
 
-Using this method, we have determined the waist to be 
-
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.47\textwidth}
+\includegraphics[width=1\textwidth]{waistFitExample.eps}
+\label{waistFitExample}
+\end{subfigure}
+\begin{subfigure}[b]{0.47\textwidth}
+\includegraphics[width=1\textwidth]{waistExample.eps} 
+\label{waistExample}
+\end{subfigure}
+\caption[Waist determination using a knife]{\label{waistGraphs} Waist determination using a knife. On the left, there is typical data taken from a photodiode using a knife to occlude part of the beam. In general, we take data at several points along the beam path. This data is then fit to a function of the form shown in Eq.\,\ref{fiterfeqn}. This is shown on the right. The graph on the right shows a fit to equations of the form shown in Eq.\,\ref{eq:Aafinder} and \ref{eq:AAAfinder}. This data was taken for the $y$ direction on the beam going into the AOM. The fit values turn out to be $a_1=0.016875$ and $a_2=11.400$ for Eq.\,\ref{eq:Aafinder} and $a_1=1.6875e-2$, $a_2 = 11.4$, and $a_3=-2.6737e-7$ for the coefficients in Eq.\,\ref{eq:AAAfinder}. The value of $a_3$ is very small, which would suggest that $M^2\approx1$. However, because of the limited resolution and the fact that we fit the data points to a function before trying to calculate $M^2$ rather than using the directly-calculated second-moment width, we probably cannot trust the fit value corresoponding to $M^2$. On both graphs, the 0 mm point is arbitrary.}
+\end{figure}
+%power arbitrary units might be milliamps.
+%it is better to get it on both sides
 
 \section{Using the camera}
 We initially wanted to measure the $M^2$ of our beam. The measurements are hard to do accurately. We tried to use the camera and got results that were not entirely usable.
