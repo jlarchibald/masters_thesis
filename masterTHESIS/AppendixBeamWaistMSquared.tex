@@ -31,26 +31,21 @@ Now, we figure out that those constants will be
 The ``constants'' term represents the maximum intensity that occurs within the beam (i.e. when $x=y=z=0$, or in other words, at the center of the narrowest part of the beam.)
 
 Now, to take measurements with a knife, we block some fraction of the beam by mounting the knife on a translation stage. We then look at the amount of power from the beam hitting a photo diode that is placed downstream from the knife. If, for example, the knife is mounted vertically, the measurements on the photo diode correspond to the total power in the beam from $x=-\infty$ to $x_0$ where $x_0$ is the location of the knife. Thus, if we plot this power as a function of the spatial position of the knife, we expect that the result should be 
-
 \begin{align}
 P(x_0)&=\int_{\infty}^{\infty}\int_{-\infty}^{x_0} \frac{2 P}{\pi w_x(z) w_y(z)}\exp \left(-2\frac{x^2}{w_x^2(z)}-2\frac{y^2}{w_y^2(z)}\right) dx dy\\
-P(x_0)&=\frac{P}{2} \left(\erf \frac{\sqrt{2} x}{W_x}+1 \right)
+P(x_0)&=\frac{P}{2} \left(\erf \frac{\sqrt{2} x}{W_x}+1 \right).
 \end{align}
-
 So, now we have a function that we can fit. The code in masterFILEhoriz14Nov.m calculates the approximate beam waist based on a series of knife cuts. First, one loads the intensity (in arbitrary units) and the position (in the units that the waist will ultimately be given in) into a number of arrays named x1, x2, .. . etc. The user types the position of the knife along the waist (show picture) into the vector called positions. 
 
-The function d4sigma attempts to calculate the second moment width using just the raw data. This is notoriously inaccurate and also it is probably misnamed because it probably just calculates something that is different from the standard D4$\sigma$ by some factor of 2 or something. Also, we don't use this. 
+The function ``d4sigma'' attempts to calculate the second moment width using just the raw data. This is notoriously inaccurate because of how D4$\sigma$ is \emph{more} sensitive to radiation far from the center of the beam. Also, the knife technique lends itself to getting data of relatively low resolution. Finally, because I realized this and decided not to use the d4sigma function, the d4sigma function itself is not well-debugged and may be off by a constant factor.
 
-Ultimately, the program does a best fit approximation to a Gaussian for each beam profile. The function we fit to is contained in the file beamWaistCalculator, which takes as its arguments the raw position data and the raw intensity data. This function is 
-
+The program instead calculates the second moment width and the beam waist exclusively by assuming the beam profile is Gaussian and finding parameters that will fit the measured data points to the function that we would expect if we were measuring the profile of a Gaussian beam. The function we fit to is contained in the file beamWaistCalculator, which takes as its arguments the raw position data and the raw intensity data. This function is 
 \begin{equation}\label{fiterfeqn}
 f(x)=a_1 \erf \left(\frac{x-a_3}{a_2}\right)+a_4.
 \end{equation}
-
 The function defined in ``beamWaistCalculator'' thus returns a vector containing $(a_1, a_2, a_3, a_4)$. Thus, to get the beam waist, we will take $a_2$ and multiply by $\sqrt{2}$. 
 
 According to Siegman \cite{SiegmanBeamQuality}, the second moment width always propagates according to this equation: 
-
 \begin{equation}
 W_x^2(z)=W_{0x}^2 + M_x^4 \left( \frac{\lambda}{\pi W_{0x}}\right)^2 (z-z_{0x})^2. 
 \end{equation}
@@ -64,9 +59,9 @@ and this:
 \begin{equation}
 W_x=a_1 \sqrt{1+(1+a_3^2) \left(\frac{(x-a_2) \lambda}{\pi a_1^2}\right)^2}.\label{eq:AAAfinder} 
 \end{equation}
-The first case we are forcing $M^2$ to be one. This gives us a worst-case scenario. A few test cases convinced us that if $M^2$ is higher than we think it is, we have a less-tightly focused center. Thus, for the purposes of not putting too much power into the AOM, we go with the fit to the first equation. 
+The first case we are forcing $M^2$ to be one. This gives us a worst-case scenario. A few test cases, along with inspection of the equation convinced us that if $M^2$ is higher than we think it is, we have a less-tightly focused center. Thus, for the purposes of not putting too much power into the AOM, we go with the fit to the first equation. 
 
-In principle, we should be able to fit the calculated second moment widths to the equations above, but they don't work overly well. Thus, we usually use the second moment width of the Gaussian we fit it to. This is all illustrated for one laser width in Fig.\,\ref{waistGraphs}.
+Because the beam radii/second moment widths used to perform the curve fit described in Eqs\,\ref{eq:Aafinder} and \ref{eq:AAAfinder} were calculated assuming the beam profile is Gaussian, we do not expect to get a very good estimate of $M^2$.  profile and fit we usually use the second moment width of the Gaussian we fit it to. This is all illustrated for one laser width in Fig.\,\ref{waistGraphs}.
 
 \begin{figure}
 \centering
@@ -78,7 +73,13 @@ In principle, we should be able to fit the calculated second moment widths to th
 \includegraphics[width=1\textwidth]{waistExample.eps} 
 \label{waistExample}
 \end{subfigure}
-\caption[Waist determination using a knife]{\label{waistGraphs} Waist determination using a knife. On the left, there is typical data taken from a photodiode using a knife to occlude part of the beam. In general, we take data at several points along the beam path. This data is then fit to a function of the form shown in Eq.\,\ref{fiterfeqn}. This is shown on the right. The graph on the right shows a fit to equations of the form shown in Eq.\,\ref{eq:Aafinder} and \ref{eq:AAAfinder}. This data was taken for the $y$ direction on the beam going into the AOM. The fit values turn out to be $a_1=0.016875$ and $a_2=11.400$ for Eq.\,\ref{eq:Aafinder} and $a_1=1.6875e-2$, $a_2 = 11.4$, and $a_3=-2.6737e-7$ for the coefficients in Eq.\,\ref{eq:AAAfinder}. The value of $a_3$ is very small, which would suggest that $M^2\approx1$. However, because of the limited resolution and the fact that we fit the data points to a function before trying to calculate $M^2$ rather than using the directly-calculated second-moment width, we probably cannot trust the fit value corresoponding to $M^2$. On both graphs, the 0 mm point is arbitrary.}
+\caption[Waist determination using a knife]{\label{waistGraphs} 
+%Waist determination using a knife. On the left, there is typical data taken from a photodiode using a knife to occlude part of the beam. In general, we take data at several points along the beam path. This data is then fit to a function of the form shown in Eq.\,\ref{fiterfeqn}. This is shown on the right. The graph on the right shows a fit to equations of the form shown in Eq.\,\ref{eq:Aafinder} and \ref{eq:AAAfinder}. This data was taken for the $y$ direction on the beam going into the AOM. The fit values turn out to be $a_1=0.016875$ and $a_2=11.400$ for Eq.\,\ref{eq:Aafinder} and $a_1=1.6875e-2$, $a_2 = 11.4$, and $a_3=-2.6737e-7$ for the coefficients in Eq.\,\ref{eq:AAAfinder}. The value of $a_3$ is very small, which would suggest that $M^2\approx1$. However, because of the limited resolution and the fact that we fit the data points to a function before trying to calculate $M^2$ rather than using the directly-calculated second-moment width, we probably cannot trust the fit value corresoponding to $M^2$. On both graphs, the 0 mm point is arbitrary.
+Waist determination using a knife. On the left is an example of data that was collected by measuring the beam power while occluding the beam in one direction using a razor blade. Each position on the x axis of the chart on the left corresponds to a different location of the razor blade within the beam. The curve fit to Eq.\,\ref{fiterfeqn} is also shown in the graph.
+The graph on the right shows second moment widths of the beam at several points along the direction of propagation. The fit to Eqs.\,\ref{eq:Aafinder} and \ref{eq:AAAfinder} is also shown. 
+The values of the coefficients found by fitting for the data shown turn out to be $a_1=0.016875$ and $a_2=11.400$ for the coefficients in Eq.\,\ref{eq:Aafinder} and $a_1=1.6875e-2$, $a_2 = 11.4$, and $a_3=-2.6737e-7$ for the coefficients in Eq.\,\ref{eq:AAAfinder}. The value of $a_3$ is very small, which would suggest that $M^2\approx1$. However, as mentioned in the text, I do not believe that this gives a very reliable estimate of the actual value of $M^2$. The x axis of both graphs is measured relative to an arbitrary point that was selected based on experimental convenience.
+%The razor blade is mounted perpendicular to the direction of beam propagation. Each position on the x axis of the chart on the left corresponds to a different location of the razor blade within the beam. I took data like this for several positions along the direction of propagation of the beam. I then performed a fit where the fit function is of the form shown in Eq.\,\ref{fiterfeqn}. From the parameters generated by the curve fit, I extract an effective beam waist. Beam waists found in this way for several locations of the beam are shown in the plot on the right. The waist data as a function of distance along the path propagation is fitted to Eqs.\,\ref{eq:Aafinder} and \ref{eq:AAAfinder}. Allowing 
+}
 \end{figure}
 %power arbitrary units might be milliamps.
 %it is better to get it on both sides

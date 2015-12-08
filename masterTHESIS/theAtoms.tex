@@ -227,7 +227,7 @@ This is handy because at the end of the interferometer, we hope to be able to de
 %H=H_0+V
 %\end{equation} 
 %
-%where $H$ is the total Hamiltonian, $H_0=\hbar \omega_e |e\rangle\langle e| + \hbar \omega_g|g\rangle\langle g|$ is the Hamiltonian of the atom not including the contribution from the external electric field and $V=\mathbf{d}\cdot\mathbf{E}$ represents the part of the Hamiltonian that describes the interaction of the laser with the system. To do this, I must make the standard transformations to the interaction picture. I get \cite{merzbacher} \cite{sakurai}, 
+%where $H$ is the total Hamiltonian, $H_0=\hbar \omega_e |e\rangle\langle e| + \hbar \omega_g|g\rangle\langle g|$ is the Hamiltonian of the atom not including the contribution from the external electric field and $V=\mathbf{d}\cdot\mathbf{E}$ represents the part of the Hamiltonian that describes the interaction of the laser with the system. To do this, I must make the standard transformations to the interaction picture. I get \cite{merzbacher,sakurai}, 
 %
 %\begin{align}
 %|\psi\rangle_I &= e^{i H_0 t/\hbar} |\psi \rangle \\
@@ -628,7 +628,7 @@ In the case of $^{87}$Sr+, there is only one electron in the valence band. The i
 %We will first approximate the Hamiltonian by assuming that there is no coupling that is dependent on the spin. 
 %The hyperfine interaction will be modeled as a perturbation on top of this.
 
-The ``good'' quantum numbers for describing the internal states of a $^{87}$Sr+ ion are $F$, $J$, $L$, $S$, $m_f$ and $n$\cite{experimental_hyperfine_alkali_arimondo}\cite{cuaMITnotes} where $F$, $J$, $L$, $S$, $m_f$ take on their usual meanings (see Table\, \ref{quantumNumberQuickref}). This is because the Hamiltonian for the unperturbed atom is diagonal in this basis. Equivalently,  it is because these operators all commute with one another and with the other pieces of the Hamiltonian. However,  a few of the external stimuli to the ions (like the constant magnetic field or the interaction of the lasers) can be most naturally modelled in terms of the eigenstates of the $L, m_l, S, m_s, I, m_I$ quantum numbers.   
+The ``good'' quantum numbers for describing the internal states of a $^{87}$Sr+ ion are $F$, $J$, $L$, $S$, $m_f$ and $n$\cite{experimental_hyperfine_alkali_arimondo,cuaMITnotes} where $F$, $J$, $L$, $S$, $m_f$ take on their usual meanings (see Table\, \ref{quantumNumberQuickref}). This is because the Hamiltonian for the unperturbed atom is diagonal in this basis. Equivalently,  it is because these operators all commute with one another and with the other pieces of the Hamiltonian. However,  a few of the external stimuli to the ions (like the constant magnetic field or the interaction of the lasers) can be most naturally modelled in terms of the eigenstates of the $L, m_l, S, m_s, I, m_I$ quantum numbers.   
 
 \begin{table}[h!]
 \centering
@@ -694,7 +694,7 @@ W_f=A\mathbf{I}\cdot\mathbf{J},
 where $W_f$ represents the energy associated with this coupling and $A$ encapsulates a coupling factor between the nuclear and electronic magnetic moments. 
 %Note that here we are using the normal, three dimensional dot product (i.e. $\mathbf{I}\cdot\mathbf{J}=I_xJ_x+I_yJ_y+I_zJ_z$). 
 
-The product $\mathbf{I}\cdot\mathbf{J}$ can be expanded by noticing that $\mathbf{F}^2=(\mathbf{I}+\mathbf{J})^2=\mathbf{I}^2+2 \mathbf{I}\cdot\mathbf{J}+\mathbf{J}^2$. This gives \cite{cuaMITnotes}\cite{sobelman_spectra}: 
+The product $\mathbf{I}\cdot\mathbf{J}$ can be expanded by noticing that $\mathbf{F}^2=(\mathbf{I}+\mathbf{J})^2=\mathbf{I}^2+2 \mathbf{I}\cdot\mathbf{J}+\mathbf{J}^2$. This gives \cite{sobelman_spectra,cuaMITnotes}: 
 \begin{equation}\label{Wf_dot_product}
 W_f=\frac{1}{2}A(\mathbf{F}^2-\mathbf{J}^2-\mathbf{I}^2).
 \end{equation}
@@ -732,7 +732,7 @@ I & J & k
 \end{Bmatrix}$ represents the Wigner $6j$ symbol. 
 
 Using the properties of the Wigner $6j$ symbols, it can be shown that %\footnote{I will get this from Sobelman. He gives the Racah coefficients in 4.97 - 4.99} 
-the equation for the electric quadrapole term in the hyperfine interaction takes the form \cite{cuaMITnotes}\cite{sobelman_spectra} 
+the equation for the electric quadrapole term in the hyperfine interaction takes the form \cite{cuaMITnotes,sobelman_spectra}
 %\footnote{OK Dallin--I'm not sure if I should even include this.} 
 \begin{equation}\label{justQuadrupole}
 W=BC(C+1),
@@ -967,7 +967,7 @@ $F'=5$, $F=5$&$- 0.1 \sqrt{165}$&-1.28\\
 $F'=6$, $F=5$&$0.5 \sqrt{13}$&1.80\\ 
 \hline
 \end{tabular}
-\caption{Values of $\langle n' L' S J' I F' ||\mathbf{r}||n L S J I F\rangle / \langle n'L' S J'||T^{(k)}|| n L S J\rangle$ as given in Eq.\,\ref{afterSpectators}. These coefficients essentially take into account the geometrical considerations that come into play when we discuss an operator that has been described to us in terms of eigenstates of $\mathbf{J}$ if we want to discuss it in terms of the eigenstates of $\mathbf{F}$. In this table, we have placed only values that gave nonzero results. The symbol $F'$ denotes the total angular momentum number of the intermediate ($^2$P$_{3/2}$) states, while $F$ is for the $^2$S$_{1/2}$ state. These results were obtained using the SymPy Python module \cite{sympy}\cite{rasch6j}. Code for calculating these values can be found in Appendix\,\ref{sympy6jAppendix}.
+\caption{Values of $\langle n' L' S J' I F' ||\mathbf{r}||n L S J I F\rangle / \langle n'L' S J'||T^{(k)}|| n L S J\rangle$ as given in Eq.\,\ref{afterSpectators}. These coefficients essentially take into account the geometrical considerations that come into play when we discuss an operator that has been described to us in terms of eigenstates of $\mathbf{J}$ if we want to discuss it in terms of the eigenstates of $\mathbf{F}$. In this table, we have placed only values that gave nonzero results. The symbol $F'$ denotes the total angular momentum number of the intermediate ($^2$P$_{3/2}$) states, while $F$ is for the $^2$S$_{1/2}$ state. These results were obtained using the SymPy Python module \cite{sympy,rasch6j}. Code for calculating these values can be found in Appendix\,\ref{sympy6jAppendix}.
 \label{coefficient_calculated}}
 \end{table}
 %todo: clean up the presentation. Maybe do all this stuff together. 
