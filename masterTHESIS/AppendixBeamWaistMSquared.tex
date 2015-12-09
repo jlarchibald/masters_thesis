@@ -1,34 +1,24 @@
 \chapter{Measuring Beam Waist}
 \label{BeamWaistAppendix}
 
-Sometimes it's important to measure the waist of one's laser beam. This explains the exact method we use. 
-  
-The profile for the intensity of the beam is given by
-
+Sometimes it's important to measure the waist of one's laser beam. This explains the exact method we use. The profile for the intensity of a Gaussian beam is given by
 \begin{equation} \label{electricFieldExplicitForm}
 I(r,z)=I_0\left(\frac{w_0}{w(z)}\right)^2 \exp \left(\frac{-2 r^2}{w^2(z)}\right)
 \end{equation}
-
 Extrapolating this to when there are two different waists in different directions, we get: 
-
 \begin{equation}
-I(r,z)= ({\rm constants})\exp \left(-2\frac{x^2}{w_x^2(z)}-2\frac{y^2}{w_y^2(z)}\right) . 
+I(r,z)= I_0\exp \left(-2\frac{x^2}{w_x^2(z)}-2\frac{y^2}{w_y^2(z)}\right) . 
 \end{equation}
-
 Now, total power ($P$) can be obtained by integrating the the intensity: 
-
 \begin{align}
 P&=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty} ({\rm constants}) \exp \left(-2\frac{x^2}{w_x^2(z)}-2\frac{y^2}{w_y^2(z)}\right) dx dy\\
-P&=\frac{\pi}{2} ({\rm constants}) w_x(z) w_y(z)
+P&=\frac{\pi}{2} I_0 w_x(z) w_y(z)
 \end{align}
-
-Now, we figure out that those constants will be
-
+The equation for $I_0$ takes the form
 \begin{equation}
-({\rm constants})=\frac{2 P}{\pi w_x(z) w_y(z)}.
+I_0=\frac{2 P}{\pi w_x(z) w_y(z)}.
 \end{equation}
-
-The ``constants'' term represents the maximum intensity that occurs within the beam (i.e. when $x=y=z=0$, or in other words, at the center of the narrowest part of the beam.)
+The symbol $I_0$ represents the maximum intensity that occurs within the beam (i.e. when $x=y=z=0$, or in other words, at the center of the narrowest part of the beam.)
 
 Now, to take measurements with a knife, we block some fraction of the beam by mounting the knife on a translation stage. We then look at the amount of power from the beam hitting a photo diode that is placed downstream from the knife. If, for example, the knife is mounted vertically, the measurements on the photo diode correspond to the total power in the beam from $x=-\infty$ to $x_0$ where $x_0$ is the location of the knife. Thus, if we plot this power as a function of the spatial position of the knife, we expect that the result should be 
 \begin{align}
