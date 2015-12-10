@@ -4,22 +4,23 @@
 Sometimes it is important to measure the waist of one's laser beam. For example, these techniques were useful when doing the work described in Section\,\ref{optimbeamWaist} to make sure that the maximum intensity of the beam was not above a certain threshold. In this appendix, I will discuss two methods for trying to characterize the profile of the laser beam. One involved a knife and did work. The other involved a camera and did not work due to the limitations of the camera.  
 
 \section{Knife measurements}
-In order to take measurements with a knife, we block some fraction of the beam by mounting the knife on a translation stage. We then use the translation stage to move the knife perpendicular to the direction of beam propagation. At several different positions, we look at the amount of power from the beam hitting a photo diode that is placed downstream from the knife. 
+In order to take measurements with a knife, we block some fraction of the beam by mounting the knife on a translation stage. We then use the translation stage to move the knife perpendicular to the direction of beam propagation. At several different positions, we look at the amount of power from the beam hitting a photo diode that is placed downstream from the knife. This is illustrated in Figure\,\ref{knifeDiagram}.
 \begin{figure}
 \includegraphics[width=.95\textwidth]{knife_drawing}
-\caption[Knife diagram]{\label{knifeDiagram} An illustration of the razor blade method for measuring beam radius.
+\caption[Knife diagram]{\label{knifeDiagram} An illustration of the razor blade method for measuring beam radius. The blade is shown 
 }
 \end{figure}
+If, for example, the knife is mounted vertically, the the knife would be moved in the horizontal direction. For each horizontal position, a different fraction of the beam would be occluded. 
 
-If, for example, the knife is mounted vertically, the the knife would be moved in the horizontal direction. For each horizontal position, a different fraction of the beam would be occluded. The measurements on the photo diode correspond to the total power in the beam from $x=-\infty$ to $x_0$ where $x_0$ is the location of the knife. Thus, if we plot this power as a function of the spatial position of the knife, we expect that the result should be 
+I wrote a function called ``d4sigma'' that attempts to calculate the second moment width using just the raw data taken from the photodiode. This is notoriously inaccurate because of how D4$\sigma$ is \emph{more} sensitive to radiation far from the center of the beam. Also, the knife technique lends itself to getting data of relatively low resolution. Finally, because I realized this and decided not to use the d4sigma function, the d4sigma function itself is not well-debugged and may be off by a constant factor.
+
+The measurements on the photo diode correspond to the total power in the beam from $x=-\infty$ to $x_0$ where $x_0$ is the location of the knife. Thus, if we plot this power as a function of the spatial position of the knife, we expect that the result should be 
 \begin{align}
 P(x_0)&=\int_{\infty}^{\infty}\int_{-\infty}^{x_0} \frac{2 P}{\pi w_x(z) w_y(z)}\exp \left(-2\frac{x^2}{w_x^2(z)}-2\frac{y^2}{w_y^2(z)}\right) dx dy\\
 P(x_0)&=\frac{P}{2} \left(\erf \frac{\sqrt{2} x}{W_x}+1 \right).\label{powerfitfun}
 \end{align}
 Eq.\,\ref{powerfitfun} can now be used as a function to which we can fit our measured data. 
 %The code in masterFILEhoriz14Nov.m calculates the approximate beam waist based on a series of knife cuts. First, one loads the intensity (in arbitrary units) and the position (in the units that the waist will ultimately be given in) into a number of arrays named x1, x2, .. . etc. The user types the position of the knife along the waist (show picture) into the vector called positions. 
-
-I wrote a function called ``d4sigma'' that attempts to calculate the second moment width using just the raw data. This is notoriously inaccurate because of how D4$\sigma$ is \emph{more} sensitive to radiation far from the center of the beam. Also, the knife technique lends itself to getting data of relatively low resolution. Finally, because I realized this and decided not to use the d4sigma function, the d4sigma function itself is not well-debugged and may be off by a constant factor.
 
 This explains the exact method we use. The profile for the intensity of a Gaussian beam is given by
 \begin{equation} \label{electricFieldExplicitForm}
