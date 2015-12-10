@@ -1,7 +1,27 @@
 \chapter{Measuring Beam Waist}
 \label{BeamWaistAppendix}
 
-Sometimes it's important to measure the waist of one's laser beam. This explains the exact method we use. The profile for the intensity of a Gaussian beam is given by
+Sometimes it is important to measure the waist of one's laser beam. For example, these techniques were useful when doing the work described in Section\,\ref{optimbeamWaist} to make sure that the maximum intensity of the beam was not above a certain threshold. In this appendix, I will discuss two methods for trying to characterize the profile of the laser beam. One involved a knife and did work. The other involved a camera and did not work due to the limitations of the camera.  
+
+\section{Knife measurements}
+In order to take measurements with a knife, we block some fraction of the beam by mounting the knife on a translation stage. We then use the translation stage to move the knife perpendicular to the direction of beam propagation. At several different positions, we look at the amount of power from the beam hitting a photo diode that is placed downstream from the knife. 
+\begin{figure}
+\includegraphics[width=.95\textwidth]{knife_drawing}
+\caption[Knife diagram]{\label{knifeDiagram} An illustration of the razor blade method for measuring beam radius.
+}
+\end{figure}
+
+If, for example, the knife is mounted vertically, the the knife would be moved in the horizontal direction. For each horizontal position, a different fraction of the beam would be occluded. The measurements on the photo diode correspond to the total power in the beam from $x=-\infty$ to $x_0$ where $x_0$ is the location of the knife. Thus, if we plot this power as a function of the spatial position of the knife, we expect that the result should be 
+\begin{align}
+P(x_0)&=\int_{\infty}^{\infty}\int_{-\infty}^{x_0} \frac{2 P}{\pi w_x(z) w_y(z)}\exp \left(-2\frac{x^2}{w_x^2(z)}-2\frac{y^2}{w_y^2(z)}\right) dx dy\\
+P(x_0)&=\frac{P}{2} \left(\erf \frac{\sqrt{2} x}{W_x}+1 \right).\label{powerfitfun}
+\end{align}
+Eq.\,\ref{powerfitfun} can now be used as a function to which we can fit our measured data. 
+%The code in masterFILEhoriz14Nov.m calculates the approximate beam waist based on a series of knife cuts. First, one loads the intensity (in arbitrary units) and the position (in the units that the waist will ultimately be given in) into a number of arrays named x1, x2, .. . etc. The user types the position of the knife along the waist (show picture) into the vector called positions. 
+
+I wrote a function called ``d4sigma'' that attempts to calculate the second moment width using just the raw data. This is notoriously inaccurate because of how D4$\sigma$ is \emph{more} sensitive to radiation far from the center of the beam. Also, the knife technique lends itself to getting data of relatively low resolution. Finally, because I realized this and decided not to use the d4sigma function, the d4sigma function itself is not well-debugged and may be off by a constant factor.
+
+This explains the exact method we use. The profile for the intensity of a Gaussian beam is given by
 \begin{equation} \label{electricFieldExplicitForm}
 I(r,z)=I_0\left(\frac{w_0}{w(z)}\right)^2 \exp \left(\frac{-2 r^2}{w^2(z)}\right)
 \end{equation}
@@ -12,7 +32,7 @@ I(r,z)= I_0\exp \left(-2\frac{x^2}{w_x^2(z)}-2\frac{y^2}{w_y^2(z)}\right) .
 Now, total power ($P$) can be obtained by integrating the the intensity: 
 \begin{align}
 P&=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty} ({\rm constants}) \exp \left(-2\frac{x^2}{w_x^2(z)}-2\frac{y^2}{w_y^2(z)}\right) dx dy\\
-P&=\frac{\pi}{2} I_0 w_x(z) w_y(z)
+P&=\frac{\pi}{2} I_0 w_x(z) w_y(z).
 \end{align}
 The equation for $I_0$ takes the form
 \begin{equation}
@@ -20,14 +40,6 @@ I_0=\frac{2 P}{\pi w_x(z) w_y(z)}.
 \end{equation}
 The symbol $I_0$ represents the maximum intensity that occurs within the beam (i.e. when $x=y=z=0$, or in other words, at the center of the narrowest part of the beam.)
 
-Now, to take measurements with a knife, we block some fraction of the beam by mounting the knife on a translation stage. We then look at the amount of power from the beam hitting a photo diode that is placed downstream from the knife. If, for example, the knife is mounted vertically, the measurements on the photo diode correspond to the total power in the beam from $x=-\infty$ to $x_0$ where $x_0$ is the location of the knife. Thus, if we plot this power as a function of the spatial position of the knife, we expect that the result should be 
-\begin{align}
-P(x_0)&=\int_{\infty}^{\infty}\int_{-\infty}^{x_0} \frac{2 P}{\pi w_x(z) w_y(z)}\exp \left(-2\frac{x^2}{w_x^2(z)}-2\frac{y^2}{w_y^2(z)}\right) dx dy\\
-P(x_0)&=\frac{P}{2} \left(\erf \frac{\sqrt{2} x}{W_x}+1 \right).
-\end{align}
-So, now we have a function that we can fit. The code in masterFILEhoriz14Nov.m calculates the approximate beam waist based on a series of knife cuts. First, one loads the intensity (in arbitrary units) and the position (in the units that the waist will ultimately be given in) into a number of arrays named x1, x2, .. . etc. The user types the position of the knife along the waist (show picture) into the vector called positions. 
-
-The function ``d4sigma'' attempts to calculate the second moment width using just the raw data. This is notoriously inaccurate because of how D4$\sigma$ is \emph{more} sensitive to radiation far from the center of the beam. Also, the knife technique lends itself to getting data of relatively low resolution. Finally, because I realized this and decided not to use the d4sigma function, the d4sigma function itself is not well-debugged and may be off by a constant factor.
 
 The program instead calculates the second moment width and the beam waist exclusively by assuming the beam profile is Gaussian and finding parameters that will fit the measured data points to the function that we would expect if we were measuring the profile of a Gaussian beam. The function we fit to is contained in the file beamWaistCalculator, which takes as its arguments the raw position data and the raw intensity data. This function is 
 \begin{equation}\label{fiterfeqn}
@@ -49,9 +61,9 @@ and this:
 \begin{equation}
 W_x=a_1 \sqrt{1+(1+a_3^2) \left(\frac{(x-a_2) \lambda}{\pi a_1^2}\right)^2}.\label{eq:AAAfinder} 
 \end{equation}
-The first case we are forcing $M^2$ to be one. This gives us a worst-case scenario. A few test cases, along with inspection of the equation convinced us that if $M^2$ is higher than we think it is, we have a less-tightly focused center. Thus, for the purposes of not putting too much power into the AOM, we go with the fit to the first equation. 
+Eq.\,\ref{eq:Aafinder} is very similar to Eq.\,\ref{eq:AAAfinder} except that in Eq.\,\ref{eq:Aafinder}, we are effectively forcing $M^2$ to be one. As explained in Section,\ref{optimbeamWaist}, the assumption that $M^2=1$ is a useful one since, given a set of beam radius measurements for various points along the beam, the maximum intensity calculated assuming that $M^2=1$ will always be greater than or equal to the actual intensity of the beam for any possible actual value of $M^2$. Thus, for the purposes of verifying that the intensity that we measure and calculate is below the damage threshold of the AOM, we can use the values obtained with the assumption that $M^2=1$. 
 
-Because the beam radii/second moment widths used to perform the curve fit described in Eqs\,\ref{eq:Aafinder} and \ref{eq:AAAfinder} were calculated assuming the beam profile is Gaussian, we do not expect to get a very good estimate of $M^2$.  profile and fit we usually use the second moment width of the Gaussian we fit it to. This is all illustrated for one laser width in Fig.\,\ref{waistGraphs}.
+Furthermore, because the beam radii/second moment widths used to perform the curve fit described in Eqs\,\ref{eq:Aafinder} and \ref{eq:AAAfinder} were calculated assuming the beam profile is Gaussian, we do not expect to get a very good estimate of $M^2$. This is all illustrated for one laser width in Fig.\,\ref{waistGraphs}.
 
 \begin{figure}
 \centering
